@@ -1,0 +1,12 @@
+[book]
+title = "Computer Science"
+language = "it"
+description = "Appunti per il corso di Informatica all'Università di Venezia"
+src = "src"
+
+[preprocessor.katex]
+
+[output.html]
+mathjax-support = true
+
+[output.katex]
