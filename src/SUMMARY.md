@@ -6,6 +6,7 @@
 
 - [Calcolo 1](./ct0432/README.md)
 	- [Insiemi](./ct0432/2022-09-19.md)
+	- [Numeri reali](./ct0432/2022-09-22.md)
 
 - [Matematica discreta](./ct0434/README.md)
 
