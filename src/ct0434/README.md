@@ -1,20 +1,30 @@
 # Terminologia
 
 - **Enunciato**: indica un espressione linguistica che rappresenta proprietà di **oggetti matematici** per cui è possibile stabilire un **valore di verità**. Può essere di tipo:
+
 	- **Semplice**
+
 	- **Composto**: formato da più enunciati connessi da dei connettivi
+
 	- **Esistenziali**: cominciano con "Esiste" (e.g. "Esiste $n \in \mathbb{N} : n^2 = 441$"), e viene dimostrato con un **esempio** (e.g. "$21^2 = 441$"). Per dimostrare che è falso invece, va dimostrato **per ogni valore di** $n$ sul suo insieme di appartenenza.
+
 	- **Universali**: cominciano con "Per ogni" (e.g. "Per ogni $n \in \mathbb{N}, n^2+n$ è pari"), e viene dimostrato per **tutti i valori di** $n$. Per dimostrare che è falso invece, basta un **contro-esempio**.
+
 - **Oggetti matematici**: sono elementi come le funzioni, variabili, matrici, sequenze, etc.
+
 - **Valori di verità**: il valore che può essere associato ad un enunciato, cioè **vero** o **falso**.
+
 - **Teorema**: viene espresso attraverso un enunciato, ed è formato da una **dimostrazione**, cioè il processo che permette di ricavare il valore di verità.
+
 	- **Lemma**: è un teorema che serve per la dimostrazione di un teorema successivo più importante
+
 	- **Proposizione**: è un teorema di meno rilevanza utile per la dimostrazione di un teorema più importante
+
 	- **Corollario**: è un teorema a seguito di un altro, la cui dimostrazione è talmente immediata da poter essere solo accennata o omessa
 
 ## Esempi di problemi
 
-1. _Enunciato_: **Per ogni** (enunciato universale) $n \in \mathbb{N}, n^2 + n$ è pari
+1. _Enunciato_: **Per ogni** (enunciato universale) $n \in \mathbb{N}, n^2 + n$ è pari.
 
 	_Dimostrazione_:
 
@@ -45,7 +55,7 @@
 
 	Per cui, con il **contro-esempio** $n = 4$, il teorema è vero.
 
-3. _Enunciato_: **Non esiste** un numero primo massimo
+3. _Enunciato_: **Non esiste** un numero primo massimo.
 
 	_Dimostrazione_:
 
