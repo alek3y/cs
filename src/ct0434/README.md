@@ -1,4 +1,6 @@
-# Terminologia
+# Matematica discreta
+
+## Terminologia
 
 - **Enunciato**: indica un espressione linguistica che rappresenta proprietà di **oggetti matematici** per cui è possibile stabilire un **valore di verità**. Può essere di tipo:
 

@@ -7,7 +7,7 @@ src = "src"
 [preprocessor.katex]
 
 [output.html]
-no-section-label = true
+no-section-label = false
 additional-css = ["book.css"]
 mathjax-support = true
 

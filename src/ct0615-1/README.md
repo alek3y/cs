@@ -1,4 +1,4 @@
-# Introduzione
+# Architettura degli elaboratori
 
 ## Von Neumann
 
