@@ -1,0 +1,14 @@
+a.toggle div {
+	display: none;
+}
+
+.chapter li > a.toggle::after {
+	display: inline-block;
+	content: "›";
+	font-weight: bold;
+	font-size: 1.5em;
+}
+
+.chapter li.expanded > a.toggle::after {
+	transform: translate(0.145em, 0.2em) rotate(90deg);
+}
