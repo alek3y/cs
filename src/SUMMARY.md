@@ -12,6 +12,7 @@
 		- [Intervalli](./ct0432/2022-09-22/3.md)
 
 - [Matematica discreta](./ct0434/README.md)
+	- [Logica](./ct0434/2022-09-27.md)
 
 - [Algebra lineare](./ct0435/README.md)
 	- [Numeri complessi](./ct0435/2022-09-21.md)
