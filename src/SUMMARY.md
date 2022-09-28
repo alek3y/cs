@@ -18,4 +18,6 @@
 	- [Numeri complessi](./ct0435/2022-09-21.md)
 
 - [Architettura degli elaboratori](./ct0615-1/README.md)
-	- [Rappresentazione dell'informazione](./ct0615-1/2022-09-22.md)
+	- [Rappresentazione dell'informazione](./ct0615-1/2022-09-22/README.md)
+		- [Conversioni](./ct0615-1/2022-09-22/1.md)
+		- [Numeri negativi](./ct0615-1/2022-09-22/2.md)
