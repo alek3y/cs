@@ -10,6 +10,8 @@
 		- [Assiomi](./ct0432/02/01/README.md)
 		- [Estremi](./ct0432/02/02/README.md)
 		- [Intervalli](./ct0432/02/03/README.md)
+		- [Cardinalità e numerabilità](./ct0432/02/04/README.md)
+	- [Funzioni](./ct0432/03/README.md)
 
 - [Matematica discreta](./ct0434/README.md)
 	- [Logica](./ct0434/01/README.md)
