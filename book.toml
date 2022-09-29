@@ -7,6 +7,7 @@ src = "src"
 [preprocessor.katex]
 
 [output.html]
+preferred-dark-theme = "light"
 no-section-label = false
 additional-css = ["book.css"]
 mathjax-support = true
