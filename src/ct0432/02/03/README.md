@@ -50,7 +50,7 @@ Avendo un raggio $r > 0$:
 - $(p - r, p]$ sarà l'**intorno sinistro** di $p$
 - $[p, p + r)$ sarà l'**intorno destro** di $p$
 
-![Intorno in 0 con raggio 1](https://i.imgur.com/WYNLRpi.png)
+![Intorno in 0 con raggio 1](assets/01.png)
 
 Inoltre, chiamiamo $\overline B(p, r) = [p - r, p + r]$ **intorno circolare chiuso** di $p$.
 

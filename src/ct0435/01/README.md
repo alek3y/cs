@@ -31,7 +31,7 @@ $$i^2 = -1$$
 
 È possibile rappresentare un certo numero complesso $z = a + bi$ in un piano chiamato **piano complesso**, dove nelle ascisse verrà messa la parte _reale_, mentre nelle ordinate la parte _immaginaria_.
 
-![Rappresentazione di un numero nel piano complesso](https://i.imgur.com/sr5qDoV.png)
+![Rappresentazione di un numero nel piano complesso](assets/01.png)
 
 Dalla rappresentazione si possono ricavare le proprietà:
 

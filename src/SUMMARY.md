@@ -5,19 +5,19 @@
 # Primo anno
 
 - [Calcolo 1](./ct0432/README.md)
-	- [Insiemi](./ct0432/2022-09-19.md)
-	- [Numeri reali](./ct0432/2022-09-22/README.md)
-		- [Assiomi](./ct0432/2022-09-22/1.md)
-		- [Estremi](./ct0432/2022-09-22/2.md)
-		- [Intervalli](./ct0432/2022-09-22/3.md)
+	- [Insiemi](./ct0432/01/README.md)
+	- [Numeri reali](./ct0432/02/README.md)
+		- [Assiomi](./ct0432/02/01/README.md)
+		- [Estremi](./ct0432/02/02/README.md)
+		- [Intervalli](./ct0432/02/03/README.md)
 
 - [Matematica discreta](./ct0434/README.md)
-	- [Logica](./ct0434/2022-09-27.md)
+	- [Logica](./ct0434/01/README.md)
 
 - [Algebra lineare](./ct0435/README.md)
-	- [Numeri complessi](./ct0435/2022-09-21.md)
+	- [Numeri complessi](./ct0435/01/README.md)
 
 - [Architettura degli elaboratori](./ct0615-1/README.md)
-	- [Rappresentazione dell'informazione](./ct0615-1/2022-09-22/README.md)
-		- [Conversioni](./ct0615-1/2022-09-22/1.md)
-		- [Numeri negativi](./ct0615-1/2022-09-22/2.md)
+	- [Rappresentazione dell'informazione](./ct0615-1/01/README.md)
+		- [Conversioni](./ct0615-1/01/01/README.md)
+		- [Numeri negativi](./ct0615-1/01/02/README.md)
