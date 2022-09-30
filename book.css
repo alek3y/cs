@@ -1,4 +1,27 @@
-a.toggle div {
+/* Change light theme foreground colors */
+
+.light {
+	--fg: #404040;
+	--sidebar-active: var(--icons-hover);
+	--sidebar-fg: var(--fg);
+	--searchbar-fg: var(--fg);
+}
+
+.chapter li a.active > strong {
+	color: var(--sidebar-fg);
+}
+
+.chapter li a.active {
+	font-weight: 600;
+}
+
+.chapter li a.active > strong {
+	font-weight: bold;
+}
+
+/* Customize the fold symbol */
+
+.chapter li > a.toggle div {
 	display: none;
 }
 
