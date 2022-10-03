@@ -33,3 +33,5 @@ $$
 Utilizzando la funzione inversa, con $f^{-1}(B) = A$ si ottiene la **controimmagine** e il **dominio** di $f$.
 
 Mentre, $(f \circ f^{-1})(y) = y$ con $y \in B$ e $(f^{-1} \circ f)(x) = x$ con $x \in A$.
+
+Per esempio, l'inversa di $f(x) = x^3$ sarà $f^{-1}(y) = \sqrt[3]{y}$, dato che $(f \circ f^{-1})(x) = f(f^{-1}(x)) = \sqrt[3]{x}^3 = x$.
