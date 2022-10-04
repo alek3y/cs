@@ -4,6 +4,11 @@ language = "it"
 description = "Appunti per il corso di Informatica all'Università di Venezia"
 src = "src"
 
+[build]
+use-default-preprocessors = false	# Disable index to fix issue #431
+
+[preprocessor.links]
+
 [preprocessor.katex]
 
 [output.html]
