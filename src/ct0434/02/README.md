@@ -1,6 +1,6 @@
 # Insiemi
 
-Parte dell'argomento è stato già integrato nella parte di [Calcolo 1](../../../ct0432/01/README.md).
+Parte dell'argomento è stato già integrato nella parte di [Calcolo 1](../../ct0432/01/README.md).
 
 ## Insiemi delle parti
 
