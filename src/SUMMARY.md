@@ -22,6 +22,7 @@
 
 - [Algebra lineare](./ct0435/README.md)
 	- [Numeri complessi](./ct0435/01/README.md)
+	- [Vettori](./ct0435/02/README.md)
 
 - [Architettura degli elaboratori](./ct0615-1/README.md)
 	- [Rappresentazione dell'informazione](./ct0615-1/01/README.md)
