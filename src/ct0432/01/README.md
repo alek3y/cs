@@ -50,7 +50,7 @@ Gli insiemi possono essere rappresentati in due modi in particolare:
 
 ## Proprietà
 
-Sia $A$ un insieme tale che $A \subseteq U$, dove $U$ è l'insieme **universo**.
+Siano $A$, $B$, $C$ insiemi tali che $A, B, C \subseteq U$, dove $U$ è l'insieme **universo**, allora varranno le seguenti proprietà:
 
 - **Idempotenza**:
 	1. $$A \cup A = A, \hspace{1em} A \cap A = A$$

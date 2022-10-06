@@ -6,7 +6,7 @@ L'immagine di una funzione $f: D \to \mathbb{R}$ verrà rappresentata da $f(D)$ 
 $$f(D) = \{y \in \mathbb{R} | y = f(x) \text{ per qualche } x \in D\}$$
 
 In poche parole, l'**immagine** di una funzione fa parte del suo **codominio**, cioè a tutti i valori di $f(x)$. \
-Il _codominio_ però, **è diverso dall'immagine** e non viene calcolata, visto che è interamente specificato dalla **firma** della funzione (e.g. $f: A \to B$).
+Il _codominio_ però, **è diverso dall'immagine** (che non viene calcolata), visto che è interamente specificato dalla **firma** della funzione (e.g. $f: A \to B$).
 
 Per esempio, nel caso della funzione $f(x) = mx + q$, che comprende tutte le rette **non verticali**, l'immagine sarà $f(D) = \begin{cases} \mathbb{R} & \text{se } m \neq 0 \\ \{q\} & \text{se } m = 0, \text{ retta orizzontale} \end{cases}$
 
@@ -15,7 +15,7 @@ Per esempio, nel caso della funzione $f(x) = mx + q$, che comprende tutte le ret
 La controimmagine di una funzione $f: D \to B$ è rappresentata da $\overleftarrow f(B)$, e viene descritta come:
 $$\overleftarrow f(B) = \{x \in D | f(x) \in B\}$$
 
-In poche parole, la **controimmagine** di una funzione fa parte del suo **dominio**, cioè a tutti i valori assunti da $x$. Il _dominio_ **non è la stessa cosa della controimmagine**, visto che non viene calcolata dato che viene specificato nella firma della funzione.
+In poche parole, la **controimmagine** di una funzione fa parte del suo **dominio**, cioè a tutti i valori assunti da $x$. Il _dominio_ **non è la stessa cosa della controimmagine** (visto che non viene calcolata), dato che viene specificato nella firma della funzione.
 
 ### Esempio
 
