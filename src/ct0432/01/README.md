@@ -29,6 +29,11 @@ Gli insiemi possono essere rappresentati in due modi in particolare:
 - **Differenza**:
 	$$A \setminus B = \{x | x \in A \land x \not\in B\}$$
 
+- **Differenza simmetrica**:
+	$$A \triangle B = (A \setminus B) \cup (B \setminus A) = (A \cup B) \setminus (A \cap B)$$
+
+	cioè l'unione degli elementi che non sono in comune tra $A$ e $B$.
+
 - **Prodotto cartesiano**:
 	$$A \times B = \{(a, b) | a \in A \land b \in B\}$$
 
@@ -42,6 +47,33 @@ Gli insiemi possono essere rappresentati in due modi in particolare:
 - $\mathbb{Z} = \{..., -2, -1, 0, 1, 2, ...\}$
 - $\mathbb{Q} = \{\frac{p}{q} | p \in \mathbb{Z} \land q \in \mathbb{Z} \setminus \{0\}\}$, tra cui i numeri periodici
 - $\mathbb{I} = \mathbb{R} - \mathbb{Q}$, che contiene numeri con parte decimale infinita e non periodica
+
+## Proprietà
+
+Sia $A$ un insieme tale che $A \subseteq U$, dove $U$ è l'insieme **universo**.
+
+- **Idempotenza**:
+	1. $$A \cup A = A, \hspace{1em} A \cap A = A$$
+	2. $$A \cup \emptyset = A, \hspace{1em} A \cap \emptyset = \emptyset$$
+	3. $$A \cup U = U, \hspace{1em} A \cap U = A$$
+
+- **Commutativa**:
+	$$A \cup B = B \cup A, \hspace{1em} A \cap B = B \cap A$$
+
+- **Associativa**:
+	$$A \cup (B \cup C) = A \cup B \cup C, \hspace{1em} A \cap (B \cap C) = A \cap B \cap C$$
+
+- **Distributiva**:
+	$$A \cup (B \cap C) = (A \cup B) \cap (A \cup C), \hspace{1em} A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$$
+
+- **Assorbimento**:
+	$$A \cup (A \cap B) = A, \hspace{1em} A \cap (A \cup B) = A$$
+
+- **Complementazione**:
+	$$A \cup A^C = U, \hspace{1em} A \cap A^C = \emptyset$$
+
+- **De Morgan**:
+	$$(A \cup B)^C = A^C \cap B^C, \hspace{1em} (A \cap B)^C = A^C \cup B^C$$
 
 ## Esempio di dimostrazione
 
