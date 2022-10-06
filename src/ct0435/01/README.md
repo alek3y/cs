@@ -10,6 +10,7 @@ $$i^2 = -1$$
 - **Coniugato**: $\overline z = a - bi$
 - **Modulo**: $|z| = \sqrt{a^2 + b^2}$
 - **Inverso**: $z^{-1} = \frac{\overline z}{|z|^2} = \frac{a - bi}{a^2 + b^2}$
+- **Divisione**: $\frac{w}{z} = w \cdot z^{-1} = w \cdot \frac{\overline z}{|z|^2}$
 
 ### Esempi
 
