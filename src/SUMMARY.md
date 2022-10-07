@@ -15,6 +15,7 @@
 		- [Immagine e controimmagine](./ct0432/03/01/README.md)
 		- [Tipi di funzione](./ct0432/03/02/README.md)
 		- [Operazioni tra funzioni](./ct0432/03/03/README.md)
+		- [Funzioni elementari](./ct0432/03/04/README.md)
 
 - [Matematica discreta](./ct0434/README.md)
 	- [Logica](./ct0434/01/README.md)

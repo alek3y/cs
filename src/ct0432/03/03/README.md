@@ -35,3 +35,17 @@ Utilizzando la funzione inversa, con $f^{-1}(B) = A$ si ottiene la **controimmag
 Mentre, $(f \circ f^{-1})(y) = y$ con $y \in B$ e $(f^{-1} \circ f)(x) = x$ con $x \in A$.
 
 Per esempio, l'inversa di $f(x) = x^3$ sarà $f^{-1}(y) = \sqrt[3]{y}$, dato che $(f \circ f^{-1})(x) = f(f^{-1}(x)) = \sqrt[3]{x}^3 = x$.
+
+## Traslazioni, dilatazioni e riflessioni
+
+Modificando una funzione si può modificarne l'aspetto, quindi con $c \in \mathbb{R}$:
+- **Traslazione orizzontale**: $f(x \pm c)$
+- **Traslazione verticale**: $f(x) \pm c$
+- **Dilatazione orizzontale**: $f(x \cdot \frac{1}{c})$
+- **Dilatazione verticale**: $f(x) \cdot \frac{1}{c}$
+- **Contrazione orizzontale**: $f(x \cdot c)$
+- **Contrazione verticale**: $f(x) \cdot c$
+- **Riflessione rispetto le ordinate**: $f(-x)$
+- **Riflessione rispetto le ascisse**: $-f(x)$
+- **Riflessione rispetto l'origine**: $-f(-x)$
+- **Riflessione rispetto a** $y = x$: $f^{-1}(x)$, cioè la funzione _inversa_ di $f$ (e.g. $f(x) = 3x$, $f^{-1}(x) = \frac{x}{3}$)

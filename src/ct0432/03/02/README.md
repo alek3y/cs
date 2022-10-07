@@ -36,3 +36,18 @@ Una funzione viene chiamata **monotona** quando soddisfa una delle seguenti prop
 - **Strettamente crescente** se $f(x) < f(z)$
 - **Strettamente decrescente** se $f(x) > f(z)$
 - **Costante**, se $|f(D)| = 1$ e quindi $f(x) = f(z)$ (e.g. le rette orizzontali)
+
+## Funzioni simmetriche
+
+Una funzione si dice **simmetrica**, quando è:
+- $f(-x) = f(x)$ o **pari**, per cui è simmetrica rispetto all'asse $y$
+- $f(-x) = -f(x)$ o **dispari**, per cui è simmetrica rispetto all'origine
+
+Per esempio, $|x|$ è _pari_ e $x^3$ è _dispari_.
+
+## Funzioni periodiche
+
+Una funzione $f: D \rightarrow \mathbb{R}$, è detta **periodica** quando $\exists \epsilon > 0 : \forall x \in D, x \pm \epsilon \in D \land f(x \pm \epsilon) = f(x)$, cioè quando i valori _immagine_ della funzione si ripetono ogni valore arbitrario $\epsilon$.
+Il più piccolo $\epsilon$ esistente rappresenta il **periodo** della funzione $f$.
+
+Per esempio, $\sin(x)$ ha periodo $\pi$ e $y = c$ con $c \in \mathbb{R}$ ha periodo $\epsilon, \forall \epsilon > 0$.
