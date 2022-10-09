@@ -10,7 +10,7 @@ $$
 
 si dice:
 - **Suriettiva** se $\mathrm{Im}(f) = B$, e cioè che il codominio corrisponde a tutti punti di $f(x)$
-- **Iniettiva**, se per ogni $x$ esiste una sola $f(x)$
+- **Iniettiva**, se per ogni $x$ esiste massimo una sola $f(x)$
 - **Biettiva**, se la funzione è sia **suriettiva** che **iniettiva**
 
 ### Esempio
@@ -26,7 +26,7 @@ La parabola quindi **non è suriettiva** perchè ci sono dei punti del codominio
 Restringere una funzione può portarla a diventare _suriettiva_ o _iniettiva_.
 Questo è possibile cambiando il suo **dominio** e **codominio**.
 
-Per la parabola $y = x^2$, essa diventa _suriettiva_ se si **restringe il suo dominio** a $D = [0, +\infty)$ (espressa come $f_{|D}$), mentre diventa _iniettiva_ se si **restringe il suo codominio** a $C = [0, +\infty)$.
+Per la parabola $y = x^2$, essa diventa _iniettiva_ se si **restringe il suo dominio** a $D = [0, +\infty)$ (espressa come $f_{|D}$), mentre diventa _suriettiva_ se si **restringe il suo codominio** a $C = [0, +\infty)$.
 
 ## Funzioni monotone
 
