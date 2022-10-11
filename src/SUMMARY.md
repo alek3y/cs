@@ -35,3 +35,5 @@
 		- [Numeri negativi](./ct0615-1/01/02/README.md)
 		- [Overflow](./ct0615-1/01/03/README.md)
 		- [Numeri con la virgola](./ct0615-1/01/04/README.md)
+		- [IEEE754](./ct0615-1/01/05/README.md)
+		- [Errori di sequenze](./ct0615-1/01/06/README.md)

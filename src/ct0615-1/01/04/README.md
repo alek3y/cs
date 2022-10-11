@@ -8,6 +8,9 @@ Per convertire un numero con la virgola in base 2, sarà sufficente separare la 
 
 ![Conversione in virgola fissa binaria](assets/01.png)
 
+Se si vuole convertire un numero con la virgola in _complemento a due_, basterà trattarlo come se la virgola non esistesse.
+Per esempio, su 8 bit totali, $-1.25_{10} = -0001.0100_2 = 1110.1100_2$.
+
 ## Virgola mobile
 
 Questo è il metodo tutt'ora più utilizzato per la rappresentazione di numeri reali in binario.
