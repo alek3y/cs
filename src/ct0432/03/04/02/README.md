@@ -25,6 +25,7 @@ per cui $x \in D_f \Rightarrow x > 0$, e valgono le proprietà:
 - $\log_a(x) + \log_a(y) = \log_a(xy)$
 - $\log_a(x) - \log_a(y) = \log_a(\frac{x}{y})$
 - $\log_{a^b}(x) = \frac{1}{b}\log_a(x)$
+- $\log_a(x) = \frac{log_b(x)}{log_b(a)}$
 
 Essendo funzione **inversa** di $a^x$,
 $$(f \circ f^{-1})(x) = f(f^{-1}(x)) = a^{\log_a(x)} = x$$
