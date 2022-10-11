@@ -16,6 +16,10 @@
 		- [Tipi di funzione](./ct0432/03/02/README.md)
 		- [Operazioni tra funzioni](./ct0432/03/03/README.md)
 		- [Funzioni elementari](./ct0432/03/04/README.md)
+			- [Potenze](./ct0432/03/04/01/README.md)
+			- [Esponenziali e logaritmiche](./ct0432/03/04/02/README.md)
+			- [Valore assoluto e segno](./ct0432/03/04/03/README.md)
+			- [Trigonometriche](./ct0432/03/04/04/README.md)
 
 - [Matematica discreta](./ct0434/README.md)
 	- [Logica](./ct0434/01/README.md)
