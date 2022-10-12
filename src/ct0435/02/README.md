@@ -1,12 +1,12 @@
 # Vettori
 
-Il più semplice vettore è un **segmento orientato** $\overrightarrow{PQ}$, anche chiamato **vettore applicato**, che parte da un _punto iniziale_ $P$ ed arriva ad un _punto finale_ $Q$.
+Il più semplice vettore è un **vettore applicato** $\overrightarrow{PQ}$, anche chiamato **segmento orientato**, che parte da un _punto iniziale_ $P$ ed arriva ad un _punto finale_ $Q$.
 
 L'indicazione dell'origine del vettore lo rende **orientato**, per cui $\overrightarrow{PQ} \neq \overrightarrow{QP}$.
 
 Un **punto**, viene quindi espresso con le lettere maiuscole e come una **coppia** (tuple da due componenti) di numeri (e.g. $A = (1, 2)$).
 
-Un vettore $v$ invece, viene rappresentato come la coppia di valori $(x, y)$ in due dimensioni (quindi $\mathbb{R}^2$).
+Un vettore generico $v$ **applicato nell'origine** invece, viene rappresentato come la coppia di valori $(x, y)$ in due dimensioni (quindi $\mathbb{R}^2$).
 Con l'aumento di dimensioni, aumentano anche i **componenti** del vettore:
 $$v = (x_1, x_2, ..., x_n) \text{ su } \mathbb{R}^n$$
 
@@ -35,13 +35,14 @@ Si chiama in questo modo perchè se si moltiplica un vettore per uno scalare si 
 	![Prodotto per uno scalare](assets/02.png)
 
 - **Norma**, o _modulo_:
-	$$||v|| = ||(v_1, v_2)|| = \sqrt{(v_1)^2 + (v_2)^2}$$
+	$$||v|| = \sqrt{v \cdot v} = \sqrt{(v_1)^2 + (v_2)^2}$$
+	dove $v \cdot v$ corrisponde al **prodotto scalare** tra $v$ e se stesso, cioè a $||v||^2$.
 
 - **Prodotto scalare**:
 	$$v \cdot w = (||v|| \cdot \cos(\alpha)) \cdot ||w||$$
 	dove $\alpha$ corrisponde all'angolo tra i due vettori $v$ e $w$.
 
-	La parte $||v||\cos(\alpha)$ si può pensare come la **proiezione** di $v$ su $w$, che poi servirà come scalare per $||w||$, ridimensionando il risultato secondo la lunghezza della proiezione.
+	La parte $||v||\cos(\alpha)$ si può pensare come la **proiezione** di $v$ su $w$, che poi servirà come scalare per $||w||$, ridimensionando quindi la lunghezza di $w$ secondo la lunghezza della proiezione.
 
 	![Proiezione nel prodotto scalare](assets/03.png)
 
@@ -75,9 +76,34 @@ Per esempio, se $C = (-2, 1)$ e $D = (2, 1)$, $\overrightarrow{CD} = (x_D - x_C,
 
 ## Vettori perpendicolari e allineati
 
-Due vettori $v$ e $w$ si dicono **perpendicolari** se:
-$$v \cdot w = 0$$
-
-Si dicono **allineati** invece, se con l'angolo $\alpha$ tra i due vettori si ottiene che:
+Due vettori si dicono **allineati**, se con l'angolo $\alpha$ tra i due vettori si ottiene che:
 $$\cos(\alpha) = \pm 1$$
 cioè che $\alpha = k \pi$, con $k \in \mathbb{N}$.
+
+Invece, $A$ e $B$ si dicono **perpendicolari** o **ortogonali**, se
+$$A \cdot B = 0$$
+che si verifica quando
+$$||A - B||^2 = ||A + B||^2$$
+ovvero quando la distanza tra i punti $A$ e $B$ (cioè $||\overrightarrow{AB}||$) e la distanza tra $A$ e $-B$ (cioè $||\overrightarrow{A(-B)}||$, dove $-B$ è il vettore capovolto (e quindi allineato a $B$)) si equivalgono.
+
+![Esempio di vettori perpendicolari](assets/04.png)
+
+Un altro modo in cui si verifica, è quando in $A \cdot B = ||A|| \cdot \cos(\alpha) \cdot ||B||$, il $\cos(\alpha) = 0$, cioè quando $\alpha = \pm \frac{\pi}{2} = \pm 90^\circ$.
+
+## Proiezione
+
+Per ricavare la proiezione di un vettore $A$ su $B$, basta **ridimensionare** $B$, in modo che la sua **norma sia uguale alla proiezione** di $A$ su $B$.
+
+![Proiezione sul vettore](assets/05.png)
+
+Chiamiamo, quindi, $c$ il valore scalare che ridimensionerà $B$ come proiezione di $A$ su $B$:
+$$||cB|| = c||B|| = ||A|| \cdot \cos(\alpha)$$
+
+Sappiamo che
+$$A \cdot B = ||A|| \cdot \cos(\alpha) \cdot ||B|| \Rightarrow \frac{A \cdot B}{||B||} = ||A|| \cdot \cos(\alpha)$$
+di conseguenza, è possibile sostituire nel valore di $c||B||$:
+$$c||B|| = \frac{A \cdot B}{||B||} \Rightarrow c = \frac{A \cdot B}{||B||^2} = \frac{A \cdot B}{B \cdot B}$$
+
+Un'alternativa è trovare il vettore che va da $cB$ a $A$, cioè $\overrightarrow{(cB)A} = A - cB$.
+Questo lo si può ottenere sfruttando la proprietà della perpendicolarità:
+$$(A - cB) \cdot B = 0 \Rightarrow A \cdot B - cB \cdot B = 0 \Rightarrow c = \frac{A \cdot B}{B \cdot B}$$

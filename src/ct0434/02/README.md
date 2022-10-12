@@ -31,8 +31,8 @@ Una famiglia di insiemi $A_i$ formano una **partizione** di $U$, se:
 
 ## Relazioni
 
-Una **relazione** $R$ tra due insiemi $A$ e $B$ è un sottoinsieme del prodotto cartesiano: $R \subset A \times B$.
+Una **relazione** $R$ tra due insiemi $A$ e $B$ è un sottoinsieme delle coppie del prodotto cartesiano $R \subset A \times B$.
 
-Il sottoinsieme conterrà delle coppie $(a, b), a \in A \land b \in B$ che sono messe in relazione da $R$.
+Il sottoinsieme conterrà delle coppie $(a, b)$ con $a \in A \land b \in B$ che sono messe in relazione da $R$.
 
 Per esempio, con $A = B = \{x | x \text{ è una persona}\}$, allora la relazione $R \subset A^2$ corrisponderà a $R = \{(x, y) | x \text{ è amico di } y\}$, per cui $x$ è in relazione con $y$ secondo $R$.
