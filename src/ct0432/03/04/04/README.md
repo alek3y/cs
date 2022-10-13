@@ -22,3 +22,34 @@ Nel caso della **circonferenza unitaria**, cioè con raggio $r = 1$, si hanno le
 - $\cos(\alpha + \beta) = \cos(\alpha)\cos(\beta) - \sin(\alpha)\sin(\beta)$
 - $\sin(\alpha + \beta) = \sin(\alpha)\cos(\beta) + \sin(\beta)\cos(\alpha)$
 - $\cos^2(\alpha) + \sin^2(\alpha) = 1$
+
+Dalle ultime tre formule è possibile ricavarsi che:
+- $\sin(2\alpha) = 2\sin(\alpha)\cos(\alpha)$
+- $\cos(2\alpha) = \cos^2(\alpha) - \sin^2(\alpha) = 1 - 2\sin^2(\alpha) = -1 + 2\cos(\alpha)$
+- $\sin^2(\alpha) = \frac{1 - \cos(2\alpha)}{2}$
+- $\cos^2(\alpha) = \frac{1 + \cos(2\alpha)}{2}$
+
+## Tangente
+
+Per trovare la **tangente** di un angolo $\alpha$, si può fare la proporzione tra un triangolo $\triangle OAP$, dove $P = (\cos(\alpha), \sin(\alpha))$, con il triangolo $\triangle OBQ$ per trovare $\overline{BQ} = \tan(\alpha)$ dove $Q$ corrisponde al punto in cui la retta di angolo $\alpha$ si interseca con $x = 1$:
+
+![Rappresentazione della tangente](assets/02.png)
+
+$$\overline{OA} : \overline{OB} = \overline{AP} : \overline{BQ}$$
+$$\cos(\alpha) : 1 = \sin(\alpha) : \tan(\alpha) \Rightarrow \tan(\alpha) = \frac{\sin(\alpha)}{\cos(\alpha)}$$
+
+Questo implica anche che $\alpha \neq \frac{pi}{2} + k\pi, k \in \mathbb{Z}$.
+
+## Inverse
+
+Perchè le funzioni trigonometriche siano invertibili vanno ristrette sul dominio rendendole **biettive**.
+
+- **Seno**
+	$$\sin\colon \left[-\frac{\pi}{2}, \frac{\pi}{2}\right] \rightarrow [-1, 1]$$
+
+	$$\arcsin\colon [-1, 1] \rightarrow \left[-\frac{\pi}{2}, \frac{\pi}{2}\right]$$
+
+- **Coseno**
+	$$\cos\colon [0, \pi] \rightarrow [-1, 1]$$
+
+	$$\arccos\colon [-1, 1] \rightarrow [0, \pi]$$
