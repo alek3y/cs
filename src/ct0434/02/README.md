@@ -27,6 +27,8 @@ Una famiglia di insiemi $A_i$ formano una **partizione** di $U$, se:
 1. $A_i \subset U$, quindi sono tutti sottoinsiemi di $U$
 2. $A_i \cap A_k = \emptyset$, per cui non hanno alcuna intersezione tra di loro
 
+Il numero di partizioni che possono essere costruite su $U$ corrisponde a $2 \cdot |U| - 1$.
+
 ![Esempio di partizione](assets/01.png)
 
 ## Relazioni

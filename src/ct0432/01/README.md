@@ -2,8 +2,9 @@
 
 Gli insiemi sono **collezioni non ordinate** di elementi (i.e. $\{1, 2, 3\} = \{3, 1, 2\}$), e vengono indicati con le lettere maiuscole (e.g. $A$, $B$, ...), mentre i suoi elementi vegono indicati come variabili a lettere minuscole (e.g. $a$, $b$, ...).
 
-Due insiemi sono uguali se contengono gli stessi elementi, oppure:
-$$A = B \Leftrightarrow \forall x (x \in A \land x \in B)$$
+Due insiemi si dicono **uguali** se:
+$$A = B \Leftrightarrow A \subseteq B \land B \subseteq A$$
+e quindi se $\forall x, x \in A \land x \in B$.
 
 Gli insiemi possono essere rappresentati in due modi in particolare:
 - Rappresentazione **estensiva**: vengono elencati tutti gli elementi; e.g. $A = \{a, b\} \Rightarrow c \not\in A$
