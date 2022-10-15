@@ -24,6 +24,10 @@
 - [Matematica discreta](./ct0434/README.md)
 	- [Logica](./ct0434/01/README.md)
 	- [Insiemi](./ct0434/02/README.md)
+	- [Relazioni](./ct0434/03/README.md)
+		- [Relazioni d'ordine](./ct0434/03/01/README.md)
+		- [Relazioni di equivalenza](./ct0434/03/02/README.md)
+		- [Catene e anticatene](./ct0434/03/03/README.md)
 
 - [Algebra lineare](./ct0435/README.md)
 	- [Numeri complessi](./ct0435/01/README.md)
