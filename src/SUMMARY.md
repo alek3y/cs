@@ -20,6 +20,8 @@
 			- [Esponenziali e logaritmiche](./ct0432/03/04/02/README.md)
 			- [Valore assoluto e segno](./ct0432/03/04/03/README.md)
 			- [Trigonometriche](./ct0432/03/04/04/README.md)
+			- [Angoli notevoli](./ct0432/03/04/05/README.md)
+			- [Iperboliche](./ct0432/03/04/06/README.md)
 
 - [Matematica discreta](./ct0434/README.md)
 	- [Logica](./ct0434/01/README.md)

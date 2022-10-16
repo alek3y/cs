@@ -40,6 +40,8 @@ $$\cos(\alpha) : 1 = \sin(\alpha) : \tan(\alpha) \Rightarrow \tan(\alpha) = \fra
 
 Questo implica anche che $\alpha \neq \frac{pi}{2} + k\pi, k \in \mathbb{Z}$.
 
+La funzione è **dispari**, perchè il grafico della funzione è simmetrico rispetto all'origine, ed è periodica con $T = \pi$.
+
 ## Inverse
 
 Perchè le funzioni trigonometriche siano invertibili vanno ristrette sul dominio rendendole **biettive**.
@@ -53,3 +55,20 @@ Perchè le funzioni trigonometriche siano invertibili vanno ristrette sul domini
 	$$\cos\colon [0, \pi] \rightarrow [-1, 1]$$
 
 	$$\arccos\colon [-1, 1] \rightarrow [0, \pi]$$
+
+- **Tangente**
+	$$\tan\colon \left(-\frac{\pi}{2}, \frac{\pi}{2}\right) \rightarrow (-\infty, +\infty)$$
+
+	$$\arctan\colon (-\infty, +\infty) \rightarrow \left(-\frac{\pi}{2}, \frac{\pi}{2}\right)$$
+
+## Cotangente
+
+La **cotangente** usa lo stesso concetto della **tangente**, ma invece che trovare l'intersezione su $x = 1$, si trova il valore dell'intersezione su $y = 1$.
+$$\cot(\alpha) = \frac{\cos(\alpha)}{\sin(\alpha)} = \frac{1}{\tan(\alpha)}$$
+
+## Secante
+
+La **secante** invece, cerca l'intersezione su $y = 0$, della tangente che sta sul punto di intersezione tra la retta di angolo $\alpha$ e la circonferenza.
+$$\sec(\alpha) = \frac{1}{\cos(\alpha)}, \hspace{1em} \cosec(\alpha) = \frac{1}{\sin(\alpha)}$$
+
+![Rappresentazione della secante](assets/03.png)
