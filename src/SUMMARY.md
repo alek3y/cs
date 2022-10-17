@@ -22,6 +22,7 @@
 			- [Trigonometriche](./ct0432/03/04/04/README.md)
 			- [Angoli notevoli](./ct0432/03/04/05/README.md)
 			- [Iperboliche](./ct0432/03/04/06/README.md)
+	- [Limiti](./ct0432/04/README.md)
 
 - [Matematica discreta](./ct0434/README.md)
 	- [Logica](./ct0434/01/README.md)
