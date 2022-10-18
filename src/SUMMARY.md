@@ -45,3 +45,4 @@
 		- [Numeri con la virgola](./ct0615-1/01/04/README.md)
 		- [IEEE754](./ct0615-1/01/05/README.md)
 		- [Errori di sequenze](./ct0615-1/01/06/README.md)
+	- [Algebra booleana](./ct0615-1/02/README.md)
