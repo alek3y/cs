@@ -2,20 +2,25 @@
 
 ## Immagine
 
-L'immagine di una funzione $f: D \to \mathbb{R}$ verrà rappresentata da $f(D)$ o $\mathrm{Im}(f)$, ed è costituita dai valori assunti dalla funzione:
-$$f(D) = \{y \in \mathbb{R} | y = f(x) \text{ per qualche } x \in D\}$$
+Si dice **immagine** di un valore $x$, il valore $y$ che **assume la funzione** su $x$, cioè $y = f(x)$.
 
-In poche parole, l'**immagine** di una funzione fa parte del suo **codominio**, cioè a tutti i valori di $f(x)$. \
-Il _codominio_ però, **è diverso dall'immagine** (che non viene calcolata), visto che è interamente specificato dalla **firma** della funzione (e.g. $f: A \to B$).
+Per esempio, l'immagine di $2$ sulla funzione $f(x) = 2x + 1$ è $f(2) = 5$.
 
-Per esempio, nel caso della funzione $f(x) = mx + q$, che comprende tutte le rette **non verticali**, l'immagine sarà $f(D) = \begin{cases} \mathbb{R} & \text{se } m \neq 0 \\ \{q\} & \text{se } m = 0, \text{ retta orizzontale} \end{cases}$
+L'immagine di un **insieme di valori** $C \subseteq \mathrm{Dom}(f)$, è l'insieme di tutte le $y$ che assume $f$ su $C$:
+$$f(C) = \{f(x) \in \mathrm{Codom}(f) | x \in C\}$$
+
+Quando si parla di **immagine di una funzione** $f(\mathrm{Dom}(f))$ o $\mathrm{Im}(f)$ quindi, si intendono tutti i valori assunti dalla funzione sul _codominio_.
+
+Il codominio però, è diverso dall'immagine di una funzione $f$, perchè $Im(f)$ si calcola, mentre $\mathrm{Codom}(f)$ è specificato nella **firma** della funzione (e.g. $f: A \to B \Rightarrow B = \mathrm{Codom}(f)$).
+
+Per esempio, nel caso della funzione $f(x) = mx + q$, che comprende tutte le rette **non verticali**, l'immagine sarà $f(D) = \begin{cases} \mathbb{R} & \text{se } m \neq 0 \\ \{q\} & \text{se } m = 0, \text{ retta orizzontale} \end{cases}$, con $D = \mathrm{Dom}(f)$.
 
 ## Controimmagine
 
-La controimmagine di una funzione $f: D \to B$ è rappresentata da $\overleftarrow f(B)$, e viene descritta come:
-$$\overleftarrow f(B) = \{x \in D | f(x) \in B\}$$
+La **controimmagine** di una funzione $f: D \to B$ è rappresentata da $\overleftarrow f(B)$, e viene descritta come:
+$$\overleftarrow f(B) = \{x | f(x) \in B \land x \in D\}$$
 
-In poche parole, la **controimmagine** di una funzione fa parte del suo **dominio**, cioè a tutti i valori assunti da $x$. Il _dominio_ **non è la stessa cosa della controimmagine** (visto che non viene calcolata), dato che viene specificato nella firma della funzione.
+Analogamente all'immagine, anche il dominio è diverso dalla controimmagine, perchè quest'ultima va calcolata e il diminio è specificato nella **firma**.
 
 ### Esempio
 

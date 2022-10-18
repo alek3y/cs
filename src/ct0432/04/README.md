@@ -14,6 +14,8 @@ $$
 $$
 e quindi, per ogni raggio $\epsilon$, si sta cercando un raggio $\delta$ per cui i tutti i valori immagine dell'intorno circolare $B(x_0, \delta)$ (cioè i valori delle $y$) appartengano a $B(l, \epsilon)$.
 
+Di conseguenza la proprietà **vale e il limite esiste** se, qualunque sia $\epsilon$ (sulle _ordinate_), sarà sempre possibile trovare un suo $\delta$ corrispondente (sulle _ascisse_).
+
 Si consideri $d(x_1, x_2) = |x_2 - x_1|$ cioè la distanza tra due punti $x_1$ e $x_2$, allora la definizione potrà essere espressa come
 $$
 \forall \epsilon > 0,

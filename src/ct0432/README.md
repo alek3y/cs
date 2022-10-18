@@ -12,8 +12,9 @@
 ## Quantificatori
 
 - $\forall$, per ogni, quantificatore universale: $\forall x \in \mathbb{N} \Rightarrow x \geq 0$
-- $\exists$, esiste almeno, quantificatore esistenziale: $\exists x \in \mathbb{C} : x^2 = -1$
-- $\exists!$, esiste un solo, quantificatore esistenziale: $\exists! x \in \mathbb{R} : \sqrt{x} = 0$
+- $\exists$, esiste almeno uno, quantificatore esistenziale: $\exists x \in \mathbb{C} : x^2 = -1$
+- $\exists!$, $\exists_{=1}$, esiste uno e uno solo, quantificatore esistenziale: $\exists! x \in \mathbb{R} : \sqrt{x} = 0$
+- $\exists_{\leq 1}$, esiste al più uno, quantificatore esistenziale: $\exists_{\leq 1} x \in \mathbb{R} : x^2 = -1$
 
 ## Insiemi
 

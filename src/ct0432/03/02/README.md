@@ -9,8 +9,12 @@ f\colon &A \to B\newline
 $$
 
 si dice:
-- **Suriettiva** se $\mathrm{Im}(f) = B$, e cioè che il codominio corrisponde a tutti punti di $f(x)$
-- **Iniettiva**, se per ogni $x$ esiste massimo una sola $f(x)$
+- **Suriettiva**, se tutti i punti del codominio si possono ricavare da $f(x)$, e quindi se $\mathrm{Im}(f) = B$:
+	$$\forall y \in B, \exists x \in A : y = f(x)$$
+
+- **Iniettiva**, se per ogni $x$ esiste massimo una sola $f(x)$:
+	$$\forall x_1, x_2 \in A, f(x_1) = f(x_2) \Rightarrow x_1 = x_2$$
+
 - **Biettiva**, se la funzione è sia **suriettiva** che **iniettiva**
 
 ### Esempio
