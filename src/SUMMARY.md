@@ -32,6 +32,7 @@
 		- [Relazioni di equivalenza](./ct0434/03/02/README.md)
 		- [Catene e anticatene](./ct0434/03/03/README.md)
 	- [Funzioni](./ct0434/04/README.md)
+		- [Cardinalità](./ct0434/04/01/README.md)
 
 - [Algebra lineare](./ct0435/README.md)
 	- [Numeri complessi](./ct0435/01/README.md)
