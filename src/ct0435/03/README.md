@@ -3,55 +3,72 @@
 ## Retta
 
 L'**equazione parametrica della retta** sarà:
-$$R = P + tA$$
+$$X = P + tA$$
 dove $P$ è un **punto**, mentre $A$ è un **vettore** che definisce la direzione della retta.
 
 Il **parametro** $t$ assumerà tutti i valori reali, e fa da scalare al vettore $A$ traslandolo sul punto $P$, creando così una retta.
 
+La **forma cartesiana della retta** invece, sarà:
+$$ax + by + c = 0$$
+per cui quando:
+- $a = 0$, è parallelo all'asse $x$
+- $b = 0$, è parallelo all'asse $y$
+- $c = 0$, passa per l'origine
+
 ### In forma cartesiana
 
-Dall'equazione $R$ e la sua **forma parametrica**
+Dall'equazione $X$ e la sua **forma parametrica**
 $$
 r:
 \begin{cases}
-x = R_0 = p_0 + a_0 \cdot t \\
-y = R_1 = p_1 + a_1 \cdot t
+x = X_0 = p_0 + a_0 \cdot t \\
+y = X_1 = p_1 + a_1 \cdot t
 \end{cases}
 $$
-è possibile ricavare l'equazione in **forma cartesiana**, isolando $t$ e sostituendolo:
+è possibile ricavare l'equazione in **forma cartesiana**, isolando $t$ e sostituendolo.
+
+Per esempio, se $X = (1 - 2t, 2 + t)$:
 $$
 r:
 \begin{cases}
-t = \frac{x - p_0}{a_0} \\
-y = p_1 + a_1 \cdot (\frac{x - p_0}{a_0})
+x = 1 - 2t \\
+y = 2 + t
+\end{cases} =
+\begin{cases}
+t = \frac{1 - x}{2} \\
+y = 2 + \frac{1 - x}{2} = \frac{5 - x}{2}
 \end{cases}
 \Rightarrow
-ax + by + c = 0
+x + 2y - 5 = 0
 $$
-con $a = \frac{a_1}{a_0}$, $b = -1$ e $c = -\frac{a_1}{a_0}p_0 + p_1$, ricavati dalla trasformazione in forma implicita di $y$.
+che si ricava dalla trasformazione implicita di $y$ dopo la sostituzione.
 
 ### Dalla forma cartesiana
 
-È per cui possibile anche fare il contrario, portando l'equazione dalla **forma cartesiana** alla **forma parametrica** ponendo $x$ uguale a $t$:
+È per cui possibile anche fare il contrario, portando l'equazione dalla **forma cartesiana** alla **forma parametrica** ponendo $x$ uguale a $t$.
+
+Per esempio, se:
 $$
-ax + by + c = 0 \Rightarrow
+2x - y + 5 = 0
+\Rightarrow
 r:
 \begin{cases}
 x = t \\
-y = - \frac{at + c}{b}
+y = 2t + 5
 \end{cases}
+\Rightarrow
+X = (t, 2t + 5)
 $$
-da cui si ricava che
-$$R = \left(t, -\frac{at + c}{b}\right) \Leftrightarrow (p_0 + a_0 \cdot t, p_1 + a_1 \cdot t) = \left(t, -\frac{at + c}{b}\right)$$
-e quindi
+
+Se poi si vuole trovare anche il punto $P$ e il vettore $A$, basterà:
 $$
 r:
 \begin{cases}
 p_0 + a_0 \cdot t = 0 + 1 \cdot t \\
-p_1 + a_1 \cdot t =  -\frac{c}{b} - \frac{a}{b} \cdot t
+p_1 + a_1 \cdot t = 5 + 2 \cdot t
 \end{cases}
 \Rightarrow
-P = \left(0, -\frac{c}{b}\right) \land A = \left(1, -\frac{a}{b}\right)
+P = (0, 5) \land A = (1, 2)
 $$
 
 ### Passante per due punti
@@ -62,4 +79,28 @@ Un vettore che possiamo costruirci è quindi $\overrightarrow{BC}$:
 $$\overrightarrow{BC} = C - B = (c_0 - b_0, c_1 - b_1)$$
 
 Come punto invece, possiamo usare sia $B$ che $C$:
-$$R = C + t \cdot \overrightarrow{BC}$$
+$$X = C + t \cdot \overrightarrow{BC}$$
+
+## Piano
+
+L'**equazione parametrica del piano** su $\mathbb{R}^3$ sarà:
+$$X = P + tA + sB$$
+dove $P$ è un **punto** su cui traslare il piano, mentre $A$ e $B$ sono i due **vettori** che indicano la direzione del piano.
+
+La **forma cartesiana** del piano sarà:
+$$ax + by + cz + d = 0$$
+per cui quando:
+- $a = 0$, è parallelo all'asse $x$
+- $b = 0$, è parallelo all'asse $y$
+- $c = 0$, è parallelo all'asse $z$
+- $d = 0$, passa per l'origine
+
+## In forma cartesiana
+
+Il procedimento è analogo alla trasformazione in forma cartesiana della retta.
+
+Per esempio, se si vuole trovare il piano che passa tra i punti $P$, $Q$ e $R$, bisognerà creare due vettori $A = \overrightarrow{PQ}$ e $B = \overrightarrow{PR}$ da usare sull'_equazione parametrica_ assieme ad uno dei tre punti, per poi isolare i parametri e trovare l'equazione implicita del piano.
+
+## Dalla forma cartesiana
+
+Anche in questo caso il processo è analogo alla trasformazione dalla forma cartesiana della retta, per cui basterà porre $x = t$, $z = s$ e isolare $y$ nell'equazione cartesiana.
