@@ -23,6 +23,8 @@
 			- [Angoli notevoli](./ct0432/03/04/05/README.md)
 			- [Iperboliche](./ct0432/03/04/06/README.md)
 	- [Limiti](./ct0432/04/README.md)
+		- [Teoremi](./ct0432/04/01/README.md)
+		- [Algebra dei limiti](./ct0432/04/02/README.md)
 
 - [Matematica discreta](./ct0434/README.md)
 	- [Logica](./ct0434/01/README.md)

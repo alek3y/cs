@@ -44,20 +44,3 @@ Nel caso in cui $x \to \pm\infty$ o $f(x) \to \pm\infty$, invece di prendere un 
 Per esempio, con $\lim_{x \to +\infty} f(x) = l$:
 $$\forall \epsilon > 0, \exists M > 0 : x > M \Rightarrow f(x) \in B(l, \epsilon)$$
 e ne si può vedere l'effetto con [questa animazione](https://www.desmos.com/calculator/8286y6mubt).
-
-## Teoremi
-
-Tra i teoremi più importanti ci sono:
-
-1. **Teorema di unicità**
-
-	Che dice che un limite su un punto $x_0$ può assumere un solo valore $l \in \mathrm{Codom}(f)$.
-
-	$$\lim_{x \to x_0} f(x) = l_1 \land \lim_{x \to x_0} f(x) = l_2 \Rightarrow l_1 = l_2$$
-	perchè se fossero diversi, dovrebbe per forza esistere un intorno (delle $y$) di $l_1$ e un altro di $l_2$ che non condividono alcun punto, ma visto che per entrambi la _controimmagine_ (valori sulle $x$) è un intorno di $x_0$, allora se $x \in I_{x_0} \Rightarrow f(x) \in I_{l_1} \land f(x) \in I_{l_2}$, cosa assurda, visto che abbiamo dato per scontato che $I_{l_1} \cap I_{l_2} = \emptyset$.
-
-2. **Teorema di permanenza del segno**
-
-	Che dice che se il risultato di un limite è positivo, allora esiste un intorno di $x_0$ per cui $f(x)$ è positiva su tutti i punti dell'intorno.
-
-	$$l > 0 \Rightarrow \exists I_{x_0} : f(x) > 0, \forall x \in I_{x_0}$$
