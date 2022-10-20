@@ -1,3 +1,9 @@
+/* Change page layout */
+
+:root {
+	--content-max-width: 810px;
+}
+
 /* Change light theme foreground colors */
 
 .light {
