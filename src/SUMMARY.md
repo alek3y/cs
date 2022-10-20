@@ -48,3 +48,5 @@
 		- [IEEE754](./ct0615-1/01/05/README.md)
 		- [Errori di sequenze](./ct0615-1/01/06/README.md)
 	- [Algebra booleana](./ct0615-1/02/README.md)
+		- [Forme canoniche](./ct0615-1/02/01/README.md)
+		- [Minimizzazione](./ct0615-1/02/02/README.md)
