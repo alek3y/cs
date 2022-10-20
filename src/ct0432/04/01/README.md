@@ -18,6 +18,11 @@
 	Che dice che se in un intorno di $x_0$,
 	$$f(x) \leq g(x) \leq h(x)$$
 	dove $f(x)$ e $h(x)$ tendono a $l$, allora:
-	$$\lim_{x \to x_0} f(x) = l$$
+	$$\lim_{x \to x_0} g(x) = l$$
 
 	Per esempio, se $g(x) = \frac{1}{x + 1}$ e $0 \leq g(x) \leq \frac{1}{x}$, allora $\lim_{x \to +\infty} g(x) = 0$.
+
+	Vale anche nel caso in cui $f(x)$ tenda ad infinito, infatti se:
+	$$\lim_{x \to x_0} f(x) = +\infty \Rightarrow \lim_{x \to x_0} g(x) = +\infty$$
+	perchè $f(x) \leq g(x)$, che è analogo a:
+	$$\lim_{x \to x_0} h(x) = -\infty \Rightarrow \lim_{x \to x_0} g(x) = -\infty$$
