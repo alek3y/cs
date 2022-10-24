@@ -44,3 +44,10 @@ Nel caso in cui $x \to \pm\infty$ o $f(x) \to \pm\infty$, invece di prendere un 
 Per esempio, con $\lim_{x \to +\infty} f(x) = l$:
 $$\forall \epsilon > 0, \exists M > 0 : x > M \Rightarrow f(x) \in B(l, \epsilon)$$
 e ne si può vedere l'effetto con [questa animazione](https://www.desmos.com/calculator/8286y6mubt).
+
+## Funzioni periodiche
+
+Il limite che tende a $\pm\infty$ di una funzione periodica **non esiste**, perchè $l$ non converge su un unico valore.
+
+Per esempio, $\nexists \lim_{x \to +\infty} \sin(x)$, ma
+$$\lim_{x \to +\infty} (\cos(x) + x) = \lim_{x \to +\infty} x \left(\frac{\cos(x)}{x} + 1\right) \underset{\left[\frac{[-1, 1]}{+\infty}\right] \to 0}{=} \lim_{x \to +\infty} x = +\infty$$
