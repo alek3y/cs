@@ -54,3 +54,5 @@
 	- [Algebra booleana](./ct0615-1/02/README.md)
 		- [Forme canoniche](./ct0615-1/02/01/README.md)
 		- [Minimizzazione](./ct0615-1/02/02/README.md)
+		- [Altri componenti](./ct0615-1/02/03/README.md)
+	- [MIPS](./ct0615-1/03/README.md)
