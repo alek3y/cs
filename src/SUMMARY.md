@@ -26,6 +26,11 @@
 		- [Teoremi](./ct0432/04/01/README.md)
 		- [Algebra dei limiti](./ct0432/04/02/README.md)
 		- [Funzioni continue](./ct0432/04/03/README.md)
+			- [Operazioni tra funzioni](./ct0432/04/03/01/README.md)
+			- [Funzioni elementari](./ct0432/04/03/02/README.md)
+			- [Teoremi](./ct0432/04/03/03/README.md)
+		- [Forme indeterminate](./ct0432/04/04/README.md)
+		- [Limiti notevoli](./ct0432/04/05/README.md)
 
 - [Matematica discreta](./ct0434/README.md)
 	- [Logica](./ct0434/01/README.md)
