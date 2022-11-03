@@ -1,6 +1,6 @@
 # Cardinalità
 
-L'argomento è già stato trattato superficialmente nella parte di [Calcolo 1](../../ct0432/02/04/README.md).
+L'argomento è già stato trattato superficialmente nella parte di [Calcolo 1](../../../ct0432/02/04/README.md).
 
 Due insiemi $A$ e $B$ si dicono **equipotenti** (o **equipollenti**) se hanno la **stessa cardinalità**, cioè:
 $$|A| = |B| \Leftrightarrow \exists f\colon A \to B \text{ biettiva}$$

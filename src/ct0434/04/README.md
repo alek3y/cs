@@ -1,6 +1,6 @@
 # Funzioni
 
-Parte dell'argomento è già stato trattato nella parte di [Calcolo 1](../../ct0432/03/01/README.md).
+Parte dell'argomento è già stato trattato nella parte di [Calcolo 1](../../ct0432/03/README.md).
 
 ## Funzioni identità
 
