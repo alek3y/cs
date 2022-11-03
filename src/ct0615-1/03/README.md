@@ -42,3 +42,15 @@ dove:
 	```asm
 	lw rt, offset(rs)
 	```
+
+	Esistono anche delle operazioni aritmetiche immediate per poter usare valori espliciti, per esempio:
+	```asm
+	addi rt, rs, 5
+	```
+	che fa la somma `rt = rs + 5`.
+
+- **J-Type**, per le istruzioni per i salti condizionati come `beq`, `bneq`, `j`:
+
+	| opcode | address |
+	|:-:|:-:
+	| 6 bit | 26 bit |
