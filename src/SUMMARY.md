@@ -31,6 +31,7 @@
 			- [Teoremi](./ct0432/04/03/03/README.md)
 		- [Forme indeterminate](./ct0432/04/04/README.md)
 		- [Limiti notevoli](./ct0432/04/05/README.md)
+	- [Derivate](./ct0432/05/README.md)
 
 - [Matematica discreta](./ct0434/README.md)
 	- [Logica](./ct0434/01/README.md)
