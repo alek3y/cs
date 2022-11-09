@@ -43,3 +43,49 @@ Per esempio, si ha da dimostrare che $P(x) = "n \text{ è scomponibile in fattor
 		$$\exists y, z \in \mathbb{N} : n + 1 = y \cdot z \land \{y, z\} \not\subseteq \{1, n+1\}$$
 		per cui $2 \leq y \leq n \land 2 \leq z \leq n$. \
 		Per _ipotesi induttiva_ $y$ e $z$ sono scomponibili in fattori primi e quindi lo è anche $n + 1$.
+
+## Funzioni ricorsive
+
+Oltre a dimostrare la proprietà definita dalle funzioni ricorsive, va anche dimostrato che **terminano**.
+
+Per esempio, la funzione $f(n) = n!$, con $f\colon \mathbb{N} \to \mathbb{N}$, può essere espressa come:
+$$
+n! = \begin{cases}
+1 & \text{se } n = 0 \\
+(n-1)! \cdot n & \text{se } n > 0
+\end{cases} \Rightarrow
+f(n) = \begin{cases}
+1 & \text{se } n = 0 \\
+f(n-1) \cdot n & \text{se } n > 0
+\end{cases}
+$$
+e si vuole dimostrare che è **ben definita** (cioè che trova veramente $n!$):
+- Caso base: $f(0) = 1 = 2^0$
+- Passo induttivo:
+
+	Sia $n = k-1$ con $n \geq 0 \Rightarrow k \geq 1$, si assume
+	$$f(k-1) = 2^{k-1}$$
+	per vero e che sia quindi l'ipotesi induttiva.
+
+	Va verificato che
+	$$f(k) = 2^k$$
+	quindi,
+	$$f(k) = f(k-1) \cdot k = (k-1)! \cdot k = n!$$
+
+Inoltre si vuole dimostrare che la funzione corrispondente $fact(n)$,
+```c
+int fact(int n) {
+	if (n == 0) {
+		return 1;
+	}
+	return fact(n-1) * n;
+}
+```
+**termina** e restituisce $n!$:
+- Caso base: Con $n = 0$, `fact(n)` restituisce $1 = 0!$
+- Passo induttivo:
+
+	Sia $n = k-1$ con $k \geq 1$ e si suppone che `fact(n-1)` termina e restituisce $(n - 1)!$.
+
+	Allora,
+	$$\texttt{fact(n)} = \texttt{n } \ast \texttt{ fact(n-1)} = n \cdot (n-1)! = n!$$
