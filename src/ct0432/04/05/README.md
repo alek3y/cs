@@ -14,6 +14,7 @@
 	- $\lim_{x \to 0} \frac{\arcsin(x)}{x} = 1$
 	- $\lim_{x \to 0} \frac{\arctan(x)}{x} = 1$
 	- $\lim_{x \to 0} \frac{1 - \cos(x)}{x^2} = \frac{1}{2}$
+	- $\lim_{x \to 0} \frac{\sin(ax)}{\sin(bx)} = \frac{a}{b}$
 
 - Esponenziali e logaritmiche:
 	- $\lim_{x \to 0} \frac{\log_a(1 + x)}{x} = \frac{1}{\log_e(a)}$
