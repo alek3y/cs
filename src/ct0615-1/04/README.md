@@ -100,15 +100,48 @@ Questa parte non sarà contenuta all'interno dell'_ALU_ ma la sfrutterà per cre
 
 L'algoritmo si basa sul metodo di **moltiplicazione in colonna** e si può riassumere in:
 ```c
-int mul(int a, int b) {
-	int sum = 0;
-	while (b > 0) {
-		if (b & 0x1) {
-			sum += a;
+long mul(int a, int b) {
+	unsigned long r0 = abs(a);	// Registro a 64bit perchè r0 << 1 per 32 volte
+	unsigned int r1 = abs(b);
+
+	long sum = 0;
+	for (size_t i = 0; i < sizeof(a) * 8; i++) {
+		if (r1 & 0x1) {
+			sum += r0;	// Necessaria una ALU da 64bit
 		}
-		a <<= 1;
-		b >>= 1;
+		r0 <<= 1;
+		r1 >>= 1;
 	}
+
+	if ((a > 0) ^ (b > 0)) {	// Controllo dei bit di segno
+		sum = -sum;
+	}
+
 	return sum;	// a * b
+}
+```
+che necessita, però, di una ALU e di un registro a 64bit, motivo per cui è stato ideato un algoritmo alternativo che è anche **più ottimizzato**:
+```c
+long mul(int a, int b) {
+	unsigned int r1 = abs(b);
+
+	long sum = 0;
+	for (size_t i = 0; i < sizeof(a) * 8; i++) {
+		if (r1 & 0x1) {
+			unsigned int upper = sum >> (sizeof(sum)*8/2);
+			unsigned int lower = sum & ~0U;
+
+			upper += abs(a);
+			sum = (long) upper << (sizeof(sum)*8/2) | lower;
+		}
+		r1 >>= 1;
+		sum >>= 1;
+	}
+
+	if ((a > 0) ^ (b > 0)) {
+		sum = -sum;
+	}
+
+	return sum;
 }
 ```
