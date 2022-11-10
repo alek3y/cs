@@ -54,6 +54,7 @@
 	- [Rette e piani](./ct0435/03/README.md)
 	- [Sistemi lineari](./ct0435/04/README.md)
 	- [Matrici](./ct0435/05/README.md)
+	- [Grafi](./ct0435/06/README.md)
 
 - [Architettura degli elaboratori](./ct0615-1/README.md)
 	- [Rappresentazione dell'informazione](./ct0615-1/01/README.md)

@@ -3,10 +3,10 @@
 Una matrice,
 $$
 A = \begin{bmatrix}
-a_{11} & a_{12} & ... & a_{1j} \\
-a_{21} & a_{22} & ... & a_{2j} \\
+a_{11} & a_{12} & \cdots & a_{1j} \\
+a_{21} & a_{22} & \cdots & a_{2j} \\
 \vdots & \vdots & \ddots & \vdots \\
-a_{i1} & a_{i2} & ... & a_{ij} \\
+a_{i1} & a_{i2} & \cdots & a_{ij} \\
 \end{bmatrix}
 $$
 ha dimensioni $m \times n$, con $m$ **righe** e $n$ **colonne**.
@@ -62,10 +62,42 @@ A_2 \cdot B^2 \\
 \end{bmatrix}
 $$
 
+	Infatti, l'unico modo di moltiplicare due matrici $1 \times n$,
+$$
+A \cdot B =
+\begin{bmatrix}
+a_1 \\ \vdots \\ a_n
+\end{bmatrix}
+\begin{bmatrix}
+b_1 \\ \vdots \\ b_n
+\end{bmatrix}
+$$
+	è quello di trasporne una delle due, quindi $A^T \cdot B$ è possibile.
+
 	Del prodotto è importante notare che con le matrici **non vale la proprietà commutativa**.
 
 	Inoltre, la matrice identità è l'elemento neutro del prodotto:
 	$$A \times I = A$$
+
+- **Prodotto hadamard** (o _element-wise product_):
+
+	Consiste nel prodotto fra gli elementi di due matrici di uguali dimensioni:
+$$
+A \circ B = A \odot B =
+\begin{bmatrix}
+a_{11} & a_{12} \\
+a_{21} & a_{22}
+\end{bmatrix}
+\circ
+\begin{bmatrix}
+b_{11} & b_{12} \\
+b_{21} & b_{22}
+\end{bmatrix} =
+\begin{bmatrix}
+a_{11}b_{11} & a_{12}b_{12} \\
+a_{21}b_{21} & a_{22}b_{22} \\
+\end{bmatrix}
+$$
 
 - **Traccia**
 
