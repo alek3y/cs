@@ -35,6 +35,7 @@
 		- [Teoremi](./ct0432/05/01/README.md)
 		- [Derivate fondamentali](./ct0432/05/02/README.md)
 		- [Algebra delle derivate](./ct0432/05/03/README.md)
+		- [Proprietà locali](./ct0432/05/04/README.md)
 
 - [Matematica discreta](./ct0434/README.md)
 	- [Logica](./ct0434/01/README.md)
