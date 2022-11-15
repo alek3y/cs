@@ -48,6 +48,7 @@
 		- [Cardinalità](./ct0434/04/01/README.md)
 	- [Principio di induzione](./ct0434/05/README.md)
 	- [Sommatorie](./ct0434/06/README.md)
+	- [Algebra modulare](./ct0434/07/README.md)
 
 - [Algebra lineare](./ct0435/README.md)
 	- [Numeri complessi](./ct0435/01/README.md)
