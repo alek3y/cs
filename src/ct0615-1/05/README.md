@@ -72,3 +72,42 @@ Un **register file** è un componente che contiene più singoli registri (ognuno
 ![Register file](assets/06.png)
 
 L'input $W$ serve ad abilitare la scrittura sul registro $W_R$, e blocca semplicemente il clock con un _AND_.
+
+## SRAM
+
+La **Static RAM** fornisce una memoria molto veloce attraverso l'uso dei _latch_, che non permettono di leggere e scrivere contemporaneamente, visto che sono trasparenti.
+Un esempio è la memoria cache.
+
+Il blocco di memoria è realizzato con una matrice di _latch_ largo $W$ e alto $H$, per cui l'accesso ad ogni cella richiede un indirizzo che ha $\log_2H$ bit.
+
+![Esempio di SRAM](assets/07.png)
+
+dove:
+- $A$ è l'indirizzo che si vuole leggere/scrivere
+- $D_{in}$ è il contenuto che si vuole scrivere
+- $D_{out}$ è l'output della cella che si vuole leggere
+- $C_E$, $O_E$, $W_E$ servono rispettivamente ad abilitare l'intero _chip_, l'_output_ e la _scrittura_
+
+Per esempio, la struttura di una _SRAM_ da $2 \times 2$ ($2$ righe da $2$ bit) sarà:
+
+![Struttura esempio SRAM](assets/08.png)
+
+dove il **buffer a tre stati** serve per disabilitare gli output agli indirizzi non richiesti e quindi rimuove la necessità di un grande _multiplexer_.
+
+Per ottimizzarlo ancora e liberarsi del _demultiplexer_ in entrata, si possono utilizzare più _SRAM_ concatenate che dividono la grandezza dell'indirizzo $A$ in due parti:
+- **Parte alta**, che identifica la riga di ogni _SRAM_
+- **Parte bassa**, che identifica con dei multiplexer quale bit in output delle _SRAM_ è quello di interesse, e quindi la colonna di ogni output
+
+Per cui ogni riga, identificata dalla parte alta, di ogni _SRAM_ contiene tutti i bit indirizzabili dalla parte bassa.
+
+## DRAM
+
+La **Dynamic RAM** è meno costosa e più capiente rispetto alla _SRAM_, ma è anche più lenta.
+
+Sono realizzate tramite una coppia di **transistor** e **condensatore** per ogni bit, dove il valore del condensatore viene messo sulla _bit line_ quando la _word line_, che identifica l'indirizzo, è alta.
+
+I condensatori tengono i valori solo per pochi millisecondi, e quindi necessitano di un _refresh dinamico_.
+
+## SSRAM e SDRAM
+
+Esistono delle alternative alle _SRAM_ e le _DRAM_, che includono il **clock** e sono quindi **sincrone**.

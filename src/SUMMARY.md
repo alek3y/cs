@@ -73,3 +73,4 @@
 	- [MIPS](./ct0615-1/03/README.md)
 	- [ALU](./ct0615-1/04/README.md)
 	- [Circuiti sequenziali](./ct0615-1/05/README.md)
+	- [Automi per circuiti](./ct0615-1/06/README.md)
