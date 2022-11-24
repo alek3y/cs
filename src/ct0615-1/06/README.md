@@ -25,3 +25,28 @@ Quindi, l'output non verrà posizionato sui nodi affianco agli stati, ma sugli a
 ![Esempio di automa di Mealy](assets/03.png)
 
 Vanno quindi fatte le due _mappe di Karnaugh_ per i bit di $S_i$ e per quelli di $O_i$, per poi ricavarne le equazioni.
+
+Un esempio completo è:
+
+![Esempio completo di un automa di Mealy](assets/04.png)
+
+## Microistruzioni
+
+Quando ci sono tanti stati diventa complicato disegnare l'automa, per questo è utile scrivere un **microprogramma** attraverso delle **microistruzioni** che seguono il formato:
+```
+Stato0:
+ Out1←1,  # Valori output di Stato0
+ Out2←0
+ case (In1, In2) of  # Casi input
+  (_, 0): Stato0
+  (_, 1): Stato1  # Transizione a Stato1
+
+Stato1:
+ Out1←0,
+ Out2←1
+ case (In1, In2) of
+  (0, _): Stato1
+  (1, _): Stato0
+```
+
+Sulla _CPU_ queste microistruzioni possono essere salvate all'interno di una **ROM** ed avere un suo _micro Program Counter_ che tiene traccia dell'istruzione corrente in modo da semplificare l'_ISA_.
