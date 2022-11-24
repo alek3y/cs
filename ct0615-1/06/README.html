@@ -154,6 +154,25 @@
 <p>Quindi, l'output non verrà posizionato sui nodi affianco agli stati, ma sugli archi affianco agli input, per esempio:</p>
 <p><img src="assets/03.png" alt="Esempio di automa di Mealy" /></p>
 <p>Vanno quindi fatte le due <em>mappe di Karnaugh</em> per i bit di <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> e per quelli di <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>, per poi ricavarne le equazioni.</p>
+<p>Un esempio completo è:</p>
+<p><img src="assets/04.png" alt="Esempio completo di un automa di Mealy" /></p>
+<h2 id="microistruzioni"><a class="header" href="#microistruzioni">Microistruzioni</a></h2>
+<p>Quando ci sono tanti stati diventa complicato disegnare l'automa, per questo è utile scrivere un <strong>microprogramma</strong> attraverso delle <strong>microistruzioni</strong> che seguono il formato:</p>
+<pre><code>Stato0:
+ Out1←1,  # Valori output di Stato0
+ Out2←0
+ case (In1, In2) of  # Casi input
+  (_, 0): Stato0
+  (_, 1): Stato1  # Transizione a Stato1
+
+Stato1:
+ Out1←0,
+ Out2←1
+ case (In1, In2) of
+  (0, _): Stato1
+  (1, _): Stato0
+</code></pre>
+<p>Sulla <em>CPU</em> queste microistruzioni possono essere salvate all'interno di una <strong>ROM</strong> ed avere un suo <em>micro Program Counter</em> che tiene traccia dell'istruzione corrente in modo da semplificare l'<em>ISA</em>.</p>
 
                     </main>
 
