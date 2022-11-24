@@ -8,8 +8,8 @@ Una **monoide** $(A, \ast)$ combina un insieme $A$ e un'operazione qualsiasi $\a
 - **Associativa**
 - **Elemento neutro**
 
-Un gruppo, invece, è una **monoide** che rispetta anche la proprietà dell'**inverso**.
-Inoltre, si dice **abeliano** se rispetta la proprietà **commutativa**.
+Un **gruppo**, invece, è una **monoide** che rispetta la proprietà dell'**inverso**.
+Si dice **abeliano**, inoltre, se rispetta anche la proprietà **commutativa**.
 
 ## Divisione
 
@@ -33,3 +33,6 @@ $$aRb \Leftrightarrow a \bmod n = b \bmod n$$
 allora, $R$ si dice **congruenza modulo** $n$.
 
 In pratica, la relazione esprime l'uguaglianza tra due numeri $a$ e $b$ sotto modulo $n$, per esempio  $12 \equiv_{10} 2$ perchè il resto di $12:10$ è $2$.
+
+L'[**insieme quoziente**](../03/02/README.md#classi-di-equivalenza) $\mathbb{Z}/\equiv_n$ di questa relazione, è caratterizzato dal fatto che divide $\mathbb{Z}$ in $n$ classi di equivalenza.
+Per esempio, $\mathbb{Z}/\equiv_1 = \{\mathbb{Z}\}$.
