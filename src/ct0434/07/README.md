@@ -24,7 +24,7 @@ $$a\, \mathrm{mod}\, n = \mathrm{mod}_n(a)$$
 
 Le proprietà sono:
 - $(a + b) \bmod n = (a \bmod n + b \bmod n) \bmod n$
-- $(a \cdot b) \bmod n = (a \bmod n \cdot a \bmod n) \bmod n$
+- $(a \cdot b) \bmod n = (a \bmod n \cdot b \bmod n) \bmod n$
 
 ### Congruenze
 

@@ -87,3 +87,19 @@ Siano $a, b \in \mathbb{N}^+$, allora:
 $$\exists x, y \in \mathbb{Z} : \mathrm{MCD}(a, b) = ax + by$$
 
 Per esempio, $\mathrm{MCD}(12, 8) = 4$ allora $4 = 12 \cdot 1 + 8 \cdot (-1)$.
+
+L'identità è possibile **generalizzarla**, infatti con $a, b, c \in \mathbb{Z}$:
+$$\exists x, y : ax + by = c \Leftrightarrow \mathrm{MCD}(a, b) | c$$
+e cioè che esistono soluzioni solamente se $c$ è divisbile per il _massimo comun divisore_.
+
+Per esempio, l'equazione $240x + 36y = 24$:
+1. Ha soluzioni perchè $\mathrm{MCD}(240, 36) = 12$ e $12|24$
+2. Dividendo per $12$ si ha che $20x + 3y = 2$, dove $20$ e $3$ sono _coprimi_, infatti $\mathrm{MCD}(20, 3) = 1$
+3. Essendo coprimi $\exists z, w \in \mathbb{Z} : 20z + 3w = 1$ per l'identità di Bezout, per cui $x = 2z$ e $y = 2w$, dato che $20 \cdot 2z + 3 \cdot 2w = 2$
+4. Di conseguenza basta trovare $z$ e $w$, che saranno $z = -1$ e $w = 7$
+5. Quindi $x = -2$ e $y = 14$ è una possibile soluzione
+
+### Proprietà di cancellazione
+
+Siano $a, b, c \in \mathbb{Z}$ e $n \in \mathbb{N}$, allora:
+$$ac \equiv_n bc \Rightarrow a \equiv_n b \Leftrightarrow \mathrm{MCD}(c, n) = 1$$
