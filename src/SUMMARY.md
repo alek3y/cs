@@ -36,6 +36,11 @@
 		- [Derivate fondamentali](./ct0432/05/02/README.md)
 		- [Algebra delle derivate](./ct0432/05/03/README.md)
 		- [Proprietà locali](./ct0432/05/04/README.md)
+		- [Asintoti](./ct0432/05/05/README.md)
+		- [Teoremi fondamentali su intervalli](./ct0432/05/06/README.md)
+		- [Convessità, concavità e flessi](./ct0432/05/07/README.md)
+		- [Studio di funzione](./ct0432/05/08/README.md)
+		- [Infiniti e infinitesimi](./ct0432/05/09/README.md)
 
 - [Matematica discreta](./ct0434/README.md)
 	- [Logica](./ct0434/01/README.md)
