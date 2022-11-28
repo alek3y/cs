@@ -39,8 +39,10 @@
 		- [Asintoti](./ct0432/05/05/README.md)
 		- [Teoremi fondamentali su intervalli](./ct0432/05/06/README.md)
 		- [Convessità, concavità e flessi](./ct0432/05/07/README.md)
-		- [Studio di funzione](./ct0432/05/08/README.md)
-		- [Infiniti e infinitesimi](./ct0432/05/09/README.md)
+	- [Studio di funzione](./ct0432/06/README.md)
+	- [Infiniti e infinitesimi](./ct0432/07/README.md)
+		- [Polinomio di Taylor](./ct0432/07/01/README.md)
+	- [Successioni](./ct0432/08/README.md)
 
 - [Matematica discreta](./ct0434/README.md)
 	- [Logica](./ct0434/01/README.md)

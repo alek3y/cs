@@ -11,7 +11,7 @@ $$\lim_{x \to x_0} \left|\frac{f(x)}{g(x)}\right| = l$$
 Per cui, quando:
 - $f$ **tende prima** a $0$ rispetto a $g$, $f$ ha ordine di **infinitesimo superiore** a $g$: $f = o(g) \Rightarrow l = 0$
 - $g$ **tende prima** a $0$ rispetto a $f$, $f$ ha ordine di **infinitesimo inferiore** a $g$: $g = o(f) \Rightarrow l = +\infty$
-- $f$ e $g$ **tendono insieme** a $0$, $f$ ha lo **stesso ordine di infinitesimo** di $g$: $f = O(f) \Rightarrow l > 0$
+- $f$ e $g$ **tendono insieme** a $0$, $f$ ha lo **stesso ordine di infinitesimo** di $g$: $f = O(g) \Rightarrow l > 0$
 
 ### Principio di sostituzione
 
@@ -52,7 +52,7 @@ $$\lim_{x \to x_0} \left|\frac{f(x)}{g(x)}\right| = l$$
 Per cui, quando:
 - $f$ **tende prima** a $\pm\infty$ rispetto a $g$, $f$ ha ordine di **infinito superiore** a $g$: $f = o(g) \Rightarrow l = +\infty$
 - $g$ **tende prima** a $\pm\infty$ rispetto a $f$, $f$ ha ordine di **infinito inferiore** a $g$: $g = o(f) \Rightarrow l = 0$
-- $f$ e $g$ **tendono insieme** a $\pm\infty$, $f$ ha lo **stesso ordine di infinito** di $g$: $f = O(f) \Rightarrow l > 0$
+- $f$ e $g$ **tendono insieme** a $\pm\infty$, $f$ ha lo **stesso ordine di infinito** di $g$: $f = O(g) \Rightarrow l > 0$
 
 ### Principio di sostituzione
 
