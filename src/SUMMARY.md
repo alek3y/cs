@@ -84,3 +84,4 @@
 	- [ALU](./ct0615-1/04/README.md)
 	- [Circuiti sequenziali](./ct0615-1/05/README.md)
 	- [Automi per circuiti](./ct0615-1/06/README.md)
+	- [CPU](./ct0615-1/07/README.md)
