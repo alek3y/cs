@@ -25,8 +25,6 @@
 
         <!-- Custom theme stylesheets -->
         <link rel="stylesheet" href="../../book.css">
-        <!-- MathJax -->
-        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     </head>
     <body>
         <!-- Provide site root to javascript -->
@@ -140,14 +138,14 @@
 <pre><code class="language-c">a[8] = h + a[8]
 </code></pre>
 <p>che tradotto sarà:</p>
-<pre><code class="language-asm">lw $15, 32($4)
-add $15, $5, $15
-sw $15, 32($4)
+<pre><code class="language-asm">lw \$15, 32(\$4)
+add \$15, \$5, \$15
+sw \$15, 32(\$4)
 </code></pre>
 <p>dove:</p>
 <ul>
-<li><code>$1</code> indica il registro <code>1</code></li>
-<li><code>32($4)</code> indica un indirizzo dentro il registro <code>$4</code> in offset a <code>32</code>, quindi <code>32 + ($4)</code> (<code>0($4)</code> o <code>($4)</code> rappresenta il contenuto del registro)</li>
+<li><code>\$1</code> indica il registro <code>1</code></li>
+<li><code>32(\$4)</code> indica un indirizzo dentro il registro <code>\$4</code> in offset a <code>32</code>, quindi <code>32 + (\$4)</code> (<code>0(\$4)</code> o <code>(\$4)</code> rappresenta il contenuto del registro)</li>
 <li><code>lw</code> e <code>sw</code> fanno il <em>load</em> e lo <em>store</em> in memoria <em>RAM</em></li>
 </ul>
 <h2 id="formati-delle-istruzioni"><a class="header" href="#formati-delle-istruzioni">Formati delle istruzioni</a></h2>
