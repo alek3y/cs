@@ -43,6 +43,7 @@
 	- [Infiniti e infinitesimi](./ct0432/07/README.md)
 		- [Polinomio di Taylor](./ct0432/07/01/README.md)
 	- [Successioni](./ct0432/08/README.md)
+	- [Serie](./ct0432/09/README.md)
 
 - [Matematica discreta](./ct0434/README.md)
 	- [Logica](./ct0434/01/README.md)
