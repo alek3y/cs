@@ -3,7 +3,7 @@
 Una **successione**,
 $$
 \begin{split}
-a\colon\space &A \subseteq \mathbb{N} \to \mathbb{R}\newline
+a\colon\space &A \subseteq \mathbb{N} \to \mathbb{R} \\
 &n \mapsto a_n
 \end{split}
 $$

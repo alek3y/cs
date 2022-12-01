@@ -22,9 +22,9 @@ jobs:
 
       - name: Download the katex preprocessor
         run: |
-          wget 'https://github.com/lzanini/mdbook-katex/releases/download/v0.2.10/mdbook-katex-v0.2.10-x86_64-unknown-linux-gnu.tar.gz'
-          tar xvf mdbook-katex-v0.2.10-x86_64-unknown-linux-gnu.tar.gz
-          mv -v target/x86_64-unknown-linux-gnu/release/mdbook-katex ~/.cargo/bin
+          wget 'https://github.com/lzanini/mdbook-katex/releases/download/v0.2.17/mdbook-katex-v0.2.17-x86_64-unknown-linux-gnu.tar.gz'
+          tar xvf mdbook-katex-v0.2.17-x86_64-unknown-linux-gnu.tar.gz
+          mv -v mdbook-katex ~/.cargo/bin
 
       - name: Build the book files
         run: mdbook build

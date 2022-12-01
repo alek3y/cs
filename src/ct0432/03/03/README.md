@@ -25,7 +25,7 @@ Tra due funzioni $f: D_f \to \mathbb{R}$ e $g: D_g \to \mathbb{R}$ è possibile 
 L'inverso di una funzione $f: A \to B : x \mapsto y$, è possibile se $f$ **è biettiva** e viene descritta come:
 $$
 \begin{split}
-f^{-1}\colon &B \to A\newline
+f^{-1}\colon &B \to A \\
 &y \mapsto x = f^{-1}(y)
 \end{split}
 $$

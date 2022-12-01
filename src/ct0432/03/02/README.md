@@ -3,7 +3,7 @@
 Una funzione
 $$
 \begin{split}
-f\colon &A \to B\newline
+f\colon &A \to B \\
 &x \mapsto y = f(x)
 \end{split}
 $$

@@ -15,7 +15,7 @@ use-default-preprocessors = false	# Disable index to fix issue #431
 preferred-dark-theme = "light"
 no-section-label = false
 additional-css = ["book.css"]
-mathjax-support = true
+mathjax-support = false
 
 [output.html.fold]
 enable = true

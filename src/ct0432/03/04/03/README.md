@@ -4,7 +4,7 @@
 
 $$
 \begin{split}
-f\colon &\mathbb{R} \rightarrow \mathbb{R^+}\newline
+f\colon &\mathbb{R} \rightarrow \mathbb{R^+} \\
 &x \mapsto |x|
 \end{split}
 $$
@@ -32,7 +32,7 @@ e valgono le seguenti proprietà:
 
 $$
 \begin{split}
-f\colon &\mathbb{R} \rightarrow \mathbb{R}\newline
+f\colon &\mathbb{R} \rightarrow \mathbb{R} \\
 &x \mapsto \mathrm{sgn}(x)
 \end{split}
 $$

@@ -4,7 +4,7 @@
 
 $$
 \begin{split}
-f\colon &\mathbb{R} \rightarrow \mathbb{R}\newline
+f\colon &\mathbb{R} \rightarrow \mathbb{R} \\
 &x \mapsto a^x = \exp_a(x)
 \end{split}
 $$
@@ -16,7 +16,7 @@ Se si restringe il suo **codominio** a $C = (0, +\infty)$, la funzione diventa *
 
 $$
 \begin{split}
-f\colon &(0, +\infty) \rightarrow \mathbb{R}\newline
+f\colon &(0, +\infty) \rightarrow \mathbb{R} \\
 &x \mapsto \log_a(x) \text{ con } a > 0 \land a \neq 1
 \end{split}
 $$

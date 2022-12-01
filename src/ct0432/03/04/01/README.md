@@ -2,7 +2,7 @@
 
 $$
 \begin{split}
-f\colon &D \to \mathbb{R}\newline
+f\colon &D \to \mathbb{R} \\
 &x \mapsto f(x) = x^n
 \end{split}
 $$

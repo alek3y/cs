@@ -7,7 +7,7 @@ Dato che $f$ va da $A$ a $B$, $A$ è chiamato **dominio** (o $D$), mentre $B$ è
 La funzione verrà quindi descritta come
 $$
 \begin{split}
-f\colon &A \to B\newline
+f\colon &A \to B \\
 &x \mapsto y = f(x)
 \end{split}
 $$

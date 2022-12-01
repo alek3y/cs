@@ -7,7 +7,7 @@ Parte dell'argomento è già stato trattato nella parte di [Calcolo 1](../../ct0
 Una funzione si dice **identità** di $A$ quando
 $$
 \begin{split}
-i_A\colon &A \to A\newline
+i_A\colon &A \to A \\
 &x \mapsto i_A(x) = x
 \end{split}
 $$
@@ -18,7 +18,7 @@ ed è quindi **biettiva**.
 Si dice **inclusione** invece, quando porta $x$ da un dominio $A \subseteq B$ ad un codominio $B$:
 $$
 \begin{split}
-j\colon &A \to B\newline
+j\colon &A \to B \\
 &x \mapsto j(x) = x
 \end{split}
 $$
@@ -29,7 +29,7 @@ e quindi "porta" gli elementi da $A$ a $B$.
 L'arrotondamento **in difetto** è espresso dalla funzione **floor**
 $$
 \begin{split}
-\lfloor \rfloor\colon &\mathbb{R} \to \mathrm{Z}\newline
+\lfloor \rfloor\colon &\mathbb{R} \to \mathrm{Z} \\
 &x \mapsto \lfloor x \rfloor = max(\{z \in \mathbb{Z} | z \leq x\})
 \end{split}
 $$
@@ -37,7 +37,7 @@ $$
 Mentre quello **in eccesso** è espresso dalla funzione **ceil**
 $$
 \begin{split}
-\lceil \rceil\colon &\mathbb{R} \to \mathrm{Z}\newline
+\lceil \rceil\colon &\mathbb{R} \to \mathrm{Z} \\
 &x \mapsto \lceil x \rceil = min(\{z \in \mathbb{Z} | x \leq z\})
 \end{split}
 $$
@@ -49,7 +49,7 @@ f\colon A \to B, \hspace{1em} g\colon B \to C
 $$
 $$
 \begin{split}
-h\colon &A \to C\newline
+h\colon &A \to C \\
 &x \mapsto (g \circ f)(x) = g(f(x))
 \end{split}
 $$
@@ -64,7 +64,7 @@ Se le funzioni coinvolte sono **suriettive** o **iniettive** lo sarà anche la f
 
 $$
 \begin{split}
-f\colon &\mathbb{R} \to \mathbb{R}\newline
+f\colon &\mathbb{R} \to \mathbb{R} \\
 &x \mapsto f(x) = ax + b, a \neq 0
 \end{split}
 $$
