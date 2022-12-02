@@ -44,6 +44,9 @@
 		- [Polinomio di Taylor](./ct0432/07/01/README.md)
 	- [Successioni](./ct0432/08/README.md)
 	- [Serie](./ct0432/09/README.md)
+	- [Integrali](./ct0432/10/README.md)
+		- [Integrali fondamentali](./ct0432/10/01/README.md)
+		- [Algebra degli integrali](./ct0432/10/02/README.md)
 
 - [Matematica discreta](./ct0434/README.md)
 	- [Logica](./ct0434/01/README.md)
