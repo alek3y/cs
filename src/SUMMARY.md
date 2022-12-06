@@ -63,6 +63,7 @@
 	- [Algebra modulare](./ct0434/07/README.md)
 	- [Divisibilità](./ct0434/08/README.md)
 	- [Numeri primi](./ct0434/09/README.md)
+	- [Calcolo combinatorio](./ct0434/10/README.md)
 
 - [Algebra lineare](./ct0435/README.md)
 	- [Numeri complessi](./ct0435/01/README.md)
