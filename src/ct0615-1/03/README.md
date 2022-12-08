@@ -8,13 +8,13 @@ a[8] = h + a[8]
 ```
 che tradotto sarà:
 ```asm
-lw \$15, 32(\$4)
-add \$15, \$5, \$15
-sw \$15, 32(\$4)
+lw $15, 32($4)
+add $15, $5, $15
+sw $15, 32($4)
 ```
 dove:
-- `\$1` indica il registro `1`
-- `32(\$4)` indica un indirizzo dentro il registro `\$4` in offset a `32`, quindi `32 + (\$4)` (`0(\$4)` o `(\$4)` rappresenta il contenuto del registro)
+- `$1` indica il registro `1`
+- `32($4)` indica un indirizzo dentro il registro `$4` in offset a `32`, quindi `32 + ($4)` (`0($4)` o `($4)` rappresenta il contenuto del registro)
 - `lw` e `sw` fanno il _load_ e lo _store_ in memoria _RAM_
 
 ## Formati delle istruzioni
