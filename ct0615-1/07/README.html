@@ -214,6 +214,26 @@ dove <span class="katex"><span class="katex-html" aria-hidden="true"><span class
 <p>Questo problema è risolto con la <em>CPU</em> a <strong>multiciclo</strong>, che suddivide ogni istruzione in più step (ognuno dei quali richiede lo stesso <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">CLK</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> <em>ridotto</em>), diminuendo il tempo totale in base all'istruzione eseguita.</p>
 </li>
 </ul>
+<h2 id="circuito-a-ciclo-multiplo"><a class="header" href="#circuito-a-ciclo-multiplo">Circuito a Ciclo Multiplo</a></h2>
+<p><img src="assets/02.png" alt="Schema logico della CPU a ciclo multiplo" /></p>
+<!--
+TODO:
+- Schema circuito
+- Controllo passi di esecuzione
+- Spiegazioni differenze (e.g. i registri)
+-->
+<p>La <em>CPU</em> a <strong>ciclo multiplo</strong> cerca di risolvere i problemi di quella a <em>singolo ciclo</em>, dividendo l'esecuzione delle istruzioni in più cicli <strong>più corti</strong>.</p>
+<p>In questo modo il periodo di clock è <strong>ridotto</strong> notevolmente e, anche se è comunque fisso, ogni istruzione richiederà un numero di passi (tick di clock) variabile, rendendo il tempo totale dipendente dall'istruzione.</p>
+<p>Questo però, implica che la parte di <em>controllo</em> della <em>CPU</em> debba essere implementata come <strong>circuito sequenziale</strong>, dato che deve memorizzare lo stato (cioè il <em>passo di esecuzione</em>) in cui si trova.</p>
+<h3 id="passi-di-esecuzione"><a class="header" href="#passi-di-esecuzione">Passi di esecuzione</a></h3>
+<ol>
+<li><strong>Fetch</strong> dell'istruzione dalla memoria e <code>PC += 4</code> con l'<em>ALU</em> (dato non è occupata)</li>
+<li><strong>Decodifica</strong> istruzione (sull'<em>unità di controllo</em>), lettura dei registri e calcolo indirizzo di salto (per <code>beq</code>)</li>
+<li>Esecuzione <em>R-Type</em> dalla <em>ALU</em>, calcola l'indirizzo di memoria (per <code>lw</code>/<code>sw</code>) o <strong>completa</strong> <code>beq</code>/<code>j</code></li>
+<li>Legge/scrive sulla memoria (per <code>lw</code>/<code>sw</code>) o <strong>completa</strong> <em>R-Type</em> scrivendo sul registro il valore di <em>ALUOut</em></li>
+<li><strong>Completa</strong> <code>lw</code> scrivendo nel registro</li>
+</ol>
+<p>Nel complesso, un'istruzione può richiedere dai 3 ai 5 cicli per il completamento.</p>
 
                     </main>
 
