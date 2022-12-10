@@ -88,3 +88,30 @@ Tra gli svantaggi di questo tipo di _CPU_ ci sono:
 	Dato però che il _periodo_ **non è variabile**, bisogna assicurare la stabilità del circuito per tutte le istruzioni e quindi renderlo pari al tempo massimo $T_{\text{CLK}} = T_{\text{fisso}} = 800\mathrm{ps}$.
 
 	Questo problema è risolto con la _CPU_ a **multiciclo**, che suddivide ogni istruzione in più step (ognuno dei quali richiede lo stesso $T_{\text{CLK}}$ _ridotto_), diminuendo il tempo totale in base all'istruzione eseguita.
+
+## Circuito a Ciclo Multiplo
+
+![Schema logico della CPU a ciclo multiplo](assets/02.png)
+
+<!--
+TODO:
+- Schema circuito
+- Controllo passi di esecuzione
+- Spiegazioni differenze (e.g. i registri)
+-->
+
+La _CPU_ a **ciclo multiplo** cerca di risolvere i problemi di quella a _singolo ciclo_, dividendo l'esecuzione delle istruzioni in più cicli **più corti**.
+
+In questo modo il periodo di clock è **ridotto** notevolmente e, anche se è comunque fisso, ogni istruzione richiederà un numero di passi (tick di clock) variabile, rendendo il tempo totale dipendente dall'istruzione.
+
+Questo però, implica che la parte di _controllo_ della _CPU_ debba essere implementata come **circuito sequenziale**, dato che deve memorizzare lo stato (cioè il _passo di esecuzione_) in cui si trova.
+
+### Passi di esecuzione
+
+1. **Fetch** dell'istruzione dalla memoria e `PC += 4` con l'_ALU_ (dato non è occupata)
+2. **Decodifica** istruzione (sull'_unità di controllo_), lettura dei registri e calcolo indirizzo di salto (per `beq`)
+3. Esecuzione _R-Type_ dalla _ALU_, calcola l'indirizzo di memoria (per `lw`/`sw`) o **completa** `beq`/`j`
+4. Legge/scrive sulla memoria (per `lw`/`sw`) o **completa** _R-Type_ scrivendo sul registro il valore di _ALUOut_
+5. **Completa** `lw` scrivendo nel registro
+
+Nel complesso, un'istruzione può richiedere dai 3 ai 5 cicli per il completamento.
