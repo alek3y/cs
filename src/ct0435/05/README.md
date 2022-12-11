@@ -35,9 +35,27 @@ ha dimensioni $m \times n$, con $m$ **righe** e $n$ **colonne**.
 
 	$$c \cdot A = (c \cdot a_{ij})$$
 
+- **Trasposta**
+
+	La matrice trasposta consiste nello scambiare la colonna per la riga su ogni elemento della matrice, per cui **viene capovolta sulla diagonale**.
+
+	Per esempio,
+$$
+\begin{bmatrix}
+2 & 3 & 0 \\
+1 & 3 & 5 \\
+4 & 2 & 0
+\end{bmatrix}^T =
+\begin{bmatrix}
+2 & 1 & 4 \\
+3 & 3 & 2 \\
+0 & 5 & 0
+\end{bmatrix}
+$$
+
 - **Prodotto fra matrici**:
 
-	Il prodotto esiste solo se la prima ha **numero di colonne uguale al numero di righe** della seconda, per esempio:
+    Il prodotto esiste **se e solo se** $A^T$ ha lo **stesso numero di righe** di $B$, per esempio:
 $$
 A \times B =
 \begin{bmatrix}
@@ -104,20 +122,33 @@ $$
 	La traccia di una matrice **quadrata** equivale alla somma di tutti gli elementi sulla diagonale:
 	$$\mathrm{tr}(A) = \sum_{i=1}^n a_{ii}$$
 
-- **Trasposta**
+## Matrice elementare
 
-	La matrice trasposta consiste nello scambiare la colonna per la riga su ogni elemento della matrice, per cui **viene capovolta sulla diagonale**.
+Una **matrice elementare** è un tipo speciale di matrice che si ottiene effettuando una singola **operazione elementare per riga** (_elementary row operation_) sulla **matrice identità**.
 
-	Per esempio,
+La matrice ottenuta si può considerare come un _blueprint_ che propagherà la stessa _operazione elementare_ come trasformazione di una matrice generica attraverso la moltiplicazione.
+
+Per esempio, partendo da una matrice identità $3 \times 3$ e scambiando le prime due righe si ottiene:
 $$
+E =
 \begin{bmatrix}
-2 & 3 & 0 \\
-1 & 3 & 5 \\
-4 & 2 & 0
-\end{bmatrix}^T =
-\begin{bmatrix}
-2 & 1 & 4 \\
-3 & 3 & 2 \\
-0 & 5 & 0
+0 & 1 & 0 \\
+1 & 0 & 0 \\
+0 & 0 & 1
 \end{bmatrix}
 $$
+che moltiplicato per una qualsiasi matrice, si ha:
+$$
+E \cdot
+\begin{bmatrix}
+3 & 4 \\ 3 & -2 \\ 4 & -2
+\end{bmatrix} =
+\begin{bmatrix}
+3 & -2 \\ 3 & 4 \\ 4 & -2
+\end{bmatrix}
+$$
+
+Questo tipo di matrice serve a rappresentare le [mosse di Gauss](../04/README.md#metodo-di-eliminazione-di-gauss), cioè le _operazioni elementari per riga_:
+- Scambio due righe
+- Moltiplico una riga per $c \in \mathbb{R}$
+- Sommo due righe e metto il risultato su una delle due
