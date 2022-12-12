@@ -14,6 +14,8 @@ C^k(I) =
 \{f\colon I \to \mathbb{R} | f \text{ derivabile } k \text{ volte e } f^{(k)} \text{ continua}\}
 $$
 
+Se $f \in C^0$ allora $f$ si dice **continua**, ma se $f \in C^1$ allora $f$ è **continua**, **differenziabile** e $f'$ è **continua**.
+
 ## Convessità e concavità
 
 Una funzione si dice **convessa** se per ogni coppia di punti $x_1, x_2 \in I$, la retta secante su $x_1$ e $x_2$ si trova **al di sopra del grafico** di $f$ e quindi la **concavità è rivolta verso l'alto**:

@@ -25,3 +25,37 @@ s_n & \leq & I & \leq & S_n \\
 && \int_a^b f(x) dx &&
 \end{array}
 $$
+
+## Esempio
+
+$$\int_0^3 x + 2 dx = \frac{(5 + 2) \cdot 3}{2}$$
+perchè la funzione $f(x) = x + 2$ da $0$ a $3$ forma un trapezio.
+
+Si ha che $\Delta x = \frac{3 - 0}{n} = \frac{3}{n}$ dove $n$ è il numero di _plurirettangoli_ tra $0$ e $3$. \
+Ogni _plurirettangolo_ ha intervallo $I_i = [x_{i - 1}, x_i]$, dove $x_i = x_{i-1} + \Delta x = x_0 + i \cdot \Delta x = i \Delta x$.
+
+Quindi la **somma degli integrali superiori** sarà:
+$$
+\begin{split}
+S_n &= \sum_{i = 1}^n \Delta x f(x_i) = \\
+&= \sum_{i = 1}^n \frac{3}{n} \left(\frac{3}{n} \cdot i + 2\right) = \\
+&= \frac{9}{n^2} \sum_{i = 1}^n i + \frac{6}{n} \sum_{i = 1}^n 1 = \\
+&= \frac{9}{n^2} \cdot \frac{n (n+1)}{2} + \frac{6}{n} \cdot n = \frac{9 (n+1)}{2n} + 6
+\end{split}
+$$
+
+## Teorema della media
+
+Il **teorema della media** dice che, avendo una funzione $f \in C^0 : [a, b] \to \mathbb{R}$, allora:
+$$\exists c \in [a, b] : f(c) = \frac{\int_a^b f(x) dx}{b - a}$$
+dove $(b - a) \cdot f(c)$ può essere pensato come **base** per **altezza**.
+
+## Teorema fondamentale del calcolo integrale
+
+Questo teorema produce l'area **con segno** della parte sottesa al grafico di una funzione $f$:
+$$\int_a^b f(x) dx = F(b) - F(a)$$
+
+Per esempio, $\int_0^2 x^2 dx = \left[\frac{x^3}{3}\right]_0^2 = \frac{8}{3}$ dato che $F(x) = \int x^2 dx - c= \frac{x^3}{3}$.
+
+Oltre a rispettare le proprietà degli integrali indefiniti, rispetta anche la proprietà per cui:
+$$\left|\int_a^b f(x) dx\right| \leq \int_a^b |f(x)| dx$$
