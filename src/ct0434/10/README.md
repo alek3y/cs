@@ -51,4 +51,11 @@ n_1 & n_2 & ... & n_k
 $$
 chiamato **coefficiente multinomiale**.
 
-Per esempio, il numero di permutazioni della parola $\text{SASSO}$ sono $\frac{5!}{3!} = 20$, mentre della parola $\text{MAMMA}$ sono $\frac{5!}{3!2!}$.
+Il numero di **disposizioni con ripetizioni** è:
+$$n^k$$
+
+Mentre le **combinazioni con ripetizioni** sono:
+$$\binom{r+k-1}{k}$$
+dove $r$ sono gli elementi e $k$ la grandezza dei gruppi.
+
+Per esempio, il numero di permutazioni della parola $\text{SASSO}$ sono $\frac{5!}{3!} = 20$, mentre di $\text{MAMMA}$ sono $\frac{5!}{3!2!}$.
