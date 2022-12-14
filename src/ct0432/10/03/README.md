@@ -52,10 +52,22 @@ dove $(b - a) \cdot f(c)$ può essere pensato come **base** per **altezza**.
 
 ## Teorema fondamentale del calcolo integrale
 
-Questo teorema produce l'area **con segno** della parte sottesa al grafico di una funzione $f$:
+Se $f\colon [a, b] \to \mathbb{R}$ continua, allora il teorema produce l'area **con segno** della funzione $f$:
 $$\int_a^b f(x) dx = F(b) - F(a)$$
 
 Per esempio, $\int_0^2 x^2 dx = \left[\frac{x^3}{3}\right]_0^2 = \frac{8}{3}$ dato che $F(x) = \int x^2 dx - c= \frac{x^3}{3}$.
 
 Oltre a rispettare le proprietà degli integrali indefiniti, rispetta anche la proprietà per cui:
 $$\left|\int_a^b f(x) dx\right| \leq \int_a^b |f(x)| dx$$
+
+## Area tra due funzioni
+
+In generale, l'area che tra due funzioni $f(x)$ e $g(x)$ è ricavabile con:
+$$\int_a^b |f(x) - g(x)| dx$$
+
+Per esempio, l'area tra le funzioni
+
+![Area tra due funzioni](assets/01.png)
+
+è ricavabile con:
+$$\int_a^b |f(x) - g(x)| dx = \int_a^c f(x) - g(x) dx + \int_c^b g(x) - f(x) dx$$

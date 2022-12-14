@@ -48,6 +48,7 @@
 		- [Integrali fondamentali](./ct0432/10/01/README.md)
 		- [Algebra degli integrali](./ct0432/10/02/README.md)
 		- [Integrali definiti](./ct0432/10/03/README.md)
+		- [Integrali impropri](./ct0432/10/04/README.md)
 
 - [Matematica discreta](./ct0434/README.md)
 	- [Logica](./ct0434/01/README.md)
