@@ -3,10 +3,10 @@
 Una matrice,
 $$
 A = \begin{bmatrix}
-a_{11} & a_{12} & \cdots & a_{1j} \\
-a_{21} & a_{22} & \cdots & a_{2j} \\
+a_{11} & a_{12} & \cdots & a_{1n} \\
+a_{21} & a_{22} & \cdots & a_{2n} \\
 \vdots & \vdots & \ddots & \vdots \\
-a_{i1} & a_{i2} & \cdots & a_{ij} \\
+a_{m1} & a_{m2} & \cdots & a_{mn} \\
 \end{bmatrix}
 $$
 ha dimensioni $m \times n$, con $m$ **righe** e $n$ **colonne**.
@@ -24,7 +24,7 @@ ha dimensioni $m \times n$, con $m$ **righe** e $n$ **colonne**.
 	- _Triangolare_ (inferiore, perchè hanno elementi solo in basso), se $a_{ij} = 0, \forall i, j \in [1, n] : i < j$
 - La matrice **zero** (chiamata $O$), è una matrice in cui ogni elemento è nullo
 
-## Operazioni
+## Operazioni semplici
 
 - **Addizione**:
 
@@ -53,49 +53,10 @@ $$
 \end{bmatrix}
 $$
 
-- **Prodotto fra matrici**:
+- **Traccia**
 
-    Il prodotto esiste **se e solo se** $A^T$ ha lo **stesso numero di righe** di $B$, per esempio:
-$$
-A \times B =
-\begin{bmatrix}
-0 & 3 & 5 \\ 5 & 5 & 2
-\end{bmatrix}
-\begin{bmatrix}
-3 & 4 \\ 3 & -2 \\ 4 & -2
-\end{bmatrix} =
-\begin{bmatrix}
-A_1 \cdot B^1 &
-A_1 \cdot B^2 \\
-A_2 \cdot B^1 &
-A_2 \cdot B^2 \\
-\end{bmatrix} = \\
-= \begin{bmatrix}
-0 + 9 + 20 & 0 - 6 - 10 \\
-15 + 15 + 8 & 20 - 10 - 4
-\end{bmatrix} =
-\begin{bmatrix}
-29 & -16 \\
-38 & 6
-\end{bmatrix}
-$$
-
-	Infatti, l'unico modo di moltiplicare due matrici $1 \times n$,
-$$
-A \cdot B =
-\begin{bmatrix}
-a_1 \\ \vdots \\ a_n
-\end{bmatrix}
-\begin{bmatrix}
-b_1 \\ \vdots \\ b_n
-\end{bmatrix}
-$$
-	è quello di trasporne una delle due, quindi $A^T \cdot B$ è possibile.
-
-	Del prodotto è importante notare che con le matrici **non vale la proprietà commutativa**.
-
-	Inoltre, la matrice identità è l'elemento neutro del prodotto:
-	$$A \times I = A$$
+	La traccia di una matrice **quadrata** equivale alla somma di tutti gli elementi sulla diagonale:
+	$$\mathrm{tr}(A) = \sum_{i=1}^n a_{ii}$$
 
 - **Prodotto hadamard** (o _element-wise product_):
 
@@ -116,39 +77,3 @@ a_{11}b_{11} & a_{12}b_{12} \\
 a_{21}b_{21} & a_{22}b_{22} \\
 \end{bmatrix}
 $$
-
-- **Traccia**
-
-	La traccia di una matrice **quadrata** equivale alla somma di tutti gli elementi sulla diagonale:
-	$$\mathrm{tr}(A) = \sum_{i=1}^n a_{ii}$$
-
-## Matrice elementare
-
-Una **matrice elementare** è un tipo speciale di matrice che si ottiene effettuando una singola **operazione elementare per riga** (_elementary row operation_) sulla **matrice identità**.
-
-La matrice ottenuta si può considerare come un _blueprint_ che propagherà la stessa _operazione elementare_ come trasformazione di una matrice generica attraverso la moltiplicazione.
-
-Per esempio, partendo da una matrice identità $3 \times 3$ e scambiando le prime due righe si ottiene:
-$$
-E =
-\begin{bmatrix}
-0 & 1 & 0 \\
-1 & 0 & 0 \\
-0 & 0 & 1
-\end{bmatrix}
-$$
-che moltiplicato per una qualsiasi matrice, si ha:
-$$
-E \cdot
-\begin{bmatrix}
-3 & 4 \\ 3 & -2 \\ 4 & -2
-\end{bmatrix} =
-\begin{bmatrix}
-3 & -2 \\ 3 & 4 \\ 4 & -2
-\end{bmatrix}
-$$
-
-Questo tipo di matrice serve a rappresentare le [mosse di Gauss](../04/README.md#metodo-di-eliminazione-di-gauss), cioè le _operazioni elementari per riga_:
-- Scambio due righe
-- Moltiplico una riga per $c \in \mathbb{R}$
-- Sommo due righe e metto il risultato su una delle due

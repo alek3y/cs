@@ -72,6 +72,10 @@
 	- [Rette e piani](./ct0435/03/README.md)
 	- [Sistemi lineari](./ct0435/04/README.md)
 	- [Matrici](./ct0435/05/README.md)
+		- [Prodotto tra matrici](./ct0435/05/01/README.md)
+		- [Determinante, minore e cofattori](./ct0435/05/02/README.md)
+		- [Matrice aggiunta e inversa](./ct0435/05/03/README.md)
+		- [Matrice elementare](./ct0435/05/04/README.md)
 	- [Grafi](./ct0435/06/README.md)
 
 - [Architettura degli elaboratori](./ct0615-1/README.md)
