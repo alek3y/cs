@@ -31,35 +31,38 @@ Per passare da una _matrice in scala_ in _forma ridotta_ basta:
 
 Per esempio:
 $$
+\begin{split}
 \begin{bmatrix}
 2 & 5 & 6 & 7 \\
 0 & 3 & 1 & 1 \\
 0 & 0 & 2 & 0
 \end{bmatrix}
-\xrightarrow{\text{dividi ogni riga per i pivot}}
+\xrightarrow{\text{dividi le righe per i pivot}}
+&
 \begin{bmatrix}
 1 & \frac{5}{2} & 3 & \frac{7}{2} \\
 0 & 1 & \frac{1}{3} & \frac{1}{3} \\
 0 & 0 & 1 & 0
 \end{bmatrix}
-\xrightarrow{\text{sottrai la (3ᵃ} \times \frac{1}{3} \text{) dalla 2ᵃ}}
+\xrightarrow{R_2 - \frac{1}{3}R_3 \to R_2}
 \begin{bmatrix}
 1 & \frac{5}{2} & 3 & \frac{7}{2} \\
 0 & 1 & 0 & \frac{1}{3} \\
 0 & 0 & 1 & 0
 \end{bmatrix}
-\rightarrow
 \\
-\xrightarrow{\text{sottrai la (3ᵃ} \times 3 \text{) dalla 1ᵃ}}
+\xrightarrow{R_1 - 3R_3 \to R_1}
+&
 \begin{bmatrix}
 1 & \frac{5}{2} & 0 & \frac{7}{2} \\
 0 & 1 & 0 & \frac{1}{3} \\
 0 & 0 & 1 & 0
 \end{bmatrix}
-\xrightarrow{\text{sottrai la (2ᵃ} \times \frac{5}{2} \text{) dalla 1ᵃ}}
+\xrightarrow{R_1 - \frac{5}{2}R_2 \to R_1}
 \begin{bmatrix}
 1 & 0 & 0 & \frac{8}{3} \\
 0 & 1 & 0 & \frac{1}{3} \\
 0 & 0 & 1 & 0
 \end{bmatrix}
+\end{split}
 $$

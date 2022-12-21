@@ -56,7 +56,7 @@ $$
 - **Traccia**
 
 	La traccia di una matrice **quadrata** equivale alla somma di tutti gli elementi sulla diagonale:
-	$$\mathrm{tr}(A) = \sum_{i=1}^n a_{ii}$$
+	$$\mathrm{trace}(A) = \sum_{i=1}^n a_{ii}$$
 
 - **Prodotto hadamard** (o _element-wise product_):
 

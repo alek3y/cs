@@ -77,6 +77,7 @@
 		- [Matrice aggiunta e inversa](./ct0435/05/03/README.md)
 		- [Matrice elementare](./ct0435/05/04/README.md)
 		- [Matrice a scala](./ct0435/05/05/README.md)
+		- [Rango](./ct0435/05/06/README.md)
 	- [Grafi](./ct0435/06/README.md)
 
 - [Architettura degli elaboratori](./ct0615-1/README.md)
