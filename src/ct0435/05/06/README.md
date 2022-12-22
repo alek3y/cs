@@ -4,7 +4,7 @@ Il **rango** o **caratteristica** di una matrice indica il **massimo numero di r
 Questo vale anche per le colonne, infatti:
 $$\mathrm{rank}(A) = \mathrm{rank}(A^T)$$
 
-Un metodo per calcolare il rango è quello di trasformare una matrice in **scala a forma ridotta** tramite le _operazioni elementari per riga_, per esempio:
+Un metodo per calcolare il rango è quello di trasformare una matrice in **scala** tramite le _operazioni elementari per riga_, per esempio:
 $$
 \begin{alignat*}{2}
 A = \begin{bmatrix}
