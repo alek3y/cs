@@ -79,6 +79,7 @@
 		- [Matrice a scala](./ct0435/05/05/README.md)
 		- [Rango](./ct0435/05/06/README.md)
 	- [Grafi](./ct0435/06/README.md)
+	- [Spazio vettoriale](./ct0435/07/README.md)
 
 - [Architettura degli elaboratori](./ct0615-1/README.md)
 	- [Rappresentazione dell'informazione](./ct0615-1/01/README.md)
