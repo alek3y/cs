@@ -18,3 +18,18 @@ Ogni _spazio vettoriale_ deve quindi soddisfare le proprietà:
 	2. **Distributiva a sinistra**: $(a + b)\vec{v} = a\vec{v} + b\vec{v}$
 	3. **Associativa**: $a(b\vec{v}) = (ab)\vec{v}$
 	4. **Elemento neutro**: $1\vec{v} = \vec{v}$
+
+## Sottospazio
+
+Un **sottospazio** $W$ dello _spazio vettoriale_ $V$, entrambi definiti sul _campo_ $K$, si definisce tale se:
+$$W \subset V : W \neq \emptyset$$
+e le due operazioni $+$ e $\cdot$ su $K$ rispettano la **proprietà di chiusura**, infatti:
+- $\vec{v}, \vec{w} \in W \Rightarrow (\vec{v} + \vec{w}) \in W$
+- $a \in K \land \vec{v} \in W \Rightarrow a\vec{v} \in W$
+
+Di conseguenza,
+$$\forall \vec{v} \in W,\, a \in K : a = 0 \Rightarrow a\vec{v} = \vec{0} \Rightarrow \vec{0} \in W$$
+quindi, perchè si possa definire **spazio vettoriale** e rispetti la **proprietà di chiusura**, $\vec{0} \in W,\; \forall W \subset V$.
+
+Per cui, ogni _iperpiano_ $W$ in $R^n$ che passa per l'origine $\vec{0}$ è considerabile _sottospazio vettoriale_, perchè:
+$$\forall \vec{v} \in W,\; 0\vec{v} = \vec{0} \in W$$
