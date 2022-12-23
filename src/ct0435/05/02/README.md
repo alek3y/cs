@@ -1,4 +1,4 @@
-# Determinante, minore e cofattori
+# Determinante
 
 Il **determinante** di una matrice **quadrata** $2 \times 2$ è dato da:
 $$
@@ -9,43 +9,6 @@ c & d
 \end{bmatrix}
 \right) = a \cdot d - b \cdot c
 $$
-
-Nel caso di matrici più grandi però, come nel caso di $3 \times 3$, si ha che:
-$$
-\begin{split}
-\det\left(
-\begin{bmatrix}
-a & b & c \\
-d & e & f \\
-g & h & i
-\end{bmatrix}
-\right) &=
-a \cdot M_{1,1} - b \cdot M_{1,2} + c \cdot M_{1,3} = \\
-&= a \cdot \det\left(
-\begin{bmatrix}
-e & f \\
-h & i
-\end{bmatrix}
-\right) -
-b \cdot \det\left(
-\begin{bmatrix}
-d & f \\
-g & i
-\end{bmatrix}
-\right) +
-c \cdot \det\left(
-\begin{bmatrix}
-d & e \\
-g & h
-\end{bmatrix}
-\right)
-\end{split}
-$$
-dove $M_{1,j}$ è il **minore** sulla colonna $j$.
-
-**In generale** quindi, quando la dimensione è più grande di $2 \times 2$:
-$$\det(A) = \sum_{j = 1}^{n} a_{1,j} \cdot C_{1,j}$$
-dove $C_{1,j}$ è il valore della **matrice dei cofattori** in riga $1$ e colonna $j$, mentre $n$ è il numero di colonne.
 
 ## Minore
 
@@ -83,3 +46,42 @@ C_{21} & C_{22} & \cdots & C_{2n} \\
 C_{n1} & C_{n2} & \cdots & C_{nn} \\
 \end{bmatrix}
 $$
+
+## Determinante di matrici più grandi
+
+Nel caso di matrici più grandi, come nel caso di $3 \times 3$, si ha che:
+$$
+\begin{split}
+\det\left(
+\begin{bmatrix}
+a & b & c \\
+d & e & f \\
+g & h & i
+\end{bmatrix}
+\right) &=
+a \cdot M_{1,1} - b \cdot M_{1,2} + c \cdot M_{1,3} = \\
+&= a \cdot \det\left(
+\begin{bmatrix}
+e & f \\
+h & i
+\end{bmatrix}
+\right) -
+b \cdot \det\left(
+\begin{bmatrix}
+d & f \\
+g & i
+\end{bmatrix}
+\right) +
+c \cdot \det\left(
+\begin{bmatrix}
+d & e \\
+g & h
+\end{bmatrix}
+\right)
+\end{split}
+$$
+dove $M_{1,j}$ è il **minore** sulla colonna $j$.
+
+**In generale** quindi, quando la dimensione è più grande di $2 \times 2$:
+$$\det(A) = \sum_{j = 1}^{n} a_{1,j} \cdot C_{1,j}$$
+dove $C_{1,j}$ è il valore della **matrice dei cofattori** in riga $1$ e colonna $j$, mentre $n$ è il numero di colonne.

@@ -8,8 +8,8 @@ per cui ogni coppia in $E$ indica un collegamento tra due vertici e anche la dir
 
 ## Matrice di adiacenza
 
-La **matrice di adiacenza** è una matrice che identifica gli archi tra ogni nodo, inclusa la loro direzione, quindi:
-$$M = \begin{cases}1 & \text{se } (v_i, v_j) \in E \\ 0 & \text{altrimenti}\end{cases}$$
+La **matrice di adiacenza** $M$ identifica gli archi tra ogni nodo, inclusa la loro direzione, quindi:
+$$m_{ij} = \begin{cases}1 & \text{se } (v_i, v_j) \in E \\ 0 & \text{altrimenti}\end{cases}$$
 
 Per esempio,
 
