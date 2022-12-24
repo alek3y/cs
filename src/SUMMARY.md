@@ -84,6 +84,7 @@
 	- [Grafi](./ct0435/06/README.md)
 	- [Spazio vettoriale](./ct0435/07/README.md)
 		- [Combinazioni lineari](./ct0435/07/01/README.md)
+		- [Basi](./ct0435/07/02/README.md)
 
 - [Architettura degli elaboratori](./ct0615-1/README.md)
 	- [Rappresentazione dell'informazione](./ct0615-1/01/README.md)

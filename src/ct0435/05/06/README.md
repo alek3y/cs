@@ -1,6 +1,6 @@
 # Rango
 
-Il **rango** o **caratteristica** di una matrice indica il **massimo numero di righe** [linearmente indipendenti](#TODO).
+Il **rango** o **caratteristica** di una matrice indica il **massimo numero di righe** [linearmente indipendenti](../../07/01/README.md#dipendenza-lineare).
 Questo vale anche per le colonne, infatti:
 $$\mathrm{rank}(A) = \mathrm{rank}(A^T)$$
 
