@@ -20,6 +20,11 @@ a_1\vec{v}_1 = -(a_2\vec{v}_2 + ... + a_n\vec{v}_n) \\
 $$
 per cui sono _dipendenti_.
 
+## Span
+
+Lo **span** di $v_1, ..., v_n$ sullo spazio vettoriale $V$ è il **sottospazio** di tutte le _combinazioni lineari_ di tali vettori:
+$$\mathrm{span}(v_1, ..., v_n) = \{a_1v_1 + ... + a_nv_n : a_1, ..., a_n \in K\}$$
+
 ## Sistema di generatori
 
 Un insieme $\{v_1, v_2, ..., v_n\} \subseteq V$ si dice **sistema di generatori** se:
