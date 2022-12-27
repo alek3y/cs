@@ -22,14 +22,14 @@ Il **nucleo** della funzione $f$ (_sottospazio_ di $V$) è definito come come l'
 $$\mathrm{Ker}(f) = \{\vec{x} \in V : f(\vec{x}) = \vec{0}\}$$
 mentre l'[_immagine_](../../ct0432/03/01/README.md#immagine) (_sottospazio_ di $W$) corrisponde a $\mathrm{Im}(f) = \{f(x) \in W : x \in V\}$.
 
-Se $|V|, |W| \in \mathbb{N}$, il **teorema della dimensione** dice che:
-$$|\mathrm{Ker}(f)| + |\mathrm{Im}(f)| = |V|$$
+Se $\dim(V), \dim(W) \in \mathbb{N}$, il **teorema della dimensione** dice che:
+$$\dim(\mathrm{Ker}(f)) + \dim(\mathrm{Im}(f)) = \dim(V)$$
 
 ## Biettività
 
 Perchè $f$ sia _invertibile_ e quindi **biettiva**, la funzione deve essere:
-- **Iniettiva**, quando $|\mathrm{Ker}(f)| = 0$
-- **Suriettiva**, quando $|\mathrm{Im}(f)| = |W|$
+- **Iniettiva**, quando $\dim(\mathrm{Ker}(f)) = 0$
+- **Suriettiva**, quando $\dim(\mathrm{Im}(f)) = \dim(W)$
 
 ## Matrice associata alla trasformazione
 
