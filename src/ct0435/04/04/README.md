@@ -24,7 +24,7 @@ E \times
 \end{bmatrix}
 $$
 
-Questo tipo di matrice serve a rappresentare le [mosse di Gauss](../../04/README.md#metodo-di-eliminazione-di-gauss), cioè le _operazioni elementari per riga_:
+Questo tipo di matrice serve a rappresentare le [mosse di Gauss](../../05/README.md#metodo-di-eliminazione-di-gauss), cioè le _operazioni elementari per riga_:
 - Scambio due righe
 - Moltiplico una riga per $c \in \mathbb{R}$
 - Sommo due righe e metto il risultato su una delle due
