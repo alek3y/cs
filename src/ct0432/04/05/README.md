@@ -17,8 +17,9 @@
 	- $\lim_{x \to 0} \frac{\sin(ax)}{\sin(bx)} = \frac{a}{b}$
 
 - Esponenziali e logaritmiche:
-	- $\lim_{x \to 0} \frac{\log_a(1 + x)}{x} = \frac{1}{\log_e(a)}$
+	- $\lim_{x \to 0} \frac{\log_a(1 + bx)}{x} = \frac{b}{\log_e(a)}$
 	- $\lim_{x \to 0} \frac{a^x - 1}{x} = \log_e(a)$
 	- $\lim_{x \to 0} \frac{(1 + x)^a - 1}{x} = a$
+	- $\lim_{x \to 0} \frac{e^{ax} - e^{bx}}{x} = a - b$
 	- $\lim_{x \to 0^+} x^c \cdot log_a(x^b) = 0$
 	- $\lim_{x \to +\infty} \frac{a^x}{x^c} = +\infty, a > 1, c > 0$
