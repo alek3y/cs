@@ -25,7 +25,7 @@ Nel caso della **circonferenza unitaria**, cioè con raggio $r = 1$, si hanno le
 
 Dalle ultime tre formule è possibile ricavarsi che:
 - $\sin(2\alpha) = 2\sin(\alpha)\cos(\alpha)$
-- $\cos(2\alpha) = \cos^2(\alpha) - \sin^2(\alpha) = 1 - 2\sin^2(\alpha) = -1 + 2\cos(\alpha)$
+- $\cos(2\alpha) = \cos^2(\alpha) - \sin^2(\alpha) = 1 - 2\sin^2(\alpha) = -1 + 2\cos^2(\alpha)$
 - $\sin^2(\alpha) = \frac{1 - \cos(2\alpha)}{2}$
 - $\cos^2(\alpha) = \frac{1 + \cos(2\alpha)}{2}$
 
