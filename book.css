@@ -4,8 +4,24 @@
 	--content-max-width: 810px;
 }
 
-.spacer {
+/* Always show spacer */
+
+.chapter .spacer {
 	margin-top: 8.4px;
+	width: calc(var(--sidebar-width) - 20px);	/* from .sidebar-scrollbox padding */
+}
+
+.chapter .section .spacer {
+	margin-left: -20px;	/* from .section padding-left */
+	margin-bottom: 0px;
+}
+
+.chapter li:not(.expanded) + li > ol {
+	display: block !important;
+}
+
+.chapter li:not(.expanded) + li > ol :not(.spacer) {
+	display: none;
 }
 
 /* Change light theme foreground colors */
