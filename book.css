@@ -4,6 +4,10 @@
 	--content-max-width: 810px;
 }
 
+.spacer {
+	margin-top: 8.4px;
+}
+
 /* Change light theme foreground colors */
 
 .light {
