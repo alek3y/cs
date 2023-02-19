@@ -4,22 +4,22 @@ Un'equazione ordinaria di ordine $n$ sarà del tipo:
 $$F(t, y, y', ..., y^{(n)}) = 0$$
 dove $t$ è la **variabile indipendente**, $y(t)$ è la **funzione incognita** e $F$ è la funzione che le mette in relazione.
 
-L'**integrale generale** sarà la famiglia di funzioni che rendolo la relazione di $F$ vera.
+L'**integrale generale** sarà la famiglia di funzioni che rendono la relazione di $F$ vera.
 
 ## Primo ordine
 
-Una relazione del primo ordine
+Una relazione di primo ordine
 $$F(t, y, y') = 0$$
 è in **forma normale** quando $y' = f(t, y)$.
 
-Tramite una **condizione iniziale** è possibile trovare il parametro che genera l'_integrale generale_, per cui quando:
+Avendo una **condizione iniziale** è possibile trovare il parametro che genera l'_integrale generale_:
 $$
 \begin{cases}
 y'(t) = f(t, y) \\
 y(t_0) = y_0
 \end{cases}
 $$
-si ha un **problema di Cauchy**.
+per cui si ha un **problema di Cauchy**.
 
 ### Equazioni a variabili separabili
 
@@ -46,9 +46,9 @@ y' = a(t)b(y)
 \int \frac{1}{b(y)} dy = \int a(t) dt
 $$
 
-da cui poi si risolvono gli integrali e si esplicita la $y$.
+da cui si risolvono gli integrali e si esplicita la $y$.
 
-Per esempio, con $y'(t) = (t-1)(y-1)$ si ha:
+Per esempio, con $y' = (t-1)(y-1)$ si ha:
 - $(y - 1) = 0 \Leftrightarrow y = 1$, per cui $y(t) = 1$ è la _soluzione costante_
 - $y \neq 1$, allora:
 $$
@@ -58,3 +58,4 @@ $$
 \Downarrow \\
 y = 1 + \pm e^{\frac{t^2}{2} - t + c} = 1 + ke^{\frac{t^2}{2} - t},\; k \in \mathbb{R}
 $$
+dove $k$ include la _soluzione costante_, infatti $k = 0 \Rightarrow y = 1$.
