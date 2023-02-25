@@ -9,6 +9,9 @@
 		- [Primo ordine](./ct0433/01/01/README.md)
 		- [Secondo ordine](./ct0433/01/02/README.md)
 
+- [Architettura degli elaboratori - Mod. 2](./ct0615-2/README.md)
+	- [Pipeline](./ct0615-2/01/README.md)
+
 - [Calcolo 1](./ct0432/README.md)
 	- [Insiemi](./ct0432/01/README.md)
 	- [Numeri reali](./ct0432/02/README.md)
@@ -94,7 +97,7 @@
 	- [Trasformazioni lineari](./ct0435/08/README.md)
 	- [Autovalori e autovettori](./ct0435/09/README.md)
 
-- [Architettura degli elaboratori](./ct0615-1/README.md)
+- [Architettura degli elaboratori - Mod. 1](./ct0615-1/README.md)
 	- [Rappresentazione dell'informazione](./ct0615-1/01/README.md)
 		- [Conversioni](./ct0615-1/01/01/README.md)
 		- [Numeri negativi](./ct0615-1/01/02/README.md)

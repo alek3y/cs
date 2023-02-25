@@ -2,6 +2,7 @@
 
 :root {
 	--content-max-width: 810px;
+	--sidebar-width: 320px;
 }
 
 /* Change light theme foreground colors */
