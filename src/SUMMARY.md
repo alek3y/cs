@@ -12,6 +12,9 @@
 - [Architettura degli elaboratori - Mod. 2](./ct0615-2/README.md)
 	- [Pipeline](./ct0615-2/01/README.md)
 
+- [Programmazione e laboratorio](./ct0442/README.md)
+	- [Fondamenti](./ct0442/01/README.md)
+
 - [Calcolo 1](./ct0432/README.md)
 	- [Insiemi](./ct0432/01/README.md)
 	- [Numeri reali](./ct0432/02/README.md)
