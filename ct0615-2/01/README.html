@@ -143,6 +143,44 @@
 </ul>
 <p>L'implementazione avviene eseguendo ogni <em>unità funzionale</em> <strong>parallelamente</strong> alle istruzioni successive.</p>
 <p><img src="assets/01.png" alt="Diagramma dei tempi ridotti dalla struttura pipeline" /></p>
+<h2 id="implementazione"><a class="header" href="#implementazione">Implementazione</a></h2>
+<p>Per suddividere il signolo ciclo in <em>unità funzionali</em>, occorre ricordare il risultato dell'<em>unità</em> (e quindi del ciclo) precedente.
+Questo è possibile con dei <strong>registri intermedi</strong> tra le sezioni (e.g. <em>IF/ID</em>, <em>ID/EX</em>, ...), che salveranno 4 byte per ogni freccia entrante (i.e. 20 byte su <em>ID/EX</em>) per propagare il risultato nelle sezioni e cicli successivi.</p>
+<p><img src="assets/02.png" alt="Schema circuito della CPU pipeline" /></p>
+<p>Questo però porta a problemi non banali durante l'esecuzione:</p>
+<ul>
+<li>
+<p><strong>Propagazione dei segnali di controllo</strong>:</p>
+<p>Perchè ogni <em>unità</em> esegui parallelamente, è necessario <strong>rallentare</strong> la propagazione dei <em>segnali di controllo</em> in modo che siano coerenti con l'istruzione eseguita.</p>
+<p>Per questo nel circuito sono implementati <strong>altri registri intermedi</strong> riservati per la parte di controllo.</p>
+</li>
+<li>
+<p><strong>WB nel register file</strong>:</p>
+<p>Perchè il <em>Write Back</em> riesca a scrivere sul <em>register file</em> c'è bisogno del valore che identifica il registro su cui scrivere, ma quando la <em>pipeline</em> sarà arrivata a <em>WB</em>, anche <em>ID</em> sarà stato rieseguito da un'altra istruzione, sovrascrivendo quindi il valore richiesto.</p>
+<p>Di conseguenza, nel circuito viene anche propagato il valore del <em>Write register</em> fino a <em>WB</em>.</p>
+</li>
+<li>
+<p><strong>Hazards</strong></p>
+</li>
+</ul>
+<h2 id="hazards"><a class="header" href="#hazards">Hazards</a></h2>
+<p>Un'<strong>hazard</strong> è una situazione in cui un'istruzione dipende da quella prima, per esempio:</p>
+<pre><code class="language-x86asm">add $s0, $t0, $t1
+sub $s1, $s0, $s2  ; Necessita del WB precedente per poter leggere su ID il register file
+</code></pre>
+<p>Per rimediare, la <em>pipeline</em> entrerà in <strong>stallo</strong>, continuando a <strong>rieseguire</strong> <em>ID</em> (bloccando un'ipotetica terza istruzione su <em>IF</em> perchè <em>ID</em> è in uso) finché l'istruzione precedente non finisce.</p>
+<p><img src="assets/03.png" alt="Diagramma di dipendenza Read After Write" /></p>
+<p>L'ultimo <em>ID</em> avrà lo scopo di aggiornare i registri <em>ID/EX</em> con il valore scritto dalla precedente <em>WB</em>.
+Questo può avvenire nello <strong>stesso ciclo</strong> di <em>WB</em> nel caso il <em>register file</em> supporti lettura e scrittura in un unico ciclo.</p>
+<p>Questo <em>hazard</em> è un <strong>data hazard</strong> detto <strong>dipendenza RAW</strong> (<em>Read After Write</em>), ma esistono altre dipendenze come <em>Write After Write</em> e <em>Write After Read</em> (creano problemi solo quando si cambia l'ordine delle istruzioni).</p>
+<p>Una soluzione <em>software</em> è sfruttare il <strong>compilatore</strong> per inserire dei <code>nop</code> <strong>tra le istruzioni dipendenti</strong>:</p>
+<pre><code class="language-x86asm">add $s0, $t0, $t1  ; IF
+nop                ; ID
+nop                ; EXE
+nop                ; MEM
+sub $s1, $s0, $s2  ; WB durante l'IF di sub, quindi esegue ID dopo WB
+</code></pre>
+<p>Oltre ad <strong>alleggerire</strong> lo sforzo della CPU nell'identificazione dello <em>stallo</em> (che effettua confrontando registri correnti e precedenti), ammette anche ulteriore <strong>ottimizzazione</strong>, rimpiazzando i <code>nop</code> con alcune istruzioni successive, così da risparmiare tempo.</p>
 
                     </main>
 
