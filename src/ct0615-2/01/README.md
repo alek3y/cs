@@ -61,4 +61,4 @@ nop                ; MEM
 sub $s1, $s0, $s2  ; WB durante l'IF di sub, quindi esegue ID dopo WB
 ```
 
-Oltre ad **alleggerire** lo sforzo della CPU nell'identificazione dello _stallo_ (che effettua confrontando registri correnti e precedenti), ammette anche ulteriore **ottimizzazione**, rimpiazzando i `nop` con alcune istruzioni successive, così da risparmiare tempo.
+Oltre ad **alleggerire** lo sforzo della CPU nell'identificazione dello _stallo_ (che effettua confrontando registri correnti e precedenti nel passo _ID_), ammette anche ulteriore **ottimizzazione**, rimpiazzando i `nop` con alcune istruzioni successive, così da risparmiare tempo.
