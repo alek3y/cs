@@ -5,7 +5,7 @@
 # Primo anno
 
 - [Calcolo 2](./ct0433/README.md)
-	- [Equazioni Differenziali Ordinarie](./ct0433/01/README.md)
+	- [Equazioni differenziali ordinarie](./ct0433/01/README.md)
 		- [Primo ordine](./ct0433/01/01/README.md)
 		- [Secondo ordine](./ct0433/01/02/README.md)
 

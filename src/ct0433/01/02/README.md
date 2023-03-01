@@ -17,12 +17,19 @@ y'(t_0) = v_0
 \end{cases}
 $$
 
-## Omogenee a coefficienti costanti
+## Lineari a coefficienti costanti
 
-Se $f(t) = 0$ e i coefficienti sono costanti, l'equazione differenziale sarà **omogenea a coefficienti costanti**:
-$$y'' + ay' + by = 0$$
+Un'equazione è lineare a **coefficienti costanti** quando:
+$$
+y'' + ay' + by' = f(t)
+$$
+con $a, b \in \mathbb{R}$.
 
-Per risolverla, si può assumere che ogni soluzione sia in forma $y(t) = e^{rt}$, per cui
+Viene detta **omogenea** se $f(t) = 0$ e **completa** se $f(t) \neq 0$.
+
+### Lineari omogenee
+
+Se $f(t) = 0$, si può assumere che ogni soluzione sia in forma $y(t) = e^{rt}$, per cui
 $$
 r^2e^{rt} + are^{rt} + be^{rt} = 0 \\
 \Downarrow \\
@@ -81,3 +88,87 @@ Di conseguenza, le soluzioni da unire in _combinazione lineare_ sono:
 | $\Delta < 0$ | $e^{\alpha t}\cos(\beta t)$ | $e^{\alpha t}\sin(\beta t)$ |
 
 dove $\alpha = \mathrm{Re}(r_1) = \mathrm{Re}(r_2)$ e $\beta = \mathrm{Im}(r_1) = -\mathrm{Im}(r_2)$.
+
+### Lineari complete
+
+Quando $f(t) \neq 0$, si utilizza il **metodo di somiglianza** per trovare una **soluzione particolare** $\bar{y}$ da sommare all'_integrale generale_ dell'**omogenea associata**:
+$$
+y(t) = z(t) + \bar{y}(t) = c_1z_1(t) + c_2z_2(t) + \bar{y}(t)
+$$
+
+Per somiglianza, $\bar{y}$ dipenderà dalla forma di $f(t)$:
+
+- **Polinomiale** di grado $n$:
+
+	Perchè assomigli al polinomio va cercata:
+$$
+\bar{y} = p_n(t) =
+\sum_{i=0}^n \bar{a}_it^{n-i} =
+\bar{a}_0t^n + \bar{a}_1t^{n-1} + \bar{a}_2t^{n-2} + ... + \bar{a}_{n-1}t + \bar{a}_n
+$$
+
+	Nel caso in cui $b = 0$, bisogna invece cercare $\bar{y} = p_{n+1}(t)$, e se anche $a = 0$, va cercato $\bar{y} = p_{n+2}(t)$.
+
+	Per esempio con $y'' + 3y' - y = 2t^2 - 1$, si cerca:
+$$
+\bar{y} = p_2(t) = \bar{a}t^2 + \bar{b}t + \bar{c} \\
+\Downarrow \\
+L(\bar{y}) = -\bar{a}t^2 + (6\bar{a} - \bar{b})t + (2\bar{a} + 3\bar{b} - \bar{c}) = 2t^2 - 1 \\
+\Updownarrow \\
+\begin{cases}
+-\bar{a} = 2 \\
+6\bar{a} - \bar{b} = 0 \\
+2\bar{a} + 3\bar{b} - \bar{c} = -1
+\end{cases} \Rightarrow
+\begin{cases}
+\bar{a} = -2 \\
+\bar{b} = -12 \\
+\bar{c} = -39
+\end{cases} \\
+\Downarrow \\
+\bar{y} = -2t^2 - 12t - 39
+$$
+
+	Mentre con $y'' + 3y' = 2t^2 - 1$, la funzione da cercare diventa $\bar{y} = p_{2+1}(t) = \bar{a}t^3 + \bar{b}t^2 + \bar{c}t + \bar{d}$.
+
+- **Esponenziale** in forma $f(t) = ke^{nt}$ con $k, n \in \mathbb{R}$:
+
+	In questo caso invece, va cercata:
+$$
+\bar{y} = \bar{a}e^{nt}
+$$
+
+	Se però questa forma è **già presente** nelle soluzioni dell'_omogenea associata_, va **moltiplicata per** $t$ finché non compare più tra le soluzioni trovate con $f(t) = 0$.
+
+	Per esempio, con $y'' + 2y' + y = e^{-t}$:
+$$
+\bar{y} = \bar{a}t^2e^{-t} = \frac{1}{2}t^2e^{-t}
+$$
+	perchè entrambe $z_1 = e^{-t}$ e $z_2 = te^{-t}$ sono soluzioni dell'_omogenea associata_.
+
+- **Trigonometrica** in forma $f(t) = k_1 \sin(\omega t) + k_2 \cos(\omega t)$ con $k_{1,2} \in \mathbb{R}$ (incluso lo zero):
+
+	La funzione particolare da cercare sarà:
+$$
+\bar{y} = \bar{a}\sin(\omega t) + \bar{b}\cos(\omega t)
+$$
+
+	Come l'_esponenziale_, se compare nell'_integrale generale_ dell'_omogenea associata_, va **moltiplicata per** $t$.
+
+	Per esempio, con $y'' + y = 2\cos(t)$:
+$$
+\bar{y} = t(\bar{a}\cos(t) + \bar{b}\sin(t)) = x\sin(t)
+$$
+	perchè $\Delta < 0$.
+
+### Sovrapposizione degli effetti
+
+Nel caso in cui l'_equazione differenziale_ sia in forma:
+$$
+y'' + ay' + by = f_1(t) + f_2(t)
+$$
+la **soluzione particolare** risulterà essere semplicemente:
+$$
+\bar{y}(t) = \bar{y}_1(t) + \bar{y}_2(t) \
+$$
+dove $\bar{y}_1$ e $\bar{y}_2$ sono le soluzioni particolari dell'equazione associata a $f_1(t)$ e $f_2(t)$.

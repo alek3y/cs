@@ -1,4 +1,4 @@
-# Equazioni Differenziali Ordinarie
+# Equazioni differenziali ordinarie
 
 Un'equazione ordinaria di ordine $n$ sarà del tipo:
 $$F(t, y, y', ..., y^{(n)}) = 0$$
