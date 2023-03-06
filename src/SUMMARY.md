@@ -8,6 +8,7 @@
 	- [Equazioni differenziali ordinarie](./ct0433/01/README.md)
 		- [Primo ordine](./ct0433/01/01/README.md)
 		- [Secondo ordine](./ct0433/01/02/README.md)
+	- [Curve parametriche](./ct0433/02/README.md)
 
 - [Architettura degli elaboratori - Mod. 2](./ct0615-2/README.md)
 	- [Pipeline](./ct0615-2/01/README.md)
