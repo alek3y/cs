@@ -12,6 +12,9 @@
 
 - [Architettura degli elaboratori - Mod. 2](./ct0615-2/README.md)
 	- [Pipeline](./ct0615-2/01/README.md)
+		- [Implementazione](./ct0615-2/01/01/README.md)
+		- [Hazards](./ct0615-2/01/02/README.md)
+		- [Forwarding](./ct0615-2/01/03/README.md)
 
 - [Programmazione e laboratorio](./ct0442/README.md)
 	- [Fondamenti](./ct0442/01/README.md)
