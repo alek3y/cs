@@ -23,6 +23,9 @@ si ottiene un'**arco di curva** di una _parabola capovolta_, perchè $t$ apparti
 Altri esempi includono:
 - $r(t) = (r\cos(\theta) + x_0, r\sin(\theta) + y_0)$, cioè la circonferenza $(x - x_0)^2 + (y - y_0)^2 = r^2$.
 - $r(t) = (a\cos(\theta) + x_0, b\sin(\theta) + y_0)$, cioè l'ellissi $\frac{(x - x_0)^2}{a^2} + \frac{(y - y_0)^2}{b^2} = 1$
+- $r(t) = p + v(t - t_0)$, cioè la [retta](../../ct0435/03/README.md#retta) che passa per $p$ al tempo $t_0$ in direzione del vettore $v$
+
+Per esempio, se $r(t) = (t^2, t)$, la _tangente_ su $t_0 = 1$ sarà $s(t) = (1, 1) + (2, 1)(t - 1) = (2t - 1, t)$.
 
 ## Proprietà
 
@@ -63,8 +66,28 @@ Una curva parametrica $r(t)$ con $t \in I = [a, b]$, può essere:
 $$
 r(a) = r(b)
 $$
+
 - **Semplice**, se **non si interseca mai** (escludendo gli estremi per quando è _chiusa_), cioè:
 $$
 r(t_1) = r(t_2) \Leftrightarrow t_1 = t_2
 $$
-dove $t_1 \in I$ e $t_2 \in \mathring{I} = I \setminus \{a, b\}$.
+	dove $t_1 \in I$ e $t_2 \in \mathring{I} = I \setminus \{a, b\}$.
+
+	La circonferenza (e.g. $x^2 + y^2 = 1$) con $I \neq [0, 2\pi]$ **non è semplice**, perchè $r(t) = r(t + 2\pi k)$.
+
+- **Regolare**, se:
+$$
+r \in C^1 \land r'(t) \neq \vec{0},\, \forall t \in I
+$$
+
+	Da cui si può ricavare il **versore tangente**:
+$$
+T(t) = \frac{r'(t)}{\|r'(t)\|}
+$$
+
+- **Regolare a tratti**, se $r \in C^0$ ed esistono finiti sottointervalli di $I$ su ognuno dei quali $r$ è **regolare**
+
+Per esempio, se $r(t) = (t^3 + t^4, \cos(\frac{\pi t}{2}))$ con $t \in [-2, 2]$:
+- **Non è regolare** anche se $r \in C^1$, perchè quando $t = 0$, $r'(t) = (0, -\frac{\pi}{2}\sin(0)) = (0, 0)$
+- **Non è chiusa**, perchè $r(-2) \neq r(2)$
+- **Non è semplice**, perchè $\cos(\frac{\pi t}{2})$ e $t^3 + t^4$ non hanno la stessa asse di simmetria
