@@ -9,6 +9,11 @@
 		- [Primo ordine](./ct0433/01/01/README.md)
 		- [Secondo ordine](./ct0433/01/02/README.md)
 	- [Curve parametriche](./ct0433/02/README.md)
+		- [Proprietà](./ct0433/02/01/README.md)
+		- [Tipi di curve](./ct0433/02/02/README.md)
+		- [Coordinate polari](./ct0433/02/03/README.md)
+		- [Lunghezza](./ct0433/02/04/README.md)
+		- [Parametro d'arco](./ct0433/02/05/README.md)
 
 - [Architettura degli elaboratori - Mod. 2](./ct0615-2/README.md)
 	- [Pipeline](./ct0615-2/01/README.md)
