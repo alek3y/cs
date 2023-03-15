@@ -11,6 +11,15 @@ $$
 r(t) \in \mathcal{C}^0 \Leftrightarrow r_i(t) \in \mathcal{C}^0, \forall i = 1, ..., m
 $$
 
+	Per esempio, con una curva definita a tratti:
+$$
+r(t) = \begin{cases}
+r_1(t) = (\frac{4}{t}\cos(\pi t), -\frac{4}{t}\sin(\pi t)) & \text{se } 1 \leq t < 4 \\
+r_2(t) = (-5t + 21, 0) & \text{se } 4 \leq t \leq 5
+\end{cases}
+$$
+	$r_{1,2}(t)$ sono continue perchè _composizione di funzioni continue_, e $r(t)$ è continua perchè $r_1(4) = r_2(4)$.
+
 - **Derivabilità**:
 $$
 r(t) \in C^1 \Leftrightarrow r_i(t) \in C^1, \forall i = 1, ..., m \\

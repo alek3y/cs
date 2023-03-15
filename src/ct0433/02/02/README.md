@@ -18,6 +18,7 @@ $$
 $$
 r \in C^1 \land r'(t) \neq \vec{0},\, \forall t \in I
 $$
+	Nel caso in cui $r'(t)$ non è continua, allora $r(t)$ **non è regolare** perchè $r(t) \not\in C^1$.
 
 	Da cui si può ricavare il **versore tangente**:
 $$
