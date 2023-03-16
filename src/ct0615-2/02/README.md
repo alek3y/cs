@@ -49,3 +49,19 @@ i_C &= (10101101_2 / 2)\, \&\, (8-1) = 1010110_2\, \&\, 111_2 = 110_2 \\
 t &= 10101101_2 / (8 \cdot 2) = 1010_2
 \end{split}
 $$
+
+La **dimensione ottimale** si può ottenere aumentando la quantità di blocchi per sfruttare al meglio la cache.
+Va però bilanciata, perchè su blocchi più grandi si **aumenta il tempo** richiesto dalla CPU per caricare i dati.
+
+Inoltre, dimensioni molto elevate aumentano la probabilità di **collisioni**, considerati i molteplici sotto-blocchi inutilizzati (fuori contesto, e.g. bytes dopo la fine di un array) che vengono caricati nella cache.
+
+## Conflitti
+
+Quando un dato viene modificato con `sw`, la CPU aggiornerà per primo il blocco sulla cache.
+Se però un indirizzo differente dovesse generare una collisione, il dato modificato potrebbe venire **sovrascritto** da una `lw` senza che venga prima aggiornato sulla _RAM_.
+
+Nel caso della memoria dedicata alle istruzioni però, essendo _read-only_, questo problema non si presenta.
+
+Tra le soluzioni a questo problema esistono due **politiche di coerenza**:
+- **Write through**: forza la scrittura su _RAM_ ad ogni `sw` (anche se _write-hit_, rallentando di molto la CPU)
+- **Write back**: scrive su _RAM_ quando `lw` fa collisione (rallentando `lw` nel caso di _read-miss_)
