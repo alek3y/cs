@@ -22,5 +22,27 @@ In particolare, l'argomento $\|r'(t)\|$ [stira](https://it.wikipedia.org/wiki/In
 
 Per esempio, se $r(t) = (3t, 4t - 1, t + 5)$ e $f(x, y, z) = 3x - y + z$, allora l'area sotto la curva è:
 $$
-\int_\gamma f ds = \int_0^1 (9t - 4t + 1 + t + 5)\sqrt(9 + 16 + 1) dt = 9\sqrt{26}
+\int_\gamma f ds = \int_0^1 (9t - 4t + 1 + t + 5)\sqrt{9 + 16 + 1} dt = 9\sqrt{26}
+$$
+
+## Esempio
+
+Avendo $r(t) = (-2\cos(\pi t), 2t)$ con $t \in [1, -1[$, e l'altezza:
+$$
+f(x, y) = \frac{y^2}{\sqrt{4 + 4\pi^2 - \pi^2x^2}}
+$$
+va trovato:
+$$
+\int_{r} f ds = \int_{-1}^1 f(r(t)) \|r'(t)\| dt
+$$
+
+Perchè $f(r(t))$ sia possibile, va verificato che $\mathrm{Im}(r) \subseteq \mathrm{Dom}(f)$, quindi:
+$$
+4 + 4\pi^2 - \pi^2x^2 > 0 \Leftrightarrow x^2 < \frac{4}{\pi^2} + 4 \Rightarrow -2\sqrt{\frac{1}{\pi^2} + 1} < x < 2\sqrt{\frac{1}{\pi^2} + 1} \\
+\Downarrow \\
+\mathrm{Dom}(f) = \left]-2\sqrt{\frac{1}{\pi^2} + 1}, 2\sqrt{\frac{1}{\pi^2} + 1}\right[ \times \mathbb{R}
+$$
+Di conseguenza, $\mathrm{Im}(r) = [-2, 2] \subseteq \mathrm{Dom}(f)$ e quindi l'integrale di linea è calcolabile:
+$$
+\int_r f ds = \int_{-1}^1 \frac{4t^2}{\sqrt{4 + 4\pi^2 - 4\pi^2\cos^2(\pi t)}} \sqrt{4\pi^2 \sin^2(\pi t) + 4} dt = \int_{-1}^1 4t^2 dt = \frac{8}{3}
 $$
