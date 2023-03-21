@@ -12,48 +12,28 @@ Attraverso la **gerarchia** si hanno degli **hit**, per cui il dato è stato **t
 
 Quindi, l'**hit time** è il tempo di accesso alla cache più vicina, mentre **miss penalty** è il tempo richiesto per caricare un dato da una memoria più distante alla cache e per passarlo alla CPU.
 
-## Mapping diretto
+## Mapping
 
-Per generare l'indirizzo sulla cache esiste il **direct-mapping**, che usa parte dei bit dell'indirizzo originale.
+Una cache è suddivisa in **sets** (i.e. righe), ed ogni _set_ è composto da molteplici **ways** o **blocchi**.
+Ogni _blocco_ contiene più byte provenienti dalle vicinanze dell'indirizzo di memoria su _RAM_ associato.
 
-Ogni riga della cache conterrà quindi:
-- Un bit **valid**, per identificare se la riga è vuota oppure no
-- Un **tag**, per identificare i bit alti dell'indirizzo della _RAM_
-- Un **block** (i.e. multiple celle di memoria), per memorizzare i valori
+L'accesso alla cache avviene tramite:
+- **Tag**, che contiene i rimanenti bit dell'indirizzo per evitare [collisioni](https://it.wikipedia.org/wiki/Principio_dei_cassetti)
+- **Index**, che indentifica il _set_ in cui si trova il blocco
+- **Offset**, che identifica quale sotto-blocco (i.e. byte) è richiesto del blocco
 
-Per trovare l'indirizzo $i_C$ su una cache $h \times w$ ($h$ righe da $w$ byte, cioè $h \cdot w$ bytes) con $w, h \in \{2^n : n \in \mathbb{N}\}$, va manipolato l'indirizzo di memoria $i_M$ per ottenere tre parti consecutive:
-- **Offset**: identifica quale dei $w$ sotto-blocchi contiene il dato di $i_M$
-$$
-o = i_M\, \&\, (w-1)
-$$
+Per esempio, su una cache con $8$ _set_, $2$ _blocchi_ da $4$ byte ciascuno:
+![Esempio mapping su cache](assets/01.png)
 
-- **Indice**: identifica l'indirizzo sulla cache dell'intero blocco (per tutti i $w$ sotto-blocchi)
-$$
-\begin{split}
-i_C &= (i_M / w) \bmod h = \\
-&= (i_M / w)\, \&\, (h-1) = \\
-&= (i_M \gg \log_2(w))\, \&\, (h-1)
-\end{split}
-$$
-
-- **Tag**: contiene i rimanenti bit alti di $i_M$ per evitare [collisioni](https://it.wikipedia.org/wiki/Principio_dei_cassetti) degli $i_M$ che producono gli stessi $i_C$
-$$
-t = i_M / (h \cdot w) = i_M \gg \log_2(h \cdot w)
-$$
-
-Per esempio, avendo $i_M = 10101101_2$ su una cache alta $8$ e larga $2$:
-$$
-\begin{split}
-o &= 10101101_2\, \&\, (2-1) = 1_2 \\
-i_C &= (10101101_2 / 2)\, \&\, (8-1) = 1010110_2\, \&\, 111_2 = 110_2 \\
-t &= 10101101_2 / (8 \cdot 2) = 1010_2
-\end{split}
-$$
-
-La **dimensione ottimale** si può ottenere aumentando la quantità di blocchi per sfruttare al meglio la cache.
-Va però bilanciata, perchè su blocchi più grandi si **aumenta il tempo** richiesto dalla CPU per caricare i dati.
+La **dimensione ottimale** si può ottenere aumentando i byte dei blocchi per sfruttare al meglio la cache.
+Va però bilanciata, perchè su blocchi più grandi **aumenta il tempo** richiesto dalla CPU per caricare i dati.
 
 Inoltre, dimensioni molto elevate aumentano la probabilità di **collisioni**, considerati i molteplici sotto-blocchi inutilizzati (fuori contesto, e.g. bytes dopo la fine di un array) che vengono caricati nella cache.
+
+Secondo questa struttura, una cache può essere:
+- **Associativa**: con più _way_, richiede di attraversare tutti i blocchi per trovare il _tag_ richiesto.
+	In caso di _miss_, il blocco che verrà rimpiazzato sarà o **casuale** o quello **meno recentemente utilizzato**.
+- **Diretta**: con uno solo _way_, è più efficiente ma aumenta la probabilità di collisioni
 
 ## Conflitti
 
@@ -65,3 +45,39 @@ Nel caso della memoria dedicata alle istruzioni però, essendo _read-only_, ques
 Tra le soluzioni a questo problema esistono due **politiche di coerenza**:
 - **Write through**: forza la scrittura su _RAM_ ad ogni `sw` (anche se _write-hit_, rallentando di molto la CPU)
 - **Write back**: scrive su _RAM_ quando `lw` fa collisione (rallentando `lw` nel caso di _read-miss_)
+
+## Performance
+
+Siano:
+- $I$: il **numero di istruzioni**
+- $I_D$: il numero di istruzioni che lavorano sui **dati** con `lw`/`sw`
+- $T$: il **periodo di clock**, ovvero il tempo richiesto da ogni ciclo
+- $m_p$: il **miss penalty**, cioè la quantità di cicli che vengono sprecati nel caso di _miss_
+- $m_r$: il **miss ratio**, cioè la percentuale di istruzioni che causano _miss_
+- $m_{r_I}$: l'**istruction miss ratio**, cioè la percentuale di _miss_ causati dal **fetch** delle istruzioni
+- $m_{r_D}$: il **data miss ratio**, che riguarda i normali _miss_ dei dati
+- $c_{\texttt{HLT}}$: il numero di **cicli di stallo**
+- $c_{\texttt{EXE}}$: il numero di **cicli di esecuzione**
+- $t_{\texttt{CPU}}$: il **tempo di esecuzione** delle istruzioni $I$
+
+Allora:
+$$
+\begin{split}
+m_r &= m_{r_I} + m_{r_D} \\
+c_{\texttt{HLT}} &= (I \cdot m_{r_I} + I_D \cdot m_{r_D}) \cdot m_p \\
+t_{\texttt{CPU}} &= (c_{\texttt{EXE}} + c_{\texttt{HLT}}) \cdot T
+\end{split}
+$$
+
+Per esempio:
+$$
+m_{r_I} = 2\% = 0.02 \\
+m_{r_D} = 4\% = 0.04 \\
+m_p = 40 \\
+I_D = 36\% I = 0.36 I \\
+\frac{c_{\texttt{EXE}}}{I} = 2 \\
+\Downarrow \\
+c_{\texttt{HLT}} = (0.02I + 0.04I_D) \cdot 40 = (0.02I + 0.04(0.36I)) \cdot 40 = 1.38I \\
+\Downarrow \\
+\frac{c_{\texttt{EXE}} + c_{\texttt{HLT}}}{I} = 2 + \frac{1.38I}{I} = 3.38
+$$
