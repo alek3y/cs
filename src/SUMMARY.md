@@ -16,6 +16,8 @@
 		- [Parametro d'arco](./ct0433/02/05/README.md)
 		- [Integrale di linea](./ct0433/02/06/README.md)
 	- [Funzioni a più variabili](./ct0433/03/README.md)
+		- [Tipi di funzioni](./ct0433/03/01/README.md)
+		- [Dominio](./ct0433/03/02/README.md)
 
 - [Architettura degli elaboratori - Mod. 2](./ct0615-2/README.md)
 	- [Pipeline](./ct0615-2/01/README.md)

@@ -9,18 +9,6 @@ f\colon A \subseteq \mathbb{R}^n &\to \mathbb{R} \\
 $$
 per cui il grafico $G(f) = \{(\vec{x}, z) \in \mathbb{R}^n \times \mathbb{R} : \vec{x} \in \mathrm{Dom}(f) \land z = f(\vec{x})\}$.
 
-## Piano
-
-Nel caso in cui $f(x, y) = ax + by + c$, la funzione rappresenterà un [**piano**](../../ct0435/03/README.md#piano) in $\mathbb{R}^3$, con equazione cartesiana:
-$$
-ax + by + cz + d = 0
-$$
-dove:
-- $a = 0$, è parallelo all'asse $x$
-- $b = 0$, è parallelo all'asse $y$
-- $c = 0$, è parallelo all'asse $z$
-- $d = 0$, passa per l'origine
-
 ## Insieme di livello
 
 L'**insieme di livello** associato a $k \in \mathbb{R}$ di una funzione $f$ è:

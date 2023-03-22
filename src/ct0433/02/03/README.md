@@ -30,6 +30,6 @@ $$
 ## Tipi di curva
 
 In questo caso, la curva si dice:
-- **Regolare** se $v(\theta)^2 = f'(\theta)^2 + f(\theta)^2 = \neq 0$
+- **Regolare** se $v(\theta)^2 = f'(\theta)^2 + f(\theta)^2 \neq 0$
 - **Chiusa** se $f(a) = f(b) \land a = b + 2k\pi$
 - **Semplice** se $\nexists \theta_1 \in I, \theta_2 \in \mathring{I} : \theta_1 = \theta_2 + 2k\pi \land f(\theta_1) = f(\theta_2)$
