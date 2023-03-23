@@ -18,6 +18,7 @@ Una cache è suddivisa in **sets** (i.e. righe), ed ogni _set_ è composto da mo
 Ogni _blocco_ contiene più byte provenienti dalle vicinanze dell'indirizzo di memoria su _RAM_ associato.
 
 L'accesso alla cache avviene tramite:
+- **Valid** bit, che specifica se il blocco è vuoto (e.g. dopo l'accensione)
 - **Tag**, che contiene i rimanenti bit dell'indirizzo per evitare [collisioni](https://it.wikipedia.org/wiki/Principio_dei_cassetti)
 - **Index**, che indentifica il _set_ in cui si trova il blocco
 - **Offset**, che identifica quale sotto-blocco (i.e. byte) è richiesto del blocco
