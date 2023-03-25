@@ -21,7 +21,7 @@ $$
 
 Un'equazione è lineare a **coefficienti costanti** quando:
 $$
-y'' + ay' + by' = f(t)
+y'' + ay' + by = f(t)
 $$
 con $a, b \in \mathbb{R}$.
 
@@ -76,7 +76,7 @@ $$
 y(t) = c_1e^{\alpha t}\cos(\beta t) + c_2e^{\alpha t}\sin(\beta t)
 $$
 Per esempio, con $z'' + 2z' + 3z = 0$ si ha:
-$$r^2 + 2r + 3 = 0 \Leftrightarrow z(t) = c_1e^{-t}\cos(\sqrt{2}t) - c_2e^{-t}\sin(\sqrt{2}t)$$
+$$r^2 + 2r + 3 = 0 \Leftrightarrow z(t) = c_1e^{-t}\cos(\sqrt{2}t) + c_2e^{-t}\sin(\sqrt{2}t)$$
 dato che $r_1 = -1 + i\sqrt{2}, r_2 = -1 - i\sqrt{2} \Rightarrow \alpha = -1, \beta = \sqrt{2}$.
 
 Di conseguenza, le soluzioni da unire in _combinazione lineare_ sono:
@@ -157,7 +157,7 @@ $$
 
 	Per esempio, con $y'' + y = 2\cos(t)$:
 $$
-\bar{y} = t(\bar{a}\cos(t) + \bar{b}\sin(t)) = x\sin(t)
+\bar{y} = t(\bar{a}\cos(t) + \bar{b}\sin(t)) = t\sin(t)
 $$
 	perchè $\Delta < 0$.
 

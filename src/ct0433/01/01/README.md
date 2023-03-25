@@ -53,7 +53,7 @@ $$
 \Downarrow \\
 \ln|y - 1| = \frac{t^2}{2} - t + c \\
 \Downarrow \\
-y = 1 + \pm e^{\frac{t^2}{2} - t + c} = 1 + ke^{\frac{t^2}{2} - t},\; k \in \mathbb{R}
+y = 1 \pm e^{\frac{t^2}{2} - t + c} = 1 + ke^{\frac{t^2}{2} - t},\; k \in \mathbb{R}
 $$
 dove $k$ include la _soluzione costante_, infatti $k = 0 \Rightarrow y = 1$.
 

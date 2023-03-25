@@ -3,7 +3,7 @@
 Avendo una curva $r\colon [a, b] \to \mathbb{R}^m$, è possibile associare alla $(m+1)$-esima dimensione la funzione:
 $$
 \begin{split}
-f\colon I \subseteq \mathbb{R}^m &\to \mathbb{R}^m \\
+f\colon I \subseteq \mathbb{R}^m &\to \mathbb{R} \\
 (x_1, x_2, ..., x_m) &\mapsto z = f(x_1, x_2, ..., x_m)
 \end{split}
 $$
@@ -42,7 +42,7 @@ $$
 \Downarrow \\
 \mathrm{Dom}(f) = \left]-2\sqrt{\frac{1}{\pi^2} + 1}, 2\sqrt{\frac{1}{\pi^2} + 1}\right[ \times \mathbb{R}
 $$
-Di conseguenza, $\mathrm{Im}(r) = [-2, 2] \subseteq \mathrm{Dom}(f)$ e quindi l'integrale di linea è calcolabile:
+Per cui, dato che $\mathrm{Im}(r) = [-2, 2] \times \mathbb{R} \subseteq \mathrm{Dom}(f)$, l'integrale di linea è calcolabile:
 $$
 \int_r f ds = \int_{-1}^1 \frac{4t^2}{\sqrt{4 + 4\pi^2 - 4\pi^2\cos^2(\pi t)}} \sqrt{4\pi^2 \sin^2(\pi t) + 4} dt = \int_{-1}^1 4t^2 dt = \frac{8}{3}
 $$

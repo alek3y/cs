@@ -21,8 +21,8 @@ Per esempio, se $r(t) = (t^2 + t, 2t - 1)$ e $-1 \leq t \leq 1$:
 si ottiene un'**arco di curva** di una _parabola capovolta_, perchè $t$ appartiene ad un **intervallo** $I \neq \mathbb{R}$.
 
 Altri esempi includono:
-- $r(t) = (r\cos(\theta) + x_0, r\sin(\theta) + y_0)$, cioè la circonferenza $(x - x_0)^2 + (y - y_0)^2 = r^2$.
-- $r(t) = (a\cos(\theta) + x_0, b\sin(\theta) + y_0)$, cioè l'ellissi $\frac{(x - x_0)^2}{a^2} + \frac{(y - y_0)^2}{b^2} = 1$
+- $r(\theta) = (r\cos(\theta) + x_0, r\sin(\theta) + y_0)$, cioè la circonferenza $(x - x_0)^2 + (y - y_0)^2 = r^2$.
+- $r(\theta) = (a\cos(\theta) + x_0, b\sin(\theta) + y_0)$, cioè l'ellissi $\frac{(x - x_0)^2}{a^2} + \frac{(y - y_0)^2}{b^2} = 1$
 - $r(t) = p + v(t - t_0)$, cioè la [retta](../../ct0435/03/README.md#retta) che passa per $p$ al tempo $t_0$ in direzione del vettore $v$
 
 Per esempio, se $r(t) = (t^2, t)$, la _tangente_ su $t_0 = 1$ sarà $s(t) = (1, 1) + (2, 1)(t - 1) = (2t - 1, t)$.
