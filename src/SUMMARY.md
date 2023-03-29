@@ -18,6 +18,8 @@
 	- [Funzioni a più variabili](./ct0433/03/README.md)
 		- [Tipi di funzioni](./ct0433/03/01/README.md)
 		- [Dominio](./ct0433/03/02/README.md)
+		- [Topologia](./ct0433/03/03/README.md)
+		- [Limiti](./ct0433/03/04/README.md)
 
 - [Architettura degli elaboratori - Mod. 2](./ct0615-2/README.md)
 	- [Pipeline](./ct0615-2/01/README.md)
