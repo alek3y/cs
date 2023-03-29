@@ -133,18 +133,39 @@
                     <main>
                         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
 <h1 id="memoria-virtuale"><a class="header" href="#memoria-virtuale">Memoria virtuale</a></h1>
-<p>La <strong>memoria virtuale</strong> genera, <strong>per ogni processo</strong>, uno <em>spazio di indirizzamento</em> <strong>virtuale</strong> con quantità maggiore di quella disponibile attraverso la <strong>swap</strong>, cioè parte del disco rigido che funge da memoria.</p>
-<p>La memoria è suddivisa in <strong>pagine</strong> di dimensione prefissata (come i blocchi della <em>cache</em>) indirizzate dal <strong>virtual page number</strong>, mentre il byte specifico è indirizzato dal <strong>page offset</strong> (i.e. primi <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9386em;vertical-align:-0.2441em;"></span><span class="mop"><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.207em;"><span style="top:-2.4559em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2441em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">s</span></span></span></span> bit, con <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">s</span></span></span></span> <em>page size</em>).
-Anche la memoria fisica, avendo la stessa <em>page size</em> viene indirizzata con <strong>physical page number</strong> e <strong>page offset</strong> uguale a quello della memoria virtuale.</p>
+<p>La <strong>memoria virtuale</strong> genera, <strong>per ogni processo</strong>, uno <em>spazio di indirizzamento</em> <strong>virtuale</strong> con quantità maggiore di quella disponibile attraverso la <strong>swap</strong>, cioè parte del disco rigido che fa da memoria.</p>
 <p>Attraverso l'uso di questa memoria, ogni processo:</p>
 <ul>
 <li>può usare <strong>più memoria di quella disponibile</strong></li>
 <li>ha lo spazio di indirizzamento <strong>isolato e protetto</strong> dagli altri processi</li>
 <li>può essere <strong>caricato ovunque</strong> in memoria, anche in regioni non continue</li>
 </ul>
-<p>La CPU lavora solamente con <em>indirizzi virtuali</em>, mentre altro hardware si occupa della <strong>traduzione</strong> dello <em>spazio indirizzato</em> in <em>indirizzo fisico</em>.
-Nel caso in cui la locazione richiesta non sia in memoria, la CPU viene <strong>notificata</strong> e si occuperà del processo di <strong>swapping</strong>, cioè il caricamento da <em>swap</em> a <em>RAM</em>.</p>
-<p>Le corrispondenze tra gli <em>indirizzi virtuali</em> e <em>fisici</em> vengono salvate all'interno della <strong>page table</strong> associata al processo, che si trova nella <em>RAM</em> all'indirizzo salvato dal <strong>page table register</strong>.</p>
+<p>La memoria è suddivisa in <strong>pagine</strong> di dimensione prefissata (come i blocchi della cache) indirizzate dal <strong>virtual page number</strong>, mentre il byte specifico è indirizzato dal <strong>page offset</strong> (i.e. primi <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9386em;vertical-align:-0.2441em;"></span><span class="mop"><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.207em;"><span style="top:-2.4559em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2441em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">s</span></span></span></span> bit, con <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">s</span></span></span></span> <em>page size</em>).
+Anche la memoria fisica, avendo la stessa <em>page size</em> viene indirizzata con <strong>physical page number</strong> e <strong>page offset</strong> uguale a quello della memoria virtuale.</p>
+<p>Le corrispondenze tra gli <em>indirizzi virtuali</em> e <em>fisici</em> vengono salvate all'interno della <strong>page table</strong> associata al processo, che si trova nella <em>RAM</em> all'indirizzo salvato dal <strong>page table register</strong> (diverso per ogni processo).</p>
+<p>Come per la cache, anche le pagine hanno dei <a href="../02/README.html#bit-di-stato">bit di stato</a>.</p>
+<h2 id="page-fault"><a class="header" href="#page-fault">Page fault</a></h2>
+<p>La CPU lavora solamente con <em>indirizzi virtuali</em>, mentre altro hardware si occupa della <strong>traduzione</strong> dello <em>spazio virtuale indirizzato</em> in <em>indirizzo fisico</em>.</p>
+<p>Se la locazione richiesta non si trova in memoria, la CPU viene <strong>notificata</strong> con un <strong>page fault</strong> e si occuperà del processo di <strong>swapping</strong>, cioè di copiare i dati dalla <em>swap</em> alla <em>RAM</em>, causando un <em>miss penalty</em> molto elevato.</p>
+<h2 id="translation-lookaside-buffer"><a class="header" href="#translation-lookaside-buffer">Translation Lookaside Buffer</a></h2>
+<p>Trovandosi in <em>RAM</em> l'accesso alla <em>page table</em> è molto lento, di conseguenza il <strong>TLB</strong> è una cache completamente dedicata al <strong>caching della page table</strong>, in particolare delle righe vicine a quelle lette più di recente.</p>
+<p>Nel caso avvenga un <strong>TLB miss</strong>, la pagina verrà caricata se presente nella <em>page table</em>, altrimenti verrà generato un <em>page fault</em> che forzerà lo <em>swapping</em>.</p>
+<h2 id="addressing-della-cache"><a class="header" href="#addressing-della-cache">Addressing della cache</a></h2>
+<p>Esistono tre modi in cui la cache può lavorare:</p>
+<ul>
+<li><strong>Physically addressed cache</strong>: per accedere alla cache l'<em>indirizzo virtuale</em> del dato dovrà prima essere tradotto in <em>fisico</em> con il <em>TLB</em> (e <em>page table</em> nel caso di <em>TLB miss</em>)</li>
+<li><strong>Virtually addressed cache</strong>: accede con <em>indirizzi virtuali</em> (non usa il <em>TLB</em>), ma può causare <strong>aliasing</strong>, e quindi due processi accedono allo stesso blocco se usano lo stesso <em>indirizzo virtuale</em> (capita spesso)</li>
+<li><strong>Virtually indexed but physically tagged</strong>: traduce comunque l'indirizzo con il <em>TLB</em>, ma <a href="../02/README.html#mapping">calcola</a> l'<em>index</em> dall'<em>indirizzo virtuale</em> e il <em>tag</em> da quello <em>fisico</em></li>
+</ul>
+<h2 id="sistema-operativo"><a class="header" href="#sistema-operativo">Sistema operativo</a></h2>
+<p>Nel caso di <strong>TLB miss</strong> o <strong>page fault</strong>, la <em>CPU</em> passa il controllo alla routine di gestione del <strong>sistema operativo</strong>.</p>
+<p>Facendo ciò passa anche da <strong>user mode</strong> a <strong>supervisor mode</strong> (o <em>kernel mode</em>), che permette al sistema di:</p>
+<ul>
+<li>modificare il <em>page table register</em></li>
+<li>modificare le entry <em>TLB</em></li>
+</ul>
+<p>Non potendo cambiare l'<strong>execution mode</strong> da <em>user mode</em> a <em>supervisor mode</em>, un programma dovrà affidarsi a delle <strong>system call</strong>.
+Un esempio su <em>ARM</em> è <code>svc</code>, che lancia un'<em>eccezione</em> elevando l'esecuzione in <em>supervisor mode</em> e quindi permettendo al <em>sistema operativo</em> di eseguire il servizio richiesto.</p>
 
                     </main>
 
