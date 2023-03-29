@@ -18,9 +18,8 @@ Una cache è suddivisa in **sets** (i.e. righe), ed ogni _set_ è composto da mo
 Ogni _blocco_ contiene più byte provenienti dalle vicinanze dell'indirizzo di memoria su _RAM_ associato.
 
 L'accesso alla cache avviene tramite:
-- **Valid** bit, che specifica se il blocco è vuoto (e.g. dopo l'accensione)
 - **Tag**, che contiene i rimanenti bit dell'indirizzo per evitare [collisioni](https://it.wikipedia.org/wiki/Principio_dei_cassetti)
-- **Index**, che indentifica il _set_ in cui si trova il blocco
+- **Index**, che identifica il _set_ in cui si trova il blocco
 - **Offset**, che identifica quale sotto-blocco (i.e. byte) è richiesto del blocco
 
 Per esempio, su una cache con $8$ _set_, $2$ _blocchi_ da $4$ byte ciascuno:
@@ -47,6 +46,20 @@ Tra le soluzioni a questo problema esistono due **politiche di coerenza**:
 - **Write through**: forza la scrittura su _RAM_ ad ogni `sw` (anche se _write-hit_, rallentando di molto la CPU)
 - **Write back**: scrive su _RAM_ quando `lw` fa collisione (rallentando `lw` nel caso di _read-miss_)
 
+## Bit di stato
+
+Oltre ai _tag_ e ai _dati_, ogni blocco contiene anche dei **bit di stato**:
+- **Valid** bit, che specifica se il blocco è **vuoto** (e.g. dopo l'accensione)
+- **Dirty** bit (per _write back_), indica se il blocco è stato **modificato** e va copiato al momento del rimpiazzo
+- **Reference** bit, in caso di conflitti indica se il blocco è preferibile (i.e. se a $0$) per la **sovrascrittura** (per la politica _Least Recently Used_, i.e. impostato a $0$ periodicamente e a $1$ all'accesso)
+
+## Tipi di miss
+
+Oltre ai normali _miss_, esistono anche altri tre tipi di _miss_:
+- **Compulsory**, cioè i _miss certi_: se la cache è vuota (i.e. _valid bit_ a $0$)
+- **Capacity**: se un blocco continua ad essere _sovrascritto_ e a fare _miss_, quando la cache è troppo piccola
+- **Collisions**, cioè i [conflitti](#conflitti): non capita se è _completamente associativa_, ovvero composta da un solo _set_
+
 ## Performance
 
 Siano:
@@ -55,7 +68,7 @@ Siano:
 - $T$: il **periodo di clock**, ovvero il tempo richiesto da ogni ciclo
 - $m_p$: il **miss penalty**, cioè la quantità di cicli che vengono sprecati nel caso di _miss_
 - $m_r$: il **miss ratio**, cioè la percentuale di istruzioni che causano _miss_
-- $m_{r_I}$: l'**istruction miss ratio**, cioè la percentuale di _miss_ causati dal **fetch** delle istruzioni
+- $m_{r_I}$: l'**instruction miss ratio**, cioè la percentuale di _miss_ causati dal **fetch** delle istruzioni
 - $m_{r_D}$: il **data miss ratio**, che riguarda i normali _miss_ dei dati
 - $c_{\texttt{HLT}}$: il numero di **cicli di stallo**
 - $c_{\texttt{EXE}}$: il numero di **cicli di esecuzione**
@@ -72,10 +85,10 @@ $$
 
 Per esempio:
 $$
-m_{r_I} = 2\% = 0.02 \\
-m_{r_D} = 4\% = 0.04 \\
+m_{r_I} = 2\% = 0.02,\hspace{1em}
+m_{r_D} = 4\% = 0.04,\hspace{1em}
 m_p = 40 \\
-I_D = 36\% I = 0.36 I \\
+I_D = 36\% I = 0.36 I,\hspace{1em}
 \frac{c_{\texttt{EXE}}}{I} = 2 \\
 \Downarrow \\
 c_{\texttt{HLT}} = (0.02I + 0.04I_D) \cdot 40 = (0.02I + 0.04(0.36I)) \cdot 40 = 1.38I \\
