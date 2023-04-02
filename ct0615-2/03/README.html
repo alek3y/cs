@@ -166,6 +166,13 @@ Anche la memoria fisica, avendo la stessa <em>page size</em> viene indirizzata c
 </ul>
 <p>Non potendo cambiare l'<strong>execution mode</strong> da <em>user mode</em> a <em>supervisor mode</em>, un programma dovrà affidarsi a delle <strong>system call</strong>.
 Un esempio su <em>ARM</em> è <code>svc</code>, che lancia un'<em>eccezione</em> elevando l'esecuzione in <em>supervisor mode</em> e quindi permettendo al <em>sistema operativo</em> di eseguire il servizio richiesto.</p>
+<p>Durante un <em>page fault</em>, mentre i dati vengono copiati in <em>RAM</em>, il <em>sistema operativo</em> effettua un <strong>context switch</strong> cioè <strong>salva i registri</strong> del processo corrente e <strong>riprende l'esecuzione</strong> di un altro.
+Inoltre, per evitare che il nuovo processo acceda a regioni non permesse, la <em>TLB</em> viene <strong>svuotata</strong> a meno che ad ogni pagina non sia <strong>associato</strong> l'<strong>ASID</strong> (<em>Address Space ID</em>, ovvero il <em>PID</em>), causando <em>miss</em> per processi diversi.</p>
+<h2 id="page-table-multilivello"><a class="header" href="#page-table-multilivello">Page table multilivello</a></h2>
+<p>Generare una <em>page table</em> per ogni processo <strong>riempirebbe</strong> la <em>RAM</em>, considerata la quantità di <em>indirizzi virtuali</em>.
+Per questo, <em>ARM</em> utilizza più <strong>livelli</strong> di <em>page table</em> suddividendo il <em>virtual page number</em> in <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">9</span></span></span></span> bit.</p>
+<p>Per esempio, con i primi <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">9</span></span></span></span> bit si trova dalla prima <em>page table</em> l'indirizzo della seconda, con i <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">9</span></span></span></span> successivi si trova nella seconda l'indirizzo della terza <em>page table</em>, e così via fino all'ultima che dà l'<em>indirizzo fisico</em>.</p>
+<p>In questo modo, solamente le <em>page table</em> interessate al processo verranno caricate in memoria (e.g. la maggior parte degli indirizzi hanno gli stessi bit più significativi).</p>
 
                     </main>
 
