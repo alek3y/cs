@@ -43,3 +43,15 @@ Facendo ciò passa anche da **user mode** a **supervisor mode** (o _kernel mode_
 
 Non potendo cambiare l'**execution mode** da _user mode_ a _supervisor mode_, un programma dovrà affidarsi a delle **system call**.
 Un esempio su _ARM_ è `svc`, che lancia un'_eccezione_ elevando l'esecuzione in _supervisor mode_ e quindi permettendo al _sistema operativo_ di eseguire il servizio richiesto.
+
+Durante un _page fault_, mentre i dati vengono copiati in _RAM_, il _sistema operativo_ effettua un **context switch** cioè **salva i registri** del processo corrente e **riprende l'esecuzione** di un altro.
+Inoltre, per evitare che il nuovo processo acceda a regioni non permesse, la _TLB_ viene **svuotata** a meno che ad ogni pagina non sia **associato** l'**ASID** (_Address Space ID_, ovvero il _PID_), causando _miss_ per processi diversi.
+
+## Page table multilivello
+
+Generare una _page table_ per ogni processo **riempirebbe** la _RAM_, considerata la quantità di _indirizzi virtuali_.
+Per questo, _ARM_ utilizza più **livelli** di _page table_ suddividendo il _virtual page number_ in $9$ bit.
+
+Per esempio, con i primi $9$ bit si trova dalla prima _page table_ l'indirizzo della seconda, con i $9$ successivi si trova nella seconda l'indirizzo della terza _page table_, e così via fino all'ultima che dà l'_indirizzo fisico_.
+
+In questo modo, solamente le _page table_ interessate al processo verranno caricate in memoria (e.g. la maggior parte degli indirizzi hanno gli stessi bit più significativi).
