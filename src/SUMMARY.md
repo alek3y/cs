@@ -19,7 +19,10 @@
 		- [Tipi di funzioni](./ct0433/03/01/README.md)
 		- [Dominio](./ct0433/03/02/README.md)
 		- [Topologia](./ct0433/03/03/README.md)
-		- [Limiti](./ct0433/03/04/README.md)
+		- [Disuguaglianze](./ct0433/03/04/README.md)
+		- [Limiti](./ct0433/03/05/README.md)
+			- [Continuità](./ct0433/03/05/01/README.md)
+			- [Calcolo dei limiti](./ct0433/03/05/02/README.md)
 
 - [Architettura degli elaboratori - Mod. 2](./ct0615-2/README.md)
 	- [Pipeline](./ct0615-2/01/README.md)
