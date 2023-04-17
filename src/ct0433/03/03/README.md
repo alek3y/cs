@@ -26,7 +26,7 @@ Da cui si ricavano gli insiemi dei punti:
 Un insieme $E \subseteq \mathbb{R}^n$ si dice:
 - **Aperto**: se $E = \mathring{E}$ e quindi se $E$ non ha alcun punto di $\partial E$
 - **Chiuso**: se $E = \bar{E}$ e quindi se $E$ contiene tutti i punti di $\partial E$
-- **Limitato**: se $\exists r > 0 : E \subset U_r((0, 0)) \supseteq E$
+- **Limitato**: se $\exists r > 0 : E \subset U_r((0, 0))$
 - **Connesso**: se dati $x_{1,2} \in E$, esiste una curva $z \in C^0$ per cui $x_{1,2} \in \gamma(z) \subseteq E$
 
 Per esempio, $E = \{(x, y) \in \mathbb{R}^2 : 1 \leq (x-1)^2 + (y+1)^2 \leq 3\}$ è l'area tra le circonferenze con centro $(1, -1)$ di raggio $1$ e $\sqrt{3}$ ed è _chiusa_ perchè $\partial E \subset E$, _limitata_ perchè $E \subset U_{10}((0, 0))$ e _connessa_.
