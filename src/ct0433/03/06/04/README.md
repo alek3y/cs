@@ -103,3 +103,45 @@ H_f(x, y) = \begin{pmatrix}
 2x^2 + 3y^2
 $$
 per cui $f$ verso $\vec{x}_0$ tenderà ad un [paraboloide ellittico](../../01/README.md#paraboloide-ellittico) con il vertice sull'origine, da cui $\vec{x}_0$ è **punto di minimo**.
+
+### Test dell'Hessiana
+
+Siano $\lambda_1, \lambda_2, ..., \lambda_n$ gli [autovalori](../../../../ct0435/09/README.md) associati ad $H_f$, il cui _paraboloide_ ha equazione $z = \vec{x}^T H_f \vec{x}$, allora:
+
+| Condizione | Tipo di matrice di $H_f$ | Forma di $\vec{x}^T H_f \vec{x}$ |
+|:-:|:-:|:-:|
+| $\lambda_i > 0, \forall i$ | Definita **positiva** | Paraboloide **ellittico verso l'alto**, perchè $$\vec{x}^T H_f \vec{x} > 0, \forall \vec{x} \neq \vec{0}$$ quindi $\forall \vec{x}$ del paraboloide hanno $z \geq 0$ |
+| $\lambda_i < 0, \forall i$ | Definita **negativa** | Paraboloide **ellittico verso il basso**, perchè $$\vec{x}^T H_f \vec{x} < 0, \forall \vec{x} \neq \vec{0}$$ |
+| $\exists i,j : \lambda_i\lambda_j < 0$ | **Indefinita** | Paraboloide **iperbolico**, perchè $$\exists \vec{x}_{1,2} : \vec{x}_1^T H_f \vec{x}_1 < 0 \land \vec{x}_2^T H_f \vec{x}_2 > 0$$ quindi alcuni $\vec{x}$ hanno $z$ positiva e altri negativa |
+| $\lambda_i \geq 0, \forall i$ | **Semi**-definita **positiva** | Paraboloide **ellittico verso l'alto** |
+| $\lambda_i \leq 0, \forall i$ | **Semi**-definita **negativa** | Paraboloide **ellittico verso il basso** |
+
+In $\mathbb{R}^2$, dato che $\det(H_f) = \lambda_1\lambda_2$:
+$$
+\det(H_f) > 0 \Rightarrow
+\mathrm{sgn}(\lambda_{1,2}) = \mathrm{sgn}((H_f)_{11}) = \mathrm{sgn}\left(\frac{\partial^2 f}{\partial x^2}\right)
+$$
+altrimenti $H_f$ è _indefinita_ se $\det(H_f) < 0$, e il test dell'_Hessiana_ non si può usare se $\det(H_f) = 0$.
+
+Per esempio, se $f(x, y) = x^2 + 2y^2 - x^2y$ si ha che:
+$$
+\nabla f(x, y) = \vec{0} \Leftrightarrow
+\begin{pmatrix}2x(1 - y) \\ 4y - x^2\end{pmatrix} = \begin{pmatrix}0 \\ 0\end{pmatrix} \Leftrightarrow
+\begin{cases}
+x = 0 \lor y = 2 \\
+x = \pm 2\sqrt{y}
+\end{cases} \\[0.5em]
+H_f(x, y) = \begin{pmatrix}
+2 - 2y & -2x \\
+-2x & 4
+\end{pmatrix}
+$$
+allora $P_1 = (0, 0)$, $P_2 = (2, 1)$ e $P_3 = (-2, 1)$ sono _punti critici_:
+$$
+\begin{split}
+\det(H_f(P_1)) &= \det\begin{pmatrix}2 & 0 \\ 0 & 4\end{pmatrix} = 8 > 0 \\
+\det(H_f(P_2)) &= \det\begin{pmatrix}0 & -4 \\ -4 & 4\end{pmatrix} = -16 < 0 \\
+\det(H_f(P_3)) &= \det\begin{pmatrix}0 & 4 \\ 4 & 4\end{pmatrix} = -16 < 0
+\end{split}
+$$
+per cui $P_1$ è punto di _minimo relativo_, perchè $(H_f(P_1))_{11} = 2 > 0$, mentre $P_2$ e $P_3$ sono punti di _sella_.
