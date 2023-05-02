@@ -17,7 +17,7 @@ La sintassi si può riassumere principalmente in:
 | `bl label` | Salva il _program counter_ e salta alla funzione `label` |
 | `ret` | Esce dalla funzione ripristinando il _program counter_ |
 | `str w0, [sp]` | Salva `w0` sui primi 4 byte all'indirizzo `sp` |
-| `str x0, [sp, #-8]!` | Salva 8 byte su `sp += 8` (_pre-indexed_, e.g. `++sp`) |
+| `str x0, [sp, #-8]!` | Salva 8 byte su `sp = sp-8` (_pre-indexed_, e.g. `--sp`) |
 | `ldr x0, [sp, #8]` | Carica da `sp+8` (_offset_, quindi `sp` non cambia) su `x0` |
 | `ldr x0, [sp], #8` | Carica da `sp` (_post indexed_, e.g. `sp++`) e aggiorna `sp = sp+8` |
 
