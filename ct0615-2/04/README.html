@@ -148,7 +148,7 @@
 <tr><td style="text-align: right"><code>bl label</code></td><td style="text-align: left">Salva il <em>program counter</em> e salta alla funzione <code>label</code></td></tr>
 <tr><td style="text-align: right"><code>ret</code></td><td style="text-align: left">Esce dalla funzione ripristinando il <em>program counter</em></td></tr>
 <tr><td style="text-align: right"><code>str w0, [sp]</code></td><td style="text-align: left">Salva <code>w0</code> sui primi 4 byte all'indirizzo <code>sp</code></td></tr>
-<tr><td style="text-align: right"><code>str x0, [sp, #-8]!</code></td><td style="text-align: left">Salva 8 byte su <code>sp += 8</code> (<em>pre-indexed</em>, e.g. <code>++sp</code>)</td></tr>
+<tr><td style="text-align: right"><code>str x0, [sp, #-8]!</code></td><td style="text-align: left">Salva 8 byte su <code>sp = sp-8</code> (<em>pre-indexed</em>, e.g. <code>--sp</code>)</td></tr>
 <tr><td style="text-align: right"><code>ldr x0, [sp, #8]</code></td><td style="text-align: left">Carica da <code>sp+8</code> (<em>offset</em>, quindi <code>sp</code> non cambia) su <code>x0</code></td></tr>
 <tr><td style="text-align: right"><code>ldr x0, [sp], #8</code></td><td style="text-align: left">Carica da <code>sp</code> (<em>post indexed</em>, e.g. <code>sp++</code>) e aggiorna <code>sp = sp+8</code></td></tr>
 </tbody></table>
