@@ -28,6 +28,7 @@
 			- [Derivata direzionale](./ct0433/03/06/02/README.md)
 			- [Massimi e minimi](./ct0433/03/06/03/README.md)
 			- [Derivate seconde](./ct0433/03/06/04/README.md)
+	- [Integrali doppi](./ct0433/04/README.md)
 
 - [Architettura degli elaboratori - Mod. 2](./ct0615-2/README.md)
 	- [Pipeline](./ct0615-2/01/README.md)

@@ -4,7 +4,7 @@ L'integrale **definito**,
 $$\int_a^b f(x)dx$$
 serve per calcolare l'**area** del trapezoide tra il grafico di $f$, l'asse $x$ e $x = a$ e $x = b$.
 
-L'area può essere _approssimata_ attraverso:
+L'area può essere [approssimata](https://www.desmos.com/calculator/7ismmr96z2) attraverso dei [plurirettangoli](https://en.wikipedia.org/wiki/Riemann_sum):
 - **Plurirettangoli inscritti**:
 
 	Per cui l'area è approssimata dalla somma delle aree dei rettangoli inscritti nel grafico sottostante a $f$:
