@@ -29,6 +29,9 @@
 			- [Massimi e minimi](./ct0433/03/06/03/README.md)
 			- [Derivate seconde](./ct0433/03/06/04/README.md)
 	- [Integrali doppi](./ct0433/04/README.md)
+		- [Domini non rettangolari](./ct0433/04/01/README.md)
+		- [Cambio di variabili](./ct0433/04/02/README.md)
+		- [Baricentro](./ct0433/04/03/README.md)
 
 - [Architettura degli elaboratori - Mod. 2](./ct0615-2/README.md)
 	- [Pipeline](./ct0615-2/01/README.md)
