@@ -48,7 +48,7 @@ $$
 
 Il **teorema della media** dice che, avendo una funzione $f \in C^0 : [a, b] \to \mathbb{R}$, allora:
 $$\exists c \in [a, b] : f(c) = \frac{\int_a^b f(x) dx}{b - a}$$
-dove $(b - a) \cdot f(c)$ può essere pensato come **base** per **altezza**.
+dove $(b - a) \cdot f(c)$ può essere [pensato](https://www.desmos.com/calculator/g0chdc1fu1) come **base** per **altezza**.
 
 ## Teorema fondamentale del calcolo integrale
 
