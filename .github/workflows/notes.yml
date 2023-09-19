@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
 
     steps:
       - uses: actions/checkout@v3
@@ -18,12 +18,12 @@ jobs:
       - name: Setup mdBook
         uses: peaceiris/actions-mdbook@v1
         with:
-          mdbook-version: '0.4.21'
+          mdbook-version: '0.4.34'
 
       - name: Download the katex preprocessor
         run: |
-          wget 'https://github.com/lzanini/mdbook-katex/releases/download/v0.2.17/mdbook-katex-v0.2.17-x86_64-unknown-linux-gnu.tar.gz'
-          tar xvf mdbook-katex-v0.2.17-x86_64-unknown-linux-gnu.tar.gz
+          wget 'https://github.com/lzanini/mdbook-katex/releases/download/v0.5.7/mdbook-katex-v0.5.7-x86_64-unknown-linux-gnu.tar.gz'
+          tar xvf mdbook-katex-v0.5.7-x86_64-unknown-linux-gnu.tar.gz
           mv -v mdbook-katex ~/.cargo/bin
 
       - name: Build the book files
@@ -33,5 +33,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{secrets.GITHUB_TOKEN}}
-          publish_dir: ./book/html
+          publish_dir: ./book
           publish_branch: book

@@ -22,5 +22,3 @@ enable = true
 
 [output.html.print]
 enable = false
-
-[output.katex]
