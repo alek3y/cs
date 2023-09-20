@@ -2,6 +2,10 @@
 
 [Introduzione]()
 
+# Secondo anno
+
+- [Sistemi operativi](./ct0125-1/README.md)
+
 # Primo anno
 
 - [Calcolo 2](./ct0433/README.md)
