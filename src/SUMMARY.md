@@ -51,9 +51,6 @@
 		- [Arbitraggio](./ct0615-2/05/01/README.md)
 		- [Controller](./ct0615-2/05/02/README.md)
 
-- [Programmazione e laboratorio](./ct0442/README.md)
-	- [Fondamenti](./ct0442/01/README.md)
-
 - [Calcolo 1](./ct0432/README.md)
 	- [Insiemi](./ct0432/01/README.md)
 	- [Numeri reali](./ct0432/02/README.md)

@@ -1,1 +1,0 @@
-# Programmazione e laboratorio
