@@ -14,16 +14,17 @@
 	--searchbar-fg: var(--fg);
 }
 
-.chapter li a.active > strong {
-	color: var(--sidebar-fg);
-}
-
 .chapter li a.active {
 	font-weight: 600;
 }
 
 .chapter li a.active > strong {
+	color: var(--sidebar-fg);
 	font-weight: bold;
+}
+
+.chapter li a:hover > strong {
+	color: var(--sidebar-fg);
 }
 
 /* Customize the fold symbol */
@@ -40,5 +41,5 @@
 }
 
 .chapter li.expanded > a.toggle::after {
-	transform: translate(0.145em, 0.2em) rotate(90deg);
+	transform: translate(0.12em, 0.1em) rotate(90deg);
 }
