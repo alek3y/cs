@@ -1,8 +1,10 @@
-# Informatica
+# Computer Science
 
 [Introduzione]()
 
 # Secondo anno
+
+- [Probabilità e statistica](./ct0111/README.md)
 
 - [Sistemi operativi](./ct0125-1/README.md)
 
