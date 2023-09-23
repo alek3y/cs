@@ -40,4 +40,4 @@ Per provare le operazioni in _IEEE754_ si può usare [questo sito](http://weitz.
 ## Errori di precisione
 
 Il troncamento avviene quando non ci sono bit sufficienti nella mantissa.
-Questo significa che a volte le somme potrebbero perdere precisione se si lavora con **numeri troppo grandi e troppo piccoli**.
+Questo significa che a volte le operazioni potrebbero perdere precisione se si lavora con numeri con **troppe cifre decimali**.
