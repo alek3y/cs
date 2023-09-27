@@ -171,6 +171,8 @@
 <li>applicazioni software, eseguite in modalità <strong>utente</strong></li>
 </ul>
 <p>L'astrazione delle risorse permette di rendere i <em>software</em> indipendenti dall'<em>hardware</em>.</p>
+<p>Nei registri usati dai processi, esiste il <strong>Program Status Word</strong> contenente lo <em>stato</em> e la <em>modalità</em> in cui si trova.
+Tramite una <strong>trap</strong> (i.e. un'eccezione che porta la <em>CPU</em> in modalità <em>kernel</em>) viene poi eseguita una <strong>system call</strong>.</p>
 <h2 id="storia"><a class="header" href="#storia">Storia</a></h2>
 <p>L'evoluzione dei <em>sistemi operativi</em> è suddivisa in:</p>
 <ol>
@@ -204,7 +206,35 @@ In seguito venne introdotto il <strong>time-sharing</strong>, per cui lo <em>sch
 <p>Sopra <em>Internet</em> venne diffuso il modello <strong>client/server</strong> e il <strong>World Wide Web</strong>.</p>
 <p>Nella programmazione invece, si diffuse l'<strong>Object Oriented Programming</strong> e il software <strong>open source</strong>.</p>
 </li>
+<li>
+<p><strong>Vᵃ generazione</strong> (1990-):</p>
+<p>In questo periodo si sviluppò la tecnologià per la <strong>mobilità</strong>, come i S.O. mobili e il risparmio energetico.</p>
+</li>
 </ol>
+<h2 id="tipi"><a class="header" href="#tipi">Tipi</a></h2>
+<p>Ogni S.O. è progettato in base al suo scopo, tra cui in particolare:</p>
+<ul>
+<li><strong>Embedded</strong> (e.g. elettrodomestici): in grado di gestire efficacemente le risorse su dispositivi limitati</li>
+<li><strong>Smartphone</strong> (o <em>PDA</em> con <em>telefonia</em>)</li>
+<li><strong>Real-time</strong>: per programmi che richiedono poco timeout</li>
+<li><strong>Server</strong>: supportano molteplici connessioni e servizi</li>
+<li><strong>Multiprocessore</strong>: in grado di gestire la <em>coerenza</em> tra processori</li>
+<li><strong>Mainframe</strong>: per potenti computer centralizzati</li>
+</ul>
+<h2 id="componenti"><a class="header" href="#componenti">Componenti</a></h2>
+<p>La comunicazione tra dispositivi avviene attraverso i <strong>bus</strong>, cioè un insieme di <strong>tracce</strong> o collegamenti elettrici.
+Nelle trasmissioni di due dispositivi, il <em>bus</em> è detto <strong>porta</strong>.
+Quando sono di più invece, è detto <strong>canale</strong> di <em>I/O</em>.</p>
+<p>Tra i <em>bus</em> più importanti, con velocità nell'<strong>ordine dei MHz</strong>, ci sono:</p>
+<ul>
+<li><strong>USB</strong> (<em>Universal Serial Bus</em>): dedicata a dispositivi <em>plug and play</em> lenti</li>
+<li><strong>FSB</strong> (<em>Front-side bus</em>): collega la <em>CPU</em> alla <em>RAM</em></li>
+<li><strong>SATA</strong> (<em>Serial AT Attachment</em>): per la connessione di dischi esterni</li>
+<li><strong>SCSI</strong> (<em>Small Computer System Interface</em>): alternativa a <em>SATA</em></li>
+<li><strong>PCIe</strong> (<em>Peripheral Component Interconnect Express</em>): collegamento standard per periferiche aggiuntive</li>
+<li><strong>DMI</strong> (<em>Direct Media Interface</em>): connette la <em>CPU</em> con il controller di periferiche</li>
+<li><strong>AGP</strong> (<em>Accelerated Graphic Port</em>): per il collegamento di schede video</li>
+</ul>
 
                     </main>
 
