@@ -1,0 +1,268 @@
+<!DOCTYPE HTML>
+<html lang="it" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Basi di Dati - Computer Science</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="Appunti per il corso di Informatica all&#x27;Università di Venezia">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../book.css">
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item affix "><div>Introduzione</div></li><li class="chapter-item affix "><li class="part-title">Secondo anno</li><li class="chapter-item expanded "><a href="../ct0006-1/README.html" class="active"><strong aria-hidden="true">1.</strong> Basi di Dati</a></li><li class="chapter-item "><a href="../ct0371-1/README.html"><strong aria-hidden="true">2.</strong> Algoritmi e strutture dati - Mod. 1</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ct0371-1/01/README.html"><strong aria-hidden="true">2.1.</strong> Complessità asintotica</a></li></ol></li><li class="chapter-item "><a href="../ct0111/README.html"><strong aria-hidden="true">3.</strong> Probabilità e statistica</a></li><li class="chapter-item "><a href="../ct0125-1/README.html"><strong aria-hidden="true">4.</strong> Sistemi operativi</a></li><li class="chapter-item affix "><li class="part-title">Primo anno</li><li class="chapter-item "><a href="../ct0433/README.html"><strong aria-hidden="true">5.</strong> Calcolo 2</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ct0433/01/README.html"><strong aria-hidden="true">5.1.</strong> Equazioni differenziali ordinarie</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ct0433/01/01/README.html"><strong aria-hidden="true">5.1.1.</strong> Primo ordine</a></li><li class="chapter-item "><a href="../ct0433/01/02/README.html"><strong aria-hidden="true">5.1.2.</strong> Secondo ordine</a></li></ol></li><li class="chapter-item "><a href="../ct0433/02/README.html"><strong aria-hidden="true">5.2.</strong> Curve parametriche</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ct0433/02/01/README.html"><strong aria-hidden="true">5.2.1.</strong> Proprietà</a></li><li class="chapter-item "><a href="../ct0433/02/02/README.html"><strong aria-hidden="true">5.2.2.</strong> Tipi di curve</a></li><li class="chapter-item "><a href="../ct0433/02/03/README.html"><strong aria-hidden="true">5.2.3.</strong> Coordinate polari</a></li><li class="chapter-item "><a href="../ct0433/02/04/README.html"><strong aria-hidden="true">5.2.4.</strong> Lunghezza</a></li><li class="chapter-item "><a href="../ct0433/02/05/README.html"><strong aria-hidden="true">5.2.5.</strong> Parametro d'arco</a></li><li class="chapter-item "><a href="../ct0433/02/06/README.html"><strong aria-hidden="true">5.2.6.</strong> Integrale di linea</a></li></ol></li><li class="chapter-item "><a href="../ct0433/03/README.html"><strong aria-hidden="true">5.3.</strong> Funzioni a più variabili</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ct0433/03/01/README.html"><strong aria-hidden="true">5.3.1.</strong> Tipi di funzioni</a></li><li class="chapter-item "><a href="../ct0433/03/02/README.html"><strong aria-hidden="true">5.3.2.</strong> Dominio</a></li><li class="chapter-item "><a href="../ct0433/03/03/README.html"><strong aria-hidden="true">5.3.3.</strong> Topologia</a></li><li class="chapter-item "><a href="../ct0433/03/04/README.html"><strong aria-hidden="true">5.3.4.</strong> Disuguaglianze</a></li><li class="chapter-item "><a href="../ct0433/03/05/README.html"><strong aria-hidden="true">5.3.5.</strong> Limiti</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ct0433/03/05/01/README.html"><strong aria-hidden="true">5.3.5.1.</strong> Continuità</a></li><li class="chapter-item "><a href="../ct0433/03/05/02/README.html"><strong aria-hidden="true">5.3.5.2.</strong> Calcolo dei limiti</a></li></ol></li><li class="chapter-item "><a href="../ct0433/03/06/README.html"><strong aria-hidden="true">5.3.6.</strong> Derivate</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ct0433/03/06/01/README.html"><strong aria-hidden="true">5.3.6.1.</strong> Piano tangente</a></li><li class="chapter-item "><a href="../ct0433/03/06/02/README.html"><strong aria-hidden="true">5.3.6.2.</strong> Derivata direzionale</a></li><li class="chapter-item "><a href="../ct0433/03/06/03/README.html"><strong aria-hidden="true">5.3.6.3.</strong> Massimi e minimi</a></li><li class="chapter-item "><a href="../ct0433/03/06/04/README.html"><strong aria-hidden="true">5.3.6.4.</strong> Derivate seconde</a></li></ol></li></ol></li><li class="chapter-item "><a href="../ct0433/04/README.html"><strong aria-hidden="true">5.4.</strong> Integrali doppi</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ct0433/04/01/README.html"><strong aria-hidden="true">5.4.1.</strong> Domini non rettangolari</a></li><li class="chapter-item "><a href="../ct0433/04/02/README.html"><strong aria-hidden="true">5.4.2.</strong> Cambio di variabili</a></li><li class="chapter-item "><a href="../ct0433/04/03/README.html"><strong aria-hidden="true">5.4.3.</strong> Baricentro</a></li></ol></li></ol></li><li class="chapter-item "><a href="../ct0615-2/README.html"><strong aria-hidden="true">6.</strong> Architettura degli elaboratori - Mod. 2</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ct0615-2/01/README.html"><strong aria-hidden="true">6.1.</strong> Pipeline</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ct0615-2/01/01/README.html"><strong aria-hidden="true">6.1.1.</strong> Implementazione</a></li><li class="chapter-item "><a href="../ct0615-2/01/02/README.html"><strong aria-hidden="true">6.1.2.</strong> Hazards</a></li><li class="chapter-item "><a href="../ct0615-2/01/03/README.html"><strong aria-hidden="true">6.1.3.</strong> Forwarding</a></li><li class="chapter-item "><a href="../ct0615-2/01/04/README.html"><strong aria-hidden="true">6.1.4.</strong> Eccezioni e interrupt</a></li><li class="chapter-item "><a href="../ct0615-2/01/05/README.html"><strong aria-hidden="true">6.1.5.</strong> Multiple issue</a></li></ol></li><li class="chapter-item "><a href="../ct0615-2/02/README.html"><strong aria-hidden="true">6.2.</strong> Cache</a></li><li class="chapter-item "><a href="../ct0615-2/03/README.html"><strong aria-hidden="true">6.3.</strong> Memoria virtuale</a></li><li class="chapter-item "><a href="../ct0615-2/04/README.html"><strong aria-hidden="true">6.4.</strong> Assembly</a></li><li class="chapter-item "><a href="../ct0615-2/05/README.html"><strong aria-hidden="true">6.5.</strong> I/O</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ct0615-2/05/01/README.html"><strong aria-hidden="true">6.5.1.</strong> Arbitraggio</a></li><li class="chapter-item "><a href="../ct0615-2/05/02/README.html"><strong aria-hidden="true">6.5.2.</strong> Controller</a></li></ol></li></ol></li><li class="chapter-item "><a href="../ct0432/README.html"><strong aria-hidden="true">7.</strong> Calcolo 1</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ct0432/01/README.html"><strong aria-hidden="true">7.1.</strong> Insiemi</a></li><li class="chapter-item "><a href="../ct0432/02/README.html"><strong aria-hidden="true">7.2.</strong> Numeri reali</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ct0432/02/01/README.html"><strong aria-hidden="true">7.2.1.</strong> Assiomi</a></li><li class="chapter-item "><a href="../ct0432/02/02/README.html"><strong aria-hidden="true">7.2.2.</strong> Estremi</a></li><li class="chapter-item "><a href="../ct0432/02/03/README.html"><strong aria-hidden="true">7.2.3.</strong> Intervalli</a></li><li class="chapter-item "><a href="../ct0432/02/04/README.html"><strong aria-hidden="true">7.2.4.</strong> Cardinalità e numerabilità</a></li></ol></li><li class="chapter-item "><a href="../ct0432/03/README.html"><strong aria-hidden="true">7.3.</strong> Funzioni</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ct0432/03/01/README.html"><strong aria-hidden="true">7.3.1.</strong> Immagine e controimmagine</a></li><li class="chapter-item "><a href="../ct0432/03/02/README.html"><strong aria-hidden="true">7.3.2.</strong> Tipi di funzione</a></li><li class="chapter-item "><a href="../ct0432/03/03/README.html"><strong aria-hidden="true">7.3.3.</strong> Operazioni tra funzioni</a></li><li class="chapter-item "><a href="../ct0432/03/04/README.html"><strong aria-hidden="true">7.3.4.</strong> Funzioni elementari</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ct0432/03/04/01/README.html"><strong aria-hidden="true">7.3.4.1.</strong> Potenze</a></li><li class="chapter-item "><a href="../ct0432/03/04/02/README.html"><strong aria-hidden="true">7.3.4.2.</strong> Esponenziali e logaritmiche</a></li><li class="chapter-item "><a href="../ct0432/03/04/03/README.html"><strong aria-hidden="true">7.3.4.3.</strong> Valore assoluto e segno</a></li><li class="chapter-item "><a href="../ct0432/03/04/04/README.html"><strong aria-hidden="true">7.3.4.4.</strong> Trigonometriche</a></li><li class="chapter-item "><a href="../ct0432/03/04/05/README.html"><strong aria-hidden="true">7.3.4.5.</strong> Angoli notevoli</a></li><li class="chapter-item "><a href="../ct0432/03/04/06/README.html"><strong aria-hidden="true">7.3.4.6.</strong> Iperboliche</a></li></ol></li></ol></li><li class="chapter-item "><a href="../ct0432/04/README.html"><strong aria-hidden="true">7.4.</strong> Limiti</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ct0432/04/01/README.html"><strong aria-hidden="true">7.4.1.</strong> Teoremi</a></li><li class="chapter-item "><a href="../ct0432/04/02/README.html"><strong aria-hidden="true">7.4.2.</strong> Algebra dei limiti</a></li><li class="chapter-item "><a href="../ct0432/04/03/README.html"><strong aria-hidden="true">7.4.3.</strong> Funzioni continue</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ct0432/04/03/01/README.html"><strong aria-hidden="true">7.4.3.1.</strong> Operazioni tra funzioni</a></li><li class="chapter-item "><a href="../ct0432/04/03/02/README.html"><strong aria-hidden="true">7.4.3.2.</strong> Funzioni elementari</a></li><li class="chapter-item "><a href="../ct0432/04/03/03/README.html"><strong aria-hidden="true">7.4.3.3.</strong> Teoremi</a></li></ol></li><li class="chapter-item "><a href="../ct0432/04/04/README.html"><strong aria-hidden="true">7.4.4.</strong> Forme indeterminate</a></li><li class="chapter-item "><a href="../ct0432/04/05/README.html"><strong aria-hidden="true">7.4.5.</strong> Limiti notevoli</a></li></ol></li><li class="chapter-item "><a href="../ct0432/05/README.html"><strong aria-hidden="true">7.5.</strong> Derivate</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ct0432/05/01/README.html"><strong aria-hidden="true">7.5.1.</strong> Teoremi</a></li><li class="chapter-item "><a href="../ct0432/05/02/README.html"><strong aria-hidden="true">7.5.2.</strong> Derivate fondamentali</a></li><li class="chapter-item "><a href="../ct0432/05/03/README.html"><strong aria-hidden="true">7.5.3.</strong> Algebra delle derivate</a></li><li class="chapter-item "><a href="../ct0432/05/04/README.html"><strong aria-hidden="true">7.5.4.</strong> Proprietà locali</a></li><li class="chapter-item "><a href="../ct0432/05/05/README.html"><strong aria-hidden="true">7.5.5.</strong> Asintoti</a></li><li class="chapter-item "><a href="../ct0432/05/06/README.html"><strong aria-hidden="true">7.5.6.</strong> Teoremi fondamentali su intervalli</a></li><li class="chapter-item "><a href="../ct0432/05/07/README.html"><strong aria-hidden="true">7.5.7.</strong> Convessità, concavità e flessi</a></li></ol></li><li class="chapter-item "><a href="../ct0432/06/README.html"><strong aria-hidden="true">7.6.</strong> Studio di funzione</a></li><li class="chapter-item "><a href="../ct0432/07/README.html"><strong aria-hidden="true">7.7.</strong> Infiniti e infinitesimi</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ct0432/07/01/README.html"><strong aria-hidden="true">7.7.1.</strong> Polinomio di Taylor</a></li></ol></li><li class="chapter-item "><a href="../ct0432/08/README.html"><strong aria-hidden="true">7.8.</strong> Successioni</a></li><li class="chapter-item "><a href="../ct0432/09/README.html"><strong aria-hidden="true">7.9.</strong> Serie</a></li><li class="chapter-item "><a href="../ct0432/10/README.html"><strong aria-hidden="true">7.10.</strong> Integrali</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ct0432/10/01/README.html"><strong aria-hidden="true">7.10.1.</strong> Integrali fondamentali</a></li><li class="chapter-item "><a href="../ct0432/10/02/README.html"><strong aria-hidden="true">7.10.2.</strong> Algebra degli integrali</a></li><li class="chapter-item "><a href="../ct0432/10/03/README.html"><strong aria-hidden="true">7.10.3.</strong> Integrali definiti</a></li><li class="chapter-item "><a href="../ct0432/10/04/README.html"><strong aria-hidden="true">7.10.4.</strong> Integrali impropri</a></li></ol></li></ol></li><li class="chapter-item "><a href="../ct0434/README.html"><strong aria-hidden="true">8.</strong> Matematica discreta</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ct0434/01/README.html"><strong aria-hidden="true">8.1.</strong> Logica</a></li><li class="chapter-item "><a href="../ct0434/02/README.html"><strong aria-hidden="true">8.2.</strong> Insiemi</a></li><li class="chapter-item "><a href="../ct0434/03/README.html"><strong aria-hidden="true">8.3.</strong> Relazioni</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ct0434/03/01/README.html"><strong aria-hidden="true">8.3.1.</strong> Relazioni d'ordine</a></li><li class="chapter-item "><a href="../ct0434/03/02/README.html"><strong aria-hidden="true">8.3.2.</strong> Relazioni di equivalenza</a></li><li class="chapter-item "><a href="../ct0434/03/03/README.html"><strong aria-hidden="true">8.3.3.</strong> Catene e anticatene</a></li></ol></li><li class="chapter-item "><a href="../ct0434/04/README.html"><strong aria-hidden="true">8.4.</strong> Funzioni</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ct0434/04/01/README.html"><strong aria-hidden="true">8.4.1.</strong> Cardinalità</a></li></ol></li><li class="chapter-item "><a href="../ct0434/05/README.html"><strong aria-hidden="true">8.5.</strong> Principio di induzione</a></li><li class="chapter-item "><a href="../ct0434/06/README.html"><strong aria-hidden="true">8.6.</strong> Sommatorie</a></li><li class="chapter-item "><a href="../ct0434/07/README.html"><strong aria-hidden="true">8.7.</strong> Algebra modulare</a></li><li class="chapter-item "><a href="../ct0434/08/README.html"><strong aria-hidden="true">8.8.</strong> Divisibilità</a></li><li class="chapter-item "><a href="../ct0434/09/README.html"><strong aria-hidden="true">8.9.</strong> Numeri primi</a></li><li class="chapter-item "><a href="../ct0434/10/README.html"><strong aria-hidden="true">8.10.</strong> Calcolo combinatorio</a></li></ol></li><li class="chapter-item "><a href="../ct0435/README.html"><strong aria-hidden="true">9.</strong> Algebra lineare</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ct0435/01/README.html"><strong aria-hidden="true">9.1.</strong> Numeri complessi</a></li><li class="chapter-item "><a href="../ct0435/02/README.html"><strong aria-hidden="true">9.2.</strong> Vettori</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ct0435/02/01/README.html"><strong aria-hidden="true">9.2.1.</strong> Operazioni</a></li><li class="chapter-item "><a href="../ct0435/02/02/README.html"><strong aria-hidden="true">9.2.2.</strong> Perpendicolari e allineati</a></li><li class="chapter-item "><a href="../ct0435/02/03/README.html"><strong aria-hidden="true">9.2.3.</strong> Proiezione</a></li></ol></li><li class="chapter-item "><a href="../ct0435/03/README.html"><strong aria-hidden="true">9.3.</strong> Rette e piani</a></li><li class="chapter-item "><a href="../ct0435/04/README.html"><strong aria-hidden="true">9.4.</strong> Matrici</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ct0435/04/01/README.html"><strong aria-hidden="true">9.4.1.</strong> Prodotto tra matrici</a></li><li class="chapter-item "><a href="../ct0435/04/02/README.html"><strong aria-hidden="true">9.4.2.</strong> Determinante</a></li><li class="chapter-item "><a href="../ct0435/04/03/README.html"><strong aria-hidden="true">9.4.3.</strong> Matrice aggiunta e inversa</a></li><li class="chapter-item "><a href="../ct0435/04/04/README.html"><strong aria-hidden="true">9.4.4.</strong> Matrice elementare</a></li><li class="chapter-item "><a href="../ct0435/04/05/README.html"><strong aria-hidden="true">9.4.5.</strong> Matrice a scala</a></li><li class="chapter-item "><a href="../ct0435/04/06/README.html"><strong aria-hidden="true">9.4.6.</strong> Rango</a></li></ol></li><li class="chapter-item "><a href="../ct0435/05/README.html"><strong aria-hidden="true">9.5.</strong> Sistemi lineari</a></li><li class="chapter-item "><a href="../ct0435/06/README.html"><strong aria-hidden="true">9.6.</strong> Grafi</a></li><li class="chapter-item "><a href="../ct0435/07/README.html"><strong aria-hidden="true">9.7.</strong> Spazio vettoriale</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ct0435/07/01/README.html"><strong aria-hidden="true">9.7.1.</strong> Combinazioni lineari</a></li><li class="chapter-item "><a href="../ct0435/07/02/README.html"><strong aria-hidden="true">9.7.2.</strong> Basi</a></li><li class="chapter-item "><a href="../ct0435/07/03/README.html"><strong aria-hidden="true">9.7.3.</strong> Dimensione</a></li></ol></li><li class="chapter-item "><a href="../ct0435/08/README.html"><strong aria-hidden="true">9.8.</strong> Trasformazioni lineari</a></li><li class="chapter-item "><a href="../ct0435/09/README.html"><strong aria-hidden="true">9.9.</strong> Autovalori e autovettori</a></li></ol></li><li class="chapter-item "><a href="../ct0615-1/README.html"><strong aria-hidden="true">10.</strong> Architettura degli elaboratori - Mod. 1</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ct0615-1/01/README.html"><strong aria-hidden="true">10.1.</strong> Rappresentazione dell'informazione</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ct0615-1/01/01/README.html"><strong aria-hidden="true">10.1.1.</strong> Conversioni</a></li><li class="chapter-item "><a href="../ct0615-1/01/02/README.html"><strong aria-hidden="true">10.1.2.</strong> Numeri negativi</a></li><li class="chapter-item "><a href="../ct0615-1/01/03/README.html"><strong aria-hidden="true">10.1.3.</strong> Overflow</a></li><li class="chapter-item "><a href="../ct0615-1/01/04/README.html"><strong aria-hidden="true">10.1.4.</strong> Numeri con la virgola</a></li><li class="chapter-item "><a href="../ct0615-1/01/05/README.html"><strong aria-hidden="true">10.1.5.</strong> IEEE754</a></li><li class="chapter-item "><a href="../ct0615-1/01/06/README.html"><strong aria-hidden="true">10.1.6.</strong> Errori di sequenze</a></li></ol></li><li class="chapter-item "><a href="../ct0615-1/02/README.html"><strong aria-hidden="true">10.2.</strong> Algebra booleana</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ct0615-1/02/01/README.html"><strong aria-hidden="true">10.2.1.</strong> Forme canoniche</a></li><li class="chapter-item "><a href="../ct0615-1/02/02/README.html"><strong aria-hidden="true">10.2.2.</strong> Minimizzazione</a></li><li class="chapter-item "><a href="../ct0615-1/02/03/README.html"><strong aria-hidden="true">10.2.3.</strong> Altri componenti</a></li></ol></li><li class="chapter-item "><a href="../ct0615-1/03/README.html"><strong aria-hidden="true">10.3.</strong> MIPS</a></li><li class="chapter-item "><a href="../ct0615-1/04/README.html"><strong aria-hidden="true">10.4.</strong> ALU</a></li><li class="chapter-item "><a href="../ct0615-1/05/README.html"><strong aria-hidden="true">10.5.</strong> Circuiti sequenziali</a></li><li class="chapter-item "><a href="../ct0615-1/06/README.html"><strong aria-hidden="true">10.6.</strong> Automi per circuiti</a></li><li class="chapter-item "><a href="../ct0615-1/07/README.html"><strong aria-hidden="true">10.7.</strong> CPU</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Computer Science</h1>
+
+                    <div class="right-buttons">
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<h1 id="basi-di-dati"><a class="header" href="#basi-di-dati">Basi di Dati</a></h1>
+<h2 id="progettazione-concettuale"><a class="header" href="#progettazione-concettuale">Progettazione concettuale</a></h2>
+<p>I tipi <strong>primitivi</strong> di dati sono:</p>
+<ul>
+<li><code>int</code></li>
+<li><code>real</code></li>
+<li><code>bool</code></li>
+<li><code>date</code></li>
+<li><code>string</code></li>
+</ul>
+<p>I tipi <strong>non primitivi</strong>, invece, sono:</p>
+<ul>
+<li><code>[A: T, B: S, ...]</code> (i.e. record), dove <code>A</code> e <code>B</code> sono etichette mentre <code>T</code> ed <code>S</code> sono tipi</li>
+<li><code>(A; B; ...)</code> (i.e. enumerazione; e.g. <code>(M; F)</code>), dove <code>A</code> e <code>B</code> sono etichette</li>
+<li><code>seq T</code> (i.e. sequenza; e.g. <code>seq int</code>), dove <code>T</code> è un tipo</li>
+</ul>
+<p>La <strong>cardinalità</strong> di un'associazione fra <code>X</code> e <code>Y</code> descrive la <strong>molteplicità</strong> di <code>X -&gt; Y</code> e di <code>Y -&gt; X</code>:</p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center"></th><th style="text-align: center"><code>[1:1]</code></th><th style="text-align: center"><code>[1:N]</code></th><th style="text-align: center"><code>[N:1]</code></th><th style="text-align: center"><code>[N:N]</code></th></tr></thead><tbody>
+<tr><td style="text-align: center">Ognuno di <code>X</code> con al massimo</td><td style="text-align: center">uno di <code>Y</code></td><td style="text-align: center">molti di <code>Y</code></td><td style="text-align: center">uno di <code>Y</code></td><td style="text-align: center">molti di <code>Y</code></td></tr>
+<tr><td style="text-align: center">Ognuno di <code>Y</code> con al massimo</td><td style="text-align: center">uno di <code>X</code></td><td style="text-align: center">uno di <code>X</code></td><td style="text-align: center">molti di <code>X</code></td><td style="text-align: center">molti di <code>X</code></td></tr>
+</tbody></table>
+</div>
+<p>Nello schema, le <strong>associazioni</strong> sono rappresentate come,</p>
+<ul>
+<li>
+<p>nel caso <code>[1:1]</code>:</p>
+<div><!-- Generated by graphviz version 2.43.0 (0)
+ --><!-- Title: %3 Pages: 1 --><svg width="152pt" height="45pt"
+ viewBox="0.00 0.00 152.00 45.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 41)"><title>%3</title><polygon fill="white" stroke="transparent" points="-4,4 -4,-41 148,-41 148,4 -4,4"/><!-- A --><g id="node1" class="node"><title>A</title><polygon fill="none" stroke="black" points="0,-0.5 0,-36.5 54,-36.5 54,-0.5 0,-0.5"/><text text-anchor="middle" x="27" y="-14.8" font-family="Times,serif" font-size="14.00">A</text></g><!-- B --><g id="node2" class="node"><title>B</title><polygon fill="none" stroke="black" points="90,-0.5 90,-36.5 144,-36.5 144,-0.5 90,-0.5"/><text text-anchor="middle" x="117" y="-14.8" font-family="Times,serif" font-size="14.00">B</text></g><!-- A&#45;&gt;B --><g id="edge1" class="edge"><title>A&#45;&gt;B</title><path fill="none" stroke="black" d="M59.52,-18.5C67.77,-18.5 76.66,-18.5 84.89,-18.5"/><polygon fill="black" stroke="black" points="59.4,-16.75 54.4,-18.5 59.4,-20.25 59.4,-16.75"/><polygon fill="black" stroke="black" points="84.92,-20.25 89.92,-18.5 84.92,-16.75 84.92,-20.25"/></g></g></svg></div>
+</li>
+<li>
+<p>nel caso <code>[1:N]</code>:</p>
+<div><!-- Generated by graphviz version 2.43.0 (0)
+ --><!-- Title: %3 Pages: 1 --><svg width="152pt" height="45pt"
+ viewBox="0.00 0.00 152.00 45.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 41)"><title>%3</title><polygon fill="white" stroke="transparent" points="-4,4 -4,-41 148,-41 148,4 -4,4"/><!-- A --><g id="node1" class="node"><title>A</title><polygon fill="none" stroke="black" points="0,-0.5 0,-36.5 54,-36.5 54,-0.5 0,-0.5"/><text text-anchor="middle" x="27" y="-14.8" font-family="Times,serif" font-size="14.00">A</text></g><!-- B --><g id="node2" class="node"><title>B</title><polygon fill="none" stroke="black" points="90,-0.5 90,-36.5 144,-36.5 144,-0.5 90,-0.5"/><text text-anchor="middle" x="117" y="-14.8" font-family="Times,serif" font-size="14.00">B</text></g><!-- A&#45;&gt;B --><g id="edge1" class="edge"><title>A&#45;&gt;B</title><path fill="none" stroke="black" d="M58.42,-18.5C65.96,-18.5 74.08,-18.5 81.78,-18.5"/><polygon fill="black" stroke="black" points="58.4,-17.1 54.4,-18.5 58.4,-19.9 58.4,-17.1"/><polygon fill="black" stroke="black" points="85.92,-19.9 89.92,-18.5 85.92,-17.1 85.92,-19.9"/><polygon fill="black" stroke="black" points="81.92,-19.9 85.92,-18.5 81.92,-17.1 81.92,-19.9"/></g></g></svg></div>
+</li>
+<li>
+<p>nel caso <code>[N:1]</code>, dove ognuno di <code>A</code> è associato con <strong>al minimo</strong> uno di <code>B</code>:</p>
+<div><!-- Generated by graphviz version 2.43.0 (0)
+ --><!-- Title: %3 Pages: 1 --><svg width="152pt" height="45pt"
+ viewBox="0.00 0.00 152.00 45.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 41)"><title>%3</title><polygon fill="white" stroke="transparent" points="-4,4 -4,-41 148,-41 148,4 -4,4"/><!-- A --><g id="node1" class="node"><title>A</title><polygon fill="none" stroke="black" points="0,-0.5 0,-36.5 54,-36.5 54,-0.5 0,-0.5"/><text text-anchor="middle" x="27" y="-14.8" font-family="Times,serif" font-size="14.00">A</text></g><!-- B --><g id="node2" class="node"><title>B</title><polygon fill="none" stroke="black" points="90,-0.5 90,-36.5 144,-36.5 144,-0.5 90,-0.5"/><text text-anchor="middle" x="117" y="-14.8" font-family="Times,serif" font-size="14.00">B</text></g><!-- A&#45;&gt;B --><g id="edge1" class="edge"><title>A&#45;&gt;B</title><path fill="none" stroke="black" d="M66.49,-18.5C72.92,-18.5 79.52,-18.5 85.71,-18.5"/><polygon fill="black" stroke="black" points="58.4,-17.1 54.4,-18.5 58.4,-19.9 58.4,-17.1"/><polygon fill="black" stroke="black" points="62.4,-17.1 58.4,-18.5 62.4,-19.9 62.4,-17.1"/><polyline fill="none" stroke="black" points="62.4,-18.5 64.4,-18.5 "/><polygon fill="black" stroke="black" points="64.8,-20.5 64.8,-16.5 65.6,-16.5 65.6,-20.5 64.8,-20.5"/><polyline fill="none" stroke="black" points="64.4,-18.5 66.4,-18.5 "/><polygon fill="black" stroke="black" points="85.92,-19.9 89.92,-18.5 85.92,-17.1 85.92,-19.9"/></g></g></svg></div>
+</li>
+</ul>
+<p>Per esempio, nel caso di:</p>
+<div><!-- Generated by graphviz version 2.43.0 (0)
+ --><!-- Title: %3 Pages: 1 --><svg width="284pt" height="45pt"
+ viewBox="0.00 0.00 284.00 45.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 41)"><title>%3</title><polygon fill="white" stroke="transparent" points="-4,4 -4,-41 280,-41 280,4 -4,4"/><!-- Studente --><g id="node1" class="node"><title>Studente</title><polygon fill="none" stroke="black" points="0,-0.5 0,-36.5 82,-36.5 82,-0.5 0,-0.5"/><text text-anchor="middle" x="41" y="-14.8" font-family="Times,serif" font-size="14.00">Studente</text></g><!-- Esame --><g id="node2" class="node"><title>Esame</title><polygon fill="none" stroke="black" points="211,-0.5 211,-36.5 276,-36.5 276,-0.5 211,-0.5"/><text text-anchor="middle" x="243.5" y="-14.8" font-family="Times,serif" font-size="14.00">Esame</text></g><!-- Studente&#45;&gt;Esame --><g id="edge1" class="edge"><title>Studente&#45;&gt;Esame</title><path fill="none" stroke="black" d="M86.15,-18.5C119.56,-18.5 165.23,-18.5 198.59,-18.5"/><polygon fill="black" stroke="black" points="86.09,-17.1 82.09,-18.5 86.09,-19.9 86.09,-17.1"/><polygon fill="black" stroke="black" points="206.72,-19.9 210.72,-18.5 206.72,-17.1 206.72,-19.9"/><polygon fill="black" stroke="black" points="202.72,-19.9 206.72,-18.5 202.72,-17.1 202.72,-19.9"/><polyline fill="none" stroke="black" points="202.72,-18.5 200.72,-18.5 "/><polygon fill="black" stroke="black" points="200.32,-16.5 200.32,-20.5 199.52,-20.5 199.52,-16.5 200.32,-16.5"/><polyline fill="none" stroke="black" points="200.72,-18.5 198.72,-18.5 "/><text text-anchor="middle" x="146.5" y="-22.3" font-family="Times,serif" font-size="14.00">HaSostenuto</text></g></g></svg></div>
+<p>ogni studente può aver sostenuto più esami, mentre ogni esame è sostenuto da uno ed un solo studente.</p>
+<p>Nel caso in cui l'<strong>associazione contenga proprietà</strong>, come</p>
+<div><!-- Generated by graphviz version 2.43.0 (0)
+ --><!-- Title: %3 Pages: 1 --><svg width="239pt" height="73pt"
+ viewBox="0.00 0.00 239.00 72.50" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 68.5)"><title>%3</title><polygon fill="white" stroke="transparent" points="-4,4 -4,-68.5 235,-68.5 235,4 -4,4"/><!-- Utente --><g id="node1" class="node"><title>Utente</title><polygon fill="none" stroke="black" points="0,-0.5 0,-36.5 66,-36.5 66,-0.5 0,-0.5"/><text text-anchor="middle" x="33" y="-14.8" font-family="Times,serif" font-size="14.00">Utente</text></g><!-- Libro --><g id="node2" class="node"><title>Libro</title><polygon fill="none" stroke="black" points="177,-0.5 177,-36.5 231,-36.5 231,-0.5 177,-0.5"/><text text-anchor="middle" x="204" y="-14.8" font-family="Times,serif" font-size="14.00">Libro</text></g><!-- Utente&#45;&gt;Libro --><g id="edge1" class="edge"><title>Utente&#45;&gt;Libro</title><path fill="none" stroke="black" d="M70.41,-18.5C100.92,-18.5 143.96,-18.5 172.63,-18.5"/><polygon fill="black" stroke="black" points="70.19,-17.1 66.19,-18.5 70.19,-19.9 70.19,-17.1"/><polygon fill="black" stroke="black" points="172.76,-19.9 176.76,-18.5 172.76,-17.1 172.76,-19.9"/><polygon fill="none" stroke="black" points="84.5,-43.5 84.5,-64.5 159.5,-64.5 159.5,-43.5 84.5,-43.5"/><text text-anchor="start" x="87.5" y="-50.3" font-family="Times" font-size="14.00">HaInPrestito</text><polygon fill="none" stroke="black" points="84.5,-22.5 84.5,-43.5 159.5,-43.5 159.5,-22.5 84.5,-22.5"/><text text-anchor="start" x="87.5" y="-29.3" font-family="Times" font-size="14.00">&#45; Data: date</text></g></g></svg></div>
+<p>la relazione viene trasformata in un'ulteriore entità:</p>
+<div><!-- Generated by graphviz version 2.43.0 (0)
+ --><!-- Title: %3 Pages: 1 --><svg width="427pt" height="55pt"
+ viewBox="0.00 0.00 427.00 55.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 51)"><title>%3</title><polygon fill="white" stroke="transparent" points="-4,4 -4,-51 423,-51 423,4 -4,4"/><!-- Prestito --><g id="node1" class="node"><title>Prestito</title><polygon fill="none" stroke="black" points="163,-0.5 163,-46.5 263,-46.5 263,-0.5 163,-0.5"/><text text-anchor="middle" x="213" y="-31.3" font-family="Times,serif" font-size="14.00">Prestito</text><polyline fill="none" stroke="black" points="163,-23.5 263,-23.5 "/><text text-anchor="start" x="171" y="-8.3" font-family="Times,serif" font-size="14.00">&#45; Data: date</text></g><!-- Libro --><g id="node3" class="node"><title>Libro</title><polygon fill="none" stroke="black" points="365,-5.5 365,-41.5 419,-41.5 419,-5.5 365,-5.5"/><text text-anchor="middle" x="392" y="-19.8" font-family="Times,serif" font-size="14.00">Libro</text></g><!-- Prestito&#45;&gt;Libro --><g id="edge2" class="edge"><title>Prestito&#45;&gt;Libro</title><path fill="none" stroke="black" d="M271.58,-23.5C301.31,-23.5 336.37,-23.5 360.78,-23.5"/><polygon fill="black" stroke="black" points="267.3,-22.1 263.3,-23.5 267.3,-24.9 267.3,-22.1"/><polyline fill="none" stroke="black" points="267.3,-23.5 269.3,-23.5 "/><polygon fill="black" stroke="black" points="269.7,-25.5 269.7,-21.5 270.5,-21.5 270.5,-25.5 269.7,-25.5"/><polyline fill="none" stroke="black" points="269.3,-23.5 271.3,-23.5 "/><polygon fill="black" stroke="black" points="360.9,-24.9 364.9,-23.5 360.9,-22.1 360.9,-24.9"/><text text-anchor="middle" x="314" y="-27.3" font-family="Times,serif" font-size="14.00">Riguarda</text></g><!-- Utente --><g id="node2" class="node"><title>Utente</title><polygon fill="none" stroke="black" points="0,-5.5 0,-41.5 66,-41.5 66,-5.5 0,-5.5"/><text text-anchor="middle" x="33" y="-19.8" font-family="Times,serif" font-size="14.00">Utente</text></g><!-- Utente&#45;&gt;Prestito --><g id="edge1" class="edge"><title>Utente&#45;&gt;Prestito</title><path fill="none" stroke="black" d="M70.43,-23.5C93.57,-23.5 124.09,-23.5 150.87,-23.5"/><polygon fill="black" stroke="black" points="70.23,-22.1 66.23,-23.5 70.23,-24.9 70.23,-22.1"/><polygon fill="black" stroke="black" points="158.88,-24.9 162.88,-23.5 158.88,-22.1 158.88,-24.9"/><polygon fill="black" stroke="black" points="154.88,-24.9 158.88,-23.5 154.88,-22.1 154.88,-24.9"/><polyline fill="none" stroke="black" points="154.88,-23.5 152.88,-23.5 "/><polygon fill="black" stroke="black" points="152.48,-21.5 152.48,-25.5 151.68,-25.5 151.68,-21.5 152.48,-21.5"/><polyline fill="none" stroke="black" points="152.88,-23.5 150.88,-23.5 "/><text text-anchor="middle" x="114.5" y="-27.3" font-family="Times,serif" font-size="14.00">HaPreso</text></g></g></svg></div>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+                            <a rel="next" href="../ct0371-1/README.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+                    <a rel="next" href="../ct0371-1/README.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
