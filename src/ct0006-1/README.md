@@ -37,7 +37,7 @@ Nello schema, le **associazioni** sono rappresentate come,
 	digraph {
 		rankdir=LR
 		node [shape=record]
-		edge [arrowsize=0.4 dir=both]
+		edge [arrowsize=0.5 dir=both]
 		A -> B [arrowhead=normalnormal]
 	}
 	```
@@ -47,7 +47,7 @@ Nello schema, le **associazioni** sono rappresentate come,
 	digraph {
 		rankdir=LR
 		node [shape=record]
-		edge [arrowsize=0.4 dir=both]
+		edge [arrowsize=0.5 dir=both]
 		A -> B [arrowtail=normalnormalnonetee]
 	}
 	```
@@ -57,7 +57,7 @@ Per esempio, nel caso di:
 digraph {
 	rankdir=LR
 	node [shape=record]
-	edge [arrowsize=0.4 dir=both]
+	edge [arrowsize=0.5 dir=both]
 	Studente -> Esame [label="HaSostenuto" arrowhead=normalnormalnonetee]
 }
 ```
@@ -68,7 +68,7 @@ Nel caso in cui l'**associazione contenga proprietà**, come
 digraph {
 	rankdir=LR
 	node [shape=record]
-	edge [arrowsize=0.4 dir=both fontname="Times"]
+	edge [arrowsize=0.5 dir=both fontname="Times"]
 	Utente -> Libro [
 		label=<<table border="0" cellborder="1" cellspacing="0">
 			<tr><td>HaInPrestito</td></tr>
@@ -83,7 +83,7 @@ la relazione viene trasformata in un'ulteriore entità:
 digraph {
 	rankdir=LR
 	node [shape=record]
-	edge [arrowsize=0.4 dir=both]
+	edge [arrowsize=0.5 dir=both]
 	Prestito [label="Prestito | - Data: date\l"]
 	Utente -> Prestito [label="HaPreso" arrowhead=normalnormalnonetee]
 	Prestito -> Libro [label="Riguarda" arrowtail=normalnonetee]
