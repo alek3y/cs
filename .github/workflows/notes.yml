@@ -20,6 +20,9 @@ jobs:
         with:
           mdbook-version: '0.4.34'
 
+      - name: Setup Graphviz
+        run: sudo apt-get install -y graphviz
+
       - name: Download the katex preprocessor
         run: |
           wget 'https://github.com/lzanini/mdbook-katex/releases/download/v0.5.7/mdbook-katex-v0.5.7-x86_64-unknown-linux-gnu.tar.gz'
