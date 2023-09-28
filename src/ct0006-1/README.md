@@ -2,6 +2,8 @@
 
 ## Progettazione concettuale
 
+### Proprietà
+
 I tipi **primitivi** di dati sono:
 - `int`
 - `real`
@@ -13,6 +15,12 @@ I tipi **non primitivi**, invece, sono:
 - `[A: T, B: S, ...]` (i.e. record), dove `A` e `B` sono etichette mentre `T` ed `S` sono tipi
 - `(A; B; ...)` (i.e. enumerazione; e.g. `(M; F)`), dove `A` e `B` sono etichette
 - `seq T` (i.e. sequenza; e.g. `seq int`), dove `T` è un tipo
+
+Tra le limitazioni applicate ai dati, ci sono i **vincoli di integrità**:
+- **statici**: il dominio del dato è limitato durante l'**inserimento**
+- **dinamici**: il cambiamento è limitato durante la **modifica**
+
+### Cardinalità
 
 La **cardinalità** di un'associazione fra `X` e `Y` descrive la **molteplicità** di `X -> Y` e di `Y -> X`:
 
@@ -63,6 +71,8 @@ digraph {
 ```
 ogni studente può aver sostenuto più esami, mentre ogni esame è sostenuto da uno ed un solo studente.
 
+### Associazioni
+
 Nel caso in cui l'**associazione contenga proprietà**, come
 ```dot process
 digraph {
@@ -75,6 +85,8 @@ digraph {
 			<tr><td align="left">- Data: date</td></tr>
 			<tr><td border="0"></td></tr>
 		</table>>
+		arrowhead=normalnormalnonetee
+		arrowtail=normalnonetee
 	]
 }
 ```
@@ -87,5 +99,19 @@ digraph {
 	Prestito [label="Prestito | - Data: date\l"]
 	Utente -> Prestito [label="HaPreso" arrowhead=normalnormalnonetee]
 	Prestito -> Libro [label="Riguarda" arrowtail=normalnonetee]
+}
+```
+
+### Ereditarietà
+
+Con l'**ereditarietà** è possibile estendere le _entità_ partendo da altre **aggiungendo** o **ridefinendo** attributi:
+```dot process
+digraph {
+	rankdir=TB
+	node [shape=record]
+	edge [arrowsize=0.5 dir=both]
+	Persona [label="{Persona | - Nome: string\l- AnnoNascita: int\l- LingueParlate: seq string\l- Possiede: Auto\l}"]
+	Studente [label="{Studente | - Matricola: int\l- AnnoIscrizione: int\l- Possiede: AutoUtilitaria\l}"]
+	Persona -> Studente [arrowhead=none arrowtail=onormal]
 }
 ```

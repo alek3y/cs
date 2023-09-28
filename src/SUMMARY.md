@@ -4,12 +4,12 @@
 
 # Secondo anno
 
-- [Basi di Dati](./ct0006-1/README.md)
+- [Probabilità e statistica](./ct0111/README.md)
 
 - [Algoritmi e strutture dati - Mod. 1](./ct0371-1/README.md)
 	- [Complessità asintotica](./ct0371-1/01/README.md)
 
-- [Probabilità e statistica](./ct0111/README.md)
+- [Basi di Dati](./ct0006-1/README.md)
 
 - [Sistemi operativi](./ct0125-1/README.md)
 
