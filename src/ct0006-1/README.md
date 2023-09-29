@@ -102,6 +102,24 @@ digraph {
 }
 ```
 
+Se invece è **ricorsiva** vengono aggiunte delle etichette che determinano il **ruolo** dell'entità, per esempio:
+```dot process
+digraph {
+	rankdir=LR
+	node [shape=box]
+	edge [arrowsize=0.5 dir=both]
+
+	Persona:w -> Persona:e [
+		label="ÈMadreDi"
+		headlabel="Figlio"
+		taillabel="Madre"
+		arrowhead=normalnormalnonetee
+		arrowtail=normal
+	]
+}
+```
+per cui _una persona è madre di più figli_ e _una persona è figlia di una e una sola madre_.
+
 ### Ereditarietà
 
 Con l'**ereditarietà** è possibile estendere le _entità_ partendo da altre **aggiungendo** o **ridefinendo** attributi:
@@ -109,9 +127,64 @@ Con l'**ereditarietà** è possibile estendere le _entità_ partendo da altre **
 digraph {
 	rankdir=TB
 	node [shape=record]
-	edge [arrowsize=0.5 dir=both]
+	edge [dir=both]
 	Persona [label="{Persona | - Nome: string\l- AnnoNascita: int\l- LingueParlate: seq string\l- Possiede: Auto\l}"]
 	Studente [label="{Studente | - Matricola: int\l- AnnoIscrizione: int\l- Possiede: AutoUtilitaria\l}"]
 	Persona -> Studente [arrowhead=none arrowtail=onormal]
 }
 ```
+
+Oltre ad essere **singole**, le gerarchie possono anche essere **multiple** se è definita da più classi:
+```dot process
+digraph {
+	rankdir=BT
+	node [shape=record]
+
+	StudenteLavoratore -> {
+		rank=same
+		Studente
+		Dipendente
+	} [arrowhead=onormal]
+}
+```
+
+
+Inoltre, possono anche essere applicati dei **vincoli** di:
+- **disgiunzione**, per cui $B \cap C = \emptyset$:
+	```dot process
+	digraph {
+		rankdir=BT
+		splines=ortho
+		node [shape=record]
+		edge [dir=none]
+
+		subgraph {
+			rank=same
+			B
+			C
+		}
+
+		0 [shape=point width=0.1]
+		0 -> A [dir=forward arrowhead=onormal]
+		B, C -> 0
+	}
+	```
+
+- **copertura**, per cui $B \cup C = A$:
+	```dot process
+	digraph {
+		rankdir=BT
+		splines=ortho
+		node [shape=record]
+		edge [dir=none]
+
+		0 [shape=point width=0]
+		0 -> A [dir=forward arrowhead=onormal color="black:invis:black"]
+
+		{
+			rank=same
+			B
+			C
+		} -> 0
+	}
+	```
