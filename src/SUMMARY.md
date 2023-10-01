@@ -8,6 +8,9 @@
 
 - [Algoritmi e strutture dati - Mod. 1](./ct0371-1/README.md)
 	- [Complessità asintotica](./ct0371-1/01/README.md)
+	- [Classi asintotiche](./ct0371-1/02/README.md)
+		- [Proprietà](./ct0371-1/02/01/README.md)
+		- [Funzioni elementari](./ct0371-1/02/02/README.md)
 
 - [Basi di Dati](./ct0006-1/README.md)
 
