@@ -11,8 +11,8 @@ use-default-preprocessors = false	# Disable index to fix issue #431
 
 [preprocessor.katex]
 
-[preprocessor.graphviz]
-after = ["links", "katex"]
+#[preprocessor.graphviz]
+#after = ["links", "katex"]
 
 [output.html]
 preferred-dark-theme = "light"
