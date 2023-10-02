@@ -29,11 +29,10 @@ jobs:
           tar xvf mdbook-katex-v0.5.7-x86_64-unknown-linux-gnu.tar.gz
           mv -v mdbook-katex ~/.cargo/bin
 
-      - name: Download the graphviz preprocessor
+      - name: Build the dot preprocessor
         run: |
-          wget 'https://github.com/cargo-bins/cargo-quickinstall/releases/download/mdbook-graphviz-0.1.6/mdbook-graphviz-0.1.6-x86_64-unknown-linux-gnu.tar.gz'
-          tar xvf mdbook-graphviz-0.1.6-x86_64-unknown-linux-gnu.tar.gz
-          mv -v mdbook-graphviz ~/.cargo/bin
+          cargo build --manifest-path deps/mdbook-dot/Cargo.toml
+          cp deps/mdbook-dot/target/debug/mdbook-dot ~/.cargo/bin
 
       - name: Build the book files
         run: mdbook build
