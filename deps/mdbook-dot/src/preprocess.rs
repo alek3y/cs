@@ -54,7 +54,7 @@ pub fn process_chapter(raw: String) -> String {
 		.replace_all(&raw, |caps: &Captures| {
 			let graph = caps.get(1).unwrap().as_str();
 			let svg = sanitize(render_dot(graph));
-			format!("<div>{svg}</div>")
+			format!("<div>{svg}</div>\n")
 		})
 		.into()
 }
