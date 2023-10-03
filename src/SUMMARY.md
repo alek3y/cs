@@ -12,7 +12,7 @@
 		- [Proprietà](./ct0371-1/02/01/README.md)
 		- [Funzioni elementari](./ct0371-1/02/02/README.md)
 
-- [Basi di Dati](./ct0006-1/README.md)
+- [Basi di dati](./ct0006-1/README.md)
 
 - [Sistemi operativi](./ct0125-1/README.md)
 
