@@ -86,13 +86,15 @@ Ogni S.O. è progettato in base al suo scopo, tra cui in particolare:
 
 Come struttura invece, può essere:
 - **monolitico**: le _componenti_ fanno parte del _kernel_, per cui è _efficiente_ ma difficile da _debuggare_
-- **a livelli**: migliora la struttura _monolitica_ isolandolo in livelli tra cui
+- **a livelli**: migliora il sistema _monolitico_ isolandolo in livelli, come il _THE_ (_Technische Hogeschool Eindhoven_)
 
-	4. _applicazioni utente_, sullo _user space_
-	3. _gestione I/O_, sul _kernel space_
-	2. _gestione IPC_
-	1. _gestione della memoria_
-	0. _allocazione del processore_ e _scheduling_
+	```dot process
+	digraph {
+		rankdir=LR
+		node [shape=record fontname="Times"]
+		System [label="4. Applicazioni utente (user space)\l | 3. Gestione I/O (kernel space)\l | 2. Gestione IPC\l | 1. Gestione della memoria\l | 0. Scheduling\l"]
+	}
+	```
 
 - **microkernel**: _limitato_ ma _modulare_ e quindi _estensibile_, per cui i livelli comunicano in stile _client/server_
 
