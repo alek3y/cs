@@ -15,6 +15,7 @@
 - [Basi di dati](./ct0006-1/README.md)
 
 - [Sistemi operativi](./ct0125-1/README.md)
+	- [Processi e thread](./ct0125-1/01/README.md)
 
 # Primo anno
 
