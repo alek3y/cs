@@ -4,19 +4,21 @@ Una **classe asintotica** specifica il comportamento della [complessità](../01/
 
 | Classe | Significato |
 |:-:|:-:|
-| $f(n) \in$ [$O(g(n))$](#classe-o) | $f(n)$ **sotto** $c \cdot g(n)$ dopo $n_0$ |
-| $f(n) \in$ [$\Omega(g(n))$](#classe-Ω) | $f(n)$ **sopra** $c \cdot g(n)$ dopo $n_0$ |
-| $f(n) \in$ [$\Theta(g(n))$](#classe-Θ) | $f(n)$ **sopra** $c_1 \cdot g(n)$ e **sotto** $c_2 \cdot g(n)$ dopo $n_0$ |
+| $f(n) \in$ [$O(g(n))$](#classe-o) | $f(n)$ **sotto un** $c \cdot g(n)$ dopo $n_0$ |
+| $f(n) \in$ [$\Omega(g(n))$](#classe-Ω) | $f(n)$ **sopra un** $c \cdot g(n)$ dopo $n_0$ |
+| $f(n) \in$ [$\Theta(g(n))$](#classe-Θ) | $f(n)$ **sopra un** $c_1 \cdot g(n)$ e **sotto un** $c_2 \cdot g(n)$ dopo $n_0$ |
+| $f(n) \in$ [$o(g(n))$](#classe-o-1) | $f(n)$ **sotto ogni** $c \cdot g(n)$ dopo _certi_ $n_0$ |
+| $f(n) \in$ [$\omega(g(n))$](#classe-ω) | $f(n)$ **sopra ogni** $c \cdot g(n)$ dopo _certi_ $n_0$ |
 
 Indichiamo che $f(n) = O(g(n))$ per intendere che $f(n)$ fa parte della **famiglia di funzioni** $O(g(n))$.
 
 ## Classe $O$
 
+<p align="center"><img src="assets/01.png" alt="Grafico di O-grande"></p>
+
 $$
 O(g(n)) = \{f(n) \mid \exists c > 0, n_0 \in \mathbb{N} : \forall n \geq n_0, f(n) \leq c \cdot g(n)\}
 $$
-
-<p align="center"><img src="assets/01.png" alt="Grafico di O-grande"></p>
 
 Per esempio $\frac{1}{2}n^2 - 3n = O(n^2)$, e quindi:
 $$
@@ -31,11 +33,11 @@ $$
 
 ## Classe $\Omega$
 
+<p align="center"><img src="assets/02.png" alt="Grafico di Omega-grande"></p>
+
 $$
 \Omega(g(n)) = \{f(n) \mid \exists c > 0, n_0 \in \mathbb{N} : \forall n \geq n_0, c \cdot g(n) \leq f(n)\}
 $$
-
-<p align="center"><img src="assets/02.png" alt="Grafico di Omega"></p>
 
 Per esempio $\frac{1}{2}n^2 - 3n = \Omega(n^2)$, e quindi:
 $$
@@ -49,11 +51,11 @@ e che per definizione $c > 0$.
 
 ## Classe $\Theta$
 
+<p align="center"><img src="assets/03.png" alt="Grafico di Theta"></p>
+
 $$
 \Theta(g(n)) = \{f(n) \mid \exists c_{1,2} > 0, n_0 \in \mathbb{N} : \forall n \geq n_0, c_1 \cdot g(n) \leq f(n) \leq c_2 \cdot g(n)\}
 $$
-
-<p align="center"><img src="assets/03.png" alt="Grafico di Theta"></p>
 
 Per esempio $\frac{1}{2}n^2 - 3n = \Theta(n^2)$ è già dimostrato perchè:
 $$
@@ -75,3 +77,21 @@ $$
 n_1(1^2 - 1) \leq 10\ \land\ n_2(\sqrt{2}^2 - 1) \geq 10
 $$
 si ha che $n_0 = \max(n_1, n_2) = 10$.
+
+## Classe $o$
+
+<p align="center"><img src="assets/04.png" alt="Grafico di o-piccolo"></p>
+
+$$
+o(g(n)) = \{f(n) \mid \forall c > 0, \exists n_0 \in \mathbb{N} : \forall n \geq n_0, f(n) < c \cdot g(n)\}
+$$
+
+Per cui, indipendentemente da quanto $g(n)$ venga scalato, $f(n)$ gli sarà comunque sotto dopo un certo $n_0$.
+
+## Classe $\omega$
+
+<p align="center"><img src="assets/05.png" alt="Grafico di omega-piccolo"></p>
+
+$$
+\omega(g(n)) = \{f(n) \mid \forall c > 0, \exists n_0 \in \mathbb{N} : \forall n \geq n_0, c \cdot g(n) < f(n)\}
+$$

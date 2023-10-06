@@ -25,3 +25,12 @@
 - $$\sqrt{n} = O(n)$$
 
 	Infatti se $n \leq n^2$, allora $\sqrt{n} \leq n$.
+
+- $$\log n = O(\sqrt{n})$$
+
+	Infatti $\lim\limits_{n \to +\infty} \frac{\log n}{\sqrt{n}} \overset{\mathcal{H}}{\underset{\left[\frac{0}{0}\right]}{=}} \lim\limits_{n \to +\infty} \frac{\frac{1}{n}}{\frac{1}{2}n^{-\frac{1}{2}}} = 0$, per cui $\log n \in o(\sqrt{n}) \subset O(\sqrt{n})$.
+
+Tra cui, i casi meno frequenti:
+- $$(1 + \sin n) n = O(n)$$
+
+	Dato che $0 \leq 1 + \sin n \leq 2 \Leftrightarrow 0 \leq (1 + \sin n) \leq 2n$, è valido per $c = 2$ anche se $\nexists\lim\limits_{n \to +\infty} \frac{(1 + \sin n)n}{n}$.
