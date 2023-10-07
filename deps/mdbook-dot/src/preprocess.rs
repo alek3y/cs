@@ -55,7 +55,14 @@ pub fn process_chapter(raw: String) -> String {
 
 pub fn render_dot(graph: &str) -> String {
 	let mut child = Command::new("dot")
-		.args(["-Tsvg"])
+		.args([
+			"-Tsvg:cairo",
+			"-Gdpi=96",
+			"-Gbgcolor=white",
+			"-Gfontname=Liberation Serif",
+			"-Nfontname=Liberation Serif",
+			"-Efontname=Liberation Serif",
+		])
 		.stdin(Stdio::piped())
 		.stdout(Stdio::piped())
 		.spawn()

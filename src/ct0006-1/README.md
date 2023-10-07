@@ -78,7 +78,7 @@ Nel caso in cui l'**associazione contenga proprietà**, come
 digraph {
 	rankdir=LR
 	node [shape=record]
-	edge [arrowsize=0.5 dir=both fontname="Times"]
+	edge [arrowsize=0.5 dir=both]
 	Utenti -> Libri [
 		label=<<table border="0" cellborder="1" cellspacing="0">
 			<tr><td>HaInPrestito</td></tr>
@@ -144,7 +144,7 @@ Per esempio, `Pixel` fa parte di `Spazio` (_vincolo estensionale_) e `int` è so
 ```dot process
 digraph {
 	rankdir=TB
-	node [shape=box fontname="Times"]
+	node [shape=box]
 	edge [arrowsize=0.5 dir=both]
 
 	Vettori [
@@ -175,7 +175,7 @@ Di conseguenza, le _entità_ vengono estese partendo da altre **aggiungendo** o 
 ```dot process
 digraph {
 	rankdir=TB
-	node [shape=record fontname="Times"]
+	node [shape=record]
 	edge [dir=back]
 	Persone [label="{Persone | - Nome: string\l- Possiede: Auto\l}"]
 	Studenti [label="{Studenti | - Matricola: int\l- Possiede: AutoUtilitaria\l}"]
@@ -268,7 +268,7 @@ fine, ed è collegata a tutti gli oggetti d’arte che sono stati esposti durant
 ```dot process
 digraph {
 	rankdir=BT
-	node [shape=box fontname="Times"]
+	node [shape=box]
 	edge [arrowsize=0.5 dir=both]
 
 	{
@@ -376,7 +376,7 @@ anche una data d'inizio e una di fine e il vincitore del torneo.
 digraph {
 	rankdir=TB
 	edge [arrowsize=0.5 dir=both]
-	node [shape=box fontname="Times"]
+	node [shape=box]
 
 	{
 		rank=same
@@ -490,8 +490,8 @@ il nome, cognome e lo stipendio e i tipi di aeroplani su cui possono lavorare.
 ```dot process
 digraph {
 	rankdir=TB
-	edge [arrowsize=0.5 dir=both fontname="Times"]
-	node [shape=box fontname="Times"]
+	edge [arrowsize=0.5 dir=both]
+	node [shape=box]
 
 	{
 		rank=same
@@ -552,10 +552,10 @@ digraph {
 		]
 	}
 
-	Hangar -> Aerei [label=" ContenutoIn", arrowhead=normalnormalnonetee]
+	Hangar -> Aerei [label="ContenutoIn", arrowhead=normalnormalnonetee]
 	Tipi -> Aerei [label="Di" arrowhead=normalnormalnonetee]
 
-	Aerei -> Manutenzioni [label=" Riguarda" arrowhead=normalnormalnonetee weight=100]
+	Aerei -> Manutenzioni [label="Riguarda" arrowhead=normalnormalnonetee weight=100]
 	Meccanici -> Manutenzioni [
 		label=<<table border="0" cellborder="1" cellspacing="0">
 			<tr><td>IntervieneIn</td></tr>
@@ -633,8 +633,8 @@ i cantanti che attirano più pubblico.
 ```dot process
 digraph {
 	rankdir=TB
-	edge [arrowsize=0.5 dir=both fontname="Times"]
-	node [shape=box fontname="Times"]
+	edge [arrowsize=0.5 dir=both]
+	node [shape=box]
 
 	{
 		rank=same
