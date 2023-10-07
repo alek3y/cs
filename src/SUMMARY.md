@@ -5,6 +5,7 @@
 # Secondo anno
 
 - [Probabilità e statistica](./ct0111/README.md)
+	- [Probabilità elementare](./ct0111/01/README.md)
 
 - [Algoritmi e strutture dati - Mod. 1](./ct0371-1/README.md)
 	- [Complessità asintotica](./ct0371-1/01/README.md)
