@@ -490,7 +490,6 @@ il nome, cognome e lo stipendio e i tipi di aeroplani su cui possono lavorare.
 ```dot process
 digraph {
 	rankdir=TB
-	size="8.4!"
 	edge [arrowsize=0.5 dir=both fontname="Times"]
 	node [shape=box fontname="Times"]
 

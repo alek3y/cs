@@ -1,3 +1,4 @@
+use base64::{engine::general_purpose, Engine};
 use mdbook::{
 	book::Book,
 	errors::Result,
@@ -40,21 +41,14 @@ impl Preprocessor for DotPreprocessor {
 	}
 }
 
-fn sanitize(svg: String) -> String {
-	let svg = Regex::new(r"<!DOCTYPE [^>]+>").unwrap().replace(&svg, "");
-	let svg = Regex::new(r"<\?xml [^>]+\?>").unwrap().replace(&svg, "");
-	let svg = Regex::new(r"\n").unwrap().replace_all(&svg, "");
-
-	svg.trim().into()
-}
-
 pub fn process_chapter(raw: String) -> String {
 	Regex::new(r"(?s)`{3}dot process\n(|.*?[^\\])`{3}")
 		.unwrap()
 		.replace_all(&raw, |caps: &Captures| {
 			let graph = caps.get(1).unwrap().as_str();
-			let svg = sanitize(render_dot(graph));
-			format!("<div>{svg}</div>\n")
+			let svg = general_purpose::STANDARD.encode(render_dot(graph));
+			let src = format!("data:image/svg+xml;base64,{svg}");
+			format!("<p><img src=\"{src}\"></p>")
 		})
 		.into()
 }
