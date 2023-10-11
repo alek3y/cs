@@ -48,7 +48,7 @@ pub fn process_chapter(raw: String) -> String {
 			let graph = caps.get(1).unwrap().as_str();
 			let svg = general_purpose::STANDARD.encode(render_dot(graph));
 			let src = format!("data:image/svg+xml;base64,{svg}");
-			format!("<p><img src=\"{src}\"></p>")
+			format!("<p><img src=\"{src}\"></p>\n")
 		})
 		.into()
 }
