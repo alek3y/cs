@@ -24,7 +24,7 @@ L'evoluzione dei _sistemi operativi_ è suddivisa in:
 
 3. **IIIᵃ generazione** (1965-1980):
 
-	Divennero a **multiprogrammazione**, alternando l'esecuzione tra i _job_ della _pool_ (i.e. insieme di _job_ da eseguire), cosa che porto all'invenzione dei **primi algoritmi di scheduling**.
+	Divennero a **multiprogrammazione**, i.e. _CPU_ condivisibile da più utenti, alternando l'esecuzione tra i _job_ della _pool_ (i.e. insieme di _job_ da eseguire), cosa che portò ai **primi algoritmi di scheduling**.
 
 	All'inizio veniva cambiato _job_ mentre _aspettava il completamento di operazioni I/O_, i.e. **spooling** usando il disco come _buffer_ per i dati da scrivere.
 	In seguito venne introdotto il **time-sharing**, per cui lo _scheduler_ da un _tempo fisso_ ad ogni _job_, per poi effettuare un **cambio di contesto**.
