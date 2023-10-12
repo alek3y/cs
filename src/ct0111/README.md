@@ -8,11 +8,11 @@ $$
 $$
 dove $m_1$ sono gli stati del primo oggetto, $m_2$ del secondo, etc.
 
-In particolare, considerata un'urna contente delle palline **distinguibili**, si possono pescare:
+In particolare, considerata un'urna contenente delle palline **distinguibili**, si possono pescare:
 - $r$ palline su $n$ **reinserendole**, cioè $\underbrace{n \cdot n \cdot ... \cdot n}_r = n^r = D'_{n,r}$[^1]
 - $r$ palline dalle rimanenti su $n$ **senza reinserirle**, cioè $\underbrace{n \cdot (n-1) \cdot ... \cdot (n-r+1)}_r = \frac{n!}{(n-r)!} = D_{n,r}$[^2]
 - **tutte** le $n$ palline, cioè $\underbrace{n \cdot (n-1) \cdot ... \cdot 1}_n = n! = P_n$[^3]
-- $r$ palline su $n$ **senza reinserirle** il cui **ordine non distingue** le configurazioni, cioè $\frac{D_{n,r}}{P_r} = C_{n,r}$[^4]
+- $r$ palline su $n$ **senza reinserirle** il cui **ordine non distingue** le configurazioni, cioè $\frac{D_{n,r}}{P_r} = {n \choose r} = C_{n,r}$[^4]
 
 Per esempio, date le lettere $\mathrm{PEPPER}$ si vogliono trovare il numero di anagrammi dove l'ordine delle $\mathrm{P}$ e delle $\mathrm{E}$ non differenzia le configurazioni (e.g. $\mathrm{P_1E_1P_2P_3E_2R} = \mathrm{P_2E_2P_3P_1E_1R}$):
 $$
