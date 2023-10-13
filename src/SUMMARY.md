@@ -14,6 +14,8 @@
 		- [Funzioni elementari](./ct0371-1/02/02/README.md)
 
 - [Basi di dati](./ct0006-1/README.md)
+	- [Progettazione concettuale](./ct0006-1/01/README.md)
+	- [Progettazione logica](./ct0006-1/02/README.md)
 
 - [Sistemi operativi](./ct0125-1/README.md)
 	- [Processi](./ct0125-1/01/README.md)
