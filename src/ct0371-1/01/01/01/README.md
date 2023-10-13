@@ -9,7 +9,7 @@
 
 	- **Tesi**: $\exists c' > 0, n_0' \in \mathbb{N} : \forall n \geq n_0', c' \cdot f(n) \leq g(n)$
 
-	Per cui con $c' = \frac{1}{c}$ e $n_0' = n_0$ la [_condizione sufficiente_](../../ct0434/01/README.md#doppia-implicazione) è verificata e la _condizione necessaria_ è analoga.
+	Per cui con $c' = \frac{1}{c}$ e $n_0' = n_0$ la [_condizione sufficiente_](../../../../ct0434/01/README.md#doppia-implicazione) è verificata e la _condizione necessaria_ è analoga.
 
 - $$\boxed{f(n) = O(g(n)) \land g(n) = O(h(n)) \Rightarrow f(n) = O(h(n))}$$
 
@@ -65,5 +65,7 @@ $$
 	Anche chiamata **regola dei polinomi**, per esempio $27n^2 + n^2\log n + \sqrt{n} + \log n^2 = \Theta(n^2\log n)$.
 
 - $$\boxed{g(n) = f(n) + o(f(n)) = \Theta(f(n))}$$
+
+	infatti $\lim\limits_{n \to +\infty} \frac{f(n) + o(f(n))}{f(n)} = \lim\limits_{n \to +\infty} \left(1 + \frac{o(f(n))}{f(n)}\right) = 1$.
 
 	Per cui la somma di $f(n)$ con una funzione inferiore $o(f(n))$ avrà l'_andamento asintotico_ di $f(n)$.

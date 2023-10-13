@@ -9,9 +9,11 @@
 
 - [Algoritmi e strutture dati - Mod. 1](./ct0371-1/README.md)
 	- [Complessità asintotica](./ct0371-1/01/README.md)
-	- [Classi asintotiche](./ct0371-1/02/README.md)
-		- [Proprietà](./ct0371-1/02/01/README.md)
-		- [Funzioni elementari](./ct0371-1/02/02/README.md)
+		- [Classi asintotiche](./ct0371-1/01/01/README.md)
+			- [Proprietà](./ct0371-1/01/01/01/README.md)
+			- [Funzioni elementari](./ct0371-1/01/01/02/README.md)
+		- [Calcolo della complessità](./ct0371-1/01/02/README.md)
+		- [Ricorrenze](./ct0371-1/01/03/README.md)
 
 - [Basi di dati](./ct0006-1/README.md)
 	- [Progettazione concettuale](./ct0006-1/01/README.md)

@@ -1,6 +1,6 @@
 # Classi asintotiche
 
-Una **classe asintotica** specifica il comportamento della [complessità](../01/README.md) rispetto ad una funzione $g(n)$.
+Una **classe asintotica** specifica il comportamento della [complessità](../README.md) rispetto ad una funzione $g(n)$.
 
 | Classe | Significato |
 |:-:|:-:|
