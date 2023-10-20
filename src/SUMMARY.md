@@ -22,6 +22,7 @@
 - [Sistemi operativi](./ct0125-1/README.md)
 	- [Processi](./ct0125-1/01/README.md)
 	- [Thread](./ct0125-1/02/README.md)
+	- [Scheduling](./ct0125-1/03/README.md)
 
 # Primo anno
 

@@ -17,6 +17,10 @@ Oltre alle [operazioni dei processi](../01/README.md#operazioni), supportano anc
 - **Cancellazione**: richiesta di **terminazione** al _thread_, che però potrebbe **mascherarla**
 - **Join**: il _thread_ che richiede il _join_ viene **bloccato** fino all'uscita del _thread_ su cui viene richiesto
 
+Su _Linux_, i _thread_ e i _processi_ sono entrambi chiamati **task**, infatti possono entrambi essere generati con la funzione `clone`, che con i giusti parametri può avere lo stesso effetto di `fork`.
+
+Su _Windows_ invece, esistono i **fiber**, cioè delle sottounità di esecuzione nel contesto del _thread_ padre, che vengono _prelasciati_ assieme al _thread_ e _schedulati_ saltando da un _fiber_ ad un'altro.
+
 ## Modelli di threading
 
 Tra i **modelli** esistenti, i _thread_ possono essere:
@@ -26,7 +30,7 @@ Tra i **modelli** esistenti, i _thread_ possono essere:
 
 	Questo permette ai S.O. senza _thread_ interni di **supportarli** in modo **portabile**, ammettendo anche la **scelta** dell'_algoritmo di scheduling_ dall'utente, ed evitando l'overhead del _cambio di contesto_.
 
-	Lo svantaggio sono le **prestazioni limitate**, dato che il _kernel_ li vede come un **singolo thread** e quindi non possono essere schedulati su più processori.
+	Lo svantaggio sono le **prestazioni limitate**, perchè non sono schedulati su più processori dato che il _kernel_ li vede come un **singolo thread**, ma anche il **blocco del processo** intero se un _thread_ fa _I/O_.
 
 - **A livello kernel** (_uno-a-uno_)
 
@@ -41,8 +45,4 @@ Tra i **modelli** esistenti, i _thread_ possono essere:
 
 	I contesti su cui sono eseguiti sono chiamati **thread worker**, e sono persistenti nel _kernel_.
 
-	Lo scheduling dei _thread_ a _livello utente_ avviene tramite l'intervento di un **processore virtuale** che è stato assegnato al processo dal nucleo, rendendolo funzionale anche sui multiprocessori.
-
-	Su _Linux_ i _thread_ e i _processi_ sono entrambi dei **task**, infatti possono entrambi essere generati con la funzione `clone`, che con i giusti parametri può avere lo stesso effetto di `fork`.
-
-	Su _Windows_ invece esistono i **fiber**, i.e. sottounità di esecuzione nel contesto del _thread_ padre, che vengono _prelasciati_ assieme al _thread_ e _schedulati_ saltando da un _fiber_ ad un'altro.
+	Lo scheduling dei _thread_ a _livello utente_ avviene tramite l'intervento di un **processore virtuale**, assegnato al processo dal nucleo e **notificato** per passare a _livello utente_ quando un _worker_ si blocca.
