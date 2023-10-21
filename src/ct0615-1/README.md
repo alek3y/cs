@@ -1,4 +1,4 @@
-# Architettura degli elaboratori - Mod. 1
+# Architettura degli elaboratori (M. 1)
 
 ## Von Neumann
 

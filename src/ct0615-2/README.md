@@ -1,1 +1,1 @@
-# Architettura degli elaboratori - Mod. 2
+# Architettura degli elaboratori (M. 2)

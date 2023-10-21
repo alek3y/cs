@@ -1,4 +1,4 @@
-# Sistemi operativi
+# Sistemi operativi (M. 1)
 
 Al **sistema operativo** è assegnato il compito di **controllare** il _tempo_ e lo _spazio in memoria_ di:
 - risorse hardware, gestite in modalità **kernel**

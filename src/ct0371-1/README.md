@@ -1,1 +1,1 @@
-# Algoritmi e strutture dati - Mod. 1
+# Algoritmi e strutture dati (M. 1)

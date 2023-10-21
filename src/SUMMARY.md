@@ -7,7 +7,7 @@
 - [Probabilità e statistica](./ct0111/README.md)
 	- [Probabilità elementare](./ct0111/01/README.md)
 
-- [Algoritmi e strutture dati - Mod. 1](./ct0371-1/README.md)
+- [Algoritmi e strutture dati (M. 1)](./ct0371-1/README.md)
 	- [Complessità asintotica](./ct0371-1/01/README.md)
 		- [Classi asintotiche](./ct0371-1/01/01/README.md)
 			- [Proprietà](./ct0371-1/01/01/01/README.md)
@@ -15,11 +15,11 @@
 		- [Calcolo della complessità](./ct0371-1/01/02/README.md)
 		- [Ricorrenze](./ct0371-1/01/03/README.md)
 
-- [Basi di dati](./ct0006-1/README.md)
+- [Basi di dati (M. 1)](./ct0006-1/README.md)
 	- [Progettazione concettuale](./ct0006-1/01/README.md)
 	- [Progettazione logica](./ct0006-1/02/README.md)
 
-- [Sistemi operativi](./ct0125-1/README.md)
+- [Sistemi operativi (M. 1)](./ct0125-1/README.md)
 	- [Processi](./ct0125-1/01/README.md)
 	- [Thread](./ct0125-1/02/README.md)
 	- [Scheduling](./ct0125-1/03/README.md)
@@ -55,7 +55,7 @@
 		- [Cambio di variabili](./ct0433/04/02/README.md)
 		- [Baricentro](./ct0433/04/03/README.md)
 
-- [Architettura degli elaboratori - Mod. 2](./ct0615-2/README.md)
+- [Architettura degli elaboratori (M. 2)](./ct0615-2/README.md)
 	- [Pipeline](./ct0615-2/01/README.md)
 		- [Implementazione](./ct0615-2/01/01/README.md)
 		- [Hazards](./ct0615-2/01/02/README.md)
@@ -154,7 +154,7 @@
 	- [Trasformazioni lineari](./ct0435/08/README.md)
 	- [Autovalori e autovettori](./ct0435/09/README.md)
 
-- [Architettura degli elaboratori - Mod. 1](./ct0615-1/README.md)
+- [Architettura degli elaboratori (M. 1)](./ct0615-1/README.md)
 	- [Rappresentazione dell'informazione](./ct0615-1/01/README.md)
 		- [Conversioni](./ct0615-1/01/01/README.md)
 		- [Numeri negativi](./ct0615-1/01/02/README.md)
