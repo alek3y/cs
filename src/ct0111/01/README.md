@@ -63,7 +63,7 @@ Questa probabilità è poi ripetuta ${n \choose k}$ volte, ovvero per tutti i mo
 
 Se invece si vuole **senza il reinserimento**[^2], diventerà:
 $$
-P(A_k) = \frac{{m \choose k} {N-m \choose n-k}}{N \choose n}
+P(A_k) = \frac{|A_k|}{|\Omega|} = \frac{{m \choose k} {N-m \choose n-k}}{N \choose n}
 $$
 dove ${m \choose k}$ è il numero di modi di scegliere i _successi_, ${N-m \choose n-k}$ gli _insuccessi_ e ${N \choose n}$ i modi di tutti gli $n$ da $N$.
 

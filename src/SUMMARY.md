@@ -6,6 +6,7 @@
 
 - [Probabilità e statistica](./ct0111/README.md)
 	- [Probabilità elementare](./ct0111/01/README.md)
+	- [Probabilità condizionata](./ct0111/02/README.md)
 
 - [Algoritmi e strutture dati (M. 2)](./ct0371-2/README.md)
 	- [Dizionario](./ct0371-2/01/README.md)
