@@ -24,6 +24,7 @@
 - [Basi di dati (M. 1)](./ct0006-1/README.md)
 	- [Progettazione concettuale](./ct0006-1/01/README.md)
 	- [Progettazione logica](./ct0006-1/02/README.md)
+	- [Algebra relazionale](./ct0006-1/03/README.md)
 
 - [Sistemi operativi (M. 1)](./ct0125-1/README.md)
 	- [Processi](./ct0125-1/01/README.md)

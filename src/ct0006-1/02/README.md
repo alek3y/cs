@@ -19,7 +19,7 @@ In questo _modello_, gli attributi sono **solamente primitivi**, e vengono intro
 
 - **Chiave esterna**
 
-	Quando un attributo **punta** alla _chiave primaria_ di un ennupla **esistente** di un'altro oggetto.
+	Quando un attributo **punta** alla _chiave primaria_ di un ennupla **esistente** in un'altro oggetto.
 
 - Valori **non nulli**
 
@@ -333,3 +333,107 @@ Un'**istanza** dello schema viene detta **valida** quando rispetta tutti i vinco
 		}
 		```
 		in cui `A` può essere omesso se è di **coperatura** (i.e. $A = B \cup C$).
+
+4. **Chiavi primarie**
+
+	Viene scelto un attributo che soddisfa il **vincolo di chiave**, cioè che rende l'ennupla unica. Nel caso non sia presente basterà creare una **chiave sintetica** con un nuovo attributo.
+
+	Se la relazione è una **sottoclasse**, andrà copiata la chiave primaria della _superclasse_.
+	Se è una relazione derivante da associazione **molti-a-molti** invece, andranno concatenate le chiavi esterne coinvolte.
+
+5. **Attributi multivalore**
+
+	```dot process
+	digraph {
+		rankdir=LR
+		node [shape=record]
+
+		A [label="A | - K &lt;PK&gt;\l- Attributi\l- S: seq T\l"]
+	}
+	```
+	diventa
+	```dot process
+	digraph {
+		rankdir=LR
+		node [shape=record]
+		edge [arrowsize=0.5 dir=back]
+
+		A [label="A | - K &lt;PK&gt;\l- Attributi\l"]
+		S [label="S | - A.K &lt;PK, FK(A)&gt;\l- S: T &lt;PK&gt;\l"]
+
+		A -> S [label="A.K"]
+	}
+	```
+	se le sequenze `S` **non condividono** elementi tra le varie ennuple di `A`, altrimenti diventa
+
+	```dot process
+	digraph {
+		rankdir=LR
+		node [shape=record]
+		edge [arrowsize=0.5]
+
+		A [label="A | - K &lt;PK&gt;\l- Attributi\l"]
+		AS [label="A-S | - A.K &lt;PK, FK(A)&gt;\l- S.K &lt;PK, FK(S)&gt;\l"]
+		S [label="S | - K &lt;PK&gt;\l- S: T\l"]
+
+		A -> AS [label="A.K" dir=back]
+		AS -> S [label="S.K"]
+	}
+	```
+	creando una nuova _chiave sintetica_ su `S`.
+
+6. **Attributi composti**
+
+	```dot process
+	digraph {
+		rankdir=LR
+		node [shape=record]
+
+		A [label="A | - K &lt;PK&gt;\l- Attributi\l- R: [A: T, B: S, ...]\l"]
+	}
+	```
+	diventa
+	```dot process
+	digraph {
+		rankdir=LR
+		node [shape=record]
+
+		A [label="A | - K &lt;PK&gt;\l- Attributi\l- R.A: T\l- R.B: S\l- ...\l"]
+	}
+	```
+
+### Esempio
+
+Data la classe `Corsi` contenente una lista di docenti, si passa da:
+```dot process
+digraph {
+	rankdir=LR
+	node [shape=record]
+
+	Corsi [label="Corsi | - Codice: int &lt;PK&gt;\l- Nome: string\l- Crediti: int\l- Docenti: seq [Nome: string, Cognome: string]\l"]
+}
+```
+rimuovendo gli _attributi multivalore_, a:
+```dot process
+digraph {
+	rankdir=LR
+	node [shape=record]
+	edge [arrowsize=0.5 dir=back]
+
+	Corsi [label="Corsi | - Codice: int &lt;PK&gt;\l- Nome: string\l- Crediti: int\l"]
+	Docenti [label="Docenti | - Codice: int &lt;PK, FK(Corsi)&gt;\l- Anagrafica: [Nome: string, Cognome: string] &lt;PK&gt;\l"]
+	Corsi -> Docenti [label="Codice"]
+}
+```
+ed eliminando gli _attributi composti_ si arriva infine a:
+```dot process
+digraph {
+	rankdir=LR
+	node [shape=record]
+	edge [arrowsize=0.5 dir=back]
+
+	Corsi [label="Corsi | - Codice: int &lt;PK&gt;\l- Nome: string\l- Crediti: int\l"]
+	Docenti [label="Docenti | - Codice: int &lt;PK, FK(Corsi)&gt;\l- Nome: string &lt;PK&gt;\l- Cognome: string &lt;PK&gt;\l"]
+	Corsi -> Docenti [label="Codice"]
+}
+```
