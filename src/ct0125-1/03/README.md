@@ -18,6 +18,8 @@ e ha come **obbiettivi**,
 
 Ad ogni _processo_ può essere assegnata **priorità statica**, che ha **basso overhead** perchè **non cambia** nel tempo, oppure **dinamica**, per **aumentare la reazione** in cambio di maggior _overhead_.
 
+Nel caso siano presenti **più utenti** si usa una politica di **fair share**, dove i processi di ogni utente rientrano in un determinato **gruppo**, ognuno dei quali avrà percentuali diverse di risorse utilizzabili.
+
 ## Livelli
 
 Lo _scheduler_ può essere suddiviso in **livelli**, per la scelta di quali _processi_ eseguire e quali no:
@@ -65,7 +67,7 @@ Altrimenti può essere **con prelazione**, per migliorare il _tempo di risposta_
 
 	Consiste nell'assegnare ad ogni processo una **classe di priorità**, che può essere **fissa** o **variabile** (e.g. in base alla dimensione dell'ultimo _quanto_ assegnato).
 
-	Un'implementazione si basa sull'utilizzo di instanze di _round robin_ separate su ogni _classe_ di processi.
+	Un'implementazione si basa sull'utilizzo di istanze di _round robin_ separate su ogni _classe_ di processi.
 	Se però i processi ad _alta priorità_ non terminano, avviene l'**attesa infinita** di quelli a _bassa priorità_.
 
 - **Selfish Round Robin** (_SRR_)
@@ -79,8 +81,8 @@ Altrimenti può essere **con prelazione**, per migliorare il _tempo di risposta_
 
 Un'alternativa agli algoritmi precedenti sono le **code multilivello**, in cui i processi corti terminano mentre quelli più lunghi scalano di livello, su ognuno dei quali ci saranno tempi di _prelazione_ più lunghi.
 
-Lo _scheduler_ passarà all'esecuzione dei livelli _inferiori_ solamente se quelli _superiori_ si **svuotano**.
-All'arrivo di un nuovo processo in un livello _superiore_, verrà forzato il **prelascio** di quello nel livello _inferiore_.
+Lo _scheduler_ passerà all'esecuzione dei livelli _inferiori_ solamente se quelli _superiori_ si **svuotano**.
+All'arrivo di un nuovo processo in un livello _superiore_ invece, verrà forzato il **prelascio** di quello nel livello _inferiore_.
 
 ```dot process
 digraph {
@@ -126,3 +128,32 @@ digraph {
 ```
 
 Dato che l'algoritmo si **adatta** ai processi, avrà una migliore sensibilità a costo di un _overhead_ maggiore.
+
+## Real-time
+
+Nei sistemi con processi con **vincoli temporali** si usa lo scheduling **a scadenza**, che richiede di **conoscere i requisiti** dei processi per eseguire prima quelli con scadenza più vicina, cosa che comporta _overhead_.
+
+Se i _vincoli temporali_ non sono garantiti (e.g. riproduzione multimediale) si tratta di **soft** real-time scheduling, altrimenti (e.g. controllo del traffico aereo) si tratta di **hard** real-time scheduling.
+
+Nel caso il sistema usi eventi [periodici](../../ct0615-2/05/02/README.md#polling), è richiesto che di $n$ processi:
+$$
+\sum_{i = 1}^n \frac{C_i}{T_i} \leq 1
+$$
+dove $C_i$ è il tempo di esecuzione dell'$i$-esimo processo e $T_i$ il suo periodo che corrisponde alla sua _deadline_.
+
+Durante l'esecuzione l'algoritmo di scheduling può essere:
+- **Statico**
+
+	Non adegua le priorità alle condizioni di esecuzione, ed è quindi pratico per i sistemi con condizioni che **cambiano raramente**, come per l'_hard_ real-time scheduling.
+
+	Tra gli algoritmi di scheduling ci sono:
+	- **Rate monotonic** (_RM_): sfrutta il _RR_, aumentando la priorità con la frequenza di esecuzione
+	- **Deadline rate monotonic**: per i processi la cui _deadline_ non coincide con il periodo
+
+- **Dinamico**
+
+	Adatta le priorità col tempo, assicurandosi che l'_overhead_ risultante non porti a scadenze mancate.
+
+	In base alle _deadline_ si hanno:
+	- **Earliest deadline first** (_EDF_): sceglie il processo con la scadenza più vicina dopo il _prelascio_
+	- **Least laxity first** (_LLF_): tipo _EDF_ ma in base al tempo che rimarrà, dopo l'esecuzione, alla _deadline_

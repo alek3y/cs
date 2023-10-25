@@ -30,6 +30,7 @@
 	- [Processi](./ct0125-1/01/README.md)
 	- [Thread](./ct0125-1/02/README.md)
 	- [Scheduling](./ct0125-1/03/README.md)
+	- [Memoria](./ct0125-1/04/README.md)
 
 # Primo anno
 
