@@ -1,4 +1,4 @@
-# Dizionario
+# Dizionari
 
 Un **dizionario** è una funzione $R\colon D \to C$ dove $d \in D$ sono le **chiavi** e $c \in C$ sono i **valori**.
 

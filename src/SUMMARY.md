@@ -9,9 +9,11 @@
 	- [Probabilità condizionata](./ct0111/02/README.md)
 
 - [Algoritmi e strutture dati (M. 2)](./ct0371-2/README.md)
-	- [Dizionario](./ct0371-2/01/README.md)
+	- [Dizionari](./ct0371-2/01/README.md)
 		- [Array](./ct0371-2/01/01/README.md)
 		- [Lista](./ct0371-2/01/02/README.md)
+	- [Alberi](./ct0371-2/02/README.md)
+		- [Array](./ct0371-2/02/01/README.md)
 
 - [Algoritmi e strutture dati (M. 1)](./ct0371-1/README.md)
 	- [Complessità asintotica](./ct0371-1/01/README.md)
