@@ -35,7 +35,7 @@ Per esempio, $P(N_1 \cap B_2) = \frac{3}{10} \neq P(N_1)P(B_2) = \frac{2}{5}\fra
 
 ## Teorema di Bayes
 
-Grazie alla **forumale di Bayes** è possibile **aggiornare** la probabilità di un evento $A$ ipotizzando $B$ come avvenuto, prima che avvenga realmente.
+Grazie alla **formula di Bayes** è possibile **aggiornare** la probabilità di un evento $A$ ipotizzando $B$ come avvenuto, prima che avvenga realmente.
 Questa operazione ci risulta nella nuova probabilità _a posteriori_:
 $$
 P(A|B) = \frac{P(B|A)P(A)}{P(B)}
