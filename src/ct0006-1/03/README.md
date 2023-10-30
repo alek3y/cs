@@ -16,7 +16,7 @@ Tra gli **operatori** principali, si hanno:
 
 	$$R \cup S$$
 	con _cardinalità_ $|R| + |S| - |R \cap S|$, e
-	$$R \setminus S$$
+	$$R - S$$
 	con _cardinalità_ $|R| - |R \cap S|$.
 
 - **Proiezione**, e.g. per **isolare** gli attributi $A_1$ e $A_2$:
@@ -56,10 +56,10 @@ Inoltre, dai precedenti operatori si possono ricavare gli **operatori derivati**
 
 	$$R \underset{A_i = B_j}{\bowtie} S$$
 
-- **Join naturale**, per combinare _ennuple_ attraverso attributi di $R$ ed $S$ aventi lo **stesso nome**:
+- **Natural join**, come la _join_ ma attraverso attributi di $R$ ed $S$ aventi lo **stesso nome**:
 
 	$$R \bowtie S$$
-	che richiede la _ridenominazione_ degli attributi in comune se espresso con il _prodotto_.
+	che, se espresso con il _prodotto_, richiede la _ridenominazione_ degli attributi in comune.
 
 	Per esempio, dati
 	```
@@ -78,6 +78,21 @@ Inoltre, dai precedenti operatori si possono ricavare gli **operatori derivati**
 	\rho_{\text{CodInfo} \leftarrow \text{ICod}}(\text{Informazioni}))))
 	$$
 
+- **Outer join**, come la _join_ ma tenendo le _ennuple_ **non combinabili** impostando i nuovi attributi a `NULL`:
+
+	$$R \overset{\leftrightarrow}{\bowtie} S$$
+
 - **Intersezione**, sulle _ennuple_ delle relazioni $R$ ed $S$ dello _stesso tipo_:
 
-	$$R \cap S = R \setminus (R \setminus S)$$
+	$$R \cap S = R - (R - S)$$
+
+- **Divisione**, per raggruppare tutte le _ennuple_ di $R$ associate a tutti gli attributi di $S \neq \emptyset$:
+
+	$$R \div S = \pi_X(R) - \pi_X((\pi_X(R) \times S) - R)$$
+	dove $R$ contiene gli attributi $X$ e $Y$, mentre $S$ contiene solamente gli attributi $Y$.
+
+	Per esempio, siano $E = \pi_{\text{Studente},\text{Materia}}(\text{Esami})$ e $A = \pi_{\text{Materia}}(\sigma_{\text{Studente} = \text{"76366"}}(E))$, allora $E \div A$ restituisce gli studenti che hanno fatto **al minimo** tutti gli esami $A$.
+
+	Inoltre, le _ennuple_ associate **esattamente** (né più né meno) a tutte quelle in $S$ si possono ottenere con:
+	$$R \div S \cap (\pi_X(R) - \pi_X(R - (\pi_X(R) \times S)))$$
+	dove il secondo termine contiene le _ennuple_ in $R$ associate **al più** a quelle in $S$.
