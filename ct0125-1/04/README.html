@@ -186,13 +186,53 @@ Se però è richiesta una grande porzione di memoria può essere <strong>impossi
 Questo <strong>aumenta</strong> il numero di processi in memoria, ma aumenta anche l'<em>overhead</em>.</p>
 </li>
 </ul>
-<h2 id="overlay"><a class="header" href="#overlay">Overlay</a></h2>
-<p>La tecnica di <strong>overlay</strong> consiste nel dividere il programma in <strong>sezioni</strong> e alternativamente caricare quelle <strong>attive</strong> nella stessa area <em>contigua</em> di memoria.</p>
+<h2 id="organizzazione"><a class="header" href="#organizzazione">Organizzazione</a></h2>
+<p>Se l'ambiente è <strong>mono utente</strong>, il singolo processo utilizza tutta la memoria libera disponibile.</p>
+<p>Nel caso di insufficiente memoria <em>contigua</em> disponibile esiste la tecnica di <strong>overlay</strong>, che consiste nel dividere il programma in <strong>sezioni</strong> e alternativamente caricare quelle <strong>attive</strong> nella stessa area <em>contigua</em> di memoria.</p>
 <p>Questo però <strong>complica</strong> l'organizzazione delle sezioni, perchè quelle che interagiscono non possono essere sovrapposte, ma anche perchè le modifiche al programma possono renderle non sovrapponibili.</p>
-<h2 id="protezione"><a class="header" href="#protezione">Protezione</a></h2>
-<p>Sulla memoria si necessita anche della <strong>protezione</strong>, perchè il S.O. non deve essere riscrivibile dall'utente.</p>
-<p>In un'ambiente <strong>mono utente</strong>, una tecnica consiste nel far salvare al <em>kernel</em> gli <strong>indirizzi limite</strong> della memoria del programma in dei registri protetti, così da negare l'accesso alla memoria oltre ai limiti.</p>
-<p>Un esempio è un sistema ad elaborazione <strong>batch</strong>, in cui solo un programma è inserito in memoria.</p>
+<p>La <strong>protezione</strong> del S.O. avviene salvando gli <strong>indirizzi limite</strong> della memoria del processo in un registro protetto, così da lanciare un'<a href="../../ct0615-2/01/04/README.html#eccezioni-e-interrupt">eccezione</a> nel caso vengano superati.</p>
+<p>Se l'ambiente è a <strong>multiprogrammazione</strong> invece, la memoria può essere organizzata in:</p>
+<ul>
+<li>
+<p><strong>Partizioni fisse</strong></p>
+<p>Inizialmente ogni programma veniva compilato con indirizzi <strong>assoluti</strong>, di conseguenza ad ogni processo caricato veniva assegnata una <em>partizione</em> di memoria con posizione e dimensione <em>fissa</em>.</p>
+<p>Questo semplificava il parallelismo, ma forzava l'<strong>attesa</strong> ai processi da caricare sulla stessa <em>partizione</em>.</p>
+<p>L'alternativa è stata l'introduzione di compilazione con indirizzi <strong>rilocabili</strong>, per cui ogni processo è caricato dinamicamente su <em>partizioni</em> diverse.</p>
+<p>La <em>protezione</em> del S.O. e gli altri processi avviene associando ad ogni <em>partizione</em> un <strong>registro base</strong> e <strong>limite</strong> che limitano gli indirizzi accessibili in memoria dal processo.</p>
+<p>Un lato negativo è la <strong>frammentazione interna</strong> alle <em>partizioni</em>, dato che la memoria non in uso dal processo nella <em>partizione</em> non può essere in alcun modo usata.</p>
+</li>
+<li>
+<p><strong>Partizioni variabili</strong></p>
+<p>L'alternativa alle <em>partizioni fisse</em> è creare nuove <em>partizioni</em> della <strong>stessa dimensione</strong> del processo.</p>
+<p>Questo risolve la <em>frammentazione interna</em>, ma introduce <strong>frammentazione esterna</strong> causata dai buchi lasciati in memoria quando il processo termina.
+Tra i modi per risolvere, ci sono:</p>
+<ul>
+<li><strong>Coalescenza</strong>: combina più blocchi liberi vicini in un singolo blocco</li>
+<li><strong>Compattazione</strong>: compatta i blocchi in uso in memoria, comportando <em>overhead</em> significativo</li>
+</ul>
+<p>Inoltre, la scelta di posizione in memoria avviene secondo le <strong>strategie</strong> di:</p>
+<ul>
+<li><strong>Best-fit</strong>: nel più piccolo spazio in grado di contenere il processo</li>
+<li><strong>First-fit</strong>: nel primo spazio libero, riducendo l'<em>overhead</em></li>
+<li><strong>Worst-fit</strong>: nello spazio più grande disponibile, lasciando un grande buco per il prossimo processo</li>
+</ul>
+<p>Per poter <strong>gestire la memoria libera</strong> però, vanno salvate le informazioni sulle partizioni.
+Una tecnica consiste nel salvare una <strong>bitmap</strong>, dove ogni bit indica lo stato di un'unità di memoria, un'altra nell'usare una <strong>linked list</strong>, dove ogni elemento è una <em>partizione</em> di un processo o di memoria libera.</p>
+</li>
+<li>
+<p><strong>Swapping</strong></p>
+<p>Invece di avere una <em>partizione</em> per processo, si tiene l'intera memoria per il <strong>singolo processo</strong> in esecuzione, spostando gli atri temporaneamente nella <em>memoria secondaria</em>.</p>
+<p>Questo comporta grande <em>overhead</em> al cambio di contesto, dato che è richiesto l'accesso in <em>memoria secondaria</em>.
+Di conseguenza, una soluzione può essere l'uso di <em>partizioni variabili</em> con <em>swapping</em>.</p>
+</li>
+</ul>
+<h2 id="memoria-virtuale"><a class="header" href="#memoria-virtuale">Memoria virtuale</a></h2>
+<p>La <a href="../../ct0615-2/03/README.html"><strong>memoria virtuale</strong></a> permette l'uso di un <strong>indirizzamento virtuale</strong> molto più ampio di quello <strong>reale</strong>.</p>
+<p>Blocchi <em>virtuali</em> contigui vengono tradotti in blocchi <em>reali</em> non necessariamente contigui, e possono essere:</p>
+<ul>
+<li><strong>Pagine</strong>, con la <strong>paginazione</strong>, se ogni blocco ha dimensione <em>fissa</em></li>
+<li><strong>Segmenti</strong>, con la <strong>segmentazione</strong>, se ogni blocco può avere dimensione <em>diversa</em></li>
+</ul>
 
                     </main>
 
