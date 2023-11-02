@@ -17,6 +17,7 @@
 		- [Array](./ct0371-2/02/01/README.md)
 		- [Puntatori](./ct0371-2/02/02/README.md)
 		- [Visite](./ct0371-2/02/03/README.md)
+		- [Decomposizione](./ct0371-2/02/04/README.md)
 
 - [Algoritmi e strutture dati (M. 1)](./ct0371-1/README.md)
 	- [Complessità asintotica](./ct0371-1/01/README.md)
