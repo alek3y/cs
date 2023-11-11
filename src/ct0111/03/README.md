@@ -121,6 +121,29 @@ Per esempio, l'unica _moda_ di $S$ è su $7$ perchè è dove $P_S(s)$ assume il 
 
 Un altro esempio considera l'urna $\{1, 1, 2, 2, 3, 3, 4\}$ e $X = \text{"numero estratto"}$, da cui si ricavano le _mode_ in $x = 1, 2, 3$ perchè $P_X(x) = \frac{2}{7}$ che sono valori maggiori del rimanente $P_X(4) = \frac{1}{7}$.
 
+## Mediana
+
+Si definisce **mediana** il minimo valore $\mathrm{med}(X) = m$ per cui:
+$$
+F(m) = P(X \leq m) = \frac{1}{2}\ \land\ P(X \geq m) = \frac{1}{2}
+$$
+
+Nel caso **discreto** basta che $P(X \leq m) \geq \frac{1}{2}$ dato che $X = m$ potrebbe essere **impossibile**.
+
+Per esempio, nel lancio di un dado $P(X = 1,2,3) = P(X = 4,5,6) = \frac{1}{2}$ per cui la _mediana_ dovrebbe essere un valore in $(3, 4)$, ma $X \not\in (3, 4)$ di conseguenza si sceglie come _mediana_ $m = 3$.
+
+Nel caso **continuo** invece, si rispetta la condizione per cui $\int_{-\infty}^m f(x)dx = \int_m^\infty f(x)dx = \frac{1}{2}$.
+
+## Quantili
+
+Un **quantile di livello** $\alpha$ è il minimo valore $q_\alpha$ per cui, nel caso **discreto**:
+$$
+F(q_\alpha) = P(X \leq q_\alpha) = \alpha
+$$
+che nel caso **discreto** sarà sufficiente la condizione $F(q_\alpha) \geq \alpha$.
+
+Servono a generalizzare divisioni del grafico come la _mediana_, che infatti è un _quantile_ di livello $\alpha = \frac{1}{2}$.
+
 [^1]: [_Probability mass function_](https://en.wikipedia.org/wiki/Probability_mass_function)
 
 [^2]: [_Probability density function_](https://en.wikipedia.org/wiki/Probability_density_function)
