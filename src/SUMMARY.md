@@ -38,6 +38,8 @@
 	- [Thread](./ct0125-1/02/README.md)
 	- [Scheduling](./ct0125-1/03/README.md)
 	- [Memoria](./ct0125-1/04/README.md)
+		- [Paginazione](./ct0125-1/04/01/README.md)
+		- [Segmentazione](./ct0125-1/04/02/README.md)
 
 # Primo anno
 
