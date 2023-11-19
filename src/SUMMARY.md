@@ -41,6 +41,8 @@
 		- [Paginazione](./ct0125-1/04/01/README.md)
 		- [Segmentazione](./ct0125-1/04/02/README.md)
 	- [Filesystem](./ct0125-1/05/README.md)
+	- [Dischi](./ct0125-1/06/README.md)
+	- [Casi di studio](./ct0125-1/07/README.md)
 
 # Primo anno
 
