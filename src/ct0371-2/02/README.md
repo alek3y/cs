@@ -49,7 +49,7 @@ graph {
 ```
 si ha che:
 - $7$ e $3$ sono _nodi interni_ mentre $8$, $12$ e $10$ sono _foglie_
-- $7$ ha _grado_ $2$, _altezza_ $3$ e _profondità_ $0$
+- $7$ ha _grado_ $2$, _altezza_ $2$ e _profondità_ $0$
 - $3$ e $7$ sono _antenati propri_ di $12$, mentre $12$ è _discendente_ di $3$, $7$ e $12$
 - $8$ e $12$ hanno _profondità_ $2$, mentre $10$ _profondità_ $1$
 - $3$ e $10$ come $8$ e $12$ sono _fratelli_
@@ -61,6 +61,10 @@ si ha che:
 
 Un albero si dice **$k$-ario** se ogni nodo ha **al più** $k$ figli.
 È detto **binario** invece, se è **vuoto** o possiede ricorsivamente un _sottoalbero binario_ **sinistro** e uno **destro**, ovvero $k = 2$ figli.
+
+Un albero **$k$-ario** è definito **bilanciato** se l'altezza $h = O(\log n)$.
+
+Se è _bilanciato_, viene anche detto **completo** se ogni _foglia_ ha la **stessa profondità** e ogni nodo ha **grado** $k$.
 
 Per esempio, l'albero
 ```dot process
@@ -77,9 +81,7 @@ graph {
 	d -- e, f
 }
 ```
-è $3$-ario perchè ha $k$ che è al **minimo** $3$.
-
-Un albero **$k$-ario** è definito **completo**, se ogni _foglia_ ha la **stessa profondità** e ogni nodo ha **grado** $k$.
+è $3$-ario perchè ha $k$ che è al **minimo** $3$, _bilanciato_ ma non _completo_.
 
 ### Numero di nodi
 
