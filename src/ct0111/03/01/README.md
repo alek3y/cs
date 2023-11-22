@@ -17,6 +17,9 @@ $$X \sim \mathrm{Ig}(N, m, n)$$
 - **Probabilità**: $P_X(k) = \frac{{m \choose k} {N-m \choose n-k}}{N \choose n}$
 - **Media**: $E(X) = n\frac{m}{N}$
 - **Varianza**: $\mathrm{Var}(X) = n\frac{m}{N}\frac{N - m}{N}\frac{N - n}{N - 1}$
+- **Funzione**,
+	- per $P(X = k)$: `dhyper(x=k, m=m, n=N-m, k=n)`
+	- per $P(X \leq k)$: `phyper(q=k, m=m, n=N-m, k=n)`
 
 Modella l'[estrazione](../../01/README.md#estrazione) di $n$ palline **senza reinserimento** da un'urna di $N$ palline dei quali $m$ sono successi.
 
@@ -29,6 +32,9 @@ $$X \sim \mathrm{Ber}(p)$$
 - **Probabilità**: $P_X(x) = \begin{cases}1 - p & \text{se } x = 0 \\ p & \text{se } x = 1 \\ 0 & \text{altrimenti}\end{cases} = p^x (1 - p)^{1-x}\mathbf{1}_{\{0, 1\}}(x)$
 - **Media**: $E(X) = p$
 - **Varianza**: $\mathrm{Var}(X) = p(1 - p)$
+- **Funzione**,
+	- per $P(X = k)$: `dbinom(x=k, size=1, prob=p)`
+	- per $P(X \leq k)$: `pbinom(q=k, size=1, prob=p)`
 
 ## Binomiale
 

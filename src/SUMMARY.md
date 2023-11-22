@@ -9,6 +9,7 @@
 	- [Probabilità condizionata](./ct0111/02/README.md)
 	- [Variabili casuali](./ct0111/03/README.md)
 		- [Distribuzioni discrete](./ct0111/03/01/README.md)
+		- [Distribuzioni continue](./ct0111/03/02/README.md)
 
 - [Algoritmi e strutture dati (M. 2)](./ct0371-2/README.md)
 	- [Dizionari](./ct0371-2/01/README.md)
