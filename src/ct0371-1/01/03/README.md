@@ -151,13 +151,13 @@ $$
 Esplodendo il tempo $T(n) = aT(\frac{n}{b}) + f(n)$ si trova che, e.g. con $a = 2$:
 ```dot process
 graph {
-	node [shape=circle width=0.5 fixedsize=true]
+	node [shape=circle]
 
 	{
 		rank=same
 		0 [shape=none label="Livello\n0"]
 		6 [shape=none label="Nodi\n1"]
-		a [label="n"]
+		a [label="n" width=0.5 fixedsize=true]
 	}
 
 	{
@@ -165,8 +165,12 @@ graph {
 		1 [shape=plain]
 		7 [shape=plain label="a"]
 		3 [shape=point width=0]
-		b [label="n/b"]
-		c [label="n/b"]
+
+		{
+			node [width=0.5 fixedsize=true]
+			b [label="n/b"]
+			c [label="n/b"]
+		}
 	}
 
 	{
@@ -174,10 +178,14 @@ graph {
 		2 [shape=plain]
 		8 [shape=plain label="a⋅a"]
 		4, 5 [shape=point width=0]
-		d [label="n/b²"]
-		e [label="n/b²"]
-		f [label="n/b²"]
-		g [label="n/b²"]
+
+		{
+			node [width=0.5 fixedsize=true]
+			d [label="n/b²"]
+			e [label="n/b²"]
+			f [label="n/b²"]
+			g [label="n/b²"]
+		}
 	}
 
 	a -- b [label="1"]
