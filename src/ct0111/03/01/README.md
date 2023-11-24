@@ -2,7 +2,7 @@
 
 ## Uniforme
 
-$$X \sim U(\{x_1, ..., x_n\})$$
+$$X \sim \mathrm{U}(\{x_1, ..., x_n\})$$
 
 - **Probabilità**: $P_X(x) = \frac{1}{n}$
 - **Media**: $E(X) = \frac{x_1 + x_n}{2}$
