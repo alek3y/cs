@@ -84,7 +84,7 @@ Un'**istanza** dello schema viene detta **valida** quando rispetta tutti i vinco
 		edge [arrowsize=0.5 dir=forward]
 		A [label="A | - Attributi\l- R &lt;FK(B)&gt;\l"]
 		B [label="B | - Attributi"]
-		A -> B [label="R"]
+		A -> B [label="R" arrowhead=normalnonetee]
 	}
 	```
 
