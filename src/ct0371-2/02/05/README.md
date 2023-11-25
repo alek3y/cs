@@ -7,6 +7,8 @@ che genera una stampa in ordine crescente con la visita [in-order](../03/README.
 
 ## Operazioni
 
+Dato che la maggior parte delle operazioni sono $O(h)$ dove $h$ è l'**altezza**, mantenere l'albero [bilanciato](../README.md#alberi-k-ari) permette di ottenere al meglio $T(n) = O(\log n)$ invece che $T(n) = O(n)$ nel caso peggiore.
+
 - **Ricerca**
 
 	```c
@@ -80,7 +82,7 @@ che genera una stampa in ordine crescente con la visita [in-order](../03/README.
 - **Inserimento**
 
 	```c
-	insert(Tree t, Node z)
+	insert(Tree T, Node z)
 	  y = NIL
 	  x = T.root
 	  while x != NIL  // Al più h volte
@@ -99,3 +101,80 @@ che genera una stampa in ordine crescente con la visita [in-order](../03/README.
 	      y.right = z
 	```
 	con $T(n) = O(h)$.
+
+- **Cancellazione**
+
+	Si può dimostrare che il _successore_ di un nodo $x$ **non ha figlio sinistro**, dato che nella visita [in-order](../03/README.md#depth-first-search) precedono i nodi del sottoalbero sinistro di $x$, poi $x$ e poi i nodi del sottoalbero destro.
+
+	Per _assurdo_ se $s$, i.e. il _successore_ di $x$, avesse un _figlio sinistro_ $y$, nella visita si avrebbe che $x \leadsto y \leadsto s$ che è una _contraddizione_ dato che allora sarebbe $y$ il _successore_ di $x$ e non $s$.
+
+	Questo permetterà di formare un algoritmo **corretto** per la _cancellazione_, che richiederà però:
+	```c
+	transplant(Tree T, Node u, Node v)  // Rimpiazza u con v
+	  if u.parent == NIL
+	    T.root = v
+	  else
+	    if u.parent.left == u
+	      u.parent.left = v
+	    else
+	      u.parent.right = v
+
+	    if v != NIL
+	      v.parent = u.parent
+	```
+	con $T(n) = \Theta(1)$, con cui si ottiene:
+	```c
+	delete(Tree T, Node z)
+	  if z.left == NIL
+	    transplant(T, z, z.right)  // Rimpiazza z con z.right dato che z.left è vuoto
+	  else if z.right == NIL
+	    transplant(T, z, z.left)
+	  else
+
+	    // Trova il successore in tempo O(h) per metterlo al posto di z
+	    y = minimum(z.right)
+
+	    // Se z non è il padre di y si rimpiazza y con y.right così che z.right
+	    // sia di ricerca e si possa spostare y al posto di z
+	    if y.parent != z
+	      transplant(T, y, y.right)
+	      y.right = z.right
+	      z.right.parent = y
+
+	    // Si sostituisce z con y anche se z è padre di y perchè essendo successore
+	    // y non ha y.left e quindi come figli di y si mettono z.left e z.right
+	    transplant(T, z, y)
+	    y.left = z.left
+	    z.left.parent = y
+	```
+	che avrà complessità $T(n) = O(h)$ per via di `minimum`.
+
+- **Costruzione**
+
+	```c
+	build(Array A) -> Tree
+	  Tree T = {root = NIL}
+	  for i = 1 to A.length  // n volte
+	    Node u = {key = A[i], left = NIL, right = NIL}
+	    insert(T, u)  // O(h) con h = i nel caso peggiore in cui A è ordinato
+	  return T
+	```
+	con $T(n) = \sum\limits_{i = 1}^{n} O(i) = O\left(\sum\limits_{i = 1}^{n} i\right) = O\left(\frac{n(n + 1)}{2}\right) = O(n^2)$.
+
+	Se sappiamo però che `A` è dato **ordinato**, allora si può **ottimizzare**:
+	```c
+	build_ord(Array A) -> Tree
+	  Tree T = {root = build_ord_aux(A, 1, A.length, NIL)}
+	  return T
+
+	build_ord_aux(Array A, int inf, int sup, Node parent) -> Node
+	  if inf > sup
+	    return NIL
+	  else
+	    med = floor((inf + sup)/2)
+	    Node r = {key = A[med], parent = parent}
+	    r.left = build_ord_aux(A, inf, med-1, r)
+	    r.right = build_ord_aux(A, med+1, sup, r)
+	    return r
+	```
+	con $T(n) = \Theta(n)$ perchè $T(n) = 2T\left(\frac{n}{2}\right) + d$ se $n > 0$ per il [teorema master](../../../ct0371-1/01/03/README.md#teorema-master).
