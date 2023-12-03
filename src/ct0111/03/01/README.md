@@ -62,9 +62,9 @@ $$X \sim \mathrm{Po}(\lambda)$$
 - **Media**: $E(X) = \lambda$
 - **Varianza**: $\mathrm{Var}(X) = \lambda$
 - **Funzione**,
-	- per $P(X = k)$: `dpois(x=k, lambda=lambda)`
-	- per $P(X \leq k)$: `ppois(q=k, lambda=lambda)`
-	- per $P(X \geq k)$: `1-ppois(q=k-1, lambda=lambda)`
+	- per $P(X = k)$: `dpois(x=k, lambda=𝜆)`
+	- per $P(X \leq k)$: `ppois(q=k, lambda=𝜆)`
+	- per $P(X \geq k)$: `1-ppois(q=k-1, lambda=𝜆)`
 
 Modella $X$ sul **conteggio** di un certo evento favorevole secondo una media $\lambda$.
 
@@ -85,7 +85,9 @@ $$X \sim \mathrm{Geo}(p)$$
 - **Probabilità**: $P_X(x) = p(1 - p)^{x - 1}$
 - **Media**: $E(X) = \frac{1}{p}$
 - **Varianza**: $\mathrm{Var}(X) = \frac{1 - p}{p^2}$
-- **Funzione**, per $P(X = x)$: `dgeom(x=x-1, prob=p)`
+- **Funzione**,
+	- per $P(X = x)$: `dgeom(x=x-1, prob=p)`
+	- per $P(X \leq x)$: `pgeom(q=x-1, prob=p)`
 
 Modella $X$ sul numero di **ripetizioni necessarie** per ottenere il primo successo con probabilità $p$.
 

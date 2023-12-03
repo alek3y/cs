@@ -62,3 +62,56 @@ P(800 \leq X \leq 850) &= P(799.5 < X < 850.5) \approx \\
 &= 0.631887
 \end{split}
 $$
+
+## Gamma
+
+$$X \sim \mathrm{Ga}(\alpha, \lambda)$$
+
+- **Densità**: $f(x) = \frac{\lambda^\alpha}{\Gamma(\alpha)}x^{\alpha-1}e^{-\lambda x}$, per $x > 0$
+- **Media**: $E(X) = \frac{\alpha}{\lambda}$
+- **Varianza**: $\mathrm{Var}(X) = \frac{\alpha}{\lambda^2}$
+- **Funzione**, per $P(X \leq x)$: `pgamma(q=x, shape=𝛼, rate=𝜆)`
+
+Come la _normale_ ma solo per le $X > 0$, annullando quindi la proprietà di _simmetria_.
+
+La _densità_ contiene la **funzione gamma** che estende il fattoriale su $\mathbb{R}$, infatti $\Gamma(n+1) = n!, \forall n \in \mathbb{N}$.
+
+Riordinando i termini per ottenere una _densità_ **conosciuta** invece, si trovano la _media_ e la _varianza_:
+$$
+\begin{split}
+E(x) &= \int_0^\infty x\frac{\lambda^\alpha}{\Gamma(\alpha)}x^{\alpha-1}e^{-\lambda x} dx
+= \frac{\lambda^\alpha}{\Gamma(\alpha)} \int_0^\infty x^{(\alpha+1)-1}e^{-\lambda x} dx = \\
+&= \frac{\lambda^\alpha}{\Gamma(\alpha)} \cdot \frac{\Gamma(\alpha + 1)}{\lambda^{\alpha + 1}} \int_0^\infty \frac{\lambda^{\alpha + 1}}{\Gamma(\alpha + 1)} x^{(\alpha+1)-1}e^{-\lambda x} dx = \\
+&= \frac{\lambda^\alpha}{\Gamma(\alpha)} \cdot \frac{\Gamma(\alpha + 1)}{\lambda^{\alpha + 1}} \cdot 1
+= \frac{\lambda^\alpha}{\cancel{\Gamma(\alpha)}} \cdot \frac{\cancel{\Gamma(\alpha)} \cdot \alpha}{\lambda^{\alpha + 1}} = \frac{\alpha}{\lambda}
+\end{split}
+$$
+
+## Esponenziale
+
+$$X \sim \mathrm{Exp}(\lambda)$$
+
+- **Densità**: $f(x) = \lambda e^{-\lambda x}$, per $x \geq 0$
+- **Ripartizione**: $F(x) = 1 - e^{-\lambda x}$
+- **Media**: $E(X) = \frac{1}{\lambda}$
+- **Varianza**: $\mathrm{Var}(X) = \frac{1}{\lambda^2}$
+- **Funzione**, per $P(X \leq x)$: `pgamma(q=x, shape=1, rate=𝜆)`
+
+Modella $X$ sul **tempo di attesa** per l'arrivo di un successo in base ad una **frequenza media** $\lambda$.
+
+Come la [geometrica](../01/README.md#geometrica), possiede la **mancanza di memoria**.
+
+Per esempio, ogni ora un software è installato su $\lambda = 30$ PC, la probabilità che ci vogliano più di $5$ minuti è:
+$$
+P\left(X > \frac{5}{60}\right) = 1 - P\left(X \leq \frac{5}{60}\right) = 1 - (1 - e^{-30 \cdot \frac{5}{60}}) = e^{-\frac{5}{2}}
+$$
+
+## Processo di Poisson
+
+$$
+X_t \sim \mathrm{Po}(\lambda \cdot t)
+$$
+
+L'insieme delle $X_t$ per $t > 0$ modella il **conteggio** di eventi dal tempo $0$ al tempo $t$.
+
+Per esempio, ogni $10$ minuti arrivano $12$ messaggi, la probabilità che non arrivi alcun messaggio in $15$ minuti è $P(X_{15} = 0) = e^{-\frac{12}{10} \cdot 15} = e^{-18}$, che in questo caso è uguale a $P(T > 15) = e^{-18}$ con $T \sim \mathrm{Exp}(\frac{12}{10})$.
