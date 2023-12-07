@@ -21,6 +21,11 @@
 		- [Visite](./ct0371-2/02/03/README.md)
 		- [Decomposizione](./ct0371-2/02/04/README.md)
 		- [Di ricerca](./ct0371-2/02/05/README.md)
+		- [Altri tipi](./ct0371-2/02/06/README.md)
+	- [Ordinamento](./ct0371-2/03/README.md)
+		- [Insertion sort](./ct0371-2/03/01/README.md)
+		- [Merge sort](./ct0371-2/03/02/README.md)
+		- [Quick sort](./ct0371-2/03/03/README.md)
 
 - [Algoritmi e strutture dati (M. 1)](./ct0371-1/README.md)
 	- [Complessità asintotica](./ct0371-1/01/README.md)
