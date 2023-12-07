@@ -178,3 +178,95 @@ Dato che la maggior parte delle operazioni sono $O(h)$ dove $h$ è l'**altezza**
 	    return r
 	```
 	con $T(n) = \Theta(n)$ perchè $T(n) = 2T\left(\frac{n}{2}\right) + d$ se $n > 0$ per il [teorema master](../../../ct0371-1/01/03/README.md#teorema-master).
+
+## Esempi
+
+- Restituire il numero massimo di ripetizioni in un albero binario di ricerca in $\Theta(n)$.
+
+	```cpp
+	int massimo_ripetizioni(Tree t) {
+	  if (t.root == nullptr) {
+	    return 0;
+	  }
+
+	  int max = 1, count = 1;
+	  PNode iter = minimum(t.root);  // O(h)
+	  int value = iter->key;
+	  iter = successor(iter);
+	  while (iter != nullptr) {
+	    if (iter->key == value) {
+	      count++;
+	    } else {
+	      if (count > max) {
+	        max = count;
+	      }
+	      count = 1;
+	      value = iter->key;
+	    }
+	    iter = successor(iter);  // O(h)
+	  }
+
+	  if (count > max) {
+	    max = count;
+	  }
+	  return max;
+	}
+	```
+	con $T(n) = \Theta(n)$ perchè chiamando `minimum` e poi $n$ volte `successor` si ha una visita in-order.
+
+- Verificare che un albero sia di ricerca.
+
+	```cpp
+	bool is_bst(PNode r) {
+	  if (r == nullptr) {
+	    return true;
+	  }
+	  int min, max;
+	  return is_bst_aux(r, min, max);
+	}
+
+	bool is_bst_aux(PNode u, int& min, int& max) {
+	  int min_sx, min_dx, max_sx, max_dx;
+	  bool is_sx, is_dx;
+	  if (u->left == nullptr) {
+	    is_sx = true;
+	    min_sx = max_sx = u->key;
+	  } else {
+	    is_sx = is_bst_aux(u->left, min_sx, max_sx);
+	  }
+	  if (u->right == nullptr) {
+	    is_dx = true;
+	    min_dx = max_dx = u->key;
+	  } else {
+	    is_dx = is_bst_aux(u->right, min_dx, max_dx);
+	  }
+
+	  min = min_sx;
+	  max = max_dx;
+	  return is_sx && is_dx && max_sx <= u->key && min_dx >= u->key;
+	}
+	```
+	con $T(n) = \Theta(n)$ per la [decomposizione](../04/README.md).
+
+- Verificare che dato un albero $T$ _binario di ricerca_ $\forall k, k \in T \land k + 2 \in T \Rightarrow k+1 \in T$.
+
+	```cpp
+	bool check(Tree t) {
+	  if (t.root == nullptr) {
+	    return true;
+	  }
+
+	  PNode iter = minimum(t.root), succ;
+	  bool valid = true;
+	  while (iter != nullptr && valid) {
+	    succ = successor(iter);
+	    if (succ != nullptr && succ->key >= iter->key+2) {
+	      valid = false;
+	    } else {
+	      iter = succ;
+	    }
+	  }
+	  return valid;
+	}
+	```
+	con $T(n) = O(n)$ dato che la visita in-order può terminare in anticipo se l'albero non è valido.
