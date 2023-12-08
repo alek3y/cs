@@ -62,7 +62,7 @@ digraph {
 		select * from Esami where Voto > 26;
 		```
 
-	Supporta anche _condizioni_ come `between`, e `like`:
+	Supporta anche _condizioni_ come `between` e `like`:
 	```sql
 	select * from Studenti where Matricola between 71000 and 72000;
 	select * from Studenti where Nome like 'A_%i';  -- Corrisponde alla regex /^A..*i$/
@@ -147,7 +147,7 @@ digraph {
 		```sql
 		select count(distinct Voto), avg(Voto) from Esami;
 		```
-		con `distinct` che rimuovi i duplicati da `Voto` sul conteggio.
+		con `distinct` che rimuove i duplicati da `Voto` sul conteggio.
 
 	- $_{\text{Candidato}}\gamma_{\text{Candidato}, \mathrm{count}(\ast), \mathrm{avg}(\text{Voto})}(\text{Esami})$:
 
@@ -224,4 +224,76 @@ digraph {
 
 	delete from Studenti where Matricola = '74324';
 	delete from Studenti where Matricola not in (select Candidato from Esami);
+	```
+
+## Definizione
+
+Una base di dati è composta da:
+Su una base di dati è possibile definire:
+
+- **Schemi**, cioè un raggruppamento di **tabelle**
+
+	```sql
+	create schema Università;
+	drop schema Università;
+	```
+
+- **Tabelle**, formate da un insieme di **colonne** formate da un _nome_ e un _tipo_
+
+	```sql
+	create table Università.Studenti (
+	  Nome varchar(10) not null,
+	  Cognome varchar(10) not null,
+	  Sesso char(1) check(Sesso in ('M', 'F')),
+	  Matricola char(6)
+	  Nascita date,
+	  Provincia char(2) default 'VE',
+	  Tutor char(6)
+	);
+	create table Università.Tutor as
+	  select t.Matricola, t.Nome, t.Cognome from Università.Studenti t
+	  where t.Matricola in (
+	    select s.Tutor from Studenti s where s.Provincia = 'VE'
+	  );
+
+	alter table Studenti add column Nazionalità varchar(10) default 'Italiana';
+	alter table Studenti drop column Provincia;
+
+	drop table Università.Tutor;  -- Si blocca se ci sono riferimenti (restrict di default)
+	drop table Università.Studenti cascade;  -- Cancella gli oggetti che gli riferiscono
+	```
+
+- **Vincoli**, per limitare i valori assunti dalle colonne
+
+	```sql
+	create table Esami (
+	  Codice char(4) primary key,
+	  Materia char(3),
+	  Candidato char(6) not null,
+	  Voto integer check(Voto >= 18 and Voto <= 30),
+	  CodDoc char(3) not null,
+	  unique (Materia, Candidato),
+	  foreign key (Candidato) references Studenti(Matricola)
+	    on update cascade
+	    on delete set null,
+	  foreign key (CodDoc) references Docenti(CodDoc)
+	    on update cascade
+	    on delete set default
+	);
+
+	alter table Studenti add primary key (Matricola);
+	alter table Studenti alter column Provincia drop default;
+	```
+
+- **Viste**, cioè tabelle virtuali basate su _query_
+
+	```sql
+	create view VotiMedi (Matricola, Media) as
+	  select e.Candidato, avg(Voto) from Esami e group by e.Candidato;
+	create view ProvMax (Provincia, Max) as
+	  select s.Provincia, max(e.Voto) from Studenti s
+	  join Esami e on s.Matricola = e.Candidato
+	  group by s.Provincia;
+
+	select avg(Max) from ProvMax;  -- Media dei voti massimi tra province
 	```
