@@ -213,7 +213,7 @@
 </code></pre>
 </li>
 </ul>
-<p>Supporta anche <em>condizioni</em> come <code>between</code>, e <code>like</code>:</p>
+<p>Supporta anche <em>condizioni</em> come <code>between</code> e <code>like</code>:</p>
 <pre><code class="language-sql">select * from Studenti where Matricola between 71000 and 72000;
 select * from Studenti where Nome like 'A_%i';  -- Corrisponde alla regex /^A..*i$/
 </code></pre>
@@ -303,7 +303,7 @@ select Candidato from esami where Voto = 30;
 <p><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.1052em;vertical-align:-0.3552em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05556em;">γ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3448em;"><span style="top:-2.5198em;margin-left:-0.0556em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathrm mtight">count</span></span><span class="mopen mtight">(</span><span class="mord text mtight"><span class="mord mtight">Voto</span></span><span class="mclose mtight">)</span><span class="mpunct mtight">,</span><span class="mord mtight"><span class="mord mathrm mtight" style="margin-right:0.01389em;">avg</span></span><span class="mopen mtight">(</span><span class="mord text mtight"><span class="mord mtight">Voto</span></span><span class="mclose mtight">)</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.3552em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord text"><span class="mord">Esami</span></span><span class="mclose">)</span></span></span></span>:</p>
 <pre><code class="language-sql">select count(distinct Voto), avg(Voto) from Esami;
 </code></pre>
-<p>con <code>distinct</code> che rimuovi i duplicati da <code>Voto</code> sul conteggio.</p>
+<p>con <code>distinct</code> che rimuove i duplicati da <code>Voto</code> sul conteggio.</p>
 </li>
 <li>
 <p><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.1052em;vertical-align:-0.3552em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">Candidato</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05556em;">γ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3448em;"><span style="top:-2.5198em;margin-left:-0.0556em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">Candidato</span></span><span class="mpunct mtight">,</span><span class="mord mtight"><span class="mord mathrm mtight">count</span></span><span class="mopen mtight">(</span><span class="mord mtight">∗</span><span class="mclose mtight">)</span><span class="mpunct mtight">,</span><span class="mord mtight"><span class="mord mathrm mtight" style="margin-right:0.01389em;">avg</span></span><span class="mopen mtight">(</span><span class="mord text mtight"><span class="mord mtight">Voto</span></span><span class="mclose mtight">)</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.3552em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord text"><span class="mord">Esami</span></span><span class="mclose">)</span></span></span></span>:</p>
@@ -371,6 +371,74 @@ update Esami set Voto = Voto + 1 where Voto &gt; 23 and Voto &lt; 30;
 
 delete from Studenti where Matricola = '74324';
 delete from Studenti where Matricola not in (select Candidato from Esami);
+</code></pre>
+</li>
+</ul>
+<h2 id="definizione"><a class="header" href="#definizione">Definizione</a></h2>
+<p>Una base di dati è composta da:
+Su una base di dati è possibile definire:</p>
+<ul>
+<li>
+<p><strong>Schemi</strong>, cioè un raggruppamento di <strong>tabelle</strong></p>
+<pre><code class="language-sql">create schema Università;
+drop schema Università;
+</code></pre>
+</li>
+<li>
+<p><strong>Tabelle</strong>, formate da un insieme di <strong>colonne</strong> formate da un <em>nome</em> e un <em>tipo</em></p>
+<pre><code class="language-sql">create table Università.Studenti (
+  Nome varchar(10) not null,
+  Cognome varchar(10) not null,
+  Sesso char(1) check(Sesso in ('M', 'F')),
+  Matricola char(6)
+  Nascita date,
+  Provincia char(2) default 'VE',
+  Tutor char(6)
+);
+create table Università.Tutor as
+  select t.Matricola, t.Nome, t.Cognome from Università.Studenti t
+  where t.Matricola in (
+    select s.Tutor from Studenti s where s.Provincia = 'VE'
+  );
+
+alter table Studenti add column Nazionalità varchar(10) default 'Italiana';
+alter table Studenti drop column Provincia;
+
+drop table Università.Tutor;  -- Si blocca se ci sono riferimenti (restrict di default)
+drop table Università.Studenti cascade;  -- Cancella gli oggetti che gli riferiscono
+</code></pre>
+</li>
+<li>
+<p><strong>Vincoli</strong>, per limitare i valori assunti dalle colonne</p>
+<pre><code class="language-sql">create table Esami (
+  Codice char(4) primary key,
+  Materia char(3),
+  Candidato char(6) not null,
+  Voto integer check(Voto &gt;= 18 and Voto &lt;= 30),
+  CodDoc char(3) not null,
+  unique (Materia, Candidato),
+  foreign key (Candidato) references Studenti(Matricola)
+    on update cascade
+    on delete set null,
+  foreign key (CodDoc) references Docenti(CodDoc)
+    on update cascade
+    on delete set default
+);
+
+alter table Studenti add primary key (Matricola);
+alter table Studenti alter column Provincia drop default;
+</code></pre>
+</li>
+<li>
+<p><strong>Viste</strong>, cioè tabelle virtuali basate su <em>query</em></p>
+<pre><code class="language-sql">create view VotiMedi (Matricola, Media) as
+  select e.Candidato, avg(Voto) from Esami e group by e.Candidato;
+create view ProvMax (Provincia, Max) as
+  select s.Provincia, max(e.Voto) from Studenti s
+  join Esami e on s.Matricola = e.Candidato
+  group by s.Provincia;
+
+select avg(Max) from ProvMax;  -- Media dei voti massimi tra province
 </code></pre>
 </li>
 </ul>
