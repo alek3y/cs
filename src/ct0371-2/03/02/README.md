@@ -35,9 +35,9 @@ merge(Array A, int p, int med, int r)
 ```
 
 L'algoritmo è **corretto** per l'[invariante](../../01/02/README.md#analisi-della-correttezza) dell'ultimo `for`:
-> In `A[p, ..., k-1]` sono **ordinati** elementi che, come `L[i]` e `R[j]`, sono minori del resto di `L` e `R`
+> In `A[p..k-1]` sono **ordinati** elementi che, come `L[i]` e `R[j]`, sono minori del resto di `L` e `R`
 
-e quando il `for` termina `k = r + 1` quindi l'_invariante_ vale per `A[p, ..., r+1-1]` cioè l'intero array.
+e quando il `for` termina `k = r + 1` quindi l'_invariante_ vale per `A[p..r+1-1]` cioè l'intero array.
 
 La complessità di `merge` si può ricavare, sapendo che $n = r - p + 1$, da:
 $$

@@ -7,7 +7,7 @@ che genera una stampa in ordine crescente con la visita [in-order](../03/README.
 
 ## Operazioni
 
-Dato che la maggior parte delle operazioni sono $O(h)$ dove $h$ è l'**altezza**, mantenere l'albero [bilanciato](../README.md#alberi-k-ari) permette di ottenere al meglio $T(n) = O(\log n)$ invece che $T(n) = O(n)$ nel caso peggiore.
+Dato che la maggior parte delle operazioni sono $O(h)$ dove $h$ è l'**altezza**, mantenere l'albero [bilanciato](../README.md#alberi-k-ari) permette di ottenere al meglio $T(n) = O(\log n)$ invece che $O(n)$ nel caso peggiore.
 
 - **Ricerca**
 

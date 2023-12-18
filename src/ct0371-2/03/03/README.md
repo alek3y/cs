@@ -1,6 +1,6 @@
 # Quick sort
 
-Il **quick sort** sceglie un elemento **pivot** spostando gli elementi minori a sinistra per **partizionare** l'array in `A[p, ..., q-1]` e `A[q+1, ..., r]` e poi riordinarli ricorsivamente, dove `A[q]` è il valore del _pivot_.
+Il **quick sort** sceglie un elemento **pivot** spostando gli elementi minori a sinistra per **partizionare** l'array in `A[p..q-1]` e `A[q+1..r]` e poi riordinarli ricorsivamente, dove `A[q]` è il valore del _pivot_.
 
 ```c
 quicksort(Array A, int p, int r)
@@ -119,21 +119,23 @@ che si può risolvere separando nei diversi casi:
 	$$
 	che è comunque $O(n \log n)$.
 
+L'algoritmo è **in loco**, ma non è _stabile_.
+
 ## Pivot casuale
 
 Scegliere un _pivot_ **casuale** al posto di `A[r]` diminuisce le probabilità che capiti il caso peggiore.
 
 ```c
 random_quicksort(Array A, int p, int r)
-	if p < r
-		q = random_partition(A, p, r)
-		random_quicksort(A, p, q-1)
-		random_quicksort(A, q+1, r)
+  if p < r
+    q = random_partition(A, p, r)
+    random_quicksort(A, p, q-1)
+    random_quicksort(A, q+1, r)
 
 random_partition(Array A, int p, int r) -> int
-	i = random(p, r)
-	swap(A[i], A[r])
-	return partition(A, p, r)
+  i = random(p, r)
+  swap(A[i], A[r])
+  return partition(A, p, r)
 ```
 
 Come per il [merge sort](../02/README.md), è possibile migliorare le prestazioni sfruttando l'[insertion sort](../01/README.md) su array piccoli, oppure scegliendo il _pivot_ come **mediana** di tre elementi equidistanti.
@@ -143,33 +145,31 @@ Come per il [merge sort](../02/README.md), è possibile migliorare le prestazion
 Nel caso fossero presenti chiavi **duplicate** si rischierebbe di avere array **sbilanciati** (e.g. nel caso di chiavi tutte uguali), che si possono evitare creando una _partizione_ per gli elementi uguali al _pivot_ `A[r]`:
 ```c
 quicksort(Array A, int p, int r)
-	if p < r
-		<q, t> = partition(A, p, r)
-		quicksort(A, p, q-1)
-		quicksort(A, t+1, r)
+  if p < r
+    <q, t> = partition(A, p, r)
+    quicksort(A, p, q-1)
+    quicksort(A, t+1, r)
 
 partition(Array A, int p, int r) -> <int, int>
-	x = A[r]
-	min = eq = p
-	mag = r
-	while eq < mag
-		if A[eq] < x
-			swap(A[eq], A[min])
-			min++
-			eq++
-		else if A[eq] == x
-			eq++
-		else
-			mag--
-			swap(A[eq], A[mag])
-	swap(A[r], A[mag])
-	return <min, mag>
+  x = A[r]
+  min = eq = p
+  mag = r
+  while eq < mag
+    if A[eq] < x
+      swap(A[eq], A[min])
+      min++
+      eq++
+    else if A[eq] == x
+      eq++
+    else
+      mag--
+      swap(A[eq], A[mag])
+  swap(A[r], A[mag])
+  return <min, mag>
 ```
 che è **corretto** perchè il `while` ha _invariante_:
 > Tra `p` e `min` sono **minori**, tra `min` ed `eq` sono **uguali** e tra `mag` e `r` sono **maggiori** del _pivot_
 
 assicurando che quando il `while` termina `eq = mag` e quindi ci sono solo tre _partizioni_.
 
-Nel caso **medio** `quicksort` è $O(n \log n)$ e nel **peggiore** $O(n^2)$ con `partition` da $\Theta(n)$.
-
-L'algoritmo è **in loco**, ma non è _stabile_.
+Questa versione di `partition` è $\Theta(r - p)$ cioè $\Theta(n)$, per cui la complessità di `quicksort` sarà la stessa.
