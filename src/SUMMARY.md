@@ -11,6 +11,7 @@
 		- [Distribuzioni discrete](./ct0111/03/01/README.md)
 		- [Distribuzioni continue](./ct0111/03/02/README.md)
 	- [Variabili congiunte](./ct0111/04/README.md)
+	- [Catene di Markov](./ct0111/05/README.md)
 
 - [Algoritmi e strutture dati (M. 2)](./ct0371-2/README.md)
 	- [Dizionari](./ct0371-2/01/README.md)

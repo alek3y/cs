@@ -115,3 +115,70 @@ $$
 E(g(X, Y)) = \iint_{\mathbb{R}^2} g(x, y) f(x, y) dx dy
 $$
 da cui $E(X + Y) = E(X) + E(Y)$ e nel caso siano **indipendenti** $E(X \cdot Y) = E(X)E(Y)$.
+
+## Covarianza
+
+La **covarianza** tra due variabili $X$ e $Y$ misura quanto **variano** insieme:
+$$
+\mathrm{Cov}(X, Y) = E((X - E(X))(Y - E(Y))) = E(XY) - E(X)E(Y)
+$$
+infatti se sono _indipendenti_ $\mathrm{Cov}(X, Y) = 0$.
+
+### Proprietà
+
+La _covarianza_ segue le proprietà per cui:
+- $\mathrm{Cov}(X, Y) = \mathrm{Cov}(Y, X)$
+- $\mathrm{Cov}(aX, Y) = a\mathrm{Cov}(Y, X)$
+- $\mathrm{Var}(aX) = \mathrm{Cov}(aX, aX) = a^2\mathrm{Cov}(X)$
+- $\mathrm{Cov}(X, a) = 0$
+- $\mathrm{Cov}\left(\sum_i X_i, \sum_j Y_i\right) = \sum_i\sum_j \mathrm{Cov}\left(X_i, Y_i\right)$
+- $\mathrm{Var}\left(\sum_i X_i\right) = \sum_i \mathrm{Var}(X_i) + 2\sum_i\sum_{j > i} \mathrm{Cov}(X_i, X_j)$
+
+## Correlazione
+
+La **correlazione** tra $X$ e $Y$ misura quanto il variare di $X$ dipende da $Y$ e viceversa:
+$$
+\mathrm{Cor}(X, Y) = \frac{\mathrm{Cov}(X, Y)}{\sqrt{\mathrm{Var}(X) \cdot \mathrm{Var}(Y)}} \in [-1, 1]
+$$
+che nel caso più estremo in cui $Y = aX + b$ allora $\mathrm{Cor}(X, Y) = \mathrm{sgn}(a) = \pm 1$.
+
+## Somme di variabili
+
+- $\sum\limits_{i = 1}^n \mathrm{Bin}(1, p) = \mathrm{Bin}(n, p)$
+- $\sum\limits_{i = 1}^n \mathrm{Po}(\lambda_i) = \mathrm{Po}\left(\sum\limits_{i = 1}^n \lambda_i\right)$
+- $\sum\limits_{i = 1}^n \mathrm{Exp}(\lambda) = \mathrm{Ga}(n, \lambda)$
+- $\sum\limits_{i = 1}^n \mathrm{N}(\mu_i, \sigma_i^2) = \mathrm{N}\left(\sum\limits_{i = 1}^n \mu_i, \sum\limits_{i = 1}^n \sigma_i^2\right)$
+
+## Media campionaria
+
+La **media campionaria** di $n$ variabili **indipendenti** con $E(X_i) = \mu$ e $\mathrm{Var}(X_i) = \sigma^2$ è definita come:
+$$
+\overline{X}_n = \frac{\sum_i X_i}{n}
+$$
+che avrà _media_ $E(\overline{X}_n) = \mu$ e _varianza_ $\mathrm{Var}(\overline{X}_n) = \frac{\sigma^2}{n}$.
+
+## Disuguaglianza di Chebyshev
+
+Data una _variabile casuale_ $X$ con $\mathrm{Var}(X) \in \mathbb{R}$:
+$$
+P(|X - E(X)| > \epsilon) \leq \frac{\mathrm{Var}(X)}{\epsilon^2},\ \forall \epsilon > 0
+$$
+
+Per esempio, se $E(Y) = 130$ e $\mathrm{Var}(Y) = 50$ allora:
+$$
+P(100 \leq Y \leq 160) = 1 - P(|Y - 130| > 30) \geq 1 - \frac{50}{30^2} \approx 0.944
+$$
+
+## LLN e CLT
+
+Per **LLN** (_Law of Large Numbers_), $\overline{X}_n$ si concentrerà su $\mu$ con l'aumentare del _campione_ (i.e. $X_1, ..., X_n, ...$):
+$$
+\overline{X}_n \overset{p}{\rightarrow} \mu\ \Leftrightarrow\ \plim_{n \to \infty} \overline{X}_n = \mu\ \Leftrightarrow\ \lim_{n \to \infty} P(|\overline{X}_n - \mu| < \epsilon) = 1,\ \forall \epsilon > 0
+$$
+
+Mentre per **CLT** (_Central Limit Theorem_), $\overline{X}_n$ si avvicina alla forma di una _distribuzione normale_:
+$$
+X = \frac{(\overline{X}_n - \mu)\sqrt{n}}{\sigma} \\ \Downarrow \\
+X \overset{d}{\rightarrow} \mathrm{N}(0, 1)\ \Leftrightarrow\ \lim_{n \to \infty} F_{X}(x) = F_{\mathrm{N(0, 1)}}(x),\ \forall x
+$$
+che permette di **approssimare la probabilità** senza conoscere la distribuzione esatta.

@@ -72,7 +72,7 @@ $$X \sim \mathrm{Ga}(\alpha, \lambda)$$
 - **Varianza**: $\mathrm{Var}(X) = \frac{\alpha}{\lambda^2}$
 - **Funzione**, per $P(X \leq x)$: `pgamma(q=x, shape=𝛼, rate=𝜆)`
 
-Come la _normale_ ma solo per le $X > 0$, annullando quindi la proprietà di _simmetria_.
+Modella $X$ sul **tempo di attesa** per l'arrivo di $\alpha$ successi con **frequenza media** $\lambda$.
 
 La _densità_ contiene la **funzione gamma** che estende il fattoriale su $\mathbb{R}$, infatti $\Gamma(n+1) = n!, \forall n \in \mathbb{N}$.
 
@@ -97,7 +97,7 @@ $$X \sim \mathrm{Exp}(\lambda)$$
 - **Varianza**: $\mathrm{Var}(X) = \frac{1}{\lambda^2}$
 - **Funzione**, per $P(X \leq x)$: `pgamma(q=x, shape=1, rate=𝜆)`
 
-Modella $X$ sul **tempo di attesa** per l'arrivo di un successo in base ad una **frequenza media** $\lambda$.
+Modella $X$ sull'**attesa** di un successo in base ad una **frequenza** $\lambda$.
 
 Come la [geometrica](../01/README.md#geometrica), possiede la **mancanza di memoria**.
 
