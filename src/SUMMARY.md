@@ -30,6 +30,7 @@
 		- [Merge sort](./ct0371-2/03/02/README.md)
 		- [Quick sort](./ct0371-2/03/03/README.md)
 		- [Heap sort](./ct0371-2/03/04/README.md)
+	- [Code di priorità](./ct0371-2/04/README.md)
 
 - [Algoritmi e strutture dati (M. 1)](./ct0371-1/README.md)
 	- [Complessità asintotica](./ct0371-1/01/README.md)
