@@ -128,7 +128,7 @@ infatti se sono _indipendenti_ $\mathrm{Cov}(X, Y) = 0$.
 
 La _covarianza_ segue le proprietà per cui:
 - $\mathrm{Cov}(X, Y) = \mathrm{Cov}(Y, X)$
-- $\mathrm{Cov}(aX, Y) = a\mathrm{Cov}(Y, X)$
+- $\mathrm{Cov}(aX, Y) = a\mathrm{Cov}(X, Y)$
 - $\mathrm{Var}(aX) = \mathrm{Cov}(aX, aX) = a^2\mathrm{Cov}(X)$
 - $\mathrm{Cov}(X, a) = 0$
 - $\mathrm{Cov}\left(\sum_i X_i, \sum_j Y_i\right) = \sum_i\sum_j \mathrm{Cov}\left(X_i, Y_i\right)$

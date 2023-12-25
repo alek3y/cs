@@ -136,7 +136,7 @@ Nel caso **continuo** invece, si rispetta la condizione per cui $\int_{-\infty}^
 
 ## Quantili
 
-Un **quantile di livello** $\alpha$ è il minimo valore $q_\alpha$ per cui, nel caso **discreto**:
+Un **quantile di livello** $\alpha$ è il minimo valore $q_\alpha$ per cui, nel caso **continuo**:
 $$
 F(q_\alpha) = P(X \leq q_\alpha) = \alpha
 $$
