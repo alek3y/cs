@@ -16,7 +16,7 @@ Dato che la maggior parte delle operazioni sono $O(h)$ dove $h$ è l'**altezza**
 	  if x == NIL or x.info == k
 	    return x
 	  else
-	    if x.Key > k
+	    if x.info > k
 	      return tree_search(x.left, k)
 	    else
 	      return tree_search(x.right, k)

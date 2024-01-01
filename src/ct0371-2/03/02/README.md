@@ -14,19 +14,16 @@ merge(Array A, int p, int med, int r)
   L = []
   left_len = med - p + 1
   for i = 1 to left_len
-    push(L, A[p + i - 1])
+    push(L, A[p + i-1])
 
   R = []
   right_len = r - med
   for i = 1 to right_len
-    push(R, A[q + j])
-
-  push(L, Infinity)
-  push(R, Infinity)
+    push(R, A[med + i])
 
   i = 1, j = 1
   for k = p to r
-    if L[i] <= R[j]
+    if i <= left_len and (j > right_len or L[i] <= R[j])
       A[k] = L[i]
       i++
     else

@@ -128,7 +128,7 @@ Allora dato un $d = \log_b a$, si ha:
 
 - **Caso 3**
 
-	$$\exists \epsilon > 0 : f(n) = \Omega(n^{n + \epsilon})\ \land\ \exists 0 < c < 1 : a \cdot f\left(\frac{n}{b}\right) \leq c \cdot f(n) \\ \Downarrow \\ T(n) = \Theta(f(n))$$
+	$$\exists \epsilon > 0 : f(n) = \Omega(n^{d + \epsilon})\ \land\ \exists 0 < c < 1 : a \cdot f\left(\frac{n}{b}\right) \leq c \cdot f(n) \\ \Downarrow \\ T(n) = \Theta(f(n))$$
 	per cui, se ci vuole **più tempo per dividere il padre** in $a$ figli che per dividere tutti gli $a$ figli (per la _condizione ausiliaria_), allora la _complessità_ è **dominata dalla parte di suddivisione** $f(n)$.
 
 	Per esempio, se
