@@ -62,7 +62,7 @@ Per un _heap_ di $n$, si ha che:
 	    swap(A[i], A[max])
 	    max_heapify(A, max)
 	```
-	dove `A.heap_size` corrisponde a $n$ mentre $T(n) = O(h)$ cioè $O(\log n)$ per la _terza proprietà_.
+	dove `A.heap_size` corrisponde a $n$ mentre $T(n) = O(h)$ cioè $O(\log n)$ per la _prima proprietà_.
 
 - **Costruzione**, per generare gradualmente l'heap da $\left\lfloor\frac{n}{2}\right\rfloor$, cioè i nodi sopra le foglie, fino alla radice
 

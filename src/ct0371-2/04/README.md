@@ -20,7 +20,7 @@ Una realizzazione delle _code a massima priorità_ sfrutta gli [heap](../02/06/R
 
 	```c
 	extract_max(Heap A) -> Elem
-	  max = A[i]
+	  max = A[1]
 	  A[1] = A[A.heap_size]  // Mantengo le foglie a sinistra scegliendo l'ultima
 	  A.heap_size--
 	  max_heapify(A, 1)
