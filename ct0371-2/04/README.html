@@ -180,7 +180,7 @@
 <li>
 <p><strong>Estrazione del massimo</strong></p>
 <pre><code class="language-c">extract_max(Heap A) -&gt; Elem
-  max = A[i]
+  max = A[1]
   A[1] = A[A.heap_size]  // Mantengo le foglie a sinistra scegliendo l'ultima
   A.heap_size--
   max_heapify(A, 1)
