@@ -170,7 +170,7 @@ Inoltre la <strong>condivisione</strong> porterà a meno <em>overhead</em>, dato
 <h2 id="protezione"><a class="header" href="#protezione">Protezione</a></h2>
 <p>Una tecnica per <strong>proteggere</strong> i segmenti in memoria è quella di associare al processo e ai segmenti una <strong>chiave di protezione</strong> modificabili solo dal <em>kernel</em> che, se combacia, ne permetterà l'accesso.</p>
 <p>L'alternativa più comune è l'uso dei <strong>bit di protezione</strong>, che specificano quali tra le operazioni il processo ha il permesso di effettuare, come i bit <em>read</em>, <em>write</em> e <em>execute</em>.</p>
-<p>Questi danno un maggior controllo sulla memoria, infatti durante un riferimento avvenire le <strong>eccezioni</strong>:</p>
+<p>Questi danno un maggior controllo sulla memoria, infatti un riferimento può causare le <strong>eccezioni</strong>:</p>
 <ul>
 <li><strong>Missing segment fault</strong>, se il segmento non è caricato in memoria</li>
 <li><strong>Overflow segment fault</strong>, se il <em>page offset</em> supera la lunghezza del segmento</li>

@@ -167,7 +167,6 @@
 <h1 id="paginazione"><a class="header" href="#paginazione">Paginazione</a></h1>
 <p>Ogni <strong>entry</strong> della <a href="../../../ct0615-2/03/README.html">page table</a> ha un <strong>page frame</strong>, i.e. l'indirizzo in memoria principale della pagina, e un <strong>bit di residenza</strong> ad <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span> se la pagina non è presente e dell'<em>entry</em> va quindi letto l'indirizzo di memoria secondaria.</p>
 <p>Le pagine possono anche essere <strong>condivise</strong> tra processi, riducendo l'uso complessivo di memoria e velocizzando anche la creazione di nuovi processi (e.g. con <code>fork</code>), grazie alla tecnica del <strong>copy on write</strong>.</p>
-<p>Il S.O. può scegliere la <strong>dimensione</strong> delle pagine, scegliendola <strong>piccola</strong> per ridurre la frammentazione interna, la memoria necessaria per il <em>working set</em></p>
 <h2 id="tabella-inversa"><a class="header" href="#tabella-inversa">Tabella inversa</a></h2>
 <p>Oltre alla <a href="../../../ct0615-2/03/README.html#page-table-multilivello">tabella multilivello</a>, esiste la <strong>tabella inversa delle pagine</strong> che memorizza un'<em>entry</em> <strong>per ogni</strong> <em>page frame</em> presente in memoria principale.</p>
 <p>Ogni <em>entry</em> contiene un'etichetta dell'indirizzo virtuale, con cui si possono verificare le <strong>collisioni</strong>.</p>
