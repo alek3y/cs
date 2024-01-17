@@ -9,7 +9,7 @@ Una tecnica per **proteggere** i segmenti in memoria è quella di associare al p
 
 L'alternativa più comune è l'uso dei **bit di protezione**, che specificano quali tra le operazioni il processo ha il permesso di effettuare, come i bit _read_, _write_ e _execute_.
 
-Questi danno un maggior controllo sulla memoria, infatti durante un riferimento avvenire le **eccezioni**:
+Questi danno un maggior controllo sulla memoria, infatti un riferimento può causare le **eccezioni**:
 - **Missing segment fault**, se il segmento non è caricato in memoria
 - **Overflow segment fault**, se il _page offset_ supera la lunghezza del segmento
 - **Segment protection exception**, se l'operazione effettuata non è consentita

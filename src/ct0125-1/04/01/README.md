@@ -4,8 +4,6 @@ Ogni **entry** della [page table](../../../ct0615-2/03/README.md) ha un **page f
 
 Le pagine possono anche essere **condivise** tra processi, riducendo l'uso complessivo di memoria e velocizzando anche la creazione di nuovi processi (e.g. con `fork`), grazie alla tecnica del **copy on write**.
 
-Il S.O. può scegliere la **dimensione** delle pagine, scegliendola **piccola** per ridurre la frammentazione interna, la memoria necessaria per il _working set_
-
 ## Tabella inversa
 
 Oltre alla [tabella multilivello](../../../ct0615-2/03/README.md#page-table-multilivello), esiste la **tabella inversa delle pagine** che memorizza un'_entry_ **per ogni** _page frame_ presente in memoria principale.
