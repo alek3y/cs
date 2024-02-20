@@ -1,4 +1,4 @@
-# Ordinamento
+# Ordinamento a confronto
 
 Gli algoritmi trattati saranno basati sul **confronto** attraverso una tecnica incrementale, cioè utilizzando la soluzione al problema grande $k$ per risolvere quello grande $k+1$.
 

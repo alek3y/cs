@@ -4,11 +4,11 @@ L'**heap sort** sfrutta la proprietà dei [max heap](../../02/06/README.md) per 
 
 ```c
 heapsort(Array A)
-	build_max_heap(A)
-	for i = A.length down to 2
-		swap(A[1], A[i])
-		A.heap_size--
-		max_heapify(A, 1)
+  build_max_heap(A)
+  for i = A.length down to 2
+    swap(A[1], A[i])
+    A.heap_size--
+    max_heapify(A, 1)
 ```
 
 L'algoritmo è **corretto** per l'[invariante](../../01/02/README.md#analisi-della-correttezza) degli elementi:

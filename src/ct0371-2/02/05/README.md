@@ -119,8 +119,8 @@ Dato che la maggior parte delle operazioni sono $O(h)$ dove $h$ è l'**altezza**
 	    else
 	      u.parent.right = v
 
-	    if v != NIL
-	      v.parent = u.parent
+	  if v != NIL
+	    v.parent = u.parent
 	```
 	con $T(n) = \Theta(1)$, con cui si ottiene:
 	```c
