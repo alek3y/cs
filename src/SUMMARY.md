@@ -52,6 +52,9 @@
 	- [Algebra relazionale](./ct0006-1/03/README.md)
 	- [SQL](./ct0006-1/04/README.md)
 
+- [Basi di dati (M. 2)](./ct0006-2/README.md)
+	- [Normalizzazione](./ct0006-2/01/README.md)
+
 - [Sistemi operativi (M. 1)](./ct0125-1/README.md)
 	- [Processi](./ct0125-1/01/README.md)
 	- [Thread](./ct0125-1/02/README.md)
