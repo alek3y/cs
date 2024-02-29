@@ -54,6 +54,11 @@
 
 - [Basi di dati (M. 2)](./ct0006-2/README.md)
 	- [Normalizzazione](./ct0006-2/01/README.md)
+		- [Dipendenze funzionali](./ct0006-2/01/01/README.md)
+		- [Chiavi](./ct0006-2/01/02/README.md)
+		- [Forma e copertura canonica](./ct0006-2/01/03/README.md)
+		- [Decomposizione di schemi](./ct0006-2/01/04/README.md)
+		- [Forme normali](./ct0006-2/01/05/README.md)
 
 - [Sistemi operativi (M. 1)](./ct0125-1/README.md)
 	- [Processi](./ct0125-1/01/README.md)
