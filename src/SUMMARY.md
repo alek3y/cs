@@ -37,6 +37,9 @@
 	- [Tabelle hash](./ct0371-2/06/README.md)
 		- [Concatenamento](./ct0371-2/06/01/README.md)
 		- [Indirizzamento aperto](./ct0371-2/06/02/README.md)
+		- [Confronto](./ct0371-2/06/03/README.md)
+	- [Programmazione dinamica](./ct0371-2/07/README.md)
+		- [Taglio delle aste](./ct0371-2/07/01/README.md)
 
 - [Algoritmi e strutture dati (M. 1)](./ct0371-1/README.md)
 	- [Complessità asintotica](./ct0371-1/01/README.md)

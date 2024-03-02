@@ -52,7 +52,7 @@ h(k) = \lfloor (k \cdot A \bmod 1) \cdot m \rfloor
 $$
 con $U \subseteq \mathbb{N}$, fissando $A \in (0, 1)$ e ottenendo da $k \cdot A \bmod 1$ un valore in $[0, 1)$ da trasformare in $[0, m)$.
 
-In questo modo $m$ non è più critico e la funzione è ottimale per la maggior parte degli $A$, tra cui $A = \frac{\sqrt{5} - 1}{2}$.
+In questo modo $m$ non è più critico e la funzione è **ottimale** per la maggior parte degli $A$, tra cui $A = \frac{\sqrt{5} - 1}{2}$.
 
 Se $k$ è una _word_ lunga $w$, la funzione si può **semplificare** scegliendo una $q$ tra le $2^w$ _word_ e ponendo:
 $$
