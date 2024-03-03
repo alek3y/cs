@@ -13,6 +13,12 @@
 	- [Variabili congiunte](./ct0111/04/README.md)
 	- [Catene di Markov](./ct0111/05/README.md)
 
+- [Analisi dei dati](./ct0427/README.md)
+	- [Concetti](./ct0427/01/README.md)
+		- [Stimatori di posizione](./ct0427/01/01/README.md)
+		- [Stimatori di variabilità](./ct0427/01/02/README.md)
+		- [Analisi grafiche](./ct0427/01/03/README.md)
+
 - [Algoritmi e strutture dati (M. 2)](./ct0371-2/README.md)
 	- [Dizionari](./ct0371-2/01/README.md)
 		- [Array](./ct0371-2/01/01/README.md)
