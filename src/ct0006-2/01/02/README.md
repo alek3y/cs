@@ -8,7 +8,7 @@ Degli attributi $X$ di $R(T, F)$ si possono definire come:
 ### Algoritmo
 
 Dato il **candidato** $X :: (Y)$, la cui $X$ è una **possibile chiave** mentre $Y$ sono i possibili attributi da aggiungere se non lo fosse, si possono trovare **tutte le chiavi** di $R(T, F)$ attraverso:
-1. Iniziare con il candidato $Z :: (T \setminus Z)$, dove $Z = T \setminus \Set{Y | X \rightarrow Y \in F}$ sono attributi indipendenti
+1. Iniziare con il candidato $T \setminus \Set{Y | X \rightarrow Y \in F} :: \Set{X | X \rightarrow Y \in F}$
 2. Estrarre il primo candidato $X :: (Y)$ assicurandosi che $X$ non contenga alcuna chiave già trovata
 	- Se $X$ è _superchiave_ si può aggiungere alle chiavi trovate
 	- Altrimenti ai candidati si unisce $\Set{XA :: (W \setminus \{A\}) | A \in W}$, dove $W = Y \setminus X_F^+$
@@ -19,12 +19,9 @@ Serve anche a **verificare la primalità** degli attributi, dato che altrimenti 
 #### Esempio
 
 Per esempio, se $T = ABCDEF$ e $G = \{AB \rightarrow C, E \rightarrow A, A \rightarrow E, B \rightarrow F\}$ i passaggi sono:
-1. Il candidato iniziale è $BD :: (ACEF)$
-2. $BD$ non è _superchiave_ quindi si aggiungono i candidati dagli attributi $ACEF \setminus BDF$
-3. Il primo candidato $BDA :: (CE)$ tra i rimanenti è valido
+1. Il candidato iniziale è $BD :: (ABE)$
+2. $BD$ non è _superchiave_ quindi si aggiungono i candidati dagli attributi $ABE \setminus BDF$
+3. Il prossimo candidato $BDA :: (E)$ è valido perchè non contiene chiavi
 4. $BDA$ è _superchiave_ quindi anche **chiave**
-5. Il primo candidato $BDC :: (E)$ è valido
-6. $BDC$ non è _superchiave_ quindi si aggiungono i candidati
-7. Il primo candidato $BDE :: ()$ è valido
+5. Il prossimo candidato $BDE :: (A)$ è valido
 8. $BDE$ è _superchiave_ quindi anche **chiave**
-9. Il rimanente candidato $BDCE$ contiene la chiave $BDE$ quindi non è valido
