@@ -99,3 +99,5 @@ si nota che conviene _salvare_ il risultato di $f(2)$ e $f(3)$ per calcolarlo **
 Durante l'implementazione si può scegliere tra due **tecniche di costruzione** di algoritmi:
 - **Top-down**, attraverso la **memoization**: salva le soluzioni in una tabella durante la ricorsione
 - **Bottom-up**: ordina i sottoproblemi in base alla dimensione e li risolve dal più piccolo, salvandoli
+
+Quando la soluzione non dipende da **tutti i sottoproblemi** conviene usare la **top-down** perchè evita di calcolarli tutti ed è più intuitiva, altrimenti conviene la **bottom-up** perchè **evita il carico** della ricorsione.
