@@ -19,6 +19,8 @@
 		- [Stimatori di variabilità](./ct0427/01/02/README.md)
 		- [Analisi grafiche](./ct0427/01/03/README.md)
 	- [Stima](./ct0427/02/README.md)
+		- [Momenti](./ct0427/02/01/README.md)
+		- [Verosimiglianza](./ct0427/02/02/README.md)
 
 - [Algoritmi e strutture dati (M. 2)](./ct0371-2/README.md)
 	- [Dizionari](./ct0371-2/01/README.md)
