@@ -58,6 +58,11 @@
 			- [Funzioni elementari](./ct0371-1/01/01/02/README.md)
 		- [Calcolo della complessità](./ct0371-1/01/02/README.md)
 		- [Ricorrenze](./ct0371-1/01/03/README.md)
+	- [Grafi](./ct0371-1/02/README.md)
+		- [Concetti](./ct0371-1/02/01/README.md)
+			- [Rappresentazioni](./ct0371-1/02/01/01/README.md)
+			- [Grado](./ct0371-1/02/01/02/README.md)
+			- [Isomorfismo](./ct0371-1/02/01/03/README.md)
 
 - [Basi di dati (M. 1)](./ct0006-1/README.md)
 	- [Progettazione concettuale](./ct0006-1/01/README.md)

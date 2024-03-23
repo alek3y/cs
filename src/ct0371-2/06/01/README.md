@@ -17,7 +17,7 @@ P(h = i) = \frac{1}{m},\ \forall i \in \{0, ..., m-1\}
 $$
 da cui si ricava il **fattore di carico** $\alpha = \frac{n}{m}$.
 
-In questo caso, la **lunghezza media** di una lista $n_i$ su `T[i]` è:
+In questo caso, la **lunghezza media** di una lista lunga $n_i$ su `T[i]` è:
 $$
 \frac{n_0 + n_1 + ... + n_{m-1}}{m} = \frac{n}{m} = \alpha
 $$
