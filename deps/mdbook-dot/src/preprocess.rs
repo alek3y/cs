@@ -42,13 +42,23 @@ impl Preprocessor for DotPreprocessor {
 }
 
 pub fn process_chapter(raw: String) -> String {
-	Regex::new(r"(?s)`{3}dot process\n(|.*?[^\\])`{3}")
+	Regex::new(r"(?s)`{3}dot process(?: (inline|center))?\n(|.*?[^\\])`{3}")
 		.unwrap()
 		.replace_all(&raw, |caps: &Captures| {
-			let graph = caps.get(1).unwrap().as_str();
+			let graph = caps.get(2).unwrap().as_str();
 			let svg = general_purpose::STANDARD.encode(render_dot(graph));
 			let src = format!("data:image/svg+xml;base64,{svg}");
-			format!("<p><img src=\"{src}\"></p>\n")
+			let img = format!("<img src=\"{src}\"/>");
+
+			if let Some(option) = caps.get(1) {
+				match option.as_str() {
+					"inline" => img,
+					"center" => format!("<p align=\"center\">{img}</p>\n"),
+					_ => unreachable!()
+				}
+			} else {
+				format!("<p>{img}</p>\n")
+			}
 		})
 		.into()
 }
