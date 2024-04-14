@@ -63,6 +63,12 @@
 			- [Rappresentazioni](./ct0371-1/02/01/01/README.md)
 			- [Grado](./ct0371-1/02/01/02/README.md)
 			- [Isomorfismo](./ct0371-1/02/01/03/README.md)
+			- [Condizioni](./ct0371-1/02/01/04/README.md)
+		- [Alberi di copertura](./ct0371-1/02/02/README.md)
+			- [Algoritmo generico](./ct0371-1/02/02/01/README.md)
+			- [Algoritmo di Kruskal](./ct0371-1/02/02/02/README.md)
+			- [Algoritmo di Prim](./ct0371-1/02/02/03/README.md)
+		- [Cammini minimi](./ct0371-1/02/03/README.md)
 
 - [Basi di dati (M. 1)](./ct0006-1/README.md)
 	- [Progettazione concettuale](./ct0006-1/01/README.md)

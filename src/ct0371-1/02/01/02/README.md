@@ -18,7 +18,7 @@ da cui si ricava che $\sum\limits_{i \in V} \text{in-deg}(i) = \sum\limits_{i \i
 
 - **Numero di cammini**
 
-	Dalla [matrice di adiacenza](../../../ct0435/06/README.md#matrice-di-adiacenza) si può ricavare il **numero di cammini** lunghi $k$ da ogni nodo $i$ a $j$:
+	Dalla _matrice di adiacenza_ si può ricavare il **numero di cammini** lunghi $k$ da ogni nodo $i$ a $j$:
 	$$
 	A^k = (a_{ij}^{(k)})
 	$$

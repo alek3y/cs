@@ -76,17 +76,17 @@ Tra i termini relativi ai grafi ci sono:
 
 - **Cammino**
 
-	Per i grafi, un [cammino](../../ct0371-2/02/README.md#caratteristiche) è detto **semplice** quando ogni nodo è distinto, ed è un **ciclo** se $n_0 = n_k$.
+	Per i grafi, un [cammino](../../../ct0371-2/02/README.md#caratteristiche) è detto **semplice** quando ogni nodo è distinto, ed è un **ciclo** se $n_0 = n_k$.
 
 - **Connessione**
 
 	Un grafo è **connesso** se per ogni $u, v \in V$ esiste un cammino $(u, ..., v)$, altrimenti è **disconnesso**.
 
-	Si dice poi **componente connessa** il sottoinsieme $V' \subseteq V$ per cui:
+	Si dice poi **componente connessa** (_c.c._) il sottoinsieme $V' \subseteq V$ per cui:
 	1. $G[V']$ è _connesso_
-	2. $V' \not\subset V''$ se $G[V'']$ è _connesso_, per cui $V'$ non fa parte di una _componente connessa_ più grande
+	2. $V' \not\subset V''$ se un $G[V'']$ è _connesso_, per cui $V'$ non fa parte di una _c.c._ più grande
 
-	L'insieme delle _componenti connesse_ di $G$ formano una **partizione** di $V$.
+	Il numero di _componenti connesse_ è $\mathrm{NCC}(G)$, e insieme formano una **partizione** di $V$.
 
 	Per esempio nel seguente grafo ci sono tre _componenti connesse_:
 	```dot process
@@ -106,9 +106,10 @@ Tra i termini relativi ai grafi ci sono:
 		2 -> 3, 4
 		{
 			rank=same
-			9 -> 3 [minlen=2 style=invis]
+			edge [minlen=2]
+			9 -> 3 [style=invis]
 			3 -> 4
-			4 -> 7 [minlen=2 style=invis]
+			4 -> 7 [style=invis]
 			7 -> 8
 		}
 
@@ -116,18 +117,18 @@ Tra i termini relativi ai grafi ci sono:
 			rank=same
 			5 -> 6
 		}
-		5 -> 7
-		6 -> 8
+		5 -> 7 [weight=2]
+		6 -> 8 [weight=2]
 	}
 	```
 
 - **Complemento**
 
-	Un grafo $G^C = (V, E^C)$ è **complemento** di $G = (V, E)$ se:
+	Un grafo $\bar{G} = (V, \bar{E})$ è **complemento** di $G = (V, E)$ se:
 	$$
-	\forall (u, v) \in E^C, (u, v) \not\in E
+	\forall (u, v) \in \bar{E}, (u, v) \not\in E
 	$$
-	infatti $K_n^C = E_n$, ovvero il grafo _completo_ è _complemento_ di quello _vuoto_.
+	infatti $\bar{K}_n = E_n$, ovvero il grafo _completo_ è _complemento_ di quello _vuoto_.
 
 	Per esempio, il primo grafo è complemento del secondo e viceversa:
 	```dot process
@@ -143,12 +144,15 @@ Tra i termini relativi ai grafi ci sono:
 		11 -> 21, 31 [style=invis]
 		{
 			rank=same
+			edge [minlen=2]
 			2 -> 3 [style=invis]
-			3 -> 21 [minlen=2 style=invis]
+			3 -> 21 [style=invis]
 			21 -> 31
 		}
 	}
 	```
+
+	L'unica relazione vincolante di **connessione** tra $G$ e $\bar{G}$ è quella per cui se $G$ è _disconnesso_ allora $\bar{G}$ sarà _connesso_, perchè in $\bar{G}$ i nodi saranno interconnessi attraverso _componenti connesse_ diverse in $G$.
 
 - **Grafo bipartito**
 
@@ -177,3 +181,27 @@ Tra i termini relativi ai grafi ci sono:
 		_1 [shape=point width=0]
 	}
 	```
+
+- **Clique**
+
+	Si definisce **clique** un qualunque sottografo _completo_ di $G$, ed è detta **massima** quando ha il massimo numero di vertici, e **massimale** quando non è contenuta in un'altra più grande.
+
+	Il **numero totale** di _clique_ del grafo $G$ viene espresso come $\omega(G)$.
+
+	Per esempio, il grafo
+	```dot process
+	digraph {
+		node [shape=circle]
+		edge [dir=none penwidth=2]
+
+		1 -> 2 [color="seagreen4:invis:invis:orchid3"]
+		1 -> 3 [color="tomato3:invis:invis:seagreen4"]
+
+		{
+			rank=same
+			2 -> 3 [minlen=2 color="seagreen4:invis:invis:skyblue3"]
+		}
+		3 -> 4 [color="tan3"]
+	}
+	```
+	possiede $5$ _clique_ di cui $2$ _massimali_ (i.e. verde e arancione) di cui una è _massima_ (i.e. verde).

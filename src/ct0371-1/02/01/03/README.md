@@ -23,13 +23,14 @@ digraph {
 
 Perchè due grafi siano **isomorfi**, ovvero $G_1 \simeq G_2$, è **necessario** che:
 $$
-|V_1| = |V_2| \land |E_1| = |E_2| \land \text{deg-seq}(G_1) = \text{deg-seq}(G_2) \land c_1 = c_2
+|V_1| = |V_2| \land |E_1| = |E_2| \land \text{deg-seq}(G_1) = \text{deg-seq}(G_2) \land \mathrm{NCC}(G_1) = \mathrm{NCC}(G_2)
 $$
-dove $\text{deg-seq}(G)$ sono gli $n$ gradi dei nodi di $G$ in ordine crescente, e $c$ è il numero di _componenti connesse_.
+dove $\text{deg-seq}(G)$ sono gli $n$ gradi dei nodi di $G$ in ordine crescente.
 
 Per esempio, dati $G_1$ e $G_2$ come:
 ```dot process
 digraph {
+	ranksep=0.4
 	node [shape=circle]
 	edge [dir=none]
 
@@ -71,7 +72,7 @@ digraph {
 	a5 [label="5"]
 }
 ```
-la funzione
+si ha che la funzione
 $$
 \phi(u) = \begin{cases}
 2 & \text{se } u = 1 \\
