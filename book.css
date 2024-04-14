@@ -1,11 +1,7 @@
-/* Change page layout */
-
 :root {
 	--content-max-width: 810px;
 	--sidebar-width: 320px;
 }
-
-/* Change light theme foreground colors */
 
 .light {
 	--fg: #404040;
@@ -13,6 +9,8 @@
 	--sidebar-fg: var(--fg);
 	--searchbar-fg: var(--fg);
 }
+
+/* Improve chapter highlighting */
 
 .chapter li a.active {
 	font-weight: 600;
@@ -27,7 +25,7 @@
 	color: var(--sidebar-fg);
 }
 
-/* Customize the fold symbol */
+/* Replace fold symbol */
 
 .chapter li > a.toggle div {
 	display: none;
@@ -42,4 +40,10 @@
 
 .chapter li.expanded > a.toggle::after {
 	transform: translate(0.12em, 0.1em) rotate(90deg);
+}
+
+/* Remove inline code background inside table header */
+
+th > .hljs {
+	background: transparent;
 }
