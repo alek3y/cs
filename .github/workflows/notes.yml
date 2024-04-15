@@ -21,7 +21,10 @@ jobs:
           mdbook-version: '0.4.34'
 
       - name: Setup Graphviz
-        run: sudo apt-get install -y graphviz fonts-liberation
+        run: |
+          wget 'https://gitlab.com/api/v4/projects/4207231/packages/generic/graphviz-releases/10.0.1/ubuntu_22.04_graphviz-10.0.1-debs.tar.xz'
+          tar xvf ubuntu_22.04_graphviz-10.0.1-debs.tar.xz
+          sudo apt-get install -y fonts-liberation ./graphviz_10.0.1-1_amd64.deb ./libgraphviz4_10.0.1-1_amd64.deb
 
       - name: Download the katex preprocessor
         run: |
