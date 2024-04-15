@@ -21,7 +21,7 @@ digraph {
 	edge [dir=none]
 
 	{
-		edge [color="seagreen4" penwidth=2]
+		edge [color="seagreen4" fontcolor="seagreen4" penwidth=2]
 		{
 			rank=same
 			1 -> 2 [label="4"]
