@@ -28,7 +28,7 @@ prim(G, w, r)
 che è **corretto** perchè rispetta il _teorema fondamentale_ degli _MST_.
 Infatti, ad ogni istante, si ha che:
 $$
-A = \Set{(\pi_v, v) \in E \mid u \in V \setminus Q \setminus \{r\}}
+A = \Set{(\pi_v, v) \in E | u \in V \setminus Q \setminus \{r\}}
 $$
 e dato che $\pi_v \in V \setminus Q$, l'arco $(\pi_v, v)$ **non attraverserà mai** il _taglio_ $(V \setminus Q, Q)$, cioè il bordo tra i nodi **già visitati** e quelli **ancora da visitare**.
 Inoltre, il prossimo $u$ proviene sicuramente dall'_arco leggero_ del _taglio_.
