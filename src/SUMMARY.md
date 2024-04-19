@@ -69,6 +69,9 @@
 			- [Algoritmo di Kruskal](./ct0371-1/02/02/02/README.md)
 			- [Algoritmo di Prim](./ct0371-1/02/02/03/README.md)
 		- [Cammini minimi](./ct0371-1/02/03/README.md)
+			- [Dijkstra](./ct0371-1/02/03/01/README.md)
+			- [Bellman-Ford](./ct0371-1/02/03/02/README.md)
+			- [Floyd-Warshall](./ct0371-1/02/03/03/README.md)
 
 - [Basi di dati (M. 1)](./ct0006-1/README.md)
 	- [Progettazione concettuale](./ct0006-1/01/README.md)
