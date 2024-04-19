@@ -108,7 +108,7 @@ Sia sui grafi _orientati_ che _non orientati_ valgono le proprietà:
 		- $v = s$, allora $\delta(s, s) \leq d_s = 0$ anche in presenza di _cicli negativi_, i.e. $\delta(s, s) = -\infty$
 	- Dopo `relax` su $(u, v)$, supponendo _per assurdo_ che causi per la **prima volta** $d_v < \delta(s, v)$:
 
-		Siccome la `relax` dev'essere **entrata nell'`if`** perchè le ipotesi siano vere:
+		Siccome la `relax` dev'essere **entrata nell'`if`** perchè le ipotesi siano vere,
 		$$
 		d_u + w(u, v) = d_v
 		\hspace{0.4em} < \hspace{0.4em}
@@ -117,3 +117,17 @@ Sia sui grafi _orientati_ che _non orientati_ valgono le proprietà:
 		per l'ipotesi e per la _disuguaglianza triangolare_, ovvero che $d_u < \delta(s, u)$ che è assurdo perchè $v$ **non sarebbe il primo** ad aver infranto la proprietà, ma lo sarebbe $u$.
 
 - **Proprietà della convergenza**
+
+	Dato $p = (s, ..., u, v)$ minimo, se $d_u = \delta(s, u)$ allora dopo la prima `relax` su $(u, v)$:
+	$$
+	d_v = \delta(s, v)
+	$$
+
+	Questo è dimostrabile con il _limite inferiore_, e perchè dopo la `relax` si ha che $d_v \leq d_u + w(u, v)$:
+	$$
+	\begin{split}
+	\delta(s, v) \leq d_v &\leq d_u + w(u, v) \\
+	&= \delta(s, u) + w(u, v) \\
+	&= \delta(s, v)
+	\end{split}
+	$$
