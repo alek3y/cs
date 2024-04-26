@@ -21,6 +21,10 @@
 	- [Stima](./ct0427/02/README.md)
 		- [Momenti](./ct0427/02/01/README.md)
 		- [Verosimiglianza](./ct0427/02/02/README.md)
+	- [Intervalli di confidenza](./ct0427/03/README.md)
+		- [Media](./ct0427/03/01/README.md)
+		- [Proporzioni](./ct0427/03/02/README.md)
+		- [Statistica T](./ct0427/03/03/README.md)
 
 - [Algoritmi e strutture dati (M. 2)](./ct0371-2/README.md)
 	- [Dizionari](./ct0371-2/01/README.md)

@@ -6,8 +6,6 @@ L(\theta) \propto P(X_1 = x_1 \land ... \land X_n = x_n)
 $$
 se si ha un **problema di stima regolare**, ovvero se il dominio delle $X_i$ non dipende da $\theta$ e $L(\theta)$ è derivabile.
 
-
-
 Dopo aver trovato $L(\theta)$ attraverso un **modello** sul _campione_ si può cercare il migliore valore di $\theta$ che la massimizza, e quindi adatta meglio il modello ai dati, con la derivata [prima](../../ct0432/05/04/README.md#studio-del-segno-della-derivata) e [seconda](../../ct0432/05/07/README.md#convessità-e-concavità-locale-e-punti-di-flesso):
 $$
 \frac{d}{d\theta}L(\theta) = 0\ \land\ \frac{d^2}{d^2\theta}L(\theta) < 0
@@ -105,7 +103,7 @@ I(p) &= E(J(p)) = E(-\ell''(p)) = \\
 \Downarrow \\
 \widehat{\mathrm{SE}}(\hat{p}) = I(\hat{p})^{-1/2} = J(\hat{p})^{-1/2} = \sqrt{\frac{\hat{p}(1 - \hat{p})}{n}}
 $$
-dato che $J(\hat{p})$ è riducibile perchè si conosce $\hat{p}$, e quindi è stato necessario ricalcolare $E(J(p))$.
+dato che $J(\hat{p})$ è riducibile perchè si conosce $\hat{p}$, è stato necessario ricalcolare $E(J(p))$ per $I(p)$.
 
 ## Invarianza
 
