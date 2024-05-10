@@ -1,36 +1,43 @@
-# Proporzioni
+# Statistica T
 
-Una situazione in cui $\sigma$ è ignota è una quella della stima di una **proporzione campionaria** di $X_1, ..., X_n$:
+Si dice **distribuzione T** con $n-1$ **gradi di libertà**, la [standardizzazione](../../../ct0111/03/02/README.md#normale) di $\hat\mu = \bar{X}$ stimata con $\widehat{\mathrm{SE}}(\hat\mu) = \frac{S}{\sqrt{n}}$:
 $$
-\hat{p} = \frac{n_A}{n}
+T = \frac{\bar{X} - \mu}{\frac{S}{\sqrt{n}}} = \frac{\sqrt{n}(\bar{X} - \mu)}{S}
 $$
-dove $n_A$ è il numero di $X_i$ per cui la proprietà $A(X_i)$ è vera, allora si può dire che è una [Bernoulliana](../../../ct0111/03/01/README.md#di-bernoulli):
-$$
-X_i = \begin{cases}
-1 & \text{se } A(X_i) \\
-0 & \text{se } \neg A(X_i)
-\end{cases}
-$$
-con $E(X_i) = p$ e $\mathrm{Var}(X_i) = p(1 - p)$, da cui si ha che $\hat{p} = \bar{X}$ è _non distorto_ e _asintoticamente normale_:
-$$
-\widehat{\mathrm{SE}}(\hat{p}) = \sqrt{\frac{\hat{p}(1 - \hat{p})}{n}} = \sqrt{\frac{\bar{X}(1 - \bar{X})}{n}}\; \Rightarrow\; \bar{X} \pm z_{\alpha/2}\sqrt{\frac{\bar{X}(1 - \bar{X})}{n}}
-$$
+i cui _gradi di libertà_ provengono dalle informazioni usate dalla [stima della varianza](../../01/02/README.md#varianza-campionaria) $S^2$ e che, al loro aumento, portano la distribuzione a **convergere** a $\mathrm{N}(\mu, \sigma^2)$.
 
-## Differenza di proporzioni
+## Intervalli per la media
 
-Dati due campioni indipendenti di dimensione $n_1$ e $n_2$ e il parametro **differenza di proporzioni**
+L'**intervallo di confidenza** per la media $\mu$ di una popolazione _normale_ con la **statistica T** è:
 $$
-\theta = p_1 - p_2\; \Rightarrow\; \hat\theta = \hat{p}_1 - \hat{p}_2
+\bar{X} \pm t_{\alpha/2}\frac{S}{\sqrt{n}}
 $$
-si può ricavare l'_intervallo di confidenza_, come per la [media](../01/README.md#differenza-di-medie):
-$$
-(\hat{p}_1 - \hat{p}_2) \pm z_{\alpha/2}\sqrt{\frac{\hat{p}_1(1 - \hat{p}_1)}{n_1} + \frac{\hat{p}_2(1 - \hat{p}_2)}{n_2}}
-$$
+dove $t_{\alpha/2}$ è il **quantile** della _distribuzione T_ con $n-1$ **gradi di libertà** ricavabile da `qt(1 - 𝛼/2, df=n-1)`.
 
-## Margine di errore
+Nel caso della [differenza di medie](../01/README.md#differenza-di-medie), il metodo per trovare l'_intervallo di confidenza_ **dipende dalle varianze**:
+- $\sigma_X^2 = \sigma_Y^2 = \sigma^2$, allora:
 
-In questo caso **limitare** il _margine di errore_ a $\Delta$, porta la **dimensione** ad essere:
-$$
-z_{\alpha/2}\sqrt{\frac{\hat{p}(1 - \hat{p})}{n}} \leq \Delta\; \Rightarrow\; n \geq \underbrace{0.25}_{\hat{p}(1 - \hat{p})}\left(\frac{z_{\alpha/2}}{\Delta}\right)^2
-$$
-dove $0.25$ è il **valore massimo** assunto da $\hat{p}(1 - \hat{p})$ per $0 \leq \hat{p} \leq 1$.
+	$$
+	(\bar{X} - \bar{Y}) \pm t_{\alpha/2}S_p\sqrt{\frac{1}{n} + \frac{1}{m}}
+	$$
+	dove $t_{\alpha/2}$ deriva dalla _distribuzione T_ con $n+m-2$ **gradi di libertà**, quindi `qt(1 - 𝛼/2, df=n+m-2)`.
+
+	La stima di $\sigma^2$ si ottiene con la **varianza campionaria pooled** $S_p^2$, cioè combinata, di $X$ e $Y$:
+	$$
+	\hat{\sigma}^2 = S_p^2 = \frac{1}{n + m - 2}\left(\sum_{i = 1}^n (X_i - \bar{X})^2 + \sum_{i = 1}^m (Y_i - \bar{Y})^2\right)
+	$$
+
+- $\sigma_X^2 \neq \sigma_Y^2$, allora la _statistica T_
+
+	$$
+	T = \frac{(\bar{X} - \bar{Y}) - (\mu_X - \mu_Y)}{\sqrt{\frac{S_X^2}{n} + \frac{S_Y^2}{m}}}
+	$$
+	non ha più _distribuzione T_, ma la si può approssimare con i **gradi di libertà di Satterthwaite**:
+	$$
+	\nu = \frac{\left(\frac{S_X^2}{n} + \frac{S_Y^2}{m}\right)^2}{\frac{S_X^4}{n^2(n-1)} + \frac{S_Y^4}{m^2(m-1)}}
+	$$
+	con cui si ottiene l'_intervallo di confidenza_:
+	$$
+	(\bar{X} - \bar{Y}) \pm t_{\alpha/2}\sqrt{\frac{S_X^2}{n} + \frac{S_Y^2}{m}}
+	$$
+	dove $t_{\alpha/2}$ deriva dalla _distribuzione T_ con $\nu$ _gradi di libertà_, quindi `qt(1 - 𝛼/2, df=ν)`.
