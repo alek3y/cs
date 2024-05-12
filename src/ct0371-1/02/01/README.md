@@ -186,7 +186,7 @@ Tra i termini relativi ai grafi ci sono:
 
 	Si definisce **clique** un qualunque sottografo _completo_ di $G$, ed è detta **massima** quando ha il massimo numero di vertici, e **massimale** quando non è contenuta in un'altra più grande.
 
-	Il **numero totale** di _clique_ del grafo $G$ viene espresso come $\omega(G)$.
+	Il **numero di nodi** della _clique massima_ nel grafo $G$ viene espresso come $\omega(G)$.
 
 	Per esempio, il grafo
 	```dot process

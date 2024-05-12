@@ -23,6 +23,7 @@ connected_components(G)
       remove(C, A)
       remove(C, B)
       append(C, union(A, B))
+  return C
 ```
 
 Per esempio, dal grafo

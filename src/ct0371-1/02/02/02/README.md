@@ -14,6 +14,7 @@ kruskal(G, w)
       remove(C, V)
       append(C, union(U, V))
       add(A, (u, v))
+  return A
 ```
 che è **corretto** perchè si considerano prima gli _archi leggeri_ e quindi `A` è sempre sottoinsieme di un _MST_.
 

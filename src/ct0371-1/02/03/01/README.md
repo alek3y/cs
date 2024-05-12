@@ -6,7 +6,7 @@ dijkstra(G, w, s)
   d, 𝜋 = init_ss(G, s)
   Q = G.V
   while Q.heap_size > 0
-    u = extract_min(Q)
+    u = extract_min(Q)  // Sceglie in base a d
     for each v in neighbors(G, u)
       relax(u, v, w, d, 𝜋)
   return (d, 𝜋)
