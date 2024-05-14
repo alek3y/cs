@@ -9,7 +9,7 @@ Per esempio, $\mathrm{LCS}(ABCD, ACBD) = \{ABD, ACD\}$.
 
 ## Sottostruttura ottima
 
-Di una sequenza $X$ lunga $m$, un carattere $x_i$ può essere **incluso o meno** e quindi si avranno $O(2^m)$ alternative.
+Di una sequenza $X$ lunga $m$, un carattere $x_i$ può essere **incluso o meno** portando a $O(2^m)$ alternative.
 
 Si dice **prefisso** di $X$ la sequenza $X^k = x_1...x_k$ lunga $k \leq m$ per cui $X^0 = \epsilon$, $X^1 = x_1$ e $X^m = X$.
 
