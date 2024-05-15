@@ -39,7 +39,7 @@ Inoltre, gli algoritmi fanno uso delle **funzioni ausiliarie**:
 	```c
 	init_ss(G, s)
 	  for each u in G.V
-	    d[u] = +infty
+	    d[u] = +Infinity
 	    𝜋[u] = NIL
 	  d[s] = 0
 	  return d, 𝜋
@@ -64,7 +64,7 @@ Sia sui grafi _orientati_ che _non orientati_ valgono le proprietà:
 	Il grafo $G_\pi = (V_\pi, E_\pi)$ è detto **dei predecessori** se dipende da $\pi$, ovvero se è costruito tale che:
 	$$
 	\begin{split}
-	V_\pi &= \Set{u \in V | \exists\pi_u} \\
+	V_\pi &= \{s\} \cup \Set{u \in V | \exists\pi_u} \\
 	E_\pi &= \Set{(\pi_u, u) \in E | u \in V_\pi \setminus \{s\}}
 	\end{split}
 	$$

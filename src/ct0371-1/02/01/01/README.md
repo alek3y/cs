@@ -5,7 +5,7 @@ Un grafo **sparso** conviene venga rappresentato attraverso una **lista di adiac
 Per un grafo **denso** invece, è più conveniente usare una [**matrice di adiacenza**](../../../../ct0435/06/README.md#matrice-di-adiacenza) $A$ di dimensione $|V| \times |V|$, in cui $a_{ij} > 0$ rappresenta la presenza di un arco, e che nei grafi _non orientati_ è [simmetrica](../../../../ct0435/04/README.md#proprietà), cioè $A^T = A$.
 
 Un'altra rappresentazione è la **matrice di incidenza** di dimensione $|V| \times |E|$,
-in cui $a_{ij}$ assume il valore $-1$ quando l'arco assegnato a $j$ che parte dal nodo $i$ è **uscente** e il valore $+1$ quando è **entrante**.
+in cui $a_{ij}$ assume il valore $-1$ quando l'arco assegnato a $j$ che parte dal nodo $i$ è **uscente** e il valore $1$ quando è **entrante**.
 
 Per esempio, il grafo
 ```dot process
@@ -22,7 +22,7 @@ digraph {
 	4:w -> 1:s [xlabel="4"]
 }
 ```
-avrà _matrice di incidenza_:
+avrà _matrice di incidenza_ con colonne $(1, 2)$, $(3, 1)$, $(3, 4)$, $(4, 1)$ e $(1, 4)$:
 $$
 A = \begin{bmatrix}
 -1 & 1 & 0 & 1 & -1 \\

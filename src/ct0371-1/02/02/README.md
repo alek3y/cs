@@ -112,4 +112,4 @@ Dato un $G$ _n.o._ e connesso, un _albero di copertura minimo_ $T$, un $A \subse
 
 Come il [fatto cruciale](#fatto-cruciale) si dimostra che $(u, v) \in T'$, e $A \subseteq T'$ perchè per ipotesi $(x, y)$ non faceva parte di $A$.
 
-Dal _teorema fondamentale_ si ricava il **corollario** per cui, dato un _albero di copertura minimo_ $T$ e un $A \subseteq T$, se un arco $(u, v) \not\in A$ connette due _componenti connesse_ del grafo $(V, A)$ allora l'arco è _sicuro_ per $A$.
+Dal _teorema fondamentale_ si ricava il **corollario** per cui, dato un _albero di copertura minimo_ $T$ e un $A \subseteq T$, se un arco $(u, v) \not\in A$ e connette due _componenti connesse_ del grafo $(V, A)$, allora l'arco è _sicuro_ per $A$.

@@ -30,7 +30,7 @@ Tra i termini relativi ai grafi ci sono:
 	$$
 	V' \subseteq V \land E' \subseteq E \cap V'^2
 	$$
-	ed è detto **sottografo indotto** $E = E \cap V'^2$ con notazione $G' = G[V']$.
+	ed è detto **sottografo indotto** $E' = E \cap V'^2$ con notazione $G' = G[V']$.
 
 	Per esempio dal primo grafo, il secondo è _sottografo_ e il terzo è _sottografo indotto_:
 	```dot process

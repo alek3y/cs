@@ -17,12 +17,12 @@ Un modo per trovare le _componenti connesse_ è quello di **raggruppare** tutti 
 connected_components(G)
   C = map(G.V, v -> {v})
   for each (u, v) in G.E
-    A = find(C, s -> contains(s, u))  // Trova l'insieme di C che contiene u
-    B = find(C, s -> contains(s, v))
-    if A != B
-      remove(C, A)
-      remove(C, B)
-      append(C, union(A, B))
+    U = find(C, s -> contains(s, u))  // Trova l'insieme di C che contiene u
+    V = find(C, s -> contains(s, v))
+    if U != V
+      remove(C, U)
+      remove(C, V)
+      append(C, union(U, V))
   return C
 ```
 
