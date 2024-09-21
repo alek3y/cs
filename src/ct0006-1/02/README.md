@@ -165,7 +165,7 @@ Un'**istanza** dello schema viene detta **valida** quando rispetta tutti i vinco
 
 		{
 			rank=same
-			3, 4 [shape=point width=0]
+			3, 4 [shape=point width=0 height=inf style=invis]
 			A [
 				label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="5">
 					<tr><td>A</td></tr>
@@ -179,7 +179,7 @@ Un'**istanza** dello schema viene detta **valida** quando rispetta tutti i vinco
 
 		{
 			rank=same
-			0, 1, 2 [shape=point width=0]
+			0, 1, 2 [shape=point width=0 height=inf]
 			0 -> 1 -> 2
 		}
 
@@ -187,7 +187,7 @@ Un'**istanza** dello schema viene detta **valida** quando rispetta tutti i vinco
 
 		{
 			rank=same
-			5, 6 [shape=point width=0]
+			5, 6 [shape=point width=0 height=inf style=invis]
 			B [
 				label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="5">
 					<tr><td>B</td></tr>
@@ -223,7 +223,7 @@ Un'**istanza** dello schema viene detta **valida** quando rispetta tutti i vinco
 
 			{
 				rank=same
-				0, 1 [shape=point width=0]
+				0, 1 [shape=point width=0 height=inf style=invis]
 			}
 
 			0 -> A [label="S"]
@@ -231,7 +231,7 @@ Un'**istanza** dello schema viene detta **valida** quando rispetta tutti i vinco
 
 			{
 				rank=same
-				2, 3 [shape=point width=0]
+				2, 3 [shape=point width=0 height=inf style=invis]
 			}
 
 			A -> 2 [label="R"]
@@ -250,7 +250,7 @@ Un'**istanza** dello schema viene detta **valida** quando rispetta tutti i vinco
 
 			{
 				rank=same
-				3, 4 [shape=point width=0]
+				3, 4 [shape=point width=0 height=inf style=invis]
 				A [
 					label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="5">
 						<tr><td>A</td></tr>
@@ -267,7 +267,7 @@ Un'**istanza** dello schema viene detta **valida** quando rispetta tutti i vinco
 
 			{
 				rank=same
-				5, 6 [shape=point width=0]
+				5, 6 [shape=point width=0 height=inf style=invis]
 				B [
 					label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="5">
 						<tr><td>B</td></tr>
@@ -319,7 +319,7 @@ Un'**istanza** dello schema viene detta **valida** quando rispetta tutti i vinco
 				</table>>
 			]
 
-			0, 1, 2, 3, 4 [shape=point width=0]
+			0, 1, 2, 3, 4 [shape=point width=0 height=inf style=invis]
 
 			A -> B [style=invis]
 			B -> 4 [label="R"]

@@ -53,7 +53,8 @@ digraph {
 	node [shape=circle]
 	edge [dir=none]
 
-	_0, _1, _2 [shape=point width=0]
+	_0, _1, _2 [shape=point width=0 height=inf]
+	_1, _2 [style=invis]
 
 	1 -> 2 [weight=100]
 	1 -> 3 [xlabel=<<br/>2>]

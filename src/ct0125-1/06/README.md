@@ -15,7 +15,7 @@ digraph {
 	{
 		rank=same
 		{
-			node [shape=point width=0]
+			node [shape=point width=0 height=inf]
 			1 -> 2 -> 3
 		}
 		0 [shape=plain label="Richiesta I/O "]
@@ -26,7 +26,7 @@ digraph {
 		rank=same
 		edge [dir=back]
 		{
-			node [shape=point width=0]
+			node [shape=point width=0 height=inf]
 			6 -> 7 -> 8 -> 9
 		}
 		5 [shape=plain label="Risposta I/O"]

@@ -47,7 +47,7 @@ Tra i termini relativi ai grafi ci sono:
 		10 [label="1"]
 		20 [label="2"]
 		30 [label="3"]
-		40 [shape=point width=0]
+		40 [shape=point width=0 height=inf style=invis]
 
 		{
 			rank=same
@@ -61,7 +61,7 @@ Tra i termini relativi ai grafi ci sono:
 		11 [label="1"]
 		21 [label="2"]
 		31 [label="3"]
-		41 [shape=point width=0]
+		41 [shape=point width=0 height=inf style=invis]
 
 		{
 			rank=same
@@ -101,7 +101,7 @@ Tra i termini relativi ai grafi ci sono:
 		}
 
 		1 -> 9 [style=invis]
-		9 [shape=point width=0]
+		9 [shape=point width=0 height=inf style=invis]
 
 		2 -> 3, 4
 		{
@@ -177,8 +177,8 @@ Tra i termini relativi ai grafi ci sono:
 		3 -> 2
 		2 -> 4
 
-		_0 [shape=point width=0]
-		_1 [shape=point width=0]
+		_0 [shape=point width=0 height=inf style=invis]
+		_1 [shape=point width=0 height=inf style=invis]
 	}
 	```
 

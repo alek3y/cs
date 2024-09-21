@@ -104,7 +104,7 @@ digraph {
 	7 [xlabel=<<font color="seagreen4">3  </font>>]
 	8 [xlabel=<<font color="seagreen4"><br/>3  </font>>]
 
-	_0 [shape=point width=0]
+	_0 [shape=point width=0 height=inf]
 
 	2 -> 1 -> 4
 	{

@@ -7,7 +7,7 @@ Un albero di esempio può essere:
 graph {
 	node [shape=circle]
 
-	0 [shape=point width=0]
+	0 [shape=point width=0 height=inf style=invis]
 	A -- L, B
 	L -- E, R
 	B -- 0 [style=invis]
@@ -27,7 +27,7 @@ digraph {
 	node [shape=box]
 	edge [arrowsize=0.5]
 
-	0 [shape=point width=0]
+	0 [shape=point width=0 height=inf style=invis]
 	A -> L, B
 	L -> E, R
 	B -> 0 [style=invis]
@@ -84,7 +84,7 @@ digraph {
 		E -> R
 	}
 
-	0 [shape=point width=0]
+	0 [shape=point width=0 height=inf style=invis]
 	A -> L
 	L -> E
 	B -> 0 [style=invis]

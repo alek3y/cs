@@ -164,7 +164,7 @@ graph {
 		rank=same
 		1 [shape=plain]
 		7 [shape=plain label="a"]
-		3 [shape=point width=0]
+		3 [shape=point width=0 height=inf style=invis]
 
 		{
 			node [width=0.5 fixedsize=true]
@@ -177,7 +177,7 @@ graph {
 		rank=same
 		2 [shape=plain]
 		8 [shape=plain label="a⋅a"]
-		4, 5 [shape=point width=0]
+		4, 5 [shape=point width=0 height=inf style=invis]
 
 		{
 			node [width=0.5 fixedsize=true]

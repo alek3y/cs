@@ -109,8 +109,8 @@ digraph {
 
 	Persone:w -> Persone:e [
 		label="ÈMadreDi"
-		headlabel="Figlio"
-		taillabel="Madre"
+		headlabel=" Figlio"
+		taillabel="Madre "
 		arrowhead=normalnormalnonetee
 		arrowtail=normal
 	]
@@ -128,7 +128,7 @@ digraph {
 	node [shape=box]
 	edge [dir=none]
 
-	0 [shape=point width=0]
+	0 [shape=point width=0 height=inf]
 	Veicoli -> 0 [dir=back arrowtail=onormal]
 	0 -> Aerei, Moto
 }
@@ -210,7 +210,7 @@ Inoltre, possono anche essere applicati dei **vincoli** di:
 			C
 		}
 
-		0 [shape=point width=0.08]
+		0 [shape=point width=0.08 height=inf]
 		0 -> A [dir=forward arrowhead=onormal]
 		B, C -> 0
 	}
@@ -225,7 +225,7 @@ Inoltre, possono anche essere applicati dei **vincoli** di:
 
 		{
 			rank=same
-			0, 1, 2 [shape=point width=0]
+			0, 1, 2 [shape=point width=0 height=inf]
 			1 [width=0.08]
 			0 -> 1 -> 2
 		}
@@ -335,7 +335,7 @@ digraph {
 
 	{
 		rank=same
-		0, 1, 2 [shape=point width=0]
+		0, 1, 2 [shape=point width=0 height=inf]
 		1 [width=0.08]
 		0 -> 1 -> 2 [dir=none]
 	}
@@ -407,7 +407,7 @@ digraph {
 
 	{
 		rank=same
-		0, 1, 2 [shape=point width=0]
+		0, 1, 2 [shape=point width=0 height=inf]
 		1 [width=0.08]
 		0 -> 1 -> 2 [dir=none]
 	}
@@ -448,7 +448,7 @@ digraph {
 
 	{
 		rank=same
-		3, 4, 5 [shape=point width=0]
+		3, 4, 5 [shape=point width=0 height=inf]
 		4 [width=0.08]
 		3 -> 4 -> 5 [dir=none]
 	}
@@ -567,7 +567,7 @@ digraph {
 
 	{
 		rank=same
-		0, 1, 2 [shape=point width=0]
+		0, 1, 2 [shape=point width=0 height=inf]
 		1 [width=0.08]
 		0 -> 1 -> 2 [dir=none]
 	}
@@ -688,7 +688,7 @@ digraph {
 		]
 	}
 
-	0 [shape=point width=0]
+	0 [shape=point width=0 height=inf style=invis]
 	0 -> Studenti [style=invis constraint=false]
 
 	Studenti -> Livelli [

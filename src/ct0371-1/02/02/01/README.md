@@ -33,7 +33,7 @@ digraph {
 	node [shape=circle]
 	edge [dir=none]
 
-	_0 [shape=point width=0]
+	_0 [shape=point width=0 height=inf style=invis]
 
 	1 -> 2, 3
 	{

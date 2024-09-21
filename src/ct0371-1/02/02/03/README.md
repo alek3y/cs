@@ -47,7 +47,7 @@ digraph {
 	node [shape=circle]
 	edge [dir=none]
 
-	_0, _1, _2, _3 [shape=point width=0]
+	_0, _1, _2, _3 [shape=point width=0 height=inf style=invis]
 
 	{
 		edge [color="seagreen4" fontcolor="seagreen4" penwidth=2]

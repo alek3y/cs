@@ -76,7 +76,7 @@ che si può risolvere separando nei diversi casi:
 		2 -- 5, 6
 
 		{
-			node [shape=point width=0]
+			node [shape=point width=0 height=inf style=invis]
 			7, 8, 9, 10, 11, 12, 13, 14
 		}
 		{

@@ -49,7 +49,7 @@ digraph {
 	23 -> 15, 03
 
 	{
-		node [shape=point width=0]
+		node [shape=point width=0 height=inf style=invis]
 		_0
 		_1
 		_2
