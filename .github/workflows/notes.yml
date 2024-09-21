@@ -18,18 +18,18 @@ jobs:
       - name: Setup mdBook
         uses: peaceiris/actions-mdbook@v1
         with:
-          mdbook-version: '0.4.34'
+          mdbook-version: '0.4.40'
 
       - name: Setup Graphviz
         run: |
-          wget 'https://gitlab.com/api/v4/projects/4207231/packages/generic/graphviz-releases/10.0.1/ubuntu_22.04_graphviz-10.0.1-debs.tar.xz'
-          tar xvf ubuntu_22.04_graphviz-10.0.1-debs.tar.xz
-          sudo apt-get install -y fonts-liberation ./graphviz_10.0.1-1_amd64.deb ./libgraphviz4_10.0.1-1_amd64.deb
+          wget 'https://gitlab.com/api/v4/projects/4207231/packages/generic/graphviz-releases/12.1.1/ubuntu_22.04_graphviz-12.1.1-debs.tar.xz'
+          tar -xvf ubuntu_22.04_graphviz-12.1.1-debs.tar.xz
+          sudo apt-get install -y fonts-liberation ./graphviz_12.1.1-1_amd64.deb ./libgraphviz4_12.1.1-1_amd64.deb
 
       - name: Download the katex preprocessor
         run: |
-          wget 'https://github.com/lzanini/mdbook-katex/releases/download/v0.5.7/mdbook-katex-v0.5.7-x86_64-unknown-linux-gnu.tar.gz'
-          tar xvf mdbook-katex-v0.5.7-x86_64-unknown-linux-gnu.tar.gz
+          wget 'https://github.com/lzanini/mdbook-katex/releases/download/0.9.0-binaries/mdbook-katex-v0.9.0-x86_64-unknown-linux-gnu.tar.gz'
+          tar -xvf mdbook-katex-v0.9.0-x86_64-unknown-linux-gnu.tar.gz
           mv -v mdbook-katex ~/.cargo/bin
 
       - name: Build the dot preprocessor
