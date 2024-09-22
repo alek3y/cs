@@ -2,6 +2,11 @@
 
 [Introduzione]()
 
+# Terzo anno
+
+- [Calcolabilità e linguaggi formali](./ct0374/README.md)
+	- [Linguaggi regolari](./ct0374/01/README.md)
+
 # Secondo anno
 
 - [Probabilità e statistica](./ct0111/README.md)
