@@ -4,6 +4,11 @@
 
 # Terzo anno
 
+- [Data e web mining](./ct0509/README.md)
+	- [Supervised learning](./ct0509/01/README.md)
+		- [k-NN](./ct0509/01/01/README.md)
+		- [Decision tree](./ct0509/01/02/README.md)
+
 - [Calcolabilità e linguaggi formali](./ct0374/README.md)
 	- [Linguaggi regolari](./ct0374/01/README.md)
 
