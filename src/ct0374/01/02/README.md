@@ -1,74 +1,211 @@
-# Equivalenza
+# Operazioni su linguaggi
 
-## NFA e DFA
+Tra due linguaggi $A$ e $B$ **qualsiasi** sono definite:
+- **Unione**: $A \cup B = \Set{w | w \in A \lor w \in B}$
+- **Concatenazione**: $A \circ B = \Set{w_1w_2 | w_1 \in A \land w_2 \in B}$, con $|A \circ B| = |A \times B|$
+- **Star**: $A^\ast = \Set{w_1w_2 \cdots w_k | k \geq 0 \land w_i \in A,\ \forall i = 1, ..., k}$, che conterrà $\epsilon$
 
-Si può dimostrare che per ogni _NFA_ $N$, esiste un _DFA_ $D$ tale che $L(D) = L(N)$.
+## Chiusure
 
-Dato $N = (Q, \Sigma, \delta, q_0, F)$ con possibili $\epsilon$-transizioni, si vuole costruire $D = (Q', \Sigma, \delta', q_0', F')$:
-- $Q' = P(Q)$, per cui ogni stato di $D$ rappresenta un livello dell'[albero di computazione](../README.md#nfa) di $N$
-- $q_0' = \Epsilon(\{q_0\})$
-- $F' = \Set{R \in Q' | \exists r \in R : r \in F}$
-- $\delta'(R, a) = \bigcup\limits_{r \in R} \Epsilon(\delta(r, a))$
+La _classe dei linguaggi regolari_ è **chiusa** rispetto alle precedenti operazioni, ovvero se $A$ e $B$ sono **regolari** allora è **regolare anche il risultato** delle operazioni su di essi.
 
-dove $E(R)$ è l'**insieme** degli stati $q$ raggiungibili da qualche $r \in R$ con **$0$ o più $\epsilon$-transizioni**.
+### Unione
 
-Per esempio, l'_NFA_
+Dati due linguaggi regolari $A$ e $B$, la **chiusura dell'unione** si può dimostrare perchè:
+$$
+\exists M_1 = (Q_1, \Sigma_1, \delta_1, q_1, F_1), M_2 = (Q_2, \Sigma_2, \delta_2, q_2, F_2) : L(M_1) = A \land L(M_2) = B \\
+\Downarrow \\
+\exists M = (Q, \Sigma, \delta, q_0, F) : L(M) = A \cup B
+$$
+
+Questo è possibile perchè $M_1$ e $M_2$ sono **simulabili** in parallelo, assumendo che $\Sigma = \Sigma_1 = \Sigma_2$:
+- $Q = Q_1 \times Q_2$
+- $q_0 = (q_1, q_2)$, composto dagli stati iniziali di $M_1$ e $M_2$
+- $F = \Set{(r_1, r_2) \in Q | r_1 \in F_1 \lor r_2 \in F_2}$
+- $\delta((r_1, r_2), a) = (\delta(r_1, a), \delta(r_2, a)),\ \forall (r_1, r_2) \in Q, a \in \Sigma$
+
+L'assunzione per cui $\Sigma = \Sigma_1 = \Sigma_2$ non è limitante perchè basta aggiungere uno **stato pozzo**, per esempio
 ```dot process
 digraph {
 	rankdir=LR
 	node [shape=circle]
 	edge [arrowsize=0.8]
 
-	1 [label="1" shape=doublecircle]
-	2 [label="2"]
-	3 [label="3"]
+	1 [label=""]
+	2 [label="" shape=doublecircle]
 	_0 [shape=point width=0 height=inf style=invis]
 
 	_0 -> 1
-	1 -> 3 [label="𝜀"]
 	1 -> 2 [label="b"]
-	2 -> 3 [label="a,b"]
-	3 -> 1 [label="a"]
-	2 -> 2 [label="a"]
+	1 -> 2 [style=invis]
+	2 -> 1 [label="a"]
+	1 -> 1 [label="a"]
+	2 -> 2 [label="b"]
 }
 ```
-è convertibile nel seguente _DFA_:
+ha alfabeto $\{a, b\}$, e si può trasformare in $\{a, b, c\}$ con:
 ```dot process
 digraph {
 	rankdir=LR
-	node [shape=circle fixedsize=true width=0.6 height=0.6]
+	node [shape=circle label=""]
 	edge [arrowsize=0.8]
 
-	13 [label="{1,3}" shape=doublecircle]
-	2 [label="{2}"]
-	23 [label="{2,3}"]
-	3 [label="{3}"]
-	123 [label="{1,2,3}" shape=doublecircle width=0.7 height=0.7]
-	0 [label="∅" width=0.5 height=0.5]
+	1
+	2 [shape=doublecircle]
+	3
 	_0 [shape=point width=0 height=inf style=invis]
 
-	_0 -> 13
-	13 -> 13 [label="a"]
-	13 -> 2 [label="b"]
-	2 -> 23 [label="a"]
-	2 -> 3 [label="b"]
-	23 -> 3 [label="b"]
-	23 -> 123 [label="a"]
-	123 -> 23 [label="b"]
-	123 -> 123 [label="a"]
-	3 -> 13 [label="a"]
-	3 -> 0 [label="b"]
-	0 -> 0 [label="a,b"]
+	_0 -> 1
+	1 -> 2 [label="b"]
+	2 -> 1 [label="a"]
+	1 -> 1 [label="a"]
+	2 -> 2 [label="b"]
+	1 -> 3 [label="c"]
+	2 -> 3 [label="c"]
+	3 -> 3 [label="a,b,c"]
 }
 ```
-che è il risultato delle seguenti transizioni, che partono da $q_0' = \Epsilon(\{1\}) = \{1, 3\}$:
-1. $\delta'(\{1, 3\}, a) = \Epsilon(\delta(1, a)) \cup \Epsilon(\delta(3, a)) = E(\emptyset) \cup E(\{1\}) = \emptyset \cup \{1, 3\} = \{1, 3\}$
-2. $\delta'(\{1, 3\}, b) = \Epsilon(\{2\}) \cup \Epsilon(\emptyset) = \{2\} \cup \emptyset = \{2\}$
-3. $\delta'(\{2\}, a) = \Epsilon(\{2, 3\}) = \{2, 3\}$
-4. $\delta'(\{2\}, b) = \Epsilon(\{3\}) = \{3\}$
-5. $\delta'(\{2, 3\}, a) = \Epsilon(\{2, 3\}) \cup \Epsilon(\{1\}) = \{1, 2, 3\}$
-6. $\delta'(\{2, 3\}, b) = \Epsilon(\{3\}) \cup \Epsilon(\emptyset) = \{3\}$
-7. $\delta'(\{3\}, a) = \Epsilon(\{1\}) = \{1, 3\}$
-7. $\delta'(\{3\}, b) = \Epsilon(\emptyset) = \emptyset$
-7. $\delta'(\{1, 2, 3\}, a) = \Epsilon(\emptyset) \cup \Epsilon(\{2, 3\}) \cup \Epsilon(\{1\}) = \{1, 2, 3\}$
-7. $\delta'(\{1, 2, 3\}, b) = \Epsilon(\{2\}) \cup \Epsilon(\{3\}) \cup \Epsilon(\emptyset) = \{2, 3\}$
+
+### Concatenazione
+
+Se due linguaggi $A$ e $B$ sono regolari allora esistono gli _NFA_ $N_1$ e $N_2$ che li rappresentano, e concatenandoli si crea l'_NFA_ $N$ per cui $L(N) = A \circ B$ e si dimostra la **chiusura della concatenazione**:
+```dot process
+digraph {
+	rankdir=LR
+	node [shape=circle label="" fixedsize=true width=0.3 height=0.3]
+	edge [arrowsize=0.6]
+
+	subgraph cluster_3 {
+		label="N"
+		labeljust=l
+
+		subgraph cluster_4 {
+			label=""
+			margin=11
+
+			c1
+			c2
+			c3
+			_c1 [shape=plaintext label="..."]
+
+			c1 -> _c1 -> c2
+			_c1 -> c3 [label=" "]
+			_c1 -> c3 [dir=back label="𝜀"]
+		}
+
+		subgraph cluster_5 {
+			label=""
+			margin=10
+
+			d1
+			d2 [shape=doublecircle]
+			_d0 [shape=plaintext label="..."]
+
+			d1 -> _d0 -> d2
+		}
+
+		_e0 [shape=point width=0 height=inf style=invis]
+
+		_e0 -> c1
+		c2, c3 -> d1 [xlabel="𝜀"]
+	}
+
+	subgraph cluster_0 {
+		label=""
+		color="transparent"
+
+		subgraph cluster_1 {
+			label="N₁"
+			labeljust=l
+			color="black"
+
+			a1
+			a2 [shape=doublecircle]
+			a3 [shape=doublecircle]
+			_a0 [shape=point width=0 height=inf style=invis]
+			_a1 [shape=plaintext label="..."]
+
+
+			_a0 -> a1 -> _a1 -> a2
+			_a1 -> a3 [label=" "]
+			_a1 -> a3 [dir=back label="𝜀"]
+		}
+
+		subgraph cluster_2 {
+			label="N₂"
+			labeljust=l
+			color="black"
+
+			b1
+			b2 [shape=doublecircle]
+			_b0 [shape=point width=0 height=inf style=invis]
+			_b1 [shape=plaintext label="..."]
+
+			_b0 -> b1 -> _b1 -> b2
+		}
+	}
+
+	a2, a3 -> _b0 [style=invis]
+}
+```
+
+Quindi, se $N_1 = (Q_1, \Sigma_1, \delta_1, q_1, F_1)$ e $N_2 = (Q_2, \Sigma_2, \delta_2, q_2, F_2)$, allora $N = (Q, \Sigma, \delta, q_0, F)$ è definito:
+- $Q = Q_1 \cup Q_2$
+- $q_0 = q_1$
+- $F = F_2$
+- $\delta(q, a) = \begin{cases}\delta_1(q, a) & \text{se } q \in Q_1 \setminus F_1 \\ \delta_2(q, a) & \text{se } q \in Q_2 \\ \delta_1(q, a) & \text{se } q \in F_1 \land a \neq \epsilon \\ \{q_2\} \cup \delta_1(q, a) & \text{se } q \in F_1 \land a = \epsilon\end{cases}$
+
+## Star
+
+Come per la _concatenazione_, la **chiusura di star** rispetto ad $L(N) = A$ si dimostra costruendo un _NFA_ $M$:
+```dot process
+digraph {
+	rankdir=LR
+	node [shape=circle label="" fixedsize=true width=0.3 height=0.3]
+	edge [arrowsize=0.6]
+
+	subgraph cluster_1 {
+		label="M"
+		labeljust=l
+
+		subgraph cluster_2 {
+			label=""
+			margin=11
+
+			b1
+			b2 [shape=doublecircle]
+			_b0 [shape=plaintext label="..."]
+
+			b1 -> _b0 -> b2 [weight=1000]
+		}
+
+		c1 [shape=doublecircle]
+		_c0 [shape=point width=0 height=inf style=invis]
+
+		{
+			edge [constraint=false style=invis]
+
+			b2 -> b1
+			b2 -> b1
+			b2 -> b1
+			b2 -> b1
+			b2 -> b1
+		}
+		b2 -> b1 [xlabel="𝜀" constraint=false]
+		_c0 -> c1
+		c1 -> b1 [label="𝜀"]
+	}
+
+	subgraph cluster_0 {
+		label="N"
+		labeljust=l
+
+		a1
+		a2 [shape=doublecircle]
+		_a0 [shape=point width=0 height=inf style=invis]
+		_a1 [shape=plaintext label="..."]
+
+		_a0 -> a1 -> _a1 -> a2
+	}
+}
+```

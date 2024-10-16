@@ -12,8 +12,9 @@
 - [Calcolabilità e linguaggi formali](./ct0374/README.md)
 	- [Automi finiti](./ct0374/01/README.md)
 		- [Linguaggi](./ct0374/01/01/README.md)
-		- [Equivalenza](./ct0374/01/02/README.md)
-		- [Operazioni su linguaggi](./ct0374/01/03/README.md)
+		- [Operazioni su linguaggi](./ct0374/01/02/README.md)
+		- [Espressioni regolari](./ct0374/01/03/README.md)
+		- [Equivalenza](./ct0374/01/04/README.md)
 
 # Secondo anno
 
