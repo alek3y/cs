@@ -15,6 +15,9 @@
 		- [Operazioni su linguaggi](./ct0374/01/02/README.md)
 		- [Espressioni regolari](./ct0374/01/03/README.md)
 		- [Equivalenza](./ct0374/01/04/README.md)
+		- [Pumping lemma](./ct0374/01/05/README.md)
+		- [Esercizi](./ct0374/01/06/README.md)
+	- [Linguaggi context-free](./ct0374/02/README.md)
 
 # Secondo anno
 
