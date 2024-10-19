@@ -18,6 +18,9 @@
 		- [Pumping lemma](./ct0374/01/05/README.md)
 		- [Esercizi](./ct0374/01/06/README.md)
 	- [Linguaggi context-free](./ct0374/02/README.md)
+		- [Ambiguità](./ct0374/02/01/README.md)
+		- [Forma normale di Chomsky](./ct0374/02/02/README.md)
+		- [Automi a pila](./ct0374/02/03/README.md)
 
 # Secondo anno
 
