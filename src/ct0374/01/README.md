@@ -12,7 +12,7 @@ Un'**automa a stati finiti deterministico** (o _DFA_) $D$ è definito come una *
 Una stringa $w = w_1 w_2 \cdots w_n : w_i \in \Sigma, \forall i=1, ..., n$ è **accettata** da $M$ sse $\exists r_0,r_1,...,r_n \in Q$ tale che:
 - $r_0 = q_0$: la sequenza di stati **comincia** dallo stato iniziale
 - $r_n \in F$: alla **fine dell'input** si trova su uno stato _accettante_
-- $\delta(r_i, w_{i+1}) = r_{i+1},\ \forall i=0, ..., n-1$: l'$(i+1)$-esimo input porta allo **prossimo stato** della sequenza
+- $\delta(r_i, w_{i+1}) = r_{i+1}, \forall i=0, ..., n-1$: l'$(i+1)$-esimo input porta allo **prossimo stato** della sequenza
 
 Per esempio, l'automa
 ```dot process

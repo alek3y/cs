@@ -175,7 +175,6 @@ L'equivalenza si dimostra perchè $A$ è regolare sse esiste una _regex_ $R$ tal
 
 	2. ```dot process
 		digraph {
-			rankdir=LR
 			node [shape=circle fixedsize=true width=0.4 height=0.4]
 			edge [arrowsize=0.8]
 
@@ -185,17 +184,18 @@ L'equivalenza si dimostra perchè $A$ è regolare sse esiste una _regex_ $R$ tal
 			f [shape=doublecircle]
 			_0 [shape=point width=0 height=inf style=invis]
 
-			_0 -> s
 			{
 				rank=same
-				1 -> s [dir=back label="𝜀"]
+				_0 -> s
+				s -> 1 [label="𝜀"]
 			}
-			1 -> 1 [label="a"]
-			1 -> 2 [label="b"]
-			2 -> 2 [label="a ∪ b"]
+			s -> f [weight=100 style=invis]
+			1 -> 1 [label=" a"]
+			1 -> 2 [label=" b"]
+			2 -> 2 [label=" a ∪ b"]
 			{
 				rank=same
-				2 -> f [label="𝜀"]
+				f -> 2 [dir=back label="𝜀"]
 			}
 		}
 		```
