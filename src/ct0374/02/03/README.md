@@ -112,7 +112,7 @@ Si può dimostrare che un linguaggio $A$ è context-free sse esiste un _PDA_ $P$
 	Dato che $A$ è context-free esiste una _CFG_ $G$ che lo riconosce. Basterà quindi trasformare la _CFG_ in _PDA_:
 	1. Inserire sullo stack prima $\$$ e poi $S$, ovvero lo _start symbol_
 	2. Per ogni regola $A \rightarrow w$, alla lettura di $A$ sullo stack rimuovere $A$ e inserirci $w$
-	3. Per ogni terminale $a$, alla lettura di $a$ sullo stack rimuovere $a$ mentre viene anche letto sull'input
+	3. Per ogni _terminale_ $a$, alla lettura di $a$ sullo stack rimuovere $a$ mentre viene anche letto sull'input
 
 	Per esempio, la _CFG_
 	$$
@@ -144,3 +144,38 @@ Si può dimostrare che un linguaggio $A$ è context-free sse esiste un _PDA_ $P$
 	```
 
 2. **Condizione necessaria** ($\Leftarrow$)
+
+	Per dimostrarlo si vuole **semplificare** $P$ in modo che:
+	- Abbia un unico stato accettante $q_a$: con $\epsilon$-transizioni dagli stati finali a $q_a$
+	- Svuoti lo stack prima di accettare: con $\epsilon,a \rightarrow \epsilon, \forall a \in \Gamma$ sullo stato finale
+	- Inserisca o rimuova un simbolo sullo stack ad ogni transizione: sostituendo le transizioni $a,b \rightarrow c$ con $a,b \rightarrow \epsilon$ e $\epsilon,\epsilon \rightarrow c$, e le transizioni $a,\epsilon \rightarrow \epsilon$ con $a,\epsilon \rightarrow b$ e $\epsilon,b \rightarrow \epsilon$
+
+	Sia quindi $P = (Q, \Sigma, \Gamma, \delta, q_0, \{q_a\})$, $\Set{A_{pq} | p, q \in Q}$ i _non-terminali_ e $A_{q_0,q_a}$ lo _start symbol_ di $G$:
+	1. Per ogni $p, q, r, s \in Q$, $u \in \Gamma$ e $a, b \in \Sigma_\epsilon$ se $\delta(p, a, \epsilon)$ contiene $(r, u)$ e $\delta(s, b, u)$ contiene $(q, \epsilon)$, allora a $G$ viene aggiunta la regola $A_{pq} \rightarrow aA_{rs}b$
+	2. Per ogni $p, q, r \in Q$ viene aggiunta la regola $A_{pq} \rightarrow A_{pr}A_{rq}$ a $G$
+	3. Per ogni $p \in Q$ viene aggiunta la regola $A_{pp} \rightarrow \epsilon$ a $G$
+
+	Il primo punto è il caso in cui per andare da $p$ a $q$ il primo simbolo aggiunto e l'ultimo rimosso dallo stack è lo stesso, mentre il secondo è il caso in cui il simbolo viene rimosso prima di arrivare a $q$.
+
+	Si può quindi dimostrare che $A_{pq} \Rightarrow^\ast x$ sse $x$ porta $P$ da $p$ con lo stack vuoto a $q$ con lo stack vuoto:
+	1. **Condizione sufficiente** ($\Rightarrow$), per induzione sul numero di passi di derivazione:
+
+		- **Caso base** con $1$ passo, ovvero senza _non-terminali_: usa $A_{pp} \rightarrow \epsilon$ che non tocca lo stack
+		- **Passo induttivo** con $k+1$ passi, assumendo che valga fino a $k \geq 1$:
+
+			Il primo passo può essere $A_{pq} \Rightarrow aA_{rs}b$ oppure $A_{pq} \Rightarrow A_{pr}A_{rq}$.
+
+			Nel primo caso, con $x = ayb$, si ha che $A_{rs} \Rightarrow^\ast y$ in $k$ passi, quindi per ipotesi induttiva parte da $r$ e arriva a $s$ con lo stack uguale. Essendo una regola di $G$, da $p$ a $r$ aggiunge $u$ sullo stack e da $s$ a $q$ lo rimuove, verificando la proprietà.
+
+			Nel secondo caso, con $x = yz$, si ha che $A_{pr} \Rightarrow^\ast y$ e $A_{rq} \Rightarrow^\ast z$, entrambe fino a $k$ passi.
+			Per ipotesi induttiva lo stack ritorna vuoto da $p$ a $r$ e da $r$ a $q$, verificando la proprietà.
+
+	2. **Condizione necessaria** ($\Leftarrow$), per induzione sul numero di passi della computazione di $P$ da $p$ a $q$:
+		- **Caso base** con $0$ passi: va da un $p$ a $p$ senza leggere nulla, quindi $x = \epsilon$ e infatti $A_{pp} \Rightarrow \epsilon$
+		- **Passo induttivo** con $k+1$ passi, assumendo che valga fino a $k \geq 1$:
+
+			I $k+1$ passi per $x$ da $p$ a $q$ hanno lo stack vuoto all'inizio e alla fine oppure anche altrove.
+
+			Nel primo caso, lo stesso simbolo $u$ va inserito leggendo $a$ da $p$ ad uno stato $r$ e rimosso leggendo $b$ da uno stato $s$ a $q$, quindi $A_{pq} \Rightarrow aA_{rs}b$. Ci sono $k-1$ passi da $r$ a $s$ quindi, dato $x = ayb$, per ipotesi induttiva $A_{rs} \Rightarrow^\ast y$ e allora $A_{pq} \Rightarrow^\ast ayb = x$.
+
+			Nel secondo caso lo stack si svuota anche su $r$ quindi da $p$ a $r$ e da $r$ a $q$ sono al più $k$ passi, per cui, dato $x = yz$, per ipotesi induttiva $A_{pr} \Rightarrow^\ast y$ e $A_{rq} \Rightarrow^\ast z$ e allora $A_{pq} \Rightarrow^\ast yz = x$.

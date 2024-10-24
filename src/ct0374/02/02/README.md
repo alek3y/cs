@@ -8,7 +8,7 @@ Una _CFG_ $G$ è detta in **forma normale di Chomsky** se ogni sua regola è in 
 Si può dimostrare che ogni linguaggio _context-free_ è generato da una _CFG_ in _forma normale di Chomsky_, infatti è possibile **convertire** una qualsiasi _CFG_ in forma normale attraverso delle trasformazioni:
 1. Introdurre un **nuovo simbolo iniziale** $S_0 \rightarrow S$
 2. **Eliminare le $\epsilon$-regole** $A \to \epsilon$ aggiungendo alle regole padre i casi in cui $A$ è presente oppure no
-3. **Eliminare le regole unitarie** $A \rightarrow B$ rimpiazzando il non-terminale a destra con il suo contenuto
+3. **Eliminare le regole unitarie** $A \rightarrow B$ rimpiazzando il _non-terminale_ a destra con il suo contenuto
 4. **Dividi le regole** $A \rightarrow u_1 u_2 \cdots u_n$ per $n > 2$ e $u_i \in (V \cup \Sigma)$ in $A \rightarrow u_1A_1,\, ...,\, A_{n-2} \rightarrow u_{n-1} u_n$
 5. **Rimpiazza ogni terminale non solitario** $a \in \Sigma$ con una regola $A \rightarrow a$
 
