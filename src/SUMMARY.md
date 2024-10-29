@@ -10,7 +10,17 @@
 		- [Decision tree](./ct0509/01/02/README.md)
 
 - [Calcolabilità e linguaggi formali](./ct0374/README.md)
-	- [Linguaggi regolari](./ct0374/01/README.md)
+	- [Automi finiti](./ct0374/01/README.md)
+		- [Linguaggi](./ct0374/01/01/README.md)
+		- [Operazioni su linguaggi](./ct0374/01/02/README.md)
+		- [Espressioni regolari](./ct0374/01/03/README.md)
+		- [Equivalenza](./ct0374/01/04/README.md)
+		- [Pumping lemma](./ct0374/01/05/README.md)
+		- [Esercizi](./ct0374/01/06/README.md)
+	- [Linguaggi context-free](./ct0374/02/README.md)
+		- [Ambiguità](./ct0374/02/01/README.md)
+		- [Forma normale di Chomsky](./ct0374/02/02/README.md)
+		- [Automi a pila](./ct0374/02/03/README.md)
 
 # Secondo anno
 
