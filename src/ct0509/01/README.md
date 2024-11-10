@@ -18,3 +18,5 @@ model.fit(X_train, y_train)
 y_pred = model.predict(X_test)
 accuracy = accuracy_score(y_true=y_test, y_pred=y_pred)
 ```
+
+Oltre al campionamento casuale del _dataset_ è possibile effettuarne uno **stratified**, ovvero mantenendo le frequenze relative di ogni label del _dataset_, per evitare distorsioni durante l'apprendimento.

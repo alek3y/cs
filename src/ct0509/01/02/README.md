@@ -1,5 +1,10 @@
 # Decision tree
 
+```py
+from sklearn.tree import DecisionTreeClassifier
+model = DecisionTreeClassifier()
+model.fit(X, y)
+```
 
 Attraverso gli _alberi decisionali_ è possibile **partizionare** il dominio dei _feature vector_ in base ai valori delle singole _feature_ (i.e. componenti), e a dei **threshold** che rappresentano il confine di suddivisione.
 
@@ -120,7 +125,7 @@ dove $\mathrm{SplitInfo}(\mathcal{D}_1, ..., \mathcal{D}_k) = -\sum\limits_{i=1}
 
 Regolare gli **iperparametri** (e.g. massimo numero di foglie) può causare l'**overfitting** del modello, che causa un'esagerata accuratezza sul _dataset_ di _training_ peggiorando di conseguenza quella di _test_.
 
-Una soluzione consiste nel dividere il _dataset_ anche in **validation** con cui è possibile trovare la miglior configurazione del modello, senza che si adatti troppo al _dataset_ imparato.
+Una soluzione consiste nel dividere il _training_ del _dataset_ anche in **validation** con cui è possibile trovare la miglior configurazione del modello, senza che si adatti troppo al _dataset_ imparato.
 
 Un'altra soluzione è il **pruning**, che tenta di semplificare il modello con:
 - **Pre-pruning**: ferma la crescita dell'albero con delle _stopping criteria_
@@ -133,4 +138,4 @@ $$
 &= \frac{1}{|\mathcal{D}|} \sum_{(x, y) \in \mathcal{D}} (\mathcal{M}(x) - y)^2 + \alpha \cdot \frac{|L(\mathcal{M})|}{|\mathcal{D}|}
 \end{split}
 $$
-dove $|L(\mathcal{M})|$ è il numero di foglie, e $\alpha$ è un nuovo _iperparametro_.
+dove $|L(\mathcal{M})|$ è il numero di foglie e $\alpha$ è un nuovo _iperparametro_.

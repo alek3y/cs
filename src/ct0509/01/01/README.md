@@ -1,5 +1,11 @@
 # k-NN
 
+```py
+from sklearn.neighbors import KNeighborsClassifier
+model = KNeighborsClassifier()
+model.fit(X, y)
+```
+
 L'algoritmo di **$k$-nearest neighbors** prevede la classe di appartenenza semplicemente scegliendo quella **più frequente** tra i $k$ _feature vector_ (i.e. input) più vicini, secondo la loro [distanza euclidea](https://en.wikipedia.org/wiki/Euclidean_distance).
 
 Si vuole quindi **bilanciare** $k$: **non troppo piccolo** per evitare sensibilità al rumore, e **non troppo grande** per evitare costi computazionali elevati.
@@ -19,12 +25,12 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.neighbors import KNeighborsClassifier
 
-X, X_labels = make_blobs(
+X, y = make_blobs(
   n_samples=1000, centers=4,
   random_state=12345
 )
 X_train, X_test, y_train, y_test = train_test_split(
-  X, X_labels,
+  X, y,
   test_size=0.33,
   random_state=42
 )
@@ -32,9 +38,9 @@ X_train, X_test, y_train, y_test = train_test_split(
 scaler = MinMaxScaler()
 scaler.fit(X_train)
 
-kNN = KNeighborsClassifier(n_neighbors=10)
-kNN.fit(scaler.transform(X_train), y_train)
-y_pred = kNN.predict(scaler.transform(X_test))
+model = KNeighborsClassifier(n_neighbors=10)
+model.fit(scaler.transform(X_train), y_train)
+y_pred = model.predict(scaler.transform(X_test))
 ```
 si ottiene la seguente classificazione, con le `X` normalizzate in $[0, 1]$:
 

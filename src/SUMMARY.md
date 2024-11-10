@@ -8,6 +8,7 @@
 	- [Supervised learning](./ct0509/01/README.md)
 		- [k-NN](./ct0509/01/01/README.md)
 		- [Decision tree](./ct0509/01/02/README.md)
+		- [Regressione lineare](./ct0509/01/03/README.md)
 
 - [Calcolabilità e linguaggi formali](./ct0374/README.md)
 	- [Automi finiti](./ct0374/01/README.md)
